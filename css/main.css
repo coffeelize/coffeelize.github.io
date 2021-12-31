@@ -2819,7 +2819,7 @@ ul.breadcrumb li:last-child {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffe3e5;
+  background: #4e44e9;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
