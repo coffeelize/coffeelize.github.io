@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -178,13 +178,33 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        <span class="collection-header">Um..! 9 posts in total. Keep on posting.</span>
+        <span class="collection-header">Um..! 10 posts in total. Keep on posting.</span>
       </div>
 
       
     <div class="collection-year">
       <span class="collection-header">2022</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2022-01-27T12:34:01+08:00"
+              content="2022-01-27">
+          01-27
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/" itemprop="url">
+            <span itemprop="name">hexo博客实现图片懒加载</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -198,7 +218,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" itemprop="url">
-            <span itemprop="name">研一期末考试心理状态</span>
+            <span itemprop="name">研一期末考试</span>
           </a>
       </div>
 
@@ -240,8 +260,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E4%BA%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" itemprop="url">
-            <span itemprop="name">homepage实现只预览摘要二不显示全文功能</span>
+          <a class="post-title-link" href="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" itemprop="url">
+            <span itemprop="name">Homepage实现只预览摘要而不显示全文功能</span>
           </a>
       </div>
 
@@ -396,7 +416,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">4k</span>
+    <span title="Symbols count total">5k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -427,5 +447,11 @@
 
 
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

@@ -133,7 +133,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -182,6 +182,103 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://yuanzhuangkafei.top/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="原装咖啡">
+      <meta itemprop="description" content="心兰相随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的技术专栏">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/" class="post-title-link" itemprop="url">hexo博客实现图片懒加载</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-01-27 12:34:01 / Modified: 15:12:50" itemprop="dateCreated datePublished" datetime="2022-01-27T12:34:01+08:00">2022-01-27</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>459</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>1、从hexo根目录下进入终端，执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/loading.png" data-original="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>2、安装完毕之后，在hexo的配置文件_config.yml中添加如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>onlypost：是仅对post中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
+<li>loadingImg：图片未加载时的代替图；images目录位于主题文件夹下的source/images路径</li>
+<li>isSPA：和延迟加载相关</li>
+<li>preloadRatio：这个选项是为了更好的用户体验，默认值是1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
+</ul>
+<p>当然，也可以为指定的图片禁止懒加载，在Markdown或html中的img标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">&quot;demo.png&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="/images/loading.png" data-original="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://yuanzhuangkafei.top/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -195,7 +292,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" class="post-title-link" itemprop="url">研一期末考试心理状态</a>
+          <a href="/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" class="post-title-link" itemprop="url">研一期末考试</a>
         </h2>
 
         <div class="post-meta-container">
@@ -205,10 +302,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-01-11 18:36:51 / Modified: 18:41:54" itemprop="dateCreated datePublished" datetime="2022-01-11T18:36:51+08:00">2022-01-11</time>
+      <time title="Created: 2022-01-11 18:36:51" itemprop="dateCreated datePublished" datetime="2022-01-11T18:36:51+08:00">2022-01-11</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-27 12:08:48" itemprop="dateModified" datetime="2022-01-27T12:08:48+08:00">2022-01-27</time>
+      </span>
 
   
     <span class="post-meta-break"></span>
@@ -357,7 +460,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E4%BA%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/">
+    <link itemprop="mainEntityOfPage" href="https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -370,7 +473,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E4%BA%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">homepage实现只预览摘要二不显示全文功能</a>
+          <a href="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">Homepage实现只预览摘要而不显示全文功能</a>
         </h2>
 
         <div class="post-meta-container">
@@ -380,10 +483,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-12-31 19:58:11 / Modified: 20:25:53" itemprop="dateCreated datePublished" datetime="2021-12-31T19:58:11+08:00">2021-12-31</time>
+      <time title="Created: 2021-12-31 19:58:11" itemprop="dateCreated datePublished" datetime="2021-12-31T19:58:11+08:00">2021-12-31</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-27 12:10:15" itemprop="dateModified" datetime="2022-01-27T12:10:15+08:00">2022-01-27</time>
+      </span>
 
   
     <span class="post-meta-break"></span>
@@ -413,7 +522,7 @@
           <p>问：NexT主题会在首页显示全文，这会让整个页面看起来臃肿而无法突出重点，我们能不能设置在homepage当中只显示我们想要显示的内容呢？答：当然是可以。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E4%BA%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/">
+              <a class="btn" href="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/">
                 Read more &raquo;
               </a>
             </div>
@@ -654,7 +763,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-03 15:08:58" itemprop="dateModified" datetime="2022-01-03T15:08:58+08:00">2022-01-03</time>
+        <time title="Modified: 2022-01-27 12:34:51" itemprop="dateModified" datetime="2022-01-27T12:34:51+08:00">2022-01-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -700,11 +809,10 @@
 
 <p>又比如NexT当中插入音乐播放器「借助hexo-tag-aplayer」：</p>
 
-    <div id="aplayer-CDVjQftv" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-aTwpmaWM" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="66641056" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
     ></div>
 
-<iframe src="https://quizlet.com/539575139/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe>
       
     </div>
 
@@ -789,7 +897,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <img src="/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
+          <img src="/images/loading.png" data-original="/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
 
       
     </div>
@@ -1006,7 +1114,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">4k</span>
+    <span title="Symbols count total">5k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -1037,5 +1145,11 @@
 
 
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

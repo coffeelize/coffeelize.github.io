@@ -2652,14 +2652,6 @@ ul.breadcrumb li:last-child {
     color: #eee;
   }
 }
-.gt-header a,
-.gt-comments a,
-.gt-popup a {
-  border-bottom: 0;
-}
-.gt-container .gt-popup .gt-action.is--active::before {
-  top: 0.7em;
-}
 .use-motion .animated {
   animation-fill-mode: none;
   visibility: inherit;
@@ -2819,7 +2811,7 @@ ul.breadcrumb li:last-child {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #698a50;
+  background: #61c698;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2838,4 +2830,7 @@ ul.breadcrumb li:last-child {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+img {
+  border-radius: 10px;
 }
