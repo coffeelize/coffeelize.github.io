@@ -2811,7 +2811,7 @@ ul.breadcrumb li:last-child {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c23701;
+  background: #ac59ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2833,4 +2833,10 @@ ul.breadcrumb li:last-child {
 }
 img {
   border-radius: 15px;
+}
+.vcontent p .vemoji {
+  display: inline !important;
+}
+.vpreview p .vemoji {
+  display: inline !important;
 }
