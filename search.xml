@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>My New Post</title>
-    <url>/2021/12/18/My-New-Post/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Final Cut Pro常用快捷键总结及练习</title>
     <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好Windows笔记本放实验室了，只带了一台刚买的Mac，剪辑操作极其痛苦。<br>比如：</p>
@@ -23,6 +17,32 @@
         <tag>Final cut Pro</tag>
         <tag>quizlet</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/2021/12/18/My-New-Post/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>NexT中的标签支持</title>
+    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>注意：NexT支持它自身的标签插件，但如果将Theme切换成其他的，NexT的标签插件语法可能会失效，请酌情使用！</p>
+<p>比如NexT当中的引用：</p>
+<blockquote class="blockquote-center">
+<p>代码优雅，核心简单</p>
+
+</blockquote>
+
+<p>又比如NexT当中插入音乐播放器「借助hexo-tag-aplayer」：</p>
+
+    <div id="aplayer-irxpEKar" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="66641056" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
+    ></div>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -43,47 +63,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>NexT中的标签支持</title>
-    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>注意：NexT支持它自身的标签插件，但如果将Theme切换成其他的，NexT的标签插件语法可能会失效，请酌情使用！</p>
-<p>比如NexT当中的引用：</p>
-<blockquote class="blockquote-center">
-<p>代码优雅，核心简单</p>
-
-</blockquote>
-
-<p>又比如NexT当中插入音乐播放器「借助hexo-tag-aplayer」：</p>
-
-    <div id="aplayer-sYlVPAcy" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="66641056" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
-    ></div>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hexo博客实现图片懒加载</title>
-    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从hexo根目录下进入终端，执行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
-<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在hexo的配置文件_config.yml中添加如下配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>onlypost：是仅对post中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
-<li>loadingImg：图片未加载时的代替图；images目录位于主题文件夹下的source/images路径</li>
-<li>isSPA：和延迟加载相关</li>
-<li>preloadRatio：这个选项是为了更好的用户体验，默认值是1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
-</ul>
-<p>当然，也可以为指定的图片禁止懒加载，在Markdown或html中的img标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">&quot;demo.png&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
-<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
+    <title>hexo博客图片圆角</title>
+    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>有时间就补上😄</p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
@@ -109,24 +91,6 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客图片圆角</title>
-    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>有时间就补上😄</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实现Mac风格的代码块配置</title>
-    <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>NexT主题自带就有三种代码块风格样式，需要做的，只是将copy_button中的style的值改成mac；将enable的值改为true即可；<br>同时，为了支持语法高亮，需要将hexo配置文件当中highlight的enable属性值设置为true「默认就是true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -175,15 +139,40 @@
 ]]></content>
   </entry>
   <entry>
-    <title>研一期末考试</title>
-    <url>/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
-<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
-<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
-<p>附：学习金字塔<br><img src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
-<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
-<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种“可以预见”的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
+    <title>实现Mac风格的代码块配置</title>
+    <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>NexT主题自带就有三种代码块风格样式，需要做的，只是将copy_button中的style的值改成mac；将enable的值改为true即可；<br>同时，为了支持语法高亮，需要将hexo配置文件当中highlight的enable属性值设置为true「默认就是true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客实现图片懒加载</title>
+    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从hexo根目录下进入终端，执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
+<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在hexo的配置文件_config.yml中添加如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>onlypost：是仅对post中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
+<li>loadingImg：图片未加载时的代替图；images目录位于主题文件夹下的source/images路径</li>
+<li>isSPA：和延迟加载相关</li>
+<li>preloadRatio：这个选项是为了更好的用户体验，默认值是1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
+</ul>
+<p>当然，也可以为指定的图片禁止懒加载，在Markdown或html中的img标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">&quot;demo.png&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
+<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
 ]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>此处心安是吾乡</title>
@@ -193,5 +182,16 @@
       <tags>
         <tag>hexo配置</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>研一期末考试</title>
+    <url>/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
+<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
+<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
+<p>附：学习金字塔<br><img src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
+<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
+<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种“可以预见”的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
+]]></content>
   </entry>
 </search>
