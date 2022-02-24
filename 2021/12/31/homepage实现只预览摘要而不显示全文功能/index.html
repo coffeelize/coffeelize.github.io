@@ -13,7 +13,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="Kv6ew0U5wBKSiwo728yq7vAa0xzS88i9ucJjtlELJYM">
-  <meta name="baidu-site-verification" content="code-A92bxtrdwa">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -21,11 +20,14 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yuanzhuangkafei.top","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yuanzhuangkafei.top","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="问：NexT主题会在首页显示全文，这会让整个页面看起来臃肿而无法突出重点，我们能不能设置在homepage当中只显示我们想要显示的内容呢？答：当然是可以。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Homepage实现只预览摘要而不显示全文功能">
+<meta property="og:title" content="Homepage 实现只预览摘要而不显示全文功能">
 <meta property="og:url" content="https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="智朋的技术专栏">
 <meta property="og:description" content="问：NexT主题会在首页显示全文，这会让整个页面看起来臃肿而无法突出重点，我们能不能设置在homepage当中只显示我们想要显示的内容呢？答：当然是可以。">
@@ -44,10 +46,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/","path":"2021/12/31/homepage实现只预览摘要而不显示全文功能/","title":"Homepage实现只预览摘要而不显示全文功能"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/","path":"2021/12/31/homepage实现只预览摘要而不显示全文功能/","title":"Homepage 实现只预览摘要而不显示全文功能"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Homepage实现只预览摘要而不显示全文功能 | 智朋的技术专栏</title>
+<title>Homepage 实现只预览摘要而不显示全文功能 | 智朋的技术专栏</title>
   
 
 
@@ -160,7 +162,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">原装咖啡</p>
-  <div class="site-description" itemprop="description">心兰相随</div>
+  <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -182,6 +184,11 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuanzhuangkafei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuanzhuangkafei" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
 
 
@@ -222,7 +229,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="原装咖啡">
-      <meta itemprop="description" content="心兰相随">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -230,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Homepage实现只预览摘要而不显示全文功能
+          Homepage 实现只预览摘要而不显示全文功能
         </h1>
 
         <div class="post-meta-container">
@@ -266,15 +273,6 @@
   </span>
   
   
-    <span id="/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" class="post-meta-item leancloud_visitors" data-flag-title="Homepage实现只预览摘要而不显示全文功能" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-    <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -299,19 +297,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是NexT主题，则修改NexT文件夹下的_config.yml文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成true，效果如下图所示：<br><img src="/images/loading.png" data-original="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT主题默认的值是true而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
+        <h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
 <h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
 <ol>
 <li>显示自定义的内容</li>
 <li>显示文档某行之前的内容</li>
 </ol>
-<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage中显示的内容自定义而不必出现在下方的正文当中</p>
+<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
 <ul>
-<li>在表头「front matter」中添加description属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-完成之后如下方图片所示：<br><img src="/images/loading.png" data-original="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEexcerpt_description%E5%8F%AA%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%83%B3%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
+<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+完成之后如下方图片所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEexcerpt_description%E5%8F%AA%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%83%B3%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
 </ul>
 <h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
-<li>在文档合适的位置插入“截断”标签，homepage当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断”标签如下所示<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure></li>
+<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
 
     </div>
@@ -330,7 +328,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" title="Homepage实现只预览摘要而不显示全文功能">https://yuanzhuangkafei.top/2021/12/31/homepage实现只预览摘要而不显示全文功能/</a>
+      <a href="https://yuanzhuangkafei.top/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/" title="Homepage 实现只预览摘要而不显示全文功能">https://yuanzhuangkafei.top/2021/12/31/homepage实现只预览摘要而不显示全文功能/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -345,8 +343,8 @@
         
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/" rel="prev" title="Final Cut Pro常用快捷键总结及练习">
-                  <i class="fa fa-chevron-left"></i> Final Cut Pro常用快捷键总结及练习
+                <a href="/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/" rel="prev" title="Final Cut Pro 常用快捷键总结及练习">
+                  <i class="fa fa-chevron-left"></i> Final Cut Pro 常用快捷键总结及练习
                 </a>
             </div>
             <div class="post-nav-item">
@@ -376,7 +374,7 @@
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-mug-saucer"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">原装咖啡</span>
 </div>
@@ -461,7 +459,10 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -470,14 +471,16 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
+  <script src="/js/third-party/pace.js"></script>
 
   
 
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 
@@ -487,11 +490,5 @@ document.addEventListener('page:loaded', () => {
   });
 });
 </script>
-<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                preloadRatio: 1,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</body>
 </html>
