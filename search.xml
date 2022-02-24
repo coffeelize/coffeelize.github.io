@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Final Cut Pro 常用快捷键总结及练习</title>
+    <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
+<ul>
+<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
+<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
+<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
+<li>……</li>
+</ul>
+<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
+<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
+<!-- 以下内容为quizlet测试内嵌网页 -->
+<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
+      <tags>
+        <tag>Final cut Pro</tag>
+        <tag>quizlet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>My New Post</title>
     <url>/2021/12/18/My-New-Post/</url>
     <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
 ]]></content>
   </entry>
   <entry>
-    <title>hexo 博客图片圆角</title>
-    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
-    <content><![CDATA[<p>有时间就补上😄</p>
+    <title>NexT 中的标签支持</title>
+    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
+<p>比如 NexT 当中的引用：</p>
+<blockquote class="blockquote-center">
+<p>代码优雅，核心简单</p>
+
+</blockquote>
+
+
 ]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo 博客实现图片懒加载</title>
-    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
-    <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
-<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在 hexo 的配置文件_config.yml 中添加如下配置：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>onlypost：是仅对 post 中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
-<li> loadingImg：图片未加载时的代替图；images 目录位于主题文件夹下的 source/images 路径</li>
-<li> isSPA：和延迟加载相关</li>
-<li> preloadRatio：这个选项是为了更好的用户体验，默认值是 1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
-</ul>
-<p>当然，也可以为指定的图片禁止懒加载，在 Markdown 或 html 中的 img 标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">"demo.png"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
-<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image 官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
+      <categories>
+        <category>hexo</category>
+      </categories>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -70,6 +69,15 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo 博客图片圆角</title>
+    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
+    <content><![CDATA[<p>有时间就补上😄</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Homepage 实现只预览摘要而不显示全文功能</title>
     <url>/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
@@ -92,25 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Final Cut Pro 常用快捷键总结及练习</title>
-    <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
-    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
-<ul>
-<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
-<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
-<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
-<li>……</li>
-</ul>
-<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
-<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
-<!-- 以下内容为quizlet测试内嵌网页 -->
-<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
-      <tags>
-        <tag>Final cut Pro</tag>
-        <tag>quizlet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实现 Mac 风格的代码块配置</title>
     <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
@@ -129,20 +118,31 @@
       </tags>
   </entry>
   <entry>
-    <title>NexT 中的标签支持</title>
-    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
-<p>比如 NexT 当中的引用：</p>
-<blockquote class="blockquote-center">
-<p>代码优雅，核心简单</p>
+    <title>hexo 博客实现图片懒加载</title>
+    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
+    <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></tbody></table></figure>
 
-</blockquote>
+<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
+<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在 hexo 的配置文件_config.yml 中添加如下配置：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
+<p>参数说明：</p>
+<ul>
+<li>onlypost：是仅对 post 中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
+<li> loadingImg：图片未加载时的代替图；images 目录位于主题文件夹下的 source/images 路径</li>
+<li> isSPA：和延迟加载相关</li>
+<li> preloadRatio：这个选项是为了更好的用户体验，默认值是 1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
+</ul>
+<p>当然，也可以为指定的图片禁止懒加载，在 Markdown 或 html 中的 img 标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">"demo.png"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
+<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
+<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image 官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
 ]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
