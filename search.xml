@@ -69,12 +69,21 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 博客图片圆角</title>
-    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
-    <content><![CDATA[<p>有时间就补上😄</p>
+    <title>实现 Mac 风格的代码块配置</title>
+    <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>此处心安是吾乡</title>
+    <url>/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/</url>
+    <content><![CDATA[<img data-src="/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
 ]]></content>
       <tags>
-        <tag>hexo</tag>
+        <tag>hexo配置</tag>
       </tags>
   </entry>
   <entry>
@@ -100,21 +109,12 @@
       </tags>
   </entry>
   <entry>
-    <title>实现 Mac 风格的代码块配置</title>
-    <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>此处心安是吾乡</title>
-    <url>/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/</url>
-    <content><![CDATA[<img data-src="/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
+    <title>hexo 博客图片圆角</title>
+    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
+    <content><![CDATA[<p>有时间就补上😄</p>
 ]]></content>
       <tags>
-        <tag>hexo配置</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -143,6 +143,17 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>研一期末考试</title>
+    <url>/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
+    <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
+<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
+<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
+<p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
+<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
+<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
+]]></content>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
@@ -178,17 +189,6 @@
 <p>再有，多看看多学学其他道友们是如何写作以及表达的吧。</p>
 <p>最后，分享《论语》当中的一段话：司马牛忧曰：“人皆有兄弟，我独亡。” 子夏曰：“商闻之矣：死生有命，富贵在天。君子敬而无失，与人恭而有礼，四海之内皆兄弟也。君子何患乎无兄弟也？”</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1]. <a href="https://www.cnblogs.com/vamei/archive/2012/11/17/2774208.html">博客 - 为什么要写技术博</a><br>[2]. <a href="https://www.cnblogs.com/zhaopei/p/why_write_blog.html">博客 - 我们为什么应该坚持写博客</a><br>[3].<a href="https://lunyu.5000yan.com/12-5.html">《论语》</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>研一期末考试</title>
-    <url>/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
-    <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
-<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
-<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
-<p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
-<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
-<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
 ]]></content>
   </entry>
 </search>
