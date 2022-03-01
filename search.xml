@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>NexT 中的标签支持</title>
+    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
+<p>比如 NexT 当中的引用：</p>
+<blockquote class="blockquote-center">
+<p>代码优雅，核心简单</p>
+
+</blockquote>
+
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/2021/12/18/My-New-Post/</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Final Cut Pro 常用快捷键总结及练习</title>
     <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
     <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
@@ -20,30 +42,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/2021/12/18/My-New-Post/</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/12/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo 博客图片圆角</title>
     <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
     <content><![CDATA[<p>有时间就补上😄</p>
@@ -51,22 +49,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>NexT 中的标签支持</title>
-    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
-<p>比如 NexT 当中的引用：</p>
-<blockquote class="blockquote-center">
-<p>代码优雅，核心简单</p>
-
-</blockquote>
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
   </entry>
   <entry>
     <title>hexo 搭建评论系统</title>
@@ -141,26 +123,22 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Homepage 实现只预览摘要而不显示全文功能</title>
-    <url>/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
-<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
-<ol>
-<li>显示自定义的内容</li>
-<li>显示文档某行之前的内容</li>
-</ol>
-<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
-<ul>
-<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-完成之后如下方图片所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEexcerpt_description%E5%8F%AA%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%83%B3%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
-</ul>
-<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
-<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
+    <title>Hello World</title>
+    <url>/2021/12/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>为什么放弃使用 remnote</title>
@@ -184,6 +162,28 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Homepage 实现只预览摘要而不显示全文功能</title>
+    <url>/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
+<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
+<ol>
+<li>显示自定义的内容</li>
+<li>显示文档某行之前的内容</li>
+</ol>
+<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
+<ul>
+<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+完成之后如下方图片所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEexcerpt_description%E5%8F%AA%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%83%B3%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
+</ul>
+<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
+<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>实现 Mac 风格的代码块配置</title>
     <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
@@ -191,22 +191,6 @@
       <tags>
         <tag>NexT</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/2022/03/01/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.png"></p>
-]]></content>
   </entry>
   <entry>
     <title>此处心安是吾乡</title>
@@ -226,6 +210,22 @@
 <p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
 <p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
 <p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>新建文档指南</title>
+    <url>/2022/03/01/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
+<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.png"></p>
 ]]></content>
   </entry>
 </search>
