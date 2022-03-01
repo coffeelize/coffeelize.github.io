@@ -17,25 +17,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Final Cut Pro 常用快捷键总结及练习</title>
-    <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
-    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
-<ul>
-<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
-<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
-<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
-<li>……</li>
-</ul>
-<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
-<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
-<!-- 以下内容为quizlet测试内嵌网页 -->
-<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
-      <tags>
-        <tag>Final cut Pro</tag>
-        <tag>quizlet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo 博客实现图片懒加载</title>
     <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
     <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
@@ -72,44 +53,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Homepage 实现只预览摘要而不显示全文功能</title>
-    <url>/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
-<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
-<ol>
-<li>显示自定义的内容</li>
-<li>显示文档某行之前的内容</li>
-</ol>
-<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
+    <title>Final Cut Pro 常用快捷键总结及练习</title>
+    <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
 <ul>
-<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-完成之后如下方图片所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEexcerpt_description%E5%8F%AA%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%83%B3%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
+<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
+<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
+<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
+<li>……</li>
 </ul>
-<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
-<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
+<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
+<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
+<!-- 以下内容为quizlet测试内嵌网页 -->
+<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
+      <tags>
+        <tag>Final cut Pro</tag>
+        <tag>quizlet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 搭建评论系统</title>
+    <url>/2022/01/28/hexo%E6%90%AD%E5%BB%BA%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/12/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>My New Post</title>
@@ -154,57 +123,12 @@
 ]]></content>
   </entry>
   <entry>
-    <title>hexo 搭建评论系统</title>
-    <url>/2022/01/28/hexo%E6%90%AD%E5%BB%BA%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实现 Mac 风格的代码块配置</title>
     <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
 <figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <tags>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/2022/03/01/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>研一期末考试</title>
-    <url>/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
-    <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
-<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
-<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
-<p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
-<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
-<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>此处心安是吾乡</title>
-    <url>/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/</url>
-    <content><![CDATA[<img data-src="/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
-]]></content>
-      <tags>
-        <tag>hexo配置</tag>
       </tags>
   </entry>
   <entry>
@@ -227,5 +151,81 @@
 </ol>
 <p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88remnote%EF%BC%89%E5%88%A0%E9%99%A4%E7%AC%94%E8%AE%B0%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%80%E5%A0%86%E7%9A%84untitled%EF%BC%8C%E7%94%9A%E8%87%B3%E5%88%A0%E4%B8%8D%E5%8E%BB.png"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>新建文档指南</title>
+    <url>/2022/03/01/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
+<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Homepage 实现只预览摘要而不显示全文功能</title>
+    <url>/2021/12/31/homepage%E5%AE%9E%E7%8E%B0%E5%8F%AA%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81%E8%80%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E6%91%98%E8%A6%81%E6%8F%8F%E8%BF%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E5%BC%80%E5%85%B3%E9%BB%98%E8%AE%A4%E6%98%AF%E5%BC%80%E5%90%AF%E7%9A%84.png"><br><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
+<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
+<ol>
+<li>显示自定义的内容</li>
+<li>显示文档某行之前的内容</li>
+</ol>
+<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
+<ul>
+<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+完成之后如下方图片所示：<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEexcerpt_description%E5%8F%AA%E5%9C%A8%E4%B8%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%83%B3%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
+</ul>
+<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
+<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>研一期末考试</title>
+    <url>/2022/01/11/%E7%A0%94%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
+    <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
+<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
+<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
+<p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
+<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
+<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/12/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>此处心安是吾乡</title>
+    <url>/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/</url>
+    <content><![CDATA[<img data-src="/2021/12/19/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
+]]></content>
+      <tags>
+        <tag>hexo配置</tag>
+      </tags>
   </entry>
 </search>
