@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Word 操作</title>
+    <title>My New Post</title>
+    <url>/2021/12/18/My-New-Post/</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>NexT 中的标签支持</title>
+    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
+<p>比如 NexT 当中的引用：</p>
+<blockquote class="blockquote-center">
+<p>代码优雅，核心简单</p>
+
+</blockquote>
+
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Word 操作指南</title>
     <url>/2022/03/03/Word%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><h3 id="1、将指定功能按钮添加到快速访问工具栏"><a href="#1、将指定功能按钮添加到快速访问工具栏" class="headerlink" title="1、将指定功能按钮添加到快速访问工具栏"></a>1、将指定功能按钮添加到快速访问工具栏</h3><p><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
 <h3 id="2、长按Alt键配合数字键🔢调用快速访问工具栏功能按钮"><a href="#2、长按Alt键配合数字键🔢调用快速访问工具栏功能按钮" class="headerlink" title="2、长按Alt键配合数字键🔢调用快速访问工具栏功能按钮"></a>2、长按 Alt 键配合数字键🔢调用快速访问工具栏功能按钮</h3><p><img data-src="https://s2.loli.net/2022/03/03/WbwhFVMLZTBNH3A.gif" alt="长按ALT键+数字按键可以实现快速访问工具栏工具的使用"></p>
@@ -15,13 +37,22 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 博客图片圆角</title>
-    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
-    <content><![CDATA[<p>有时间就补上😄</p>
+    <title>Hello World</title>
+    <url>/2021/12/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>hexo 博客实现图片懒加载</title>
@@ -60,22 +91,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/12/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>Final Cut Pro 常用快捷键总结及练习</title>
+    <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
+<ul>
+<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
+<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
+<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
+<li>……</li>
+</ul>
+<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
+<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
+<!-- 以下内容为quizlet测试内嵌网页 -->
+<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
+      <tags>
+        <tag>Final cut Pro</tag>
+        <tag>quizlet</tag>
+      </tags>
   </entry>
   <entry>
     <title>Homepage 实现只预览摘要而不显示全文功能</title>
@@ -100,12 +132,12 @@
       </tags>
   </entry>
   <entry>
-    <title>实现 Mac 风格的代码块配置</title>
-    <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+    <title>hexo 博客图片圆角</title>
+    <url>/2022/01/27/hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E5%9C%86%E8%A7%92/</url>
+    <content><![CDATA[<p>有时间就补上😄</p>
+]]></content>
       <tags>
-        <tag>NexT</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -166,47 +198,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/2021/12/18/My-New-Post/</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>NexT 中的标签支持</title>
-    <url>/2021/12/20/NexT%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
-<p>比如 NexT 当中的引用：</p>
-<blockquote class="blockquote-center">
-<p>代码优雅，核心简单</p>
-
-</blockquote>
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Final Cut Pro 常用快捷键总结及练习</title>
-    <url>/2022/01/03/Final-Cut-Pro%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%E5%8F%8A%E7%BB%83%E4%B9%A0/</url>
-    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
-<ul>
-<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
-<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
-<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
-<li>……</li>
-</ul>
-<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
-<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
-<!-- 以下内容为quizlet测试内嵌网页 -->
-<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
-      <tags>
-        <tag>Final cut Pro</tag>
-        <tag>quizlet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新建文档指南</title>
     <url>/2022/03/01/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<ol>
@@ -241,5 +232,14 @@
 <p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
 <p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>实现 Mac 风格的代码块配置</title>
+    <url>/2021/12/22/%E5%AE%9E%E7%8E%B0Mac%E9%A3%8E%E6%A0%BC%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
   </entry>
 </search>
