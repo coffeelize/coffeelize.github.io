@@ -2918,7 +2918,7 @@ mark.search-keyword {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #1b66da;
+  background: #4fe271;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2937,10 +2937,4 @@ mark.search-keyword {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-.vcontent p .vemoji {
-  display: inline !important;
-}
-.vpreview p .vemoji {
-  display: inline !important;
 }
