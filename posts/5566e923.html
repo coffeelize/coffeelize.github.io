@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Kv6ew0U5wBKSiwo728yq7vAa0xzS88i9ucJjtlELJYM">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yuanzhuangkafei.top","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="1、Imagine 本地图片压缩Github 项目名称：Imagine； GitHub 仓库  Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.  优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地缺点：无法处理 gif 图片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片压缩指南">
+<meta property="og:url" content="https://yuanzhuangkafei.top/posts/5566e923.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="1、Imagine 本地图片压缩Github 项目名称：Imagine； GitHub 仓库  Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.  优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地缺点：无法处理 gif 图片">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_ImagineUI%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_Compressio.app%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_pngquant2pngcrush.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_compress_images.js%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_Image-Compress_%E9%87%87%E7%94%A8%E6%9C%AC%E5%9C%B0%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9.gif">
+<meta property="article:published_time" content="2022-03-30T11:43:38.000Z">
+<meta property="article:modified_time" content="2022-03-30T13:32:57.826Z">
+<meta property="article:author" content="原装咖啡">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_ImagineUI%E7%95%8C%E9%9D%A2.png">
+
+
+<link rel="canonical" href="https://yuanzhuangkafei.top/posts/5566e923.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuanzhuangkafei.top/posts/5566e923.html","path":"posts/5566e923.html","title":"图片压缩指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>图片压缩指南 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">应该学习的不只是知识，还有经验</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Imagine-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9"><span class="nav-number">1.</span> <span class="nav-text">1、Imagine 本地图片压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81Compressio-app"><span class="nav-number">2.</span> <span class="nav-text">2、Compressio.app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9-Compress-images"><span class="nav-number">3.</span> <span class="nav-text">3、本地图片压缩 Compress-images</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">1、使用方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">2、可能会遇到的问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">3、自定义配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81%E5%8E%8B%E7%BC%A9%E6%95%88%E6%9E%9C"><span class="nav-number">3.4.</span> <span class="nav-text">4、压缩效果</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="原装咖啡"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">原装咖啡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuanzhuangkafei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuanzhuangkafei" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/%E5%8E%9F%E8%A3%85%E5%92%96%E5%95%A1" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;原装咖啡" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuanzhuangkafei.top/posts/5566e923.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="原装咖啡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图片压缩指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-30 19:43:38 / 修改时间：21:32:57" itemprop="dateCreated datePublished" datetime="2022-03-30T19:43:38+08:00">2022-03-30</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/5566e923.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/5566e923.html" data-xid="/posts/5566e923.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="1、Imagine-本地图片压缩"><a href="#1、Imagine-本地图片压缩" class="headerlink" title="1、Imagine 本地图片压缩"></a>1、Imagine 本地图片压缩</h3><p>Github 项目名称：Imagine； <a target="_blank" rel="noopener" href="https://github.com/meowtec/Imagine">GitHub 仓库</a></p>
+<blockquote>
+<p>Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.</p>
+</blockquote>
+<p>优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地<br>缺点：无法处理 gif 图片</p>
+<span id="more"></span>
+
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_ImagineUI%E7%95%8C%E9%9D%A2.png" alt="ImagineUI界面"></p>
+<h3 id="2、Compressio-app"><a href="#2、Compressio-app" class="headerlink" title="2、Compressio.app"></a>2、Compressio.app</h3><p>在线 GIF 压缩 [Compressio.app]： <a target="_blank" rel="noopener" href="https://compressio.app/">开源网址</a><br>github 仓库： <a target="_blank" rel="noopener" href="https://github.com/twoabd/CompressioWeb">网址</a></p>
+<p>优点：开源免费；跨设备运行；免安装；可自行搭建服务器<br>缺点：可能会涉及到隐私问题</p>
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_Compressio.app%E7%95%8C%E9%9D%A2.png" alt="Compressio.app界面"></p>
+<h3 id="3、本地图片压缩-Compress-images"><a href="#3、本地图片压缩-Compress-images" class="headerlink" title="3、本地图片压缩 Compress-images"></a>3、本地图片压缩 Compress-images</h3><p>GitHub 仓库： <a target="_blank" rel="noopener" href="https://github.com/Yuriy-Svetlov/compress-images">Compress-images</a></p>
+<p>命令行安装以下依赖：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install compress-images --save</span><br><span class="line"></span><br><span class="line">npm install pngquant-bin@6.0.1 --save</span><br><span class="line">npm install gifsicle@5.2.1 --save</span><br><span class="line"></span><br><span class="line">注意不要升级随便升级版本，比如下面这段代码，升级之后报错（不知道为什么，可能识别不了）</span><br><span class="line">npm install gifsicle --save</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="1、使用方法："><a href="#1、使用方法：" class="headerlink" title="1、使用方法："></a>1、使用方法：</h4><p>请查阅下载的文档中的 example 示例的 Manual.txt</p>
+<ol>
+<li><p> 从 GitHub 仓库下载项目：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:semiromid/compress-images.git   </span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> 删除所有文件夹，除了 example 文件夹</p>
+</li>
+<li><p> 在 example 文件夹打开命令行工具（vscode 打开），如下命令安装依赖</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install compress-images --save</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> 如遇到一下情况的报错，可能是不适合运行在某些系统上，可能需要对 example 文件中的 compress_images.js 做修改。<br>PS: win7 测试，在压缩 png 图片时，需要将 pngquant 参数改为 pngcrush</p>
+</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_pngquant2pngcrush.png" alt="pngquant2pngcrush"></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[1] <span class="string">"npm install pngquant-bin@6.0.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'pngquant'</span> on other PNG engine, as example on <span class="string">"pngcrush"</span>.</span><br><span class="line">{png: {engine: <span class="string">'pngcrush'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}},</span><br><span class="line"></span><br><span class="line">[2] <span class="string">"npm install gifsicle@5.2.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'gifsicle'</span> on other GIF engine, as example <span class="string">"gif2webp"</span></span><br><span class="line">{gif: {engine: <span class="string">'gif2webp'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="5">
+<li> 运行 minify_Img.bat，如果报错缺少什么依赖，继续在命令行中安装</li>
+</ol>
+<h4 id="2、可能会遇到的问题："><a href="#2、可能会遇到的问题：" class="headerlink" title="2、可能会遇到的问题："></a>2、可能会遇到的问题：</h4><ol>
+<li> 如果图片名太长，可能不能压缩处理，可先重命名在压缩</li>
+<li> 安装依赖可能会出现网络问题</li>
+<li> 最常见的错误就是上方第四点 pngquant|pngcrush；gifsicle|gif2webp 可能需要切换</li>
+</ol>
+<h4 id="3、自定义配置："><a href="#3、自定义配置：" class="headerlink" title="3、自定义配置："></a>3、自定义配置：</h4><ol>
+<li> 下载的示例库已经创建好了输入文件夹和输出文件夹，层级关系已经设置好了。其实我们也可以自定义设置 input 和 output 文件夹</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_compress_images.js%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="compress_images.js自定义设置界面"></p>
+<ol start="2">
+<li> 自定义配置参考文档：GitHub 仓库给了 7 中实例， <a target="_blank" rel="noopener" href="https://github.com/Yuriy-Svetlov/compress-images">点击查看</a><br>举例其中的集中方式：<br>[1] 系数默认配置 </li>
+</ol>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">"compress-images"</span>),</span><br><span class="line">  INPUT_path_to_your_images,</span><br><span class="line">  OUTPUT_path;</span><br><span class="line"></span><br><span class="line">INPUT_path_to_your_images = <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}"</span>;</span><br><span class="line">OUTPUT_path = <span class="string">"build/img/"</span>;</span><br><span class="line"></span><br><span class="line">compress_images(INPUT_path_to_your_images, OUTPUT_path, { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> }, <span class="literal">false</span>,</span><br><span class="line">                { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"mozjpeg"</span>, <span class="attr">command</span>: [<span class="string">"-quality"</span>, <span class="string">"60"</span>] } },</span><br><span class="line">                { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="string">"pngquant"</span>, <span class="attr">command</span>: [<span class="string">"--quality=20-50"</span>, <span class="string">"-o"</span>] } },</span><br><span class="line">                { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="string">"svgo"</span>, <span class="attr">command</span>: <span class="string">"--multipass"</span> } },</span><br><span class="line">                { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="string">"gifsicle"</span>, <span class="attr">command</span>: [<span class="string">"--colors"</span>, <span class="string">"64"</span>, <span class="string">"--use-col=web"</span>] } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error, completed, statistic</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">    <span class="built_in">console</span>.log(completed);</span><br><span class="line">    <span class="built_in">console</span>.log(statistic);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[2]jpg⇒webp</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We will be compressing images [jpg] with two algorithms, [webp] and [jpg];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg] ---to---&gt; [webp]</span></span><br><span class="line">compress_images(</span><br><span class="line">  <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">  <span class="string">"build/img/"</span>,</span><br><span class="line">  { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> },</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"webp"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>{</span><br><span class="line">    <span class="keyword">if</span> (err === <span class="literal">null</span>) {</span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(</span><br><span class="line">        <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">        <span class="string">"build/img/"</span>,</span><br><span class="line">        { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span> },</span><br><span class="line">        <span class="literal">false</span>,</span><br><span class="line">        { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"jpegtran"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{}</span><br><span class="line">      );</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="built_in">console</span>.error(err);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[3] jpg (webp)+gif (gifsicle)+png (webp)+svg (svgo)，括号中的为压缩算法 / 格式转换</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg+gif+png+svg] ---to---&gt; [jpg(webp)+gif(gifsicle)+png(webp)+svg(svgo)]</span></span><br><span class="line">compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG,gif,png,svg}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span>}, <span class="literal">false</span>,</span><br><span class="line">                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="string">'svgo'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="string">'gifsicle'</span>, <span class="attr">command</span>: [<span class="string">'--colors'</span>, <span class="string">'64'</span>, <span class="string">'--use-col=web'</span>]}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      <span class="comment">//-------------------------------------------------                                    </span></span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'src/img/combine/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                      {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'jpegtran'</span>, <span class="attr">command</span>: [<span class="string">'-trim'</span>, <span class="string">'-progressive'</span>, <span class="string">'-copy'</span>, <span class="string">'none'</span>, <span class="string">'-optimize'</span>]}},</span><br><span class="line">                                                      {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="comment">//[jpg(jpegtran)] ---to---&gt; [jpg(mozjpeg)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">            compress_images(<span class="string">'src/img/combine/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'mozjpeg'</span>, <span class="attr">command</span>: [<span class="string">'-quality'</span>, <span class="string">'75'</span>]}},</span><br><span class="line">                                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">                  <span class="comment">//[png] ---to---&gt; [png(pngquant)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">                  compress_images(<span class="string">'src/img/source/**/*.png'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                                  {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'pngquant'</span>, <span class="attr">command</span>: [<span class="string">'--quality=30-60'</span>, <span class="string">'-o'</span>]}},</span><br><span class="line">                                                                  {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{                                                      </span><br><span class="line">                  }); </span><br><span class="line">            });                                      </span><br><span class="line">      });</span><br><span class="line">      <span class="comment">//-------------------------------------------------</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="4、压缩效果"><a href="#4、压缩效果" class="headerlink" title="4、压缩效果"></a>4、压缩效果</h4><p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_Image-Compress_%E9%87%87%E7%94%A8%E6%9C%AC%E5%9C%B0%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9.gif" alt="图片压缩效果11M⇒2.2M"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>原装咖啡
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://yuanzhuangkafei.top/posts/5566e923.html" title="图片压缩指南">https://yuanzhuangkafei.top/posts/5566e923.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/b0d7ede0.html" rel="next" title="科研作图之 PS 篇">
+                  科研作图之 PS 篇 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">原装咖啡</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">13k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/posts/5566e923.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Final Cut Pro 常用快捷键总结及练习</title>
     <url>/posts/3ac6e730.html</url>
     <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
@@ -20,25 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之图像篇</title>
-    <url>/posts/4a6b571e.html</url>
-    <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
-<h2 id="刷新题注"><a href="#刷新题注" class="headerlink" title="刷新题注"></a>刷新题注</h2><p>选择图注域代码（或者全选文档），快捷键 F9 刷新<br><img data-src="https://s2.loli.net/2022/03/03/QDzKE3mXZW76NGL.gif" alt="F9刷新题注"></p>
-<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>文字说明：如果图片为嵌入型（默认的），在段落中只显示一部分，很有可能是因为段落行间距的问题，此时需要将图片的行间距设置为单倍行距。<br><img data-src="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif" alt="（Word）插入图片显示不全，对图片进行单倍行距设置.gif"><br>为什么会这样：整段文字的行间距都是固定的 20 磅，插入图片后，上一行与下一行的行间距仍然只是 20 磅，因此只能看到 20 磅高度的图片</p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之排版篇</title>
-    <url>/posts/d50f866f.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>NexT 中的标签支持</title>
     <url>/posts/1bbb3484.html</url>
     <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
@@ -55,9 +42,29 @@
       </categories>
   </entry>
   <entry>
+    <title>Word 操作指南之图像篇</title>
+    <url>/posts/4a6b571e.html</url>
+    <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
+<h2 id="刷新题注"><a href="#刷新题注" class="headerlink" title="刷新题注"></a>刷新题注</h2><p>选择图注域代码（或者全选文档），快捷键 F9 刷新<br><img data-src="https://s2.loli.net/2022/03/03/QDzKE3mXZW76NGL.gif" alt="F9刷新题注"></p>
+<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>文字说明：如果图片为嵌入型（默认的），在段落中只显示一部分，很有可能是因为段落行间距的问题，此时需要将图片的行间距设置为单倍行距。<br><img data-src="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif" alt="（Word）插入图片显示不全，对图片进行单倍行距设置.gif"><br>为什么会这样：整段文字的行间距都是固定的 20 磅，插入图片后，上一行与下一行的行间距仍然只是 20 磅，因此只能看到 20 磅高度的图片</p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之排版篇</title>
+    <url>/posts/d50f866f.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之标题样式篇</title>
     <url>/posts/d740c613.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之符号篇</title>
+    <url>/posts/4fcbca1a.html</url>
+    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
+<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
     <title>Word 操作指南之表格篇</title>
@@ -155,36 +162,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 搭建评论系统</title>
-    <url>/posts/8e7a9251.html</url>
-    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么放弃使用 remnote</title>
-    <url>/posts/b0b73b25.html</url>
-    <content><![CDATA[<ol>
-<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
-<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
-<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
-<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
-<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
-<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
-<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
-<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
-<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
-<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
-<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
-<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
-<li>待续…</li>
-</ol>
-<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88remnote%EF%BC%89%E5%88%A0%E9%99%A4%E7%AC%94%E8%AE%B0%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%80%E5%A0%86%E7%9A%84untitled%EF%BC%8C%E7%94%9A%E8%87%B3%E5%88%A0%E4%B8%8D%E5%8E%BB.png"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>为什么我要写博客</title>
     <url>/posts/b76b2678.html</url>
     <content><![CDATA[<p>在回答这个问题之前，先思考一下为什么我之前没有写博客：</p>
@@ -221,38 +198,71 @@
 ]]></content>
   </entry>
   <entry>
-    <title>实现 Mac 风格的代码块配置</title>
-    <url>/posts/cd11c86c.html</url>
-    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
+    <title>图片压缩指南</title>
+    <url>/posts/5566e923.html</url>
+    <content><![CDATA[<h3 id="1、Imagine-本地图片压缩"><a href="#1、Imagine-本地图片压缩" class="headerlink" title="1、Imagine 本地图片压缩"></a>1、Imagine 本地图片压缩</h3><p>Github 项目名称：Imagine； <a href="https://github.com/meowtec/Imagine">GitHub 仓库</a></p>
+<blockquote>
+<p>Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.</p>
+</blockquote>
+<p>优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地<br>缺点：无法处理 gif 图片</p>
+<span id="more"></span>
+
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_ImagineUI%E7%95%8C%E9%9D%A2.png" alt="ImagineUI界面"></p>
+<h3 id="2、Compressio-app"><a href="#2、Compressio-app" class="headerlink" title="2、Compressio.app"></a>2、Compressio.app</h3><p>在线 GIF 压缩 [Compressio.app]： <a href="https://compressio.app/">开源网址</a><br>github 仓库： <a href="https://github.com/twoabd/CompressioWeb">网址</a></p>
+<p>优点：开源免费；跨设备运行；免安装；可自行搭建服务器<br>缺点：可能会涉及到隐私问题</p>
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_Compressio.app%E7%95%8C%E9%9D%A2.png" alt="Compressio.app界面"></p>
+<h3 id="3、本地图片压缩-Compress-images"><a href="#3、本地图片压缩-Compress-images" class="headerlink" title="3、本地图片压缩 Compress-images"></a>3、本地图片压缩 Compress-images</h3><p>GitHub 仓库： <a href="https://github.com/Yuriy-Svetlov/compress-images">Compress-images</a></p>
+<p>命令行安装以下依赖：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install compress-images --save</span><br><span class="line"></span><br><span class="line">npm install pngquant-bin@6.0.1 --save</span><br><span class="line">npm install gifsicle@5.2.1 --save</span><br><span class="line"></span><br><span class="line">注意不要升级随便升级版本，比如下面这段代码，升级之后报错（不知道为什么，可能识别不了）</span><br><span class="line">npm install gifsicle --save</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="1、使用方法："><a href="#1、使用方法：" class="headerlink" title="1、使用方法："></a>1、使用方法：</h4><p>请查阅下载的文档中的 example 示例的 Manual.txt</p>
+<ol>
+<li><p> 从 GitHub 仓库下载项目：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:semiromid/compress-images.git   </span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> 删除所有文件夹，除了 example 文件夹</p>
+</li>
+<li><p> 在 example 文件夹打开命令行工具（vscode 打开），如下命令安装依赖</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install compress-images --save</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> 如遇到一下情况的报错，可能是不适合运行在某些系统上，可能需要对 example 文件中的 compress_images.js 做修改。<br>PS: win7 测试，在压缩 png 图片时，需要将 pngquant 参数改为 pngcrush</p>
+</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_pngquant2pngcrush.png" alt="pngquant2pngcrush"></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[1] <span class="string">"npm install pngquant-bin@6.0.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'pngquant'</span> on other PNG engine, as example on <span class="string">"pngcrush"</span>.</span><br><span class="line">{png: {engine: <span class="string">'pngcrush'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}},</span><br><span class="line"></span><br><span class="line">[2] <span class="string">"npm install gifsicle@5.2.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'gifsicle'</span> on other GIF engine, as example <span class="string">"gif2webp"</span></span><br><span class="line">{gif: {engine: <span class="string">'gif2webp'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="5">
+<li> 运行 minify_Img.bat，如果报错缺少什么依赖，继续在命令行中安装</li>
+</ol>
+<h4 id="2、可能会遇到的问题："><a href="#2、可能会遇到的问题：" class="headerlink" title="2、可能会遇到的问题："></a>2、可能会遇到的问题：</h4><ol>
+<li> 如果图片名太长，可能不能压缩处理，可先重命名在压缩</li>
+<li> 安装依赖可能会出现网络问题</li>
+<li> 最常见的错误就是上方第四点 pngquant|pngcrush；gifsicle|gif2webp 可能需要切换</li>
+</ol>
+<h4 id="3、自定义配置："><a href="#3、自定义配置：" class="headerlink" title="3、自定义配置："></a>3、自定义配置：</h4><ol>
+<li> 下载的示例库已经创建好了输入文件夹和输出文件夹，层级关系已经设置好了。其实我们也可以自定义设置 input 和 output 文件夹</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_compress_images.js%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="compress_images.js自定义设置界面"></p>
+<ol start="2">
+<li> 自定义配置参考文档：GitHub 仓库给了 7 中实例， <a href="https://github.com/Yuriy-Svetlov/compress-images">点击查看</a><br>举例其中的集中方式：<br>[1] 系数默认配置 </li>
+</ol>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">"compress-images"</span>),</span><br><span class="line">  INPUT_path_to_your_images,</span><br><span class="line">  OUTPUT_path;</span><br><span class="line"></span><br><span class="line">INPUT_path_to_your_images = <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}"</span>;</span><br><span class="line">OUTPUT_path = <span class="string">"build/img/"</span>;</span><br><span class="line"></span><br><span class="line">compress_images(INPUT_path_to_your_images, OUTPUT_path, { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> }, <span class="literal">false</span>,</span><br><span class="line">                { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"mozjpeg"</span>, <span class="attr">command</span>: [<span class="string">"-quality"</span>, <span class="string">"60"</span>] } },</span><br><span class="line">                { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="string">"pngquant"</span>, <span class="attr">command</span>: [<span class="string">"--quality=20-50"</span>, <span class="string">"-o"</span>] } },</span><br><span class="line">                { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="string">"svgo"</span>, <span class="attr">command</span>: <span class="string">"--multipass"</span> } },</span><br><span class="line">                { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="string">"gifsicle"</span>, <span class="attr">command</span>: [<span class="string">"--colors"</span>, <span class="string">"64"</span>, <span class="string">"--use-col=web"</span>] } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error, completed, statistic</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">    <span class="built_in">console</span>.log(completed);</span><br><span class="line">    <span class="built_in">console</span>.log(statistic);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[2]jpg⇒webp</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We will be compressing images [jpg] with two algorithms, [webp] and [jpg];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg] ---to---&gt; [webp]</span></span><br><span class="line">compress_images(</span><br><span class="line">  <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">  <span class="string">"build/img/"</span>,</span><br><span class="line">  { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> },</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"webp"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>{</span><br><span class="line">    <span class="keyword">if</span> (err === <span class="literal">null</span>) {</span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(</span><br><span class="line">        <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">        <span class="string">"build/img/"</span>,</span><br><span class="line">        { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span> },</span><br><span class="line">        <span class="literal">false</span>,</span><br><span class="line">        { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"jpegtran"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{}</span><br><span class="line">      );</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="built_in">console</span>.error(err);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[3] jpg (webp)+gif (gifsicle)+png (webp)+svg (svgo)，括号中的为压缩算法 / 格式转换</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg+gif+png+svg] ---to---&gt; [jpg(webp)+gif(gifsicle)+png(webp)+svg(svgo)]</span></span><br><span class="line">compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG,gif,png,svg}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span>}, <span class="literal">false</span>,</span><br><span class="line">                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="string">'svgo'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="string">'gifsicle'</span>, <span class="attr">command</span>: [<span class="string">'--colors'</span>, <span class="string">'64'</span>, <span class="string">'--use-col=web'</span>]}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      <span class="comment">//-------------------------------------------------                                    </span></span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'src/img/combine/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                      {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'jpegtran'</span>, <span class="attr">command</span>: [<span class="string">'-trim'</span>, <span class="string">'-progressive'</span>, <span class="string">'-copy'</span>, <span class="string">'none'</span>, <span class="string">'-optimize'</span>]}},</span><br><span class="line">                                                      {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="comment">//[jpg(jpegtran)] ---to---&gt; [jpg(mozjpeg)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">            compress_images(<span class="string">'src/img/combine/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'mozjpeg'</span>, <span class="attr">command</span>: [<span class="string">'-quality'</span>, <span class="string">'75'</span>]}},</span><br><span class="line">                                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">                  <span class="comment">//[png] ---to---&gt; [png(pngquant)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">                  compress_images(<span class="string">'src/img/source/**/*.png'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                                  {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'pngquant'</span>, <span class="attr">command</span>: [<span class="string">'--quality=30-60'</span>, <span class="string">'-o'</span>]}},</span><br><span class="line">                                                                  {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{                                                      </span><br><span class="line">                  }); </span><br><span class="line">            });                                      </span><br><span class="line">      });</span><br><span class="line">      <span class="comment">//-------------------------------------------------</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="4、压缩效果"><a href="#4、压缩效果" class="headerlink" title="4、压缩效果"></a>4、压缩效果</h4><p><img data-src="https://raw.githubusercontent.com/yuanzhuangkafei/PicGo-Portable/main/Image-Compress_Image-Compress_%E9%87%87%E7%94%A8%E6%9C%AC%E5%9C%B0%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9.gif" alt="图片压缩效果11M⇒2.2M"></p>
+]]></content>
   </entry>
   <entry>
-    <title>此处心安是吾乡</title>
-    <url>/posts/d784b47d.html</url>
-    <content><![CDATA[<img data-src="/posts/d784b47d/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="This is an example image">
+    <title>hexo 搭建评论系统</title>
+    <url>/posts/8e7a9251.html</url>
+    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
 ]]></content>
       <tags>
-        <tag>hexo配置</tag>
+        <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>研一期末考试</title>
-    <url>/posts/82be73a2.html</url>
-    <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
-<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
-<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
-<p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
-<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
-<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>科研作图之 PS 篇</title>
-    <url>/posts/b0d7ede0.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>新建文档指南</title>
@@ -271,10 +281,57 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之符号篇</title>
-    <url>/posts/4fcbca1a.html</url>
-    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
-<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+    <title>为什么放弃使用 remnote</title>
+    <url>/posts/b0b73b25.html</url>
+    <content><![CDATA[<ol>
+<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
+<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
+<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
+<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
+<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
+<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
+<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
+<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
+<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
+<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
+<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
+<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
+<li>待续…</li>
+</ol>
+<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88remnote%EF%BC%89%E5%88%A0%E9%99%A4%E7%AC%94%E8%AE%B0%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%80%E5%A0%86%E7%9A%84untitled%EF%BC%8C%E7%94%9A%E8%87%B3%E5%88%A0%E4%B8%8D%E5%8E%BB.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>此处心安是吾乡</title>
+    <url>/posts/d784b47d.html</url>
+    <content><![CDATA[<img data-src="/posts/d784b47d/%E6%AD%A4%E5%A4%84%E5%BF%83%E5%AE%89%E6%98%AF%E5%90%BE%E4%B9%A1.jpg" class="" title="此处安心是吾乡">]]></content>
+      <tags>
+        <tag>hexo配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实现 Mac 风格的代码块配置</title>
+    <url>/posts/cd11c86c.html</url>
+    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>研一期末考试</title>
+    <url>/posts/82be73a2.html</url>
+    <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
+<p>学习过程可以是和实验室的同学交流讨论，也可以和室友们彻夜漫谈，亦或刷着慕课上的视频，借阅师兄师姐往年的试题笔记；</p>
+<p>遇到一个人解决不过来的问题，我们可以想办法分工合作，分工精确到试题当中哪位同学具体做哪些题，并将这些题给其他人讲清楚，最后相互讨论，相互补充，将一套题弄懂为止。备考的这段时间里，尽管有些对未来考题未知的恐惧，但更多的是那种满足感，那种将题目给旁边同学讲明白的自豪感，这种感觉尤其体现在自己对这道题的理解或心得传授给其他同学的过程。通过讨论、做题与讲授，这不比听老师讲课来的更快些嘛，嘿嘿😋！</p>
+<p>附：学习金字塔<br><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%E5%AD%A6%E4%B9%A0%E9%87%91%E5%AD%97%E5%A1%94.jpeg" alt="学习金字塔"></p>
+<p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
+<p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>科研作图之 PS 篇</title>
+    <url>/posts/b0d7ede0.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
