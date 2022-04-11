@@ -20,12 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>NexT 中的标签支持</title>
     <url>/posts/1bbb3484.html</url>
     <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
@@ -42,6 +36,172 @@
       </categories>
   </entry>
   <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>LaTeX 不快速的入门笔记</title>
+    <url>/posts/15e36c1c.html</url>
+    <content><![CDATA[<p>说明：</p>
+<ul>
+<li>以下代码块中的内容均匀 LaTeX 语法</li>
+<li>参考视频： <a href="https://www.bilibili.com/video/BV1s7411U7Pr?p=2">刘海洋・LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX 知识</a></li>
+<li>在线表格转 latex：<a href="https://tablesgenerator.com/latex_tables">https://tablesgenerator.com/latex_tables</a></li>
+<li> 推荐：在线 Latex 公式编辑器 <a href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">Equation Editor</a></li>
+<li> 推荐博客：<a href="https://liam.page/categories/LaTeX/">始终</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>命令以反斜杠开头，后面可跟花括号加参数，后面跟中括号表示可选参数</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\documentclass[11pt,twoside,a4paper]{article}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\documentclass[UTF8]{ctexart}</span><br><span class="line">% 这里的 ctexart，支持简体中文和英文的混排，指定文档的编码类型为 UTF8 格式</span><br></pre></td></tr></tbody></table></figure>
+
+<p>UTF8 是 TeXworks 编辑器默认使用的编码类型</p>
+<p>中文的文档类为 ctexart（Chinese tex article）</p>
+<p>.tex⇒.pdf<br>英文推荐：pdflatex<br>中文推荐：xelatex</p>
+<h2 id="源代码结构"><a href="#源代码结构" class="headerlink" title="源代码结构"></a>源代码结构</h2><p>documentclass 和 begin 之间的内容为导言（前言 preamble）「有点类似 HTML 当中的 head 标签」<br>介于 begin 和 end 之间的内容为正文「类似于 HTML 中是 body」</p>
+<h2 id="格式化命令"><a href="#格式化命令" class="headerlink" title="格式化命令"></a>格式化命令</h2><p> 加粗：\textbf {要加粗的内容}<br> 说明：bf 也就是 bold font 的缩写<br> 斜体：\textit {要斜体的内容}<br> 下划线：underline {下划线内容}</p>
+<p> 添加一个段落：输入两个换行符；「单独一个换行符只会生成一个空格」</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">% 章节</span><br><span class="line">\section{章节的名字}</span><br><span class="line">第一个章节中的内容</span><br><span class="line">\subsection{第一个章节的子章节}</span><br><span class="line">\subsubsection{三级章节}</span><br><span class="line">\section{另一章节的名字}</span><br><span class="line">第二个章节中的内容</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>Latex 本身不支持插图功能，需要使用 graphicx 宏包辅助支持<br>如何控制图片的大小呢？在 graphicx 命令后加可选参数</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\graphicx[width=0.5\textwidth]{这里是图片的名字}</span><br><span class="line">% textwidth 表示当前文本区域的宽度，常用可选参数有：width,height,scale,angle</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果要为图片添加图注信息，则将图片嵌套在 figure 环境当中</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\begin{figure}</span><br><span class="line">\centering  % 将图片居中对齐</span><br><span class="line">\includegraphics{图片名字}</span><br><span class="line">\caption{这个是图片的标题}</span><br><span class="line">\end{figure}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表：enumerate<br>无序列表：itemize</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\begin{itemize}</span><br><span class="line">\item 列表项 1</span><br><span class="line">\item 列表项 2</span><br><span class="line">\item 列表项 3</span><br><span class="line">\end{itemize}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><p>行内公式：可以使用 inline equation 直接在段落内添加公式，写在两个美元符号中间<br>行间公式：使用 equation 环境，「可以将环境简写为」</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\[</span><br><span class="line">公式内容</span><br><span class="line">\]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>一般符号：α，β……<br>指数上下标形式：^ and _<br>分式和根式</p>
+<p>推荐：在线 Latex 公式编辑器 <a href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">Equation Editor</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>创建环境 tabular</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\end{itemize}</span><br><span class="line">\begin{tabular}{ c c c}</span><br><span class="line">a11 &amp; a12 &amp; a13 \\</span><br><span class="line">\hline</span><br><span class="line">a21 &amp; a22 &amp; a23 \\</span><br><span class="line">\hline</span><br><span class="line">\end{tabular}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>ccc 表示共表格共 3 列，且三列为居中对齐，如果是 CRR，表示第一列居中对齐，第二三列为右对齐</li>
+<li>单元格与单元格用 &amp; 隔开</li>
+<li>表格一行结束使用两个反斜杠 \</li>
+<li> 如果在参数 ccc 中插入竖线 | c|c|c|，可为表格添加垂直方向的边框</li>
+<li>水平方向的边框通过 <code>\hline</code> 添加<br>和图片类似，如果表注，需要将表格添加的表的环境中「开始是 tabular，需要嵌入 table 环境中」，再使用 \caption {} 添加表注</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>百分号开头，和 matlab 相同</p>
+<h2 id="正文文本"><a href="#正文文本" class="headerlink" title="正文文本"></a>正文文本</h2><p>一个换行符等同于一个空格，多个空格的效果与一个相同<br>自然段分段式空一行</p>
+<p>标题：title、author、date——maketitle<br>摘要 / 前言：abstract 环境 /chapter<br>目录：tableofcontents<br>章节：chapter，section<br>附录：appendix+chapter 或 section<br>文献：bibliography（自动生成参考文献）<br>索引：printindex</p>
+<p>章节层次结构：</p>
+<ul>
+<li>part：可选的最高层</li>
+<li> chapter：report，book 类最高层</li>
+<li> section：article 类最高层</li>
+<li> subsection</li>
+<li>subsubsection：默认不编号，不编目录</li>
+<li> paragraph：默认不编号，不编目录</li>
+<li> subparagraph：默认不编号，不编目录</li>
+</ul>
+<h3 id="正文符号"><a href="#正文符号" class="headerlink" title="正文符号"></a>正文符号</h3><p>一些符号被 latex 宏语言占用，需要以命令形式输入：<br>比如反斜杠：<code>\textbackslash</code></p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><ul>
+<li>行内公式</li>
+<li>列表（显示公式）公式<ul>
+<li>简单不编号的公式使用命令 <code>\[ \]</code></li>
+<li>基本的编号的公式用 <strong>eq</strong>uation 环境（<strong>beq</strong> tab 键即可出来）</li>
+<li>更复杂的结构，使用 amsmath 宏包…</li>
+</ul>
+</li>
+</ul>
+<p>上标和下标：<code>^ and _</code><br>分式：<code>frac{分子}{分母}</code><br>根式：<code>sqrt[次数]{根号下}</code><br>矩阵：amsmath 宏包提供了专门的矩阵环境，matrix，pmatrix，bmatrix 等</p>
+<h3 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h3><ul>
+<li>数学字母</li>
+<li>普通符号<ul>
+<li>乘号：\times</li>
+<li> 除号：\div</li>
+</ul>
+</li>
+<li> 二元运算符</li>
+<li>二元关系符：大于小于等于等</li>
+<li>括号</li>
+<li>标点：逗号，<code>\colon</code> 冒号，<code>\semicolon</code> 分号</li>
+<li>分式使用 \frac {分子}{分母} 形式书写；分式在行间正常大小显示，而如果在行中，则会被压缩</li>
+<li>根式使用 \sqrt [n 次]{内容}</li>
+</ul>
+<h3 id="数学公式-1"><a href="#数学公式-1" class="headerlink" title="数学公式"></a>数学公式</h3><p>amsmath 是基本的数学工具包，在包含数学公式的文档中几乎无处不在，mathtools 则对 amsmath 做了一些补充和增强</p>
+<h3 id="科技功能"><a href="#科技功能" class="headerlink" title="科技功能"></a>科技功能</h3><p>siunitx：数字单位的一揽子解决方案</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\num{-1.2345e95}</span><br><span class="line">\SI{12}{m/s}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="编写化学式"><a href="#编写化学式" class="headerlink" title="编写化学式"></a>编写化学式</h3><p>chemformula 宏包（\ch 命令）</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\ch{2 H2 + O2 -&gt; 2 H2O}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/04/11/GusSoQfzDnMPVkW.png" alt="使用Latex编辑化学反应式"></p>
+<h3 id="列表与文本块"><a href="#列表与文本块" class="headerlink" title="列表与文本块"></a>列表与文本块</h3><h3 id="抄录代码"><a href="#抄录代码" class="headerlink" title="抄录代码"></a>抄录代码</h3><p>\verb | 这里是代码 |<br>\verbatim 环境</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\begin{verbatim}</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> inputs('hello world!')</span><br><span class="line">\end{verbatim}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/04/11/um2tfF4CIDr1QeR.png" alt="使用Latex抄录代码"></p>
+<h4 id="高级代码：语法高亮"><a href="#高级代码：语法高亮" class="headerlink" title="高级代码：语法高亮"></a>高级代码：语法高亮</h4><p>使用 listings 宏包</p>
+<h3 id="算法结构"><a href="#算法结构" class="headerlink" title="算法结构"></a>算法结构</h3><ul>
+<li>clrscode 宏包</li>
+<li> algorithm2e 宏包</li>
+<li>…</li>
+</ul>
+<h2 id="图表与浮动环境"><a href="#图表与浮动环境" class="headerlink" title="图表与浮动环境"></a>图表与浮动环境</h2><p>画表图：使用 tabular 环境<br>表格转换为 latex 代码：<a href="https://tablesgenerator.com/latex_tables">https://tablesgenerator.com/latex_tables</a></p>
+<p><img data-src="https://s2.loli.net/2022/04/11/xdvmRY2ZhGIBeaw.png" alt="在线表格转Latex"></p>
+<p>功能各异的表格宏包</p>
+<ul>
+<li>单元格处理：multirow、makecell</li>
+<li> 长表格：<strong>longtable</strong>、xtab</li>
+<li> 表线控制：booktabs（三线表）、diagbox（斜线表）</li>
+<li>综合应用：tabu</li>
+<li>…</li>
+</ul>
+<h3 id="插图"><a href="#插图" class="headerlink" title="插图"></a>插图</h3><p>graphics 宏包提供 \includegraphics 命令</p>
+<h4 id="代码画图"><a href="#代码画图" class="headerlink" title="代码画图"></a>代码画图</h4><p>优先使用外部工具绘图，矢量图 Lnkscape（开源），Illustrator，甚至是 powerpoint（保存为 PDF 格式），数学图形使用 matlab 之类</p>
+<h3 id="浮动体"><a href="#浮动体" class="headerlink" title="浮动体"></a>浮动体</h3><ul>
+<li>figure 环境</li>
+<li> table 环境<br>其他环境可以使用 float 宏包得到<br>浮动体的标题使用 \caption 命令得到，自动编号</li>
+</ul>
+<h2 id="自动化工具"><a href="#自动化工具" class="headerlink" title="自动化工具"></a>自动化工具</h2><ul>
+<li>自动目录</li>
+<li>交叉引用</li>
+<li> PDF 的链接与书签（hyperref 宏包）</li>
+<li>BIBTex<ul>
+<li>.bib 数据库<ul>
+<li> JabRef：管理 bib 数据库</li>
+</ul>
+</li>
+<li> \cite 命令引用</li>
+<li>末尾 \bibliography {math} 引用</li>
+</ul>
+</li>
+</ul>
+<h2 id="设置文献格式"><a href="#设置文献格式" class="headerlink" title="设置文献格式"></a>设置文献格式</h2><p>选用合适的.bst 格式，比如 plainnat，gbt7714-plain<br>natbib 与作者 - 年格式<br>利用 custom-bib 产生定制的格式文件<br>bilatex+biber：文献处理的新方式</p>
+<h2 id="设计文档格式"><a href="#设计文档格式" class="headerlink" title="设计文档格式"></a>设计文档格式</h2><h3 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h3><p>格式与内容分离，不要在意细节上 Latex 的一大卖点</p>
+<h3 id="使用内容相关的命令与环境"><a href="#使用内容相关的命令与环境" class="headerlink" title="使用内容相关的命令与环境"></a>使用内容相关的命令与环境</h3><p>只使用语义相关的的命令<br>比如推荐 emph，不推荐使用 textit<br>推荐 caption {流程图}，不推荐 textbf {图 1:} 流程图</p>
+<h3 id="使用宏包"><a href="#使用宏包" class="headerlink" title="使用宏包"></a>使用宏包</h3><h2 id="格式控制功能"><a href="#格式控制功能" class="headerlink" title="格式控制功能"></a>格式控制功能</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>rmfamily,textrm<br>sffamily,textsf<br>ttfamily,texttt</p>
+<h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><p>zihao{5},zihao{-3}</p>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>\centering,\raggedleft,\raggedright</p>
+<h3 id="空白间距"><a href="#空白间距" class="headerlink" title="空白间距"></a>空白间距</h3><p>\hspace{2cm},vspace{3cm}</p>
+<h2 id="版面布局"><a href="#版面布局" class="headerlink" title="版面布局"></a>版面布局</h2><p>geometry 宏包<br>fancyhdr 宏包（设置页眉页脚）</p>
+<h3 id="分页断行"><a href="#分页断行" class="headerlink" title="分页断行"></a>分页断行</h3><p>linebreak、<code>\\</code>(一般表格的时候使用)<br>pagebreak，newpage，clearpage，cleardoublepage</p>
+<h3 id="盒子"><a href="#盒子" class="headerlink" title="盒子"></a>盒子</h3><p>\mbox {内容}<br>\parbox {4em}{内容}，minipage</p>
+<h2 id="格式应用于文档"><a href="#格式应用于文档" class="headerlink" title="格式应用于文档"></a>格式应用于文档</h2><h3 id="使用在导言区单独设置格式"><a href="#使用在导言区单独设置格式" class="headerlink" title="使用在导言区单独设置格式"></a>使用在导言区单独设置格式</h3><p>直接设置相关参数：如 parindent，parskip，linespread（几倍行距），pagestyle（页眉页脚）<br>修改部分命令定义：thesection,labelenumi,descriptionlabe1,figurename<br>利用工具宏包完成设置：toclof 宏包设置目录格式</p>
+<h3 id="利用自定义命令和环境"><a href="#利用自定义命令和环境" class="headerlink" title="利用自定义命令和环境"></a>利用自定义命令和环境</h3><p>例如，为程序名定义一个命令</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\newcommand\prg[1]{\textsf{#1}}</span><br><span class="line">程序 \prg{sort} 很有用</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此后，如果想要修改 sort 的样式，那么直接修改我们自定义的命令，比如</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\newcommand\prg[1]{\textbf{\huge #1}}</span><br><span class="line">% huge 可以将 sort 字体变大</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="章节标题"><a href="#章节标题" class="headerlink" title="章节标题"></a>章节标题</h3><p>ctex 宏包及文档类，用 \ctexset 定制，西文用 titlesec 等</p>
+<h3 id="浮动标题"><a href="#浮动标题" class="headerlink" title="浮动标题"></a>浮动标题</h3><p>caption 宏包<br>texdoc caption</p>
+<h3 id="列表环境的定制"><a href="#列表环境的定制" class="headerlink" title="列表环境的定制"></a>列表环境的定制</h3><p>enumitem 宏包</p>
+<p>如设置列表不设置多倍行距</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
@@ -50,34 +210,25 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之标题样式篇</title>
-    <url>/posts/d740c613.html</url>
+    <title>Word 操作指南之排版篇</title>
+    <url>/posts/d50f866f.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之符号篇</title>
-    <url>/posts/4fcbca1a.html</url>
-    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
-<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
+    <title>Word 操作指南之配置篇</title>
+    <url>/posts/17b2576b.html</url>
+    <content><![CDATA[<h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
+<p>2、长按 Alt 键配合数字键🔢调用快速访问工具栏功能按钮<br><img data-src="https://s2.loli.net/2022/03/03/WbwhFVMLZTBNH3A.gif" alt="长按ALT键+数字按键可以实现快速访问工具栏工具的使用"></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>1、文档设置不压缩图片<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+      <tags>
+        <tag>Word</tag>
+      </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>Word 操作指南之标题样式篇</title>
+    <url>/posts/d740c613.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Word 操作指南之表格篇</title>
@@ -115,20 +266,66 @@
       </tags>
   </entry>
   <entry>
-    <title>Word 操作指南之排版篇</title>
-    <url>/posts/d50f866f.html</url>
+    <title>Word 操作指南之符号篇</title>
+    <url>/posts/4fcbca1a.html</url>
+    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
+<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>hexo 搭建评论系统</title>
+    <url>/posts/8e7a9251.html</url>
+    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Homepage 实现只预览摘要而不显示全文功能</title>
+    <url>/posts/8af01528.html</url>
+    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://s2.loli.net/2022/04/03/XjMi1lLZnVqapok.png" alt="excerpt_description属性默认为true"></p>
+<p><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
+<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
+<ol>
+<li>显示自定义的内容</li>
+<li>显示文档某行之前的内容</li>
+</ol>
+<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
+<ul>
+<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+完成之后如下方图片所示：<br><img data-src="https://s2.loli.net/2022/04/03/FdDgpqESIkmchGj.png" alt="在主页显示想要显示的内容"></li>
+</ul>
+<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
+<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sketch 绘图指南</title>
+    <url>/posts/82ded38b.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之配置篇</title>
-    <url>/posts/17b2576b.html</url>
-    <content><![CDATA[<h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
-<p>2、长按 Alt 键配合数字键🔢调用快速访问工具栏功能按钮<br><img data-src="https://s2.loli.net/2022/03/03/WbwhFVMLZTBNH3A.gif" alt="长按ALT键+数字按键可以实现快速访问工具栏工具的使用"></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>1、文档设置不压缩图片<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-      <tags>
-        <tag>Word</tag>
-      </tags>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
@@ -167,34 +364,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Homepage 实现只预览摘要而不显示全文功能</title>
-    <url>/posts/8af01528.html</url>
-    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://s2.loli.net/2022/04/03/XjMi1lLZnVqapok.png" alt="excerpt_description属性默认为true"></p>
-<p><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
-<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
-<ol>
-<li>显示自定义的内容</li>
-<li>显示文档某行之前的内容</li>
-</ol>
-<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
-<ul>
-<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-完成之后如下方图片所示：<br><img data-src="https://s2.loli.net/2022/04/03/FdDgpqESIkmchGj.png" alt="在主页显示想要显示的内容"></li>
-</ul>
-<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
-<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sketch 绘图指南</title>
-    <url>/posts/82ded38b.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>为什么放弃使用 remnote</title>
     <url>/posts/b0b73b25.html</url>
     <content><![CDATA[<ol>
@@ -214,51 +383,6 @@
 </ol>
 <p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统BUG-删除笔记后出现一堆的untitled，甚至删不去@compress"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>hexo 搭建评论系统</title>
-    <url>/posts/8e7a9251.html</url>
-    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/posts/295a526.html</url>
-    <content><![CDATA[<ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/04/03/EVDr2FzuYP3R1ph.jpg" alt="新建文档指南@compress"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>此处心安是吾乡</title>
-    <url>/posts/d784b47d.html</url>
-    <content><![CDATA[<p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
-<p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬"></p>
-<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚"></p>
-]]></content>
-      <tags>
-        <tag>hexo配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实现 Mac 风格的代码块配置</title>
-    <url>/posts/cd11c86c.html</url>
-    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
   </entry>
   <entry>
     <title>图片压缩指南</title>
@@ -319,6 +443,31 @@
 ]]></content>
   </entry>
   <entry>
+    <title>实现 Mac 风格的代码块配置</title>
+    <url>/posts/cd11c86c.html</url>
+    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新建文档指南</title>
+    <url>/posts/295a526.html</url>
+    <content><![CDATA[<ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/04/03/EVDr2FzuYP3R1ph.jpg" alt="新建文档指南@compress"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>研一期末考试</title>
     <url>/posts/82be73a2.html</url>
     <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
@@ -328,6 +477,17 @@
 <p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
 <p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>此处心安是吾乡</title>
+    <url>/posts/d784b47d.html</url>
+    <content><![CDATA[<p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
+<p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬"></p>
+<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚"></p>
+]]></content>
+      <tags>
+        <tag>hexo配置</tag>
+      </tags>
   </entry>
   <entry>
     <title>科研作图之 PS 篇</title>
