@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Final Cut Pro 常用快捷键总结及练习</title>
+    <url>/posts/3ac6e730.html</url>
+    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
+<ul>
+<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
+<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
+<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
+<li>……</li>
+</ul>
+<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
+<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
+<!-- 以下内容为quizlet测试内嵌网页 -->
+<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
+      <tags>
+        <tag>Final cut Pro</tag>
+        <tag>quizlet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT 中的标签支持</title>
+    <url>/posts/1bbb3484.html</url>
+    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
+<p>比如 NexT 当中的引用：</p>
+<blockquote class="blockquote-center">
+<p>代码优雅，核心简单</p>
+
+</blockquote>
+
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>LaTeX 不快速的入门笔记</title>
     <url>/posts/15e36c1c.html</url>
     <content><![CDATA[<p>说明：</p>
@@ -161,57 +196,6 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Final Cut Pro 常用快捷键总结及练习</title>
-    <url>/posts/3ac6e730.html</url>
-    <content><![CDATA[<p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
-<ul>
-<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
-<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
-<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
-<li>……</li>
-</ul>
-<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
-<p>好了，以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来该轮到你表演了：</p>
-<!-- 以下内容为quizlet测试内嵌网页 -->
-<!-- <iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&x=1jj1" height="500" width="100%" style="border:0"></iframe> -->]]></content>
-      <tags>
-        <tag>Final cut Pro</tag>
-        <tag>quizlet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT 中的标签支持</title>
-    <url>/posts/1bbb3484.html</url>
-    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
-<p>比如 NexT 当中的引用：</p>
-<blockquote class="blockquote-center">
-<p>代码优雅，核心简单</p>
-
-</blockquote>
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Word 操作指南之标题样式篇</title>
-    <url>/posts/d740c613.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之排版篇</title>
-    <url>/posts/d50f866f.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
@@ -220,49 +204,21 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>Word 操作指南之排版篇</title>
+    <url>/posts/d50f866f.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>hexo 博客实现图片懒加载</title>
-    <url>/posts/f4df0fd0.html</url>
-    <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
-<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在 hexo 的配置文件_config.yml 中添加如下配置：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>onlypost：是仅对 post 中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
-<li> loadingImg：图片未加载时的代替图；images 目录位于主题文件夹下的 source/images 路径</li>
-<li> isSPA：和延迟加载相关</li>
-<li> preloadRatio：这个选项是为了更好的用户体验，默认值是 1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
-</ul>
-<p>当然，也可以为指定的图片禁止懒加载，在 Markdown 或 html 中的 img 标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">"demo.png"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
-<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image 官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
+    <title>Word 操作指南之符号篇</title>
+    <url>/posts/4fcbca1a.html</url>
+    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
+<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之标题样式篇</title>
+    <url>/posts/d740c613.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Word 操作指南之表格篇</title>
@@ -293,11 +249,33 @@
       </tags>
   </entry>
   <entry>
-    <title>Word 操作指南之符号篇</title>
-    <url>/posts/4fcbca1a.html</url>
-    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
-<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>sketch 绘图指南</title>
+    <url>/posts/82ded38b.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Homepage 实现只预览摘要而不显示全文功能</title>
@@ -344,6 +322,58 @@
 ]]></content>
   </entry>
   <entry>
+    <title>hexo 博客实现图片懒加载</title>
+    <url>/posts/f4df0fd0.html</url>
+    <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
+<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在 hexo 的配置文件_config.yml 中添加如下配置：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>onlypost：是仅对 post 中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
+<li> loadingImg：图片未加载时的代替图；images 目录位于主题文件夹下的 source/images 路径</li>
+<li> isSPA：和延迟加载相关</li>
+<li> preloadRatio：这个选项是为了更好的用户体验，默认值是 1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
+</ul>
+<p>当然，也可以为指定的图片禁止懒加载，在 Markdown 或 html 中的 img 标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">"demo.png"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
+<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image 官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新建文档指南</title>
+    <url>/posts/295a526.html</url>
+    <content><![CDATA[<ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/04/03/EVDr2FzuYP3R1ph.jpg" alt="新建文档指南@compress"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>实现 Mac 风格的代码块配置</title>
+    <url>/posts/cd11c86c.html</url>
+    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <tags>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为什么我要写博客</title>
     <url>/posts/b76b2678.html</url>
     <content><![CDATA[<p>在回答这个问题之前，先思考一下为什么我之前没有写博客：</p>
@@ -377,36 +407,6 @@
 <p>再有，多看看多学学其他道友们是如何写作以及表达的吧。</p>
 <p>最后，分享《论语》当中的一段话：司马牛忧曰：“人皆有兄弟，我独亡。” 子夏曰：“商闻之矣：死生有命，富贵在天。君子敬而无失，与人恭而有礼，四海之内皆兄弟也。君子何患乎无兄弟也？”</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1]. <a href="https://www.cnblogs.com/vamei/archive/2012/11/17/2774208.html">博客 - 为什么要写技术博</a><br>[2]. <a href="https://www.cnblogs.com/zhaopei/p/why_write_blog.html">博客 - 我们为什么应该坚持写博客</a><br>[3].<a href="https://lunyu.5000yan.com/12-5.html">《论语》</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>sketch 绘图指南</title>
-    <url>/posts/82ded38b.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>实现 Mac 风格的代码块配置</title>
-    <url>/posts/cd11c86c.html</url>
-    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/posts/295a526.html</url>
-    <content><![CDATA[<ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/04/03/EVDr2FzuYP3R1ph.jpg" alt="新建文档指南@compress"></p>
 ]]></content>
   </entry>
   <entry>
