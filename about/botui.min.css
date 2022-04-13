@@ -41,24 +41,27 @@ button.botui-actions-buttons-button {
 
 .botui-app-container {
     /* 窗口宽度 */
-    width: 400px;
+    width: 700px;
     height: 100%;
     line-height: 1
 }
 
 @media (min-width:400px) {
-    /* 窗口宽度 */
+    /* 窗口宽度，意思是窗口小于400px时，最小的窗口就固定成400，不会再随着窗口变小而变小 */
     .botui-app-container {
-        width: 400px;
+        width: 500px;
+        /* 最大内容有970px，超过了1000px的部分就会被截取隐藏掉，这里不想让他隐藏，所以数值设置成比970更大些的数值 */
         height: 500px;
-        margin: 0 auto
+        margin: 20px auto
     }
 }
 
 .botui-container {
+    /* 窗口比例 */
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+    /* 隐藏右侧滚动条 */
+    overflow-y: hidden;
     overflow-x: hidden
 }
 
