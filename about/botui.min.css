@@ -45,10 +45,10 @@ button.botui-actions-buttons-button {
     line-height: 1
 }
 
-@media (min-width:700px) {
+@media (min-width:400px) {
     /* 窗口宽度 */
     .botui-app-container {
-        width: 700px;
+        width: 400px;
         height: 500px;
         margin: 0 auto
     }
