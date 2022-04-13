@@ -93,7 +93,7 @@ botui.message
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
-                    content: '基本上每周都会有一次跑步，还特别喜欢纯音乐🎵'
+                    content: '基本上每周都会有一次跑步，还特别喜欢纯音乐'
                 })
             }).then(() => {
                 return botui.message.bot({
