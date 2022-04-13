@@ -4,35 +4,35 @@ var botui = new BotUI('delivery-bot'),
 botui.message
     .bot({ // show first message
         delay: 200,
-        content: 'Hi，欢迎来到MoeCode研究所！😊'
+        content: 'Hi，欢迎来到Coffeelize咖啡所！😊'
     })
     .then(() => {
         return botui.message.bot({ // second one
             delay: 1500, // wait 1 sec.
-            content: '我是Sum Chin :-P'
+            content: '我是Cheepung'
         })
     }).then(() => {
         return botui.action.button({ // let user do something
             delay: 1500,
             action: [{
-                text: '你好呀😝啥是MoeCode研究所呢？',
+                text: '你好呀😝啥是Coffeelize咖啡所呢？',
                 value: 'question'
             }]
         })
     }).then(() => {
         return botui.message.bot({
             delay: 1500,
-            content: 'moe是日语里面的“萌”'
+            content: 'lize一般为英文单词中的动词后缀'
         })
     }).then(() => {
         return botui.message.bot({
             delay: 1500,
-            content: 'code代表我的专业计算机科学'
+            content: 'Coffee则代表咖啡啦☕️'
         })
     }).then(() => {
         return botui.message.bot({
             delay: 1500,
-            content: '因为喜欢番剧#日常#，所以叫自己的站点为研究所'
+            content: '因为咖啡#日常#，所以叫自己的站点为咖啡所'
         })
     }).then(() => {
         return botui.message.human({
@@ -56,7 +56,7 @@ botui.message
         if (res.value == 'question') {
             return botui.message.bot({
                 delay: 1500,
-                content: '我是华中科技幼儿园的一名本科生'
+                content: '我是青海大学附属幼儿园的一名研究生'
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
@@ -88,17 +88,17 @@ botui.message
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
-                    content: '我超爱二次元音乐der'
+                    content: '我超爱跑步🏃🏻‍♀️的'
                 })
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
-                    content: '所以大一开始学琴，现在在练哈农和599'
+                    content: '基本上每周都会有一次跑步，还特别喜欢纯音乐🎵'
                 })
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
-                    content: '还有我是Animenzzz的粉丝！'
+                    content: '我最喜欢的纯音乐是Pinô，还有我是羽翀的粉丝！'
                 })
             }).then(() => {
                 return botui.action.button({ // let user do something
@@ -117,7 +117,7 @@ botui.message
                 if (res.value == 'then') {
                     return botui.message.bot({
                         delay: 1500,
-                        content: '摄影、画画、平面设计都喜欢一点'
+                        content: '乒乓球、羽毛球、平面设计都喜欢一点'
                     }).then(() => {
                         return botui.message.bot({
                             delay: 1500,
@@ -144,7 +144,7 @@ botui.message
                     }).then(() => {
                         return botui.message.bot({
                             delay: 1500,
-                            content: '这是我的企鹅号137 366 871'
+                            content: '这是我的企鹅号128 6210 324'
                         })
                     }).then(() => {
                         return botui.action.button({ // let user do something

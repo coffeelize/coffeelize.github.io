@@ -20,6 +20,12 @@
       </tags>
   </entry>
   <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
@@ -28,26 +34,29 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
+    <title>Word 操作指南之标题样式篇</title>
+    <url>/posts/d740c613.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>NexT 中的标签支持</title>
-    <url>/posts/1bbb3484.html</url>
-    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
-<p>比如 NexT 当中的引用：</p>
-<blockquote class="blockquote-center">
-<p>代码优雅，核心简单</p>
-
-</blockquote>
-
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
+    <title>Word 操作指南之表格篇</title>
+    <url>/posts/494c263d.html</url>
+    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="（Word）Ctrl+Shift+Enter中断表格.gif"></p>
+<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）<br><img data-src="https://s2.loli.net/2022/03/07/6QiTCZdNhYbj1JP.gif" alt="（Word）为什么表格中的内容不会居中显示.gif"></p>
+<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）<br><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="（Word）制作三线表格.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之符号篇</title>
+    <url>/posts/4fcbca1a.html</url>
+    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
+<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之排版篇</title>
+    <url>/posts/d50f866f.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>LaTeX 不快速的入门笔记</title>
@@ -210,23 +219,6 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之排版篇</title>
-    <url>/posts/d50f866f.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之符号篇</title>
-    <url>/posts/4fcbca1a.html</url>
-    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="word输入乘号alt0215"></p>
-<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="（Word）插入带圈的数字编号.gif"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之标题样式篇</title>
-    <url>/posts/d740c613.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Word 操作指南之配置篇</title>
     <url>/posts/17b2576b.html</url>
     <content><![CDATA[<h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
@@ -238,39 +230,59 @@
       </tags>
   </entry>
   <entry>
-    <title>Word 操作指南之表格篇</title>
-    <url>/posts/494c263d.html</url>
-    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="（Word）Ctrl+Shift+Enter中断表格.gif"></p>
-<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）<br><img data-src="https://s2.loli.net/2022/03/07/6QiTCZdNhYbj1JP.gif" alt="（Word）为什么表格中的内容不会居中显示.gif"></p>
-<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）<br><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="（Word）制作三线表格.gif"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-  </entry>
-  <entry>
-    <title>hexo 搭建评论系统</title>
-    <url>/posts/8e7a9251.html</url>
-    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
+    <title>hexo 博客实现图片懒加载</title>
+    <url>/posts/f4df0fd0.html</url>
+    <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
+<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在 hexo 的配置文件_config.yml 中添加如下配置：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>onlypost：是仅对 post 中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
+<li> loadingImg：图片未加载时的代替图；images 目录位于主题文件夹下的 source/images 路径</li>
+<li> isSPA：和延迟加载相关</li>
+<li> preloadRatio：这个选项是为了更好的用户体验，默认值是 1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
+</ul>
+<p>当然，也可以为指定的图片禁止懒加载，在 Markdown 或 html 中的 img 标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">"demo.png"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
+<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image 官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>sketch 绘图指南</title>
+    <url>/posts/82ded38b.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Homepage 实现只预览摘要而不显示全文功能</title>
+    <url>/posts/8af01528.html</url>
+    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://s2.loli.net/2022/04/03/XjMi1lLZnVqapok.png" alt="excerpt_description属性默认为true"></p>
+<p><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
+<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
+<ol>
+<li>显示自定义的内容</li>
+<li>显示文档某行之前的内容</li>
+</ol>
+<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
+<ul>
+<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+完成之后如下方图片所示：<br><img data-src="https://s2.loli.net/2022/04/03/FdDgpqESIkmchGj.png" alt="在主页显示想要显示的内容"></li>
+</ul>
+<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
+<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
@@ -309,9 +321,68 @@
 ]]></content>
   </entry>
   <entry>
-    <title>sketch 绘图指南</title>
-    <url>/posts/82ded38b.html</url>
-    <content><![CDATA[]]></content>
+    <title>为什么放弃使用 remnote</title>
+    <url>/posts/b0b73b25.html</url>
+    <content><![CDATA[<ol>
+<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
+<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
+<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
+<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
+<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
+<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
+<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
+<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
+<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
+<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
+<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
+<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
+<li>待续…</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统BUG-删除笔记后出现一堆的untitled，甚至删不去@compress"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>NexT 中的标签支持</title>
+    <url>/posts/1bbb3484.html</url>
+    <content><![CDATA[<p>注意：NexT 支持它自身的标签插件，但如果将 Theme 切换成其他的，NexT 的标签插件语法可能会失效，请酌情使用！</p>
+<p>比如 NexT 当中的引用：</p>
+<blockquote class="blockquote-center">
+<p>代码优雅，核心简单</p>
+
+</blockquote>
+
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo 搭建评论系统</title>
+    <url>/posts/8e7a9251.html</url>
+    <content><![CDATA[<p>必须得记录一下呀！评论系统搭好了，博客也像个样子了！最近马上更新 (*❦ω❦)</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>图片压缩指南</title>
@@ -372,51 +443,12 @@
 ]]></content>
   </entry>
   <entry>
-    <title>为什么放弃使用 remnote</title>
-    <url>/posts/b0b73b25.html</url>
-    <content><![CDATA[<ol>
-<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
-<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
-<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
-<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
-<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
-<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
-<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
-<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
-<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
-<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
-<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
-<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
-<li>待续…</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统BUG-删除笔记后出现一堆的untitled，甚至删不去@compress"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo 博客实现图片懒加载</title>
-    <url>/posts/f4df0fd0.html</url>
-    <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>1、从 hexo 根目录下进入终端，执行以下命令：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/(hexo)npm%E5%AE%89%E8%A3%85%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.png"></p>
-<h1 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h1><p>2、安装完毕之后，在 hexo 的配置文件_config.yml 中添加如下配置：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">lazyload:</span><br><span class="line">  enable: true</span><br><span class="line">  onlypost: false</span><br><span class="line">  loadingImg: /images/loading.png </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>onlypost：是仅对 post 中的图片做懒加载，还是对博客中的所有图片做懒加载</li>
-<li> loadingImg：图片未加载时的代替图；images 目录位于主题文件夹下的 source/images 路径</li>
-<li> isSPA：和延迟加载相关</li>
-<li> preloadRatio：这个选项是为了更好的用户体验，默认值是 1。这个选项表示预加载当前屏幕尺寸多少比例内的图像，即时这些图片不在当前视点内。</li>
-</ul>
-<p>当然，也可以为指定的图片禁止懒加载，在 Markdown 或 html 中的 img 标签上添加一个属性 <code>no-lazy</code> ，示例如下：</p>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">no-lazy</span> <span class="attr">src</span>=<span class="string">"demo.png"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="3、效果"><a href="#3、效果" class="headerlink" title="3、效果"></a>3、效果</h1><p><img data-src="https://gitee.com/yuanzhuangkafei/zhi-peng-pic/raw/master/image/%EF%BC%88hexo%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD%E6%95%88%E6%9E%9C.gif"></p>
-<h1 id="4、参考链接"><a href="#4、参考链接" class="headerlink" title="4、参考链接"></a>4、参考链接</h1><p><a href="https://www.npmjs.com/package/hexo-lazyload-image">hexo-lazyload-image 官方说明文档</a><br><a href="https://cloud.tencent.com/developer/article/1142491">Hexo 优化 — lazyload 图片懒加载</a></p>
-]]></content>
+    <title>实现 Mac 风格的代码块配置</title>
+    <url>/posts/cd11c86c.html</url>
+    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
       <tags>
-        <tag>hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -447,15 +479,6 @@
       </tags>
   </entry>
   <entry>
-    <title>实现 Mac 风格的代码块配置</title>
-    <url>/posts/cd11c86c.html</url>
-    <content><![CDATA[<p>NexT 主题自带就有三种代码块风格样式，需要做的，只是将 copy_button 中的 style 的值改成 mac；将 enable 的值改为 true 即可；<br>同时，为了支持语法高亮，需要将 hexo 配置文件当中 highlight 的 enable 属性值设置为 true「默认就是 true」；<br>不过目前还没有找到有关显示代码语言的开关。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># All available themes: https://theme-next.js.org/highlight/</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">tomorrow-night</span></span><br><span class="line">  <span class="attr">prism:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">prism</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">prism-dark</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">mac</span></span><br></pre></td></tr></tbody></table></figure>]]></content>
-      <tags>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>研一期末考试</title>
     <url>/posts/82be73a2.html</url>
     <content><![CDATA[<p>不知道大家对复习周感觉如何？个人认为期末考试那段时间是非常轻松愉悦的。那一两个星期里，可以完全放下科研（而且有正当理由拒绝其他令人烦恼的事情😄），然后一边干着自己这后半学期非常想干的东西，一边准备期末复习。</p>
@@ -470,28 +493,5 @@
     <title>科研作图之 PS 篇</title>
     <url>/posts/b0d7ede0.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Homepage 实现只预览摘要而不显示全文功能</title>
-    <url>/posts/8af01528.html</url>
-    <content><![CDATA[<h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://s2.loli.net/2022/04/03/XjMi1lLZnVqapok.png" alt="excerpt_description属性默认为true"></p>
-<p><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
-<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
-<ol>
-<li>显示自定义的内容</li>
-<li>显示文档某行之前的内容</li>
-</ol>
-<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
-<ul>
-<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-完成之后如下方图片所示：<br><img data-src="https://s2.loli.net/2022/04/03/FdDgpqESIkmchGj.png" alt="在主页显示想要显示的内容"></li>
-</ul>
-<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
-<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
 </search>

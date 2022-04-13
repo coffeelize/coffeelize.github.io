@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuanzhuangkafei.top/about/aboutme/indexbackup.html</loc>
+    
+    <lastmod>2022-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yuanzhuangkafei.top/posts/15e36c1c.html</loc>
     
     <lastmod>2022-04-11</lastmod>
@@ -173,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://yuanzhuangkafei.top/posts/b76b2678.html</loc>
+    <loc>https://yuanzhuangkafei.top/posts/f4df0fd0.html</loc>
     
     <lastmod>2022-03-07</lastmod>
     
@@ -182,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://yuanzhuangkafei.top/posts/f4df0fd0.html</loc>
+    <loc>https://yuanzhuangkafei.top/posts/b76b2678.html</loc>
     
     <lastmod>2022-03-07</lastmod>
     
@@ -238,7 +247,7 @@
 
   <url>
     <loc>https://yuanzhuangkafei.top/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -246,42 +255,42 @@
   
   <url>
     <loc>https://yuanzhuangkafei.top/tags/Final-cut-Pro/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yuanzhuangkafei.top/tags/quizlet/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yuanzhuangkafei.top/tags/Word/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yuanzhuangkafei.top/tags/hexo/</loc>
-    <lastmod>2022-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuanzhuangkafei.top/tags/hexo%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yuanzhuangkafei.top/tags/NexT/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuanzhuangkafei.top/tags/hexo%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -290,7 +299,7 @@
   
   <url>
     <loc>https://yuanzhuangkafei.top/categories/hexo/</loc>
-    <lastmod>2022-04-12</lastmod>
+    <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
