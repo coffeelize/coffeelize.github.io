@@ -9,13 +9,13 @@ botui.message
     .then(() => {
         return botui.message.bot({ // second one
             delay: 1500, // wait 1 sec.
-            content: '我是Cheepung'
+            content: '我是Cheep'
         })
     }).then(() => {
         return botui.action.button({ // let user do something
             delay: 1500,
             action: [{
-                text: '你好呀😝啥是Coffeelize咖啡所呢？',
+                text: '你好呀😝啥是Coffeelize呢？',
                 value: 'question'
             }]
         })
@@ -32,7 +32,7 @@ botui.message
     }).then(() => {
         return botui.message.bot({
             delay: 1500,
-            content: '因为咖啡#日常#，所以叫自己的站点为咖啡所'
+            content: '因为咖啡#日常#，所以叫自己的站点为coffeelize'
         })
     }).then(() => {
         return botui.message.human({
@@ -60,7 +60,7 @@ botui.message
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
-                    content: '喜欢捣鼓前端'
+                    content: '喜欢捣鼓&折腾'
                 })
             }).then(() => {
                 return botui.message.bot({
@@ -98,7 +98,7 @@ botui.message
             }).then(() => {
                 return botui.message.bot({
                     delay: 1500,
-                    content: '我最喜欢的纯音乐是Pinô，还有我是羽翀的粉丝！'
+                    content: '我最喜欢的纯音乐是Pinô，最喜欢的音乐人是羽翀！'
                 })
             }).then(() => {
                 return botui.action.button({ // let user do something
