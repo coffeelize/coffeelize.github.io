@@ -2,42 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://coffeelize.top/about/index.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/8af01528.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/d50f866f.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/82be73a2.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/posts/5566e923.html</loc>
     
     <lastmod>2022-05-12</lastmod>
@@ -47,16 +11,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/3ac6e730.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/4a6b571e.html</loc>
+    <loc>https://coffeelize.top/posts/494c263d.html</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -74,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/posts/4a6b571e.html</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/posts/4fcbca1a.html</loc>
     
     <lastmod>2022-05-12</lastmod>
@@ -83,7 +47,34 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/494c263d.html</loc>
+    <loc>https://coffeelize.top/posts/d784b47d.html</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/b0b73b25.html</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/8af01528.html</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/82be73a2.html</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -110,7 +101,25 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/b0b73b25.html</loc>
+    <loc>https://coffeelize.top/about/index.html</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/d50f866f.html</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/3ac6e730.html</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -129,15 +138,6 @@
   
   <url>
     <loc>https://coffeelize.top/posts/b76b2678.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/d784b47d.html</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -232,13 +232,6 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Latex/</loc>
-    <lastmod>2022-05-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/tags/Word/</loc>
     <lastmod>2022-05-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,6 +240,13 @@
   
   <url>
     <loc>https://coffeelize.top/tags/hexo/</loc>
+    <lastmod>2022-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Latex/</loc>
     <lastmod>2022-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
