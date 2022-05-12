@@ -3162,6 +3162,8 @@ code {
 pre {
   margin: 5px 0;
   padding: 0px;
+  color: #4d4d4c;
+  line-height: 1.6;
 }
 .highlight {
   border-radius: 5px;
