@@ -62,7 +62,7 @@ button.botui-actions-buttons-button {
     height: 100%;
     /* 隐藏右侧滚动条 */
     overflow-y: hidden;
-    overflow-x: hidden
+    overflow-x: hidden;
 }
 
 .botui-message {

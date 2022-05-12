@@ -4,7 +4,7 @@ var botui = new BotUI('delivery-bot'),
 botui.message
     .bot({ // show first message
         delay: 200,
-        content: 'Hi，欢迎来到Coffeelize咖啡所！😊'
+        content: 'Hi，欢迎来到Coffeelize！😊'
     })
     .then(() => {
         return botui.message.bot({ // second one
