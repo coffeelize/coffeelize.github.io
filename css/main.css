@@ -3120,9 +3120,18 @@ mark.search-keyword {
 .posts-expand .post-body img {
   border: none;
   padding: 0px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+/* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+/*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
+  box-shadow: 0 5px 4px rgba(0,0,0,0.2);
+  border-radius: 3px;
 }
 .post-gallery .post-gallery-img img {
   padding: 3px;
+}
+p.image-caption {
+  display: none;
 }
 .headband {
   height: 1.5px;
@@ -3241,9 +3250,9 @@ blockquote {
   border-bottom: 1px solid #0593d3;
 }
 .post-copyright a:hover {
-  color: #fc6423;
+  color: #fff;
+  background-color: #0593d3;
   border-bottom: none;
-  border-bottom: 1px solid #fc6423;
 }
 .posts-expand .post-tags a {
   border-bottom: none;
@@ -3315,10 +3324,16 @@ blockquote {
 blockquote.question {
   color: #555;
   border-left: 4px solid #1098ad;
-  background-color: #e3f2fd;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
   margin-bottom: 20px;
+}
+blockquote {
+  color: #555;
+  border-left: 4px solid #1098ad;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  margin-left: -10px;
+  padding-left: 15px;
+  padding-right: 5px;
 }
 span#inline-toc {
   display: inline-block;
