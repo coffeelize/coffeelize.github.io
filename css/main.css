@@ -3352,3 +3352,6 @@ span#inline-toc {
 .post-body {
   font-family: 'LXGWWenKai', Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
+.post-body {
+  cursor: url("/images/designcursor.svg") 6 2, default;
+}
