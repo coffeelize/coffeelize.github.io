@@ -20,59 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>LaTeX 目录布局排版之简易教程</title>
-    <url>/posts/6eab1a4b.html</url>
-    <content><![CDATA[<p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
-<span id="more"></span>
-
-<p>测试 Tex 代码以下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
-<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
-<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
-<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
-<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
-<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 及标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
-<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
-<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
-<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？给你一些方向，你自己去学习吧。</p>
-<ul>
-<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
-<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
-<li>雷太赫排版系统简介（第二版）：包太雷</li>
-<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
-<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LaTeX 不快速的入门笔记</title>
     <url>/posts/15e36c1c.html</url>
     <content><![CDATA[<p>说明：</p>
@@ -233,6 +180,12 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
@@ -242,6 +195,53 @@
 <h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>文字说明：如果图片为嵌入型（默认的），在段落中只显示一部分，很有可能是因为段落行间距的问题，此时需要将图片的行间距设置为单倍行距。<br><img data-src="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif" alt="插入图片显示不全，对图片进行单倍行距设置"></p>
 <p>为什么会这样：整段文字的行间距都是固定的 20 磅，插入图片后，上一行与下一行的行间距仍然只是 20 磅，因此只能看到 20 磅高度的图片</p>
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>LaTeX 目录布局排版之简易教程</title>
+    <url>/posts/6eab1a4b.html</url>
+    <content><![CDATA[<p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
+<span id="more"></span>
+
+<p>测试 Tex 代码以下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
+<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
+<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
+<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
+<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
+<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 及标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
+<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
+<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？给你一些方向，你自己去学习吧。</p>
+<ul>
+<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
+<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
+<li>雷太赫排版系统简介（第二版）：包太雷</li>
+<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
+<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
   </entry>
   <entry>
     <title>Word 操作指南之标题样式篇</title>
@@ -256,6 +256,11 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
+    <title>Word 操作指南之排版篇</title>
+    <url>/posts/d50f866f.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之配置篇</title>
     <url>/posts/17b2576b.html</url>
     <content><![CDATA[<h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
@@ -265,29 +270,6 @@
       <tags>
         <tag>Word</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之排版篇</title>
-    <url>/posts/d50f866f.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Word 操作指南之表格篇</title>
@@ -322,66 +304,22 @@
       </tags>
   </entry>
   <entry>
-    <title>sketch 绘图指南</title>
-    <url>/posts/82ded38b.html</url>
-    <content><![CDATA[<p>初衷： <a href="https://draveness.me/sketch-and-sketch/">技术文章配图指南</a><br>参考视频： <a href="https://www.youtube.com/watch?v=6KpYC6ckShw&amp;list=PLwO1Ou6RaKN7ZE3r_TbyAw4rCZq7QODyb">sketch 教程壹天上手</a><br>参考视频教程： <a href="https://www.sketch.net.cn/lengmenjiqiao.html">冷门但好用的 SKETCH 高频技巧</a><br>参考视频： <a href="https://www.bilibili.com/video/BV1f7411w7H9?p=1">Sketch Symbols 控件功能 - 善用组件 早点下班 - 新像素 UI 设计培训</a></p>
-<span id="more"></span>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="为什么是-sketch"><a href="#为什么是-sketch" class="headerlink" title="为什么是 sketch"></a>为什么是 sketch</h3><ol>
-<li> 上手快，操作简单（让我想起了 sketchup 草图大师）</li>
-<li> 矢量图软件，可轻松到处不同倍率的图片</li>
-<li> 比 Adobe illustrator 体积更小，使用更流畅</li>
-<li> 软件稳定，没有碰到软件崩溃的情况，且没有保存按钮（软件会给我们自动保存）</li>
-<li> 有大量的第三方插件</li>
-</ol>
-<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><ol>
-<li> 切片：S；切片时双击编组，可以快速选中编组进行导出</li>
-<li> 旋转：command+shift+R，按住 shift 键也可以整数旋转；按住 command 键拖动角点也可以实现旋转</li>
-<li> 选中形状吸取颜色：control+C</li>
-<li> 锁定：command+shift+L</li>
-<li> 隐藏：command+shift+H</li>
-<li> 导入图片：command+shift+K</li>
-<li> 快速复制：按住 option 拖动，command+D 可重复上一步移动复制变换</li>
-<li> 上移一层：<code>command+]</code></li>
-<li> 下移一层：<code>command+[</code></li>
-<li>切换图层：Tab</li>
-<li> 连续缩放视图：command + 滚轮键</li>
-<li>微调形状尺寸：选中形状之后，按住 command + 上下左右箭头移动 1px；可以加上 shift 移动 10px</li>
-<li> 复制样式：command+option+C</li>
-<li> 粘贴样式：command+option+V</li>
-<li> 注意：文字效果复制到形状是无效的，形状效果复制到文本是可以的。</li>
-<li>调节图片透明度：选中图层，直接按数字键可以调整（比如按 10，设置透明度为 10%）</li>
-<li>显示 / 隐藏除绘图区域的所有界面：<code>command+.</code></li>
-<li>穿透选择：按住 Command ，鼠标点击该元素，可以穿透编组进行选择</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/03/31/drqAFMWZwiNueg1.png" alt="sketch常用快捷键.png"></p>
-<h4 id="钢笔工具"><a href="#钢笔工具" class="headerlink" title="钢笔工具"></a>钢笔工具</h4><p>钢笔工具可能是绘图中最常用和最实用的工具了<br>钢笔工具：V<br>闭合路径：钢笔右侧窗口的功能按钮<br>结束编辑：Enter</p>
-<p>四种绘制模式，快捷键分别为数字键 1，2，3，4</p>
-<ul>
-<li>直线角模式：没有调节把手，</li>
-<li>镜像（对称模式）：两边的把手的变化是一样的</li>
-<li>断开：左右把手不相关联</li>
-<li>不对称模式：两个锚点到主点之间的距离是独立的，但依然会有联系</li>
-</ul>
-<p>移动节点：选中多个节点后（shift 可以加选），拖动节点可以移动节点<br>删除节点：选择节点，delete/backspace 即可<br>选择节点：可以通过节点框选工具，或者直接 shift 加选</p>
-<h4 id="快速复制（阵列）元素"><a href="#快速复制（阵列）元素" class="headerlink" title="快速复制（阵列）元素"></a>快速复制（阵列）元素</h4><p>按住 Alt 键拖拽复制一个相同元素，你可以继续按住 Command + D 复制更多的相同元素。</p>
-<h4 id="元素像素尺寸变成整数"><a href="#元素像素尺寸变成整数" class="headerlink" title="元素像素尺寸变成整数"></a>元素像素尺寸变成整数</h4><p>不光适用于单个元素，当我们对一组元素进行缩放后，组内元素间距、大小、字号都不再是像素的整数倍时，只要选中组，点一下 Round To Pixel（<strong>对齐到像素</strong>）即可使所有元素尺寸、间距都恢复为像素的整数倍。在对齐形状时特别有用</p>
-<h4 id="圆角半径"><a href="#圆角半径" class="headerlink" title="圆角半径"></a>圆角半径</h4><p>方法 1：点击形状进入选中模式，快速双击进入路径模式，可以选择需要圆角的角点进行圆角设置<br>方法 2：点击形状进入选中模式，在圆角半径框中输入 <code>5;5;0;0</code> 即可给不同点设置不同圆角数值</p>
-<p><img data-src="https://s2.loli.net/2022/05/10/rMn4YfRvXzLlN7H.png" alt="（sketch）设置圆角半径.png"></p>
-<h3 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h3><h4 id="自适应布局"><a href="#自适应布局" class="headerlink" title="自适应布局"></a>自适应布局</h4><p>参考视频教程： <a href="https://www.sketch.net.cn/lengmenjiqiao.html">冷门但好用的 SKETCH 高频技巧</a></p>
-<p>比方说可以实现的功能：保持元素间隔不变；拖拽后保持位置和大小；保持元素间隔不变<br>方法 1：通过创建控件时调整<br>方法 2：直接调整相对位置和固定大小，调整完之后可以在创建控件。一个是相对位置，一个是上下左右方向是否固定大小（对组合控件都是有效果的）</p>
-<h4 id="控件的使用"><a href="#控件的使用" class="headerlink" title="控件的使用"></a>控件的使用</h4><p>参考视频： <a href="https://www.bilibili.com/video/BV1f7411w7H9?p=1">Sketch Symbols 控件功能 - 善用组件 早点下班 - 新像素 UI 设计培训</a></p>
-<p>组件化：UI 设计稿标准化<br>重点：如何给组件命名，斜杠的用处；斜杠就相当于多了一个层级，加上斜杠之后，（比如 card/default 和 card/clone）default 和 clone 属于一个层级，都在 card 之下。且斜杠的使用可以无限嵌套<br>如果组件套组件，如何将被套的组件做出控件<br>可以先将组件中需要做成组件的复制出来，然后创建组件，将原先的删除，将新创建的组件放进去<br>比如 button/wechat 和 button/alipay<br>控件（相当于 sketchup 中的组件）的用处</p>
-<ul>
-<li>在控件编辑区，直接在控件中添加文本，图形等都会直接影响到绘图区的所有控件</li>
-<li>命名逻辑：控件中可以手动更改的地方，在命名的时候可以加上一个符号等，后期复用控件的时候，一目了然知道这个控件哪些地方可以自定义修改</li>
-<li>比如想要更改组件的主体颜色，可以将背景设置成控件，然后将这个控件的名字命名好</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2022/05/10/SOnJvbdwiV7hoQm.png" alt="（sketch）控件的层级关系.png"></p>
-<h4 id="复用样式-amp-复用符号"><a href="#复用样式-amp-复用符号" class="headerlink" title="复用样式&amp;复用符号"></a>复用样式 &amp; 复用符号</h4><h5 id="复用样式"><a href="#复用样式" class="headerlink" title="复用样式"></a>复用样式</h5><p>也就相当于 word 中创建一个标题样式；与之相似，修改了应用了这个样式的属性，刷新一遍，所有应用了这个样式的元素都会跟着变化（就相当于 word 中将选中文字的样式赋予到标题样式中去了）</p>
-<p><img data-src="https://s2.loli.net/2022/05/10/q9ison2gMFDrb3R.png" alt="（sketch）复用样式.png"></p>
-<h5 id="复用符号"><a href="#复用符号" class="headerlink" title="复用符号"></a>复用符号</h5><p>双击复用符号，会跳转到复用符号的编辑界面，编辑完之后，可以返回<strong>实例（通过类创建的实例）</strong><br>复制多个控件，当我们编辑其中一个控件时，其他的都会跟着变化；但是当我们修改了控件中的文字，不会都跟着变哦！！！【相当于整个框架没有变】<br>比如一个圆形里面填充了一张图片，将这个圆形创建控件之后，复制一个出来，此时就可以自己更改这个圆形里面的图片了，而不会影响到其他复制的控件<br>控件的意思是不是：创建了一个框架，使得框架中的内容变得可” 控”</p>
-<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
@@ -416,6 +354,21 @@
 <h2 id="如何去写好博客"><a href="#如何去写好博客" class="headerlink" title="如何去写好博客"></a>如何去写好博客</h2><p>我们需要有假想观众，写出来的东西是一种媒介，是写给人看的，起码自己会去读吧。所以，要带着让别人读懂的目标去写，然后就是琢磨怎样写能让别人更容易读懂。<br>假设自己是某个领域的小白，去网上搜索这个领域的相关资料，搜到了一些技术博客，而某些博客的文章，没有前因，没有后果，对于小白来说是可以想象是一种怎么样的体验呢。“这写的啥东西呀，看起来和自己想要的内容相关，又好像不相关，然后随便划拉几下，关掉了博客”。别说小白，可能过段时间连自己都不知道为什么要写这个东西了。因此，在写博客的过程中，想象我们的读者是个初学者，不要一开始在认为自己懂了的前提下直接下结论。最好可以说说自己在处理过程中碰到的问题，写下这篇博客缘由以及一些注意事项，这样也方便自己以后在看自己的博客时也能马上进入状态理解以前想要表达的意思。</p>
 <p>再有，多看看多学学其他道友们是如何写作以及表达的吧。</p>
 <p>最后，分享《论语》当中的一段话：司马牛忧曰：“人皆有兄弟，我独亡。” 子夏曰：“商闻之矣：死生有命，富贵在天。君子敬而无失，与人恭而有礼，四海之内皆兄弟也。君子何患乎无兄弟也？”</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>新建文档指南</title>
+    <url>/posts/295a526.html</url>
+    <content><![CDATA[<ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -496,6 +449,68 @@
 ]]></content>
   </entry>
   <entry>
+    <title>sketch 绘图指南</title>
+    <url>/posts/82ded38b.html</url>
+    <content><![CDATA[<p>初衷： <a href="https://draveness.me/sketch-and-sketch/">技术文章配图指南</a><br>参考视频： <a href="https://www.youtube.com/watch?v=6KpYC6ckShw&amp;list=PLwO1Ou6RaKN7ZE3r_TbyAw4rCZq7QODyb">sketch 教程壹天上手</a><br>参考视频教程： <a href="https://www.sketch.net.cn/lengmenjiqiao.html">冷门但好用的 SKETCH 高频技巧</a><br>参考视频： <a href="https://www.bilibili.com/video/BV1f7411w7H9?p=1">Sketch Symbols 控件功能 - 善用组件 早点下班 - 新像素 UI 设计培训</a></p>
+<span id="more"></span>
+
+<h3 id="为什么是-sketch"><a href="#为什么是-sketch" class="headerlink" title="为什么是 sketch"></a>为什么是 sketch</h3><ol>
+<li> 上手快，操作简单（让我想起了 sketchup 草图大师）</li>
+<li> 矢量图软件，可轻松到处不同倍率的图片</li>
+<li> 比 Adobe illustrator 体积更小，使用更流畅</li>
+<li> 软件稳定，没有碰到软件崩溃的情况，且没有保存按钮（软件会给我们自动保存）</li>
+<li> 有大量的第三方插件</li>
+</ol>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><ol>
+<li> 切片：S；切片时双击编组，可以快速选中编组进行导出</li>
+<li> 旋转：command+shift+R，按住 shift 键也可以整数旋转；按住 command 键拖动角点也可以实现旋转</li>
+<li> 选中形状吸取颜色：control+C</li>
+<li> 锁定：command+shift+L</li>
+<li> 隐藏：command+shift+H</li>
+<li> 导入图片：command+shift+K</li>
+<li> 快速复制：按住 option 拖动，command+D 可重复上一步移动复制变换</li>
+<li> 上移一层：<code>command+]</code></li>
+<li> 下移一层：<code>command+[</code></li>
+<li>切换图层：Tab</li>
+<li> 连续缩放视图：command + 滚轮键</li>
+<li>微调形状尺寸：选中形状之后，按住 command + 上下左右箭头移动 1px；可以加上 shift 移动 10px</li>
+<li> 复制样式：command+option+C</li>
+<li> 粘贴样式：command+option+V</li>
+<li> 注意：文字效果复制到形状是无效的，形状效果复制到文本是可以的。</li>
+<li>调节图片透明度：选中图层，直接按数字键可以调整（比如按 10，设置透明度为 10%）</li>
+<li>显示 / 隐藏除绘图区域的所有界面：<code>command+.</code></li>
+<li>穿透选择：按住 Command ，鼠标点击该元素，可以穿透编组进行选择</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/03/31/drqAFMWZwiNueg1.png" alt="sketch常用快捷键.png"></p>
+<h4 id="钢笔工具"><a href="#钢笔工具" class="headerlink" title="钢笔工具"></a>钢笔工具</h4><p>钢笔工具可能是绘图中最常用和最实用的工具了<br>钢笔工具：V<br>闭合路径：钢笔右侧窗口的功能按钮<br>结束编辑：Enter</p>
+<p>四种绘制模式，快捷键分别为数字键 1，2，3，4</p>
+<ul>
+<li>直线角模式：没有调节把手，</li>
+<li>镜像（对称模式）：两边的把手的变化是一样的</li>
+<li>断开：左右把手不相关联</li>
+<li>不对称模式：两个锚点到主点之间的距离是独立的，但依然会有联系</li>
+</ul>
+<p>移动节点：选中多个节点后（shift 可以加选），拖动节点可以移动节点<br>删除节点：选择节点，delete/backspace 即可<br>选择节点：可以通过节点框选工具，或者直接 shift 加选</p>
+<h4 id="快速复制（阵列）元素"><a href="#快速复制（阵列）元素" class="headerlink" title="快速复制（阵列）元素"></a>快速复制（阵列）元素</h4><p>按住 Alt 键拖拽复制一个相同元素，你可以继续按住 Command + D 复制更多的相同元素。</p>
+<h4 id="元素像素尺寸变成整数"><a href="#元素像素尺寸变成整数" class="headerlink" title="元素像素尺寸变成整数"></a>元素像素尺寸变成整数</h4><p>不光适用于单个元素，当我们对一组元素进行缩放后，组内元素间距、大小、字号都不再是像素的整数倍时，只要选中组，点一下 Round To Pixel（<strong>对齐到像素</strong>）即可使所有元素尺寸、间距都恢复为像素的整数倍。在对齐形状时特别有用</p>
+<h4 id="圆角半径"><a href="#圆角半径" class="headerlink" title="圆角半径"></a>圆角半径</h4><p>方法 1：点击形状进入选中模式，快速双击进入路径模式，可以选择需要圆角的角点进行圆角设置<br>方法 2：点击形状进入选中模式，在圆角半径框中输入 <code>5;5;0;0</code> 即可给不同点设置不同圆角数值</p>
+<p><img data-src="https://s2.loli.net/2022/05/10/rMn4YfRvXzLlN7H.png" alt="（sketch）设置圆角半径.png"></p>
+<h3 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h3><h4 id="自适应布局"><a href="#自适应布局" class="headerlink" title="自适应布局"></a>自适应布局</h4><p>参考视频教程： <a href="https://www.sketch.net.cn/lengmenjiqiao.html">冷门但好用的 SKETCH 高频技巧</a></p>
+<p>比方说可以实现的功能：保持元素间隔不变；拖拽后保持位置和大小；保持元素间隔不变<br>方法 1：通过创建控件时调整<br>方法 2：直接调整相对位置和固定大小，调整完之后可以在创建控件。一个是相对位置，一个是上下左右方向是否固定大小（对组合控件都是有效果的）</p>
+<h4 id="控件的使用"><a href="#控件的使用" class="headerlink" title="控件的使用"></a>控件的使用</h4><p>参考视频： <a href="https://www.bilibili.com/video/BV1f7411w7H9?p=1">Sketch Symbols 控件功能 - 善用组件 早点下班 - 新像素 UI 设计培训</a></p>
+<p>组件化：UI 设计稿标准化<br>重点：如何给组件命名，斜杠的用处；斜杠就相当于多了一个层级，加上斜杠之后，（比如 card/default 和 card/clone）default 和 clone 属于一个层级，都在 card 之下。且斜杠的使用可以无限嵌套<br>如果组件套组件，如何将被套的组件做出控件<br>可以先将组件中需要做成组件的复制出来，然后创建组件，将原先的删除，将新创建的组件放进去<br>比如 button/wechat 和 button/alipay<br>控件（相当于 sketchup 中的组件）的用处</p>
+<ul>
+<li>在控件编辑区，直接在控件中添加文本，图形等都会直接影响到绘图区的所有控件</li>
+<li>命名逻辑：控件中可以手动更改的地方，在命名的时候可以加上一个符号等，后期复用控件的时候，一目了然知道这个控件哪些地方可以自定义修改</li>
+<li>比如想要更改组件的主体颜色，可以将背景设置成控件，然后将这个控件的名字命名好</li>
+</ul>
+<p><img data-src="https://s2.loli.net/2022/05/10/SOnJvbdwiV7hoQm.png" alt="（sketch）控件的层级关系.png"></p>
+<h4 id="复用样式-amp-复用符号"><a href="#复用样式-amp-复用符号" class="headerlink" title="复用样式&amp;复用符号"></a>复用样式 &amp; 复用符号</h4><h5 id="复用样式"><a href="#复用样式" class="headerlink" title="复用样式"></a>复用样式</h5><p>也就相当于 word 中创建一个标题样式；与之相似，修改了应用了这个样式的属性，刷新一遍，所有应用了这个样式的元素都会跟着变化（就相当于 word 中将选中文字的样式赋予到标题样式中去了）</p>
+<p><img data-src="https://s2.loli.net/2022/05/10/q9ison2gMFDrb3R.png" alt="（sketch）复用样式.png"></p>
+<h5 id="复用符号"><a href="#复用符号" class="headerlink" title="复用符号"></a>复用符号</h5><p>双击复用符号，会跳转到复用符号的编辑界面，编辑完之后，可以返回<strong>实例（通过类创建的实例）</strong><br>复制多个控件，当我们编辑其中一个控件时，其他的都会跟着变化；但是当我们修改了控件中的文字，不会都跟着变哦！！！【相当于整个框架没有变】<br>比如一个圆形里面填充了一张图片，将这个圆形创建控件之后，复制一个出来，此时就可以自己更改这个圆形里面的图片了，而不会影响到其他复制的控件<br>控件的意思是不是：创建了一个框架，使得框架中的内容变得可” 控”</p>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
+  </entry>
+  <entry>
     <title>此处心安是吾乡</title>
     <url>/posts/d784b47d.html</url>
     <content><![CDATA[<h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
@@ -505,21 +520,6 @@
       <tags>
         <tag>hexo配置</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/posts/295a526.html</url>
-    <content><![CDATA[<ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>研一期末考试</title>
