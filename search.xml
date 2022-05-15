@@ -20,6 +20,59 @@
       </tags>
   </entry>
   <entry>
+    <title>LaTeX 目录布局排版之简易教程</title>
+    <url>/posts/6eab1a4b.html</url>
+    <content><![CDATA[<p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
+<span id="more"></span>
+
+<p>测试 Tex 代码以下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
+<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
+<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
+<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
+<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
+<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 及标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
+<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
+<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？给你一些方向，你自己去学习吧。</p>
+<ul>
+<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
+<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
+<li>雷太赫排版系统简介（第二版）：包太雷</li>
+<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
+<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>LaTeX 不快速的入门笔记</title>
     <url>/posts/15e36c1c.html</url>
     <content><![CDATA[<p>说明：</p>
@@ -180,12 +233,6 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
@@ -197,58 +244,6 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>LaTeX 目录布局排版之简易教程</title>
-    <url>/posts/6eab1a4b.html</url>
-    <content><![CDATA[<p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
-<span id="more"></span>
-
-<p>测试 Tex 代码以下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
-<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
-<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
-<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
-<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
-<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 及标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
-<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
-<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
-<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？给你一些方向，你自己去学习吧。</p>
-<ul>
-<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
-<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
-<li>雷太赫排版系统简介（第二版）：包太雷</li>
-<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
-<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word 操作指南之标题样式篇</title>
-    <url>/posts/d740c613.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Word 操作指南之符号篇</title>
     <url>/posts/4fcbca1a.html</url>
     <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="输入乘号alt0215"></p>
@@ -256,9 +251,36 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之排版篇</title>
-    <url>/posts/d50f866f.html</url>
+    <title>Word 操作指南之标题样式篇</title>
+    <url>/posts/d740c613.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之表格篇</title>
+    <url>/posts/494c263d.html</url>
+    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
+<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
+<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
+<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Word 操作指南之配置篇</title>
@@ -270,15 +292,6 @@
       <tags>
         <tag>Word</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Word 操作指南之表格篇</title>
-    <url>/posts/494c263d.html</url>
-    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
-<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
-<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
-<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
     <title>Homepage 实现只预览摘要而不显示全文功能</title>
@@ -304,22 +317,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>为什么放弃使用 remnote</title>
+    <url>/posts/b0b73b25.html</url>
+    <content><![CDATA[<ol>
+<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
+<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
+<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
+<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
+<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
+<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
+<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
+<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
+<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
+<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
+<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
+<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
+<li>待续…</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统BUG-删除笔记后出现一堆的untitled，甚至删不去@compress"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Word 操作指南之排版篇</title>
+    <url>/posts/d50f866f.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
@@ -372,25 +393,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>为什么放弃使用 remnote</title>
-    <url>/posts/b0b73b25.html</url>
-    <content><![CDATA[<ol>
-<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
-<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
-<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
-<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
-<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
-<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
-<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
-<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
-<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
-<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
-<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
-<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
-<li>待续…</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统BUG-删除笔记后出现一堆的untitled，甚至删不去@compress"></p>
+    <title>此处心安是吾乡</title>
+    <url>/posts/d784b47d.html</url>
+    <content><![CDATA[<h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
+<h3 id="冬"><a href="#冬" class="headerlink" title="冬"></a>冬</h3><p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬.jpeg"></p>
+<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚.jpeg"></p>
 ]]></content>
+      <tags>
+        <tag>hexo配置</tag>
+      </tags>
   </entry>
   <entry>
     <title>图片压缩指南</title>
@@ -509,17 +520,6 @@
 <p><img data-src="https://s2.loli.net/2022/05/10/q9ison2gMFDrb3R.png" alt="（sketch）复用样式.png"></p>
 <h5 id="复用符号"><a href="#复用符号" class="headerlink" title="复用符号"></a>复用符号</h5><p>双击复用符号，会跳转到复用符号的编辑界面，编辑完之后，可以返回<strong>实例（通过类创建的实例）</strong><br>复制多个控件，当我们编辑其中一个控件时，其他的都会跟着变化；但是当我们修改了控件中的文字，不会都跟着变哦！！！【相当于整个框架没有变】<br>比如一个圆形里面填充了一张图片，将这个圆形创建控件之后，复制一个出来，此时就可以自己更改这个圆形里面的图片了，而不会影响到其他复制的控件<br>控件的意思是不是：创建了一个框架，使得框架中的内容变得可” 控”</p>
 <h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
-  </entry>
-  <entry>
-    <title>此处心安是吾乡</title>
-    <url>/posts/d784b47d.html</url>
-    <content><![CDATA[<h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
-<h3 id="冬"><a href="#冬" class="headerlink" title="冬"></a>冬</h3><p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬.jpeg"></p>
-<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚.jpeg"></p>
-]]></content>
-      <tags>
-        <tag>hexo配置</tag>
-      </tags>
   </entry>
   <entry>
     <title>研一期末考试</title>
