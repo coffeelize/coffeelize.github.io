@@ -3124,7 +3124,7 @@ mark.search-keyword {
   margin-bottom: 1em;
 /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
 /*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   border-radius: 3px;
 }
 .post-gallery .post-gallery-img img {
