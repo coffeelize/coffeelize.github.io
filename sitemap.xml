@@ -200,14 +200,7 @@
 
   
   <url>
-    <loc>https://coffeelize.top/tags/Final-cut-Pro/</loc>
-    <lastmod>2022-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/quizlet/</loc>
+    <loc>https://coffeelize.top/tags/Latex/</loc>
     <lastmod>2022-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -228,7 +221,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Latex/</loc>
+    <loc>https://coffeelize.top/tags/Final-cut-Pro/</loc>
+    <lastmod>2022-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/quizlet/</loc>
     <lastmod>2022-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
