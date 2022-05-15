@@ -3124,7 +3124,7 @@ mark.search-keyword {
   margin-bottom: 1em;
 /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
 /*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
-  box-shadow: 0 5px 4px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   border-radius: 3px;
 }
 .post-gallery .post-gallery-img img {
@@ -3163,7 +3163,7 @@ code {
   color: #ff7600;
   background: #fbf7f8;
   margin: 2px;
-  font-family: 'Roboto Mono', consolas, "PingFang", "Microsoft YaHei";
+  font-family: 'LXGWWenKai', 'Roboto Mono', consolas, "PingFang", "Microsoft YaHei";
   font-size: 1em;
   border: 1px solid #d6d6d6;
 }
@@ -3171,7 +3171,7 @@ code {
 pre {
   margin: 5px 0;
   padding: 0px;
-  color: #4d4d4c;
+  color: #515128;
   line-height: 1.6;
 }
 .highlight {
@@ -3343,4 +3343,12 @@ span#inline-toc {
   padding: 0.05em 0.4em;
   margin: 2px 5px 2px 0px;
   line-height: 1.5;
+}
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url("/fonts/LXGWWenKai-Regular.ttf");
+  font-display: swap;
+}
+.post-body {
+  font-family: 'LXGWWenKai', Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
