@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coffeelize.top/posts/57e904f9.html</loc>
+    
+    <lastmod>2022-06-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/4fcbca1a.html</loc>
+    
+    <lastmod>2022-06-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/posts/undefined.html</loc>
     
     <lastmod>2022-06-02</lastmod>
@@ -93,15 +111,6 @@
   
   <url>
     <loc>https://coffeelize.top/posts/4a6b571e.html</loc>
-    
-    <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/4fcbca1a.html</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -211,7 +220,7 @@
 
   <url>
     <loc>https://coffeelize.top/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -219,42 +228,49 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Final-cut-Pro/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/quizlet/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/Latex/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Beamer/</loc>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/Word/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/hexo/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/hexo%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-06-02</lastmod>
+    <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
