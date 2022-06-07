@@ -36,10 +36,11 @@
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png">
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png">
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif">
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png">
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png">
 <meta property="article:published_time" content="2022-06-07T07:50:44.000Z">
-<meta property="article:modified_time" content="2022-06-07T07:56:21.517Z">
+<meta property="article:modified_time" content="2022-06-07T08:10:35.143Z">
 <meta property="article:author" content="原装咖啡">
 <meta property="article:tag" content="Latex">
 <meta property="article:tag" content="Font">
@@ -267,7 +268,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-06-07 15:50:44 / 修改时间：15:56:21" itemprop="dateCreated datePublished" datetime="2022-06-07T15:50:44+08:00">2022-06-07</time>
+      <time title="创建时间：2022-06-07 15:50:44 / 修改时间：16:10:35" itemprop="dateCreated datePublished" datetime="2022-06-07T15:50:44+08:00">2022-06-07</time>
     </span>
 
   
@@ -290,7 +291,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.1k</span>
+      <span>5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -362,25 +363,25 @@
 <table>
 <thead>
 <tr>
-<th>字体</th>
-<th>命令</th>
+<th align="center">字体</th>
+<th align="center">命令</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>宋体</td>
-<td> songti</td>
+<td align="center">宋体</td>
+<td align="center"> songti</td>
 </tr>
 <tr>
-<td> 黑体</td>
-<td> heiti</td>
+<td align="center"> 黑体</td>
+<td align="center"> heiti</td>
 </tr>
 <tr>
-<td> 仿宋</td>
-<td> fangsong</td>
+<td align="center"> 仿宋</td>
+<td align="center"> fangsong</td>
 </tr>
 <tr>
-<td> 楷书</td>
-<td> kaishu</td>
+<td align="center"> 楷书</td>
+<td align="center"> kaishu</td>
 </tr>
 </tbody></table>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
@@ -388,13 +389,15 @@
 <p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
 <p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
 <p>如何查询中文字体对应的英文名称参考资料</p>
-<figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
 
 <ol>
 <li>打开 CMD</li>
 <li> 将以上命令复制到 CMD，回车</li>
-<li>去 C 盘根目录查看 <code>list.txt</code> 文件 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![（Latex）如何查看本地中文字体的英文名称.gif](https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif)</span><br></pre></td></tr></tbody></table></figure></li>
+<li>去 C 盘根目录查看 <code>list.txt</code> 文件</li>
 </ol>
+<p><img data-src="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif" alt="（Latex）如何查看本地中文字体的英文名称.gif"></p>
+<p>参考资料：</p>
 <ul>
 <li><input disabled="" type="checkbox"> CSDN：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
 <li><input disabled="" type="checkbox"> 个人博客： <a target="_blank" rel="noopener" href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
@@ -417,6 +420,8 @@
 <li><input disabled="" type="checkbox"> CSDN： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
 <li><input disabled="" type="checkbox"> 博客园：<a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
 <li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a target="_blank" rel="noopener" href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
+<li><input disabled="" type="checkbox"> CSDN：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a target="_blank" rel="noopener" href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
 </ul>
 
     </div>

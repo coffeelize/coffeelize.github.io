@@ -268,57 +268,6 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
-    <title>LaTeX 图片双语标题指南</title>
-    <url>/posts/b3daf09.html</url>
-    <content><![CDATA[<p>本案例可能需要使用到的宏包</p>
-<ul>
-<li>graphicx</li>
-<li>bicaption</li>
-<li> 案例示范图片下载链接： <a href="https://sm.ms/image/tr6LsNaFwvZkjnh">Cat2</a> ； <a href="https://sm.ms/image/7vdxgA1Rz6OFqyr">QHU’s landscape</a></li>
-</ul>
-<span id="more"></span>
-
-<h3 id="方式-1：通过计数器"><a href="#方式-1：通过计数器" class="headerlink" title="方式 1：通过计数器"></a>方式 1：通过计数器</h3><p>难点：插入图片之后，Latex 是如何知道这张图片是图 2（而不是图 3，图 4）呢？原因在于计数器。通过 figure 环境添加图片之后，计数器自动加一。</p>
-<p>如果我们为图片添加了第二个标题的话，第一个标题（中文标题）为图 1，第二个标题（英文标题）就会变为图 2 了，而这两个标题明明是指同一张图片，此时就需要在添加第二个标题之前将计数器再减掉 1。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/Df6uG7R91FePr45.png" alt="01-图片双语标题示例.png"></p>
-<p>每句代码的意思已经写在注释中了，那么在插入第二章图片试一下是否有问题</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=3in]{fig/QHU}</span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{青海大学美景} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">    <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{QHU's grand landscape} </span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">    <span class="keyword">\label</span>{QHU-landscape}</span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/gNRizltmPkw6AoI.png" alt="02-图片双语标题之插入多图示例.png"></p>
-<p>图片的图例没有问题，可是为什么图 2 会在那段文字的上方去了呢？原因在于 Latex 排版时会自动为我们排版出尽可能少的页面空白，让页面看起来更美观。这或许也正是 figure 环境为浮动体的体现吧<br>那么可以在第二章图片的 figure 环境后添加 <code>htbp</code> 参数，让 Latex 按照我们的要求进行排版</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% ...</span></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="comment">% ...</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/SLcTC9gbF8Hld75.png" alt="02-图片双语标题之插入多图示例htbp.png"></p>
-<p>浮动体中有关插图位置的参数，详细规则见文末参考资料 1</p>
-<ul>
-<li>h: here 将图片插到此处</li>
-<li> t: top 将图片插到页顶</li>
-<li> b: bottom&nbsp;将图片插到页底</li>
-<li> p: page 插图独立一页</li>
-<li> H: 将图片固定在此处</li>
-</ul>
-<p>一般参数取 h 或 H 就好了，当然也可以写多个参数，如 htbp, 此时参数会按照顺序执行，首先尝试用 h，如果不行再依次使用其他参数 (其实效果和单独一个 h 差不多)。</p>
-<h3 id="方式-2：通过-bicaption-宏包"><a href="#方式-2：通过-bicaption-宏包" class="headerlink" title="方式 2：通过 bicaption 宏包"></a>方式 2：通过 bicaption 宏包</h3><p>直接使用 bicaption 宏包就比较简单啦，毕竟宏包的开发作者就是针对这个双语标题开发出来的嘛。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption} <span class="comment">%使用双语标题宏包</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/6tQdf7kMcKrEzyF.png" alt="04-使用bicaption宏包图片示例.png"></p>
-<p>很遗憾，并没有像我们预想的那样，第二个标题的图例还是中文。宏包作者没有直接为我们定义好第二个标题的图例是有原因的，他不针对中文用户，对于其他需求，比如第一个标题为母语，第二个标题为俄语呢，通过我们自己的需求来设置第二个标题的图例是不是更好一些。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\captionsetup</span>[figure][bi-second]{name=Fig}&nbsp;<span class="comment">%设置图的第二标题图例为Fig</span></span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/GCsvxadEjpo5i7Y.png" alt="05-使用bicaption宏包设置第二标题图例.png"></p>
-<p>参考资料：</p>
-<ol>
-<li>CSDN： <a href="https://blog.csdn.net/sdu_hao/article/details/103392927">LaTex 论文排版 | (19) LaTex 中的插图问题</a> @CoreJT</li>
-<li>Latex 官方中文文档： 一份（不太）简短的 LATEX2ε 介绍</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Latex 字体之字族篇</title>
     <url>/posts/4baf1388.html</url>
     <content><![CDATA[<h3 id="字族、字系与字形"><a href="#字族、字系与字形" class="headerlink" title="字族、字系与字形"></a>字族、字系与字形</h3><p>字体 (typeface) 的概念非常令人恼火，在电子化时代，基本上也都以字体 (font) 作为替代的称呼。字族、字系与字形这三者大概可以并称字体</p>
@@ -374,25 +323,25 @@
 <table>
 <thead>
 <tr>
-<th>字体</th>
-<th>命令</th>
+<th align="center">字体</th>
+<th align="center">命令</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>宋体</td>
-<td> songti</td>
+<td align="center">宋体</td>
+<td align="center"> songti</td>
 </tr>
 <tr>
-<td> 黑体</td>
-<td> heiti</td>
+<td align="center"> 黑体</td>
+<td align="center"> heiti</td>
 </tr>
 <tr>
-<td> 仿宋</td>
-<td> fangsong</td>
+<td align="center"> 仿宋</td>
+<td align="center"> fangsong</td>
 </tr>
 <tr>
-<td> 楷书</td>
-<td> kaishu</td>
+<td align="center"> 楷书</td>
+<td align="center"> kaishu</td>
 </tr>
 </tbody></table>
 <figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
@@ -400,13 +349,15 @@
 <p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
 <p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
 <p>如何查询中文字体对应的英文名称参考资料</p>
-<figure class="highlight bat"><table><tbody><tr><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
 
 <ol>
 <li>打开 CMD</li>
 <li> 将以上命令复制到 CMD，回车</li>
-<li>去 C 盘根目录查看 <code>list.txt</code> 文件 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">![（Latex）如何查看本地中文字体的英文名称.gif](https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif)</span><br></pre></td></tr></tbody></table></figure></li>
+<li>去 C 盘根目录查看 <code>list.txt</code> 文件</li>
 </ol>
+<p><img data-src="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif" alt="（Latex）如何查看本地中文字体的英文名称.gif"></p>
+<p>参考资料：</p>
 <ul>
 <li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
 <li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
@@ -429,57 +380,13 @@
 <li><input disabled="" type="checkbox"> CSDN： <a href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
 <li><input disabled="" type="checkbox"> 博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
 <li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
 </ul>
 ]]></content>
       <tags>
         <tag>Latex</tag>
         <tag>Font</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex 浮动体位置设定</title>
-    <url>/posts/ad84a2aa.html</url>
-    <content><![CDATA[<p>本文参考资料如下：</p>
-<ul>
-<li><input disabled="" type="checkbox"> Bilibili： <a href="https://www.bilibili.com/video/BV1r4411o7KJ?spm_id_from=333.337.search-card.all.click">林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区</a></li>
-<li><input disabled="" type="checkbox"> Latex 工作室： <a href="https://www.latexstudio.net/archives/12049">漫谈 LaTeX 排版常见概念误区</a></li>
-<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LATEX 2ε 介绍</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>figure 环境和 table 环境是最常见的浮动体环境，将这些浮动体插入文档中时，难免会出现 Latex 排版的图表位置和我们想要插入位置不同的情况，这篇文章将会对浮动体的一些概念和误区做一些较为详细的说明，希望对我还有阅读的你们有用 o (^▽^) o。自己接触 Latex 也还只有一个月左右，文中若有错误之处还请指正。</p>
-<h3 id="为什么会有浮动体"><a href="#为什么会有浮动体" class="headerlink" title="为什么会有浮动体"></a>为什么会有浮动体</h3><p>内容丰富的文章或者书籍往往包含许多图片和表格等内容。这些内容的尺寸往往太大，导致分页困难。Latex 为此引入了浮动体的机制，令大块的内容可以脱离上下文，放置在合适的位置。<br>LATEX 预定义了两类浮动体环境 figure 和 table。习惯上 figure 里放图片，table 里放表格，但并没有严格限制，可以在任何一个浮动体里放置文字、公式、表格、图片等等任意内容。<br>实际上，插入图片也可以不放入 figure 环境当中，直接通过 includegraphics 命令插入图片即可（比如有的简历模板中插入照片时不推荐使用 figure 浮动体环境）</p>
-<h3 id="为什么叫做浮动体"><a href="#为什么叫做浮动体" class="headerlink" title="为什么叫做浮动体"></a>为什么叫做浮动体</h3><ol>
-<li> 排版出来供阅读的文本是主体，而图、表为辅；</li>
-<li> 插在页面的文本段落之间，打断或妨碍阅读节奏（ reading flow）；</li>
-<li> 那么浮动体的意义在于：图、表都尽量闪一边去，不要打断我的阅读节奏，闪到页面顶部、底部，甚至是页面之后都行，就是插在段落之间影响我阅读</li>
-</ol>
-<p>实际上，这和我们使用 Word 插入图片在概念上有比较大的出入，我们习惯于在提及到图表内容的段落的下一段插入相应的图表，但这排版出来的效果确实影响到整体的阅读体验了，页面看起来也不美观。</p>
-<blockquote>
-<p>Q：有人会说：我插入的图和表不应该就在我交叉引用的下一段出现吗，图和说明不在同一页，那读者怎么读得明白啊？<br>A：那么交叉引用 \label 和 \ref 的意义何在呢</p>
-</blockquote>
-<p><img data-src="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png" alt="07-Word排版插入的思路.png"></p>
-<h3 id="浮动体位置参数"><a href="#浮动体位置参数" class="headerlink" title="浮动体位置参数"></a>浮动体位置参数</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table}[位置参数]</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>位置参数提供了一些符号用来表示浮动体允许排版的位置，如 hbp 允许浮动体排版在当前位置、底部或者单独成页。<br>h：here, 就摆这里<br>t：top, 页面顶端<br>b：bottom, 页面低端<br>p：float page（也就是只有浮动体的页面，通常由于浮动体太长了，页面插入了浮动体之后，只能塞下几行文字了，此时 latex 不会再插入那几行文字，而是单独的排版这个浮动体，即浮动体单独成页）<br>！：求你了，听听我的请求吧…(在决定位置时忽视限制)</p>
-<p>注意：</p>
-<ul>
-<li>排版位置的选取与参数里符号的顺序无关，LATEX 总是以 h-t-b-p 的优先级顺序决定浮动体位置。也就是说 <code>[!htp]</code> 和 <code>[ph!t]</code> 没有区别</li>
-<li>但是如果只给了某一个参数，比如 <code>[h]</code>，那么肯定按 h 这个参数来排版</li>
-<li>图、表缺省的位置参数是 <code>[t]</code></li>
-</ul>
-<p>浮动体的位置选取受到先后顺序的限制（注意这里所说的先后顺序与上方所说顺序没有关系）。如果某个浮动体由于参数限制、空间限制等原因在当前页无法放置，就要推迟到之后处理，并使得之后的同类浮动体一并推迟。<br>比如说我论文中的图片太多了，Latex 排版时，将许多图片一并推迟到了非常靠后的页面，此时使用 <code>\clearpage</code> 命令，会在另起一页之前，先将所有推迟处理的浮动体排版成页，此时 htbp 等位置限制被完全忽略（clearpage 可以将之前推迟的所有浮动体一口气全排出来）。</p>
-<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><p>为了演示方便，本案例使用了 blindtext 宏包以用来生成假文</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[a4paper,twocolumn]{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{blindtext} <span class="comment">%生成假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\section</span>{Table position}</span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\begin</span>{table}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">        <span class="keyword">\end</span>{tabular}</span><br><span class="line">    <span class="keyword">\end</span>{table}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>如果不给表格添加位置参数，其默认的位置参数是 t</p>
-<p><img data-src="https://s2.loli.net/2022/06/06/ZSfNyHuGLwg9FQD.png" alt="01-不给位置参数则默认为顶部.png"></p>
-<p>对于双栏排版，如果想要图、表跨栏显示，如何处理？<br>双栏排版环境下，LATEX 提供了 <code>table*</code> 和 <code>figure*</code> 环境用来排版跨栏的浮动体。它们的用法与 table 和 figure 一样，不同之处为双栏的 ⟨placement⟩ 参数只能用 tp 两个位置。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table*}[t]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table*}</span><br></pre></td></tr></tbody></table></figure>
-<p>注意是 table 带星，不是 tabular 带星</p>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
-      <tags>
-        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -691,6 +598,109 @@
       </tags>
   </entry>
   <entry>
+    <title>LaTeX 图片双语标题指南</title>
+    <url>/posts/b3daf09.html</url>
+    <content><![CDATA[<p>本案例可能需要使用到的宏包</p>
+<ul>
+<li>graphicx</li>
+<li>bicaption</li>
+<li> 案例示范图片下载链接： <a href="https://sm.ms/image/tr6LsNaFwvZkjnh">Cat2</a> ； <a href="https://sm.ms/image/7vdxgA1Rz6OFqyr">QHU’s landscape</a></li>
+</ul>
+<span id="more"></span>
+
+<h3 id="方式-1：通过计数器"><a href="#方式-1：通过计数器" class="headerlink" title="方式 1：通过计数器"></a>方式 1：通过计数器</h3><p>难点：插入图片之后，Latex 是如何知道这张图片是图 2（而不是图 3，图 4）呢？原因在于计数器。通过 figure 环境添加图片之后，计数器自动加一。</p>
+<p>如果我们为图片添加了第二个标题的话，第一个标题（中文标题）为图 1，第二个标题（英文标题）就会变为图 2 了，而这两个标题明明是指同一张图片，此时就需要在添加第二个标题之前将计数器再减掉 1。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/Df6uG7R91FePr45.png" alt="01-图片双语标题示例.png"></p>
+<p>每句代码的意思已经写在注释中了，那么在插入第二章图片试一下是否有问题</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=3in]{fig/QHU}</span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{青海大学美景} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">    <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{QHU's grand landscape} </span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">    <span class="keyword">\label</span>{QHU-landscape}</span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/gNRizltmPkw6AoI.png" alt="02-图片双语标题之插入多图示例.png"></p>
+<p>图片的图例没有问题，可是为什么图 2 会在那段文字的上方去了呢？原因在于 Latex 排版时会自动为我们排版出尽可能少的页面空白，让页面看起来更美观。这或许也正是 figure 环境为浮动体的体现吧<br>那么可以在第二章图片的 figure 环境后添加 <code>htbp</code> 参数，让 Latex 按照我们的要求进行排版</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% ...</span></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="comment">% ...</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/SLcTC9gbF8Hld75.png" alt="02-图片双语标题之插入多图示例htbp.png"></p>
+<p>浮动体中有关插图位置的参数，详细规则见文末参考资料 1</p>
+<ul>
+<li>h: here 将图片插到此处</li>
+<li> t: top 将图片插到页顶</li>
+<li> b: bottom&nbsp;将图片插到页底</li>
+<li> p: page 插图独立一页</li>
+<li> H: 将图片固定在此处</li>
+</ul>
+<p>一般参数取 h 或 H 就好了，当然也可以写多个参数，如 htbp, 此时参数会按照顺序执行，首先尝试用 h，如果不行再依次使用其他参数 (其实效果和单独一个 h 差不多)。</p>
+<h3 id="方式-2：通过-bicaption-宏包"><a href="#方式-2：通过-bicaption-宏包" class="headerlink" title="方式 2：通过 bicaption 宏包"></a>方式 2：通过 bicaption 宏包</h3><p>直接使用 bicaption 宏包就比较简单啦，毕竟宏包的开发作者就是针对这个双语标题开发出来的嘛。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption} <span class="comment">%使用双语标题宏包</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/6tQdf7kMcKrEzyF.png" alt="04-使用bicaption宏包图片示例.png"></p>
+<p>很遗憾，并没有像我们预想的那样，第二个标题的图例还是中文。宏包作者没有直接为我们定义好第二个标题的图例是有原因的，他不针对中文用户，对于其他需求，比如第一个标题为母语，第二个标题为俄语呢，通过我们自己的需求来设置第二个标题的图例是不是更好一些。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\captionsetup</span>[figure][bi-second]{name=Fig}&nbsp;<span class="comment">%设置图的第二标题图例为Fig</span></span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/GCsvxadEjpo5i7Y.png" alt="05-使用bicaption宏包设置第二标题图例.png"></p>
+<p>参考资料：</p>
+<ol>
+<li>CSDN： <a href="https://blog.csdn.net/sdu_hao/article/details/103392927">LaTex 论文排版 | (19) LaTex 中的插图问题</a> @CoreJT</li>
+<li>Latex 官方中文文档： 一份（不太）简短的 LATEX2ε 介绍</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex 浮动体位置设定</title>
+    <url>/posts/ad84a2aa.html</url>
+    <content><![CDATA[<p>本文参考资料如下：</p>
+<ul>
+<li><input disabled="" type="checkbox"> Bilibili： <a href="https://www.bilibili.com/video/BV1r4411o7KJ?spm_id_from=333.337.search-card.all.click">林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区</a></li>
+<li><input disabled="" type="checkbox"> Latex 工作室： <a href="https://www.latexstudio.net/archives/12049">漫谈 LaTeX 排版常见概念误区</a></li>
+<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LATEX 2ε 介绍</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>figure 环境和 table 环境是最常见的浮动体环境，将这些浮动体插入文档中时，难免会出现 Latex 排版的图表位置和我们想要插入位置不同的情况，这篇文章将会对浮动体的一些概念和误区做一些较为详细的说明，希望对我还有阅读的你们有用 o (^▽^) o。自己接触 Latex 也还只有一个月左右，文中若有错误之处还请指正。</p>
+<h3 id="为什么会有浮动体"><a href="#为什么会有浮动体" class="headerlink" title="为什么会有浮动体"></a>为什么会有浮动体</h3><p>内容丰富的文章或者书籍往往包含许多图片和表格等内容。这些内容的尺寸往往太大，导致分页困难。Latex 为此引入了浮动体的机制，令大块的内容可以脱离上下文，放置在合适的位置。<br>LATEX 预定义了两类浮动体环境 figure 和 table。习惯上 figure 里放图片，table 里放表格，但并没有严格限制，可以在任何一个浮动体里放置文字、公式、表格、图片等等任意内容。<br>实际上，插入图片也可以不放入 figure 环境当中，直接通过 includegraphics 命令插入图片即可（比如有的简历模板中插入照片时不推荐使用 figure 浮动体环境）</p>
+<h3 id="为什么叫做浮动体"><a href="#为什么叫做浮动体" class="headerlink" title="为什么叫做浮动体"></a>为什么叫做浮动体</h3><ol>
+<li> 排版出来供阅读的文本是主体，而图、表为辅；</li>
+<li> 插在页面的文本段落之间，打断或妨碍阅读节奏（ reading flow）；</li>
+<li> 那么浮动体的意义在于：图、表都尽量闪一边去，不要打断我的阅读节奏，闪到页面顶部、底部，甚至是页面之后都行，就是插在段落之间影响我阅读</li>
+</ol>
+<p>实际上，这和我们使用 Word 插入图片在概念上有比较大的出入，我们习惯于在提及到图表内容的段落的下一段插入相应的图表，但这排版出来的效果确实影响到整体的阅读体验了，页面看起来也不美观。</p>
+<blockquote>
+<p>Q：有人会说：我插入的图和表不应该就在我交叉引用的下一段出现吗，图和说明不在同一页，那读者怎么读得明白啊？<br>A：那么交叉引用 \label 和 \ref 的意义何在呢</p>
+</blockquote>
+<p><img data-src="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png" alt="07-Word排版插入的思路.png"></p>
+<h3 id="浮动体位置参数"><a href="#浮动体位置参数" class="headerlink" title="浮动体位置参数"></a>浮动体位置参数</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table}[位置参数]</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>位置参数提供了一些符号用来表示浮动体允许排版的位置，如 hbp 允许浮动体排版在当前位置、底部或者单独成页。<br>h：here, 就摆这里<br>t：top, 页面顶端<br>b：bottom, 页面低端<br>p：float page（也就是只有浮动体的页面，通常由于浮动体太长了，页面插入了浮动体之后，只能塞下几行文字了，此时 latex 不会再插入那几行文字，而是单独的排版这个浮动体，即浮动体单独成页）<br>！：求你了，听听我的请求吧…(在决定位置时忽视限制)</p>
+<p>注意：</p>
+<ul>
+<li>排版位置的选取与参数里符号的顺序无关，LATEX 总是以 h-t-b-p 的优先级顺序决定浮动体位置。也就是说 <code>[!htp]</code> 和 <code>[ph!t]</code> 没有区别</li>
+<li>但是如果只给了某一个参数，比如 <code>[h]</code>，那么肯定按 h 这个参数来排版</li>
+<li>图、表缺省的位置参数是 <code>[t]</code></li>
+</ul>
+<p>浮动体的位置选取受到先后顺序的限制（注意这里所说的先后顺序与上方所说顺序没有关系）。如果某个浮动体由于参数限制、空间限制等原因在当前页无法放置，就要推迟到之后处理，并使得之后的同类浮动体一并推迟。<br>比如说我论文中的图片太多了，Latex 排版时，将许多图片一并推迟到了非常靠后的页面，此时使用 <code>\clearpage</code> 命令，会在另起一页之前，先将所有推迟处理的浮动体排版成页，此时 htbp 等位置限制被完全忽略（clearpage 可以将之前推迟的所有浮动体一口气全排出来）。</p>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><p>为了演示方便，本案例使用了 blindtext 宏包以用来生成假文</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[a4paper,twocolumn]{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{blindtext} <span class="comment">%生成假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\section</span>{Table position}</span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\begin</span>{table}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">        <span class="keyword">\end</span>{tabular}</span><br><span class="line">    <span class="keyword">\end</span>{table}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果不给表格添加位置参数，其默认的位置参数是 t</p>
+<p><img data-src="https://s2.loli.net/2022/06/06/ZSfNyHuGLwg9FQD.png" alt="01-不给位置参数则默认为顶部.png"></p>
+<p>对于双栏排版，如果想要图、表跨栏显示，如何处理？<br>双栏排版环境下，LATEX 提供了 <code>table*</code> 和 <code>figure*</code> 环境用来排版跨栏的浮动体。它们的用法与 table 和 figure 一样，不同之处为双栏的 ⟨placement⟩ 参数只能用 tp 两个位置。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table*}[t]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table*}</span><br></pre></td></tr></tbody></table></figure>
+<p>注意是 table 带星，不是 tabular 带星</p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
@@ -702,27 +712,12 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Word 操作指南之符号篇</title>
     <url>/posts/4fcbca1a.html</url>
     <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="输入乘号alt0215"></p>
 <h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="插入带圈的数字编号"></p>
 <h3 id="插入商标注册符号"><a href="#插入商标注册符号" class="headerlink" title="插入商标注册符号"></a>插入商标注册符号</h3><p>插入 ⇒ 符号 ⇒ 其他符号 ⇒ 特殊字符</p>
 <p><img data-src="https://s2.loli.net/2022/06/03/w8D7jSdLQYBTxmk.gif" alt="（Word）插入注册商标特殊符号.gif"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之表格篇</title>
-    <url>/posts/494c263d.html</url>
-    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
-<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
-<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
-<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
@@ -735,24 +730,6 @@
       <tags>
         <tag>Word</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>Homepage 实现只预览摘要而不显示全文功能</title>
@@ -776,6 +753,15 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Word 操作指南之表格篇</title>
+    <url>/posts/494c263d.html</url>
+    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
+<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
+<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
+<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
     <title>sketch 绘图指南</title>
@@ -838,6 +824,24 @@
 <p><img data-src="https://s2.loli.net/2022/05/10/q9ison2gMFDrb3R.png" alt="（sketch）复用样式.png"></p>
 <h5 id="复用符号"><a href="#复用符号" class="headerlink" title="复用符号"></a>复用符号</h5><p>双击复用符号，会跳转到复用符号的编辑界面，编辑完之后，可以返回<strong>实例（通过类创建的实例）</strong><br>复制多个控件，当我们编辑其中一个控件时，其他的都会跟着变化；但是当我们修改了控件中的文字，不会都跟着变哦！！！【相当于整个框架没有变】<br>比如一个圆形里面填充了一张图片，将这个圆形创建控件之后，复制一个出来，此时就可以自己更改这个圆形里面的图片了，而不会影响到其他复制的控件<br>控件的意思是不是：创建了一个框架，使得框架中的内容变得可” 控”</p>
 <h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>为什么我要写博客</title>
@@ -949,6 +953,21 @@
 <figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg+gif+png+svg] ---to---&gt; [jpg(webp)+gif(gifsicle)+png(webp)+svg(svgo)]</span></span><br><span class="line">compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG,gif,png,svg}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span>}, <span class="literal">false</span>,</span><br><span class="line">                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="string">'svgo'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="string">'gifsicle'</span>, <span class="attr">command</span>: [<span class="string">'--colors'</span>, <span class="string">'64'</span>, <span class="string">'--use-col=web'</span>]}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      <span class="comment">//-------------------------------------------------                                    </span></span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'src/img/combine/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                      {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'jpegtran'</span>, <span class="attr">command</span>: [<span class="string">'-trim'</span>, <span class="string">'-progressive'</span>, <span class="string">'-copy'</span>, <span class="string">'none'</span>, <span class="string">'-optimize'</span>]}},</span><br><span class="line">                                                      {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="comment">//[jpg(jpegtran)] ---to---&gt; [jpg(mozjpeg)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">            compress_images(<span class="string">'src/img/combine/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'mozjpeg'</span>, <span class="attr">command</span>: [<span class="string">'-quality'</span>, <span class="string">'75'</span>]}},</span><br><span class="line">                                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">                  <span class="comment">//[png] ---to---&gt; [png(pngquant)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">                  compress_images(<span class="string">'src/img/source/**/*.png'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                                  {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'pngquant'</span>, <span class="attr">command</span>: [<span class="string">'--quality=30-60'</span>, <span class="string">'-o'</span>]}},</span><br><span class="line">                                                                  {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{                                                      </span><br><span class="line">                  }); </span><br><span class="line">            });                                      </span><br><span class="line">      });</span><br><span class="line">      <span class="comment">//-------------------------------------------------</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="4、压缩效果"><a href="#4、压缩效果" class="headerlink" title="4、压缩效果"></a>4、压缩效果</h4><p><img data-src="https://s2.loli.net/2022/05/12/b8skpTMEZxOQRA7.gif" alt="图片压缩效果：文件从11M->2.2M"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>新建文档指南</title>
+    <url>/posts/295a526.html</url>
+    <content><![CDATA[<ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -1085,21 +1104,6 @@
       <tags>
         <tag>Latex</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/posts/295a526.html</url>
-    <content><![CDATA[<ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>此处心安是吾乡</title>
