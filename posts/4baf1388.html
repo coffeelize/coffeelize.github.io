@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="G2H8dHq6QIE9GJ3RiIGetZP_i7GIHeB7HsJunnlSPiw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="description：字体包括字族、字系与字形，本文针对字体中的字族（也就是常说的自定义字体）以及fontspec宏包进行说明，并附上3个编写毕业论文模板时可能会用到的使用场景(1、全文更换字体 2、中文宋体，英文Times New Roman字体 3、自定义中文字体)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latex 字体之字族篇">
+<meta property="og:url" content="https://coffeelize.top/posts/4baf1388.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="description：字体包括字族、字系与字形，本文针对字体中的字族（也就是常说的自定义字体）以及fontspec宏包进行说明，并附上3个编写毕业论文模板时可能会用到的使用场景(1、全文更换字体 2、中文宋体，英文Times New Roman字体 3、自定义中文字体)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/QDPigSsTOUCvRtG.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/ZOpf8qynwchmGUb.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png">
+<meta property="article:published_time" content="2022-06-07T07:50:44.000Z">
+<meta property="article:modified_time" content="2022-06-07T07:56:21.517Z">
+<meta property="article:author" content="原装咖啡">
+<meta property="article:tag" content="Latex">
+<meta property="article:tag" content="Font">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png">
+
+
+<link rel="canonical" href="https://coffeelize.top/posts/4baf1388.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/4baf1388.html","path":"posts/4baf1388.html","title":"Latex 字体之字族篇"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Latex 字体之字族篇 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长，行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-札记&留言板"><a href="/notes/" rel="section"><i class="fa fa-fw fa-sticky-note fa-fw"></i>札记&留言板</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%97%8F%E3%80%81%E5%AD%97%E7%B3%BB%E4%B8%8E%E5%AD%97%E5%BD%A2"><span class="nav-number">1.</span> <span class="nav-text">字族、字系与字形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fontspec-%E5%AE%8F%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">fontspec 宏包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-fontspec-%E5%AE%8F%E5%8C%85%E6%9B%B4%E6%94%B9%E5%AD%97%E4%BD%93"><span class="nav-number">3.</span> <span class="nav-text">使用 fontspec 宏包更改字体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8xelatex%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91"><span class="nav-number">3.1.</span> <span class="nav-text">使用 xelatex 进行编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E6%B1%821%EF%BC%9A%E5%85%A8%E6%96%87%E6%9B%B4%E6%8D%A2%E5%AD%97%E4%BD%93"><span class="nav-number">3.3.</span> <span class="nav-text">需求 1：全文更换字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E6%B1%822%EF%BC%9A%E4%B8%AD%E6%96%87%E4%B8%BA%E5%AE%8B%E4%BD%93%EF%BC%8C%E8%8B%B1%E6%96%87%E4%B8%BATimes-New-Roman"><span class="nav-number">3.4.</span> <span class="nav-text">需求 2：中文为宋体，英文为 Times New Roman</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E6%B1%823%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93"><span class="nav-number">3.5.</span> <span class="nav-text">需求 3：自定义中文字体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%85%E7%BB%AD%E2%80%A6"><span class="nav-number">4.</span> <span class="nav-text">待续…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="原装咖啡"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">原装咖啡</p>
+  <div class="site-description" itemprop="description">Sometimes it's the very people who no one imagines anything of who do the things that no one can imagine.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuanzhuangkafei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuanzhuangkafei" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/%E5%8E%9F%E8%A3%85%E5%92%96%E5%95%A1" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;原装咖啡" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ghgxj.xyz/" title="https:&#x2F;&#x2F;ghgxj.xyz&#x2F;" rel="noopener" target="_blank">ZXC's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.laoda.de/" title="https:&#x2F;&#x2F;blog.laoda.de" rel="noopener" target="_blank">我不是咕咕鸽</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/4baf1388.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="原装咖啡">
+      <meta itemprop="description" content="Sometimes it's the very people who no one imagines anything of who do the things that no one can imagine.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Latex 字体之字族篇
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-06-07 15:50:44 / 修改时间：15:56:21" itemprop="dateCreated datePublished" datetime="2022-06-07T15:50:44+08:00">2022-06-07</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/4baf1388.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/4baf1388.html" data-xid="/posts/4baf1388.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">description：字体包括字族、字系与字形，本文针对字体中的字族（也就是常说的自定义字体）以及fontspec宏包进行说明，并附上3个编写毕业论文模板时可能会用到的使用场景(1、全文更换字体 2、中文宋体，英文Times New Roman字体 3、自定义中文字体)</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="字族、字系与字形"><a href="#字族、字系与字形" class="headerlink" title="字族、字系与字形"></a>字族、字系与字形</h3><p>字体 (typeface) 的概念非常令人恼火，在电子化时代，基本上也都以字体 (font) 作为替代的称呼。字族、字系与字形这三者大概可以并称字体</p>
+<ul>
+<li>宋体、黑体、楷体，这属于字族</li>
+<li>加粗、加斜属于字系和字形</li>
+<li>五号、小四属于字号</li>
+</ul>
+<h3 id="fontspec-宏包"><a href="#fontspec-宏包" class="headerlink" title="fontspec 宏包"></a>fontspec 宏包</h3><p>fontspec 是一个基于 XeLaTeX 和 LuaLaTeX 的宏包（此处划重点），所以在编译时要注意不能使用 PdfLaTeX，否则会出现编译错误（建议使用 <strong>XeLaTex</strong>）。</p>
+<h3 id="使用-fontspec-宏包更改字体"><a href="#使用-fontspec-宏包更改字体" class="headerlink" title="使用 fontspec 宏包更改字体"></a>使用 fontspec 宏包更改字体</h3><p>xelatex 编译命令能够支持直接调用系统安装的 .ttf 或 .otf 格式字体，xelatex 命令下支持用户调用字体的宏包是 fontspec</p>
+<blockquote>
+<p>如何使用 xelatex 进行编译</p>
+<ul>
+<li>可以将 xelatex 作为编辑器的默认编译器，编译即自动使用 xelatex（推荐该方式）</li>
+<li>或者找到 xelatex 命令</li>
+</ul>
+</blockquote>
+<h4 id="使用xelatex进行编译"><a href="#使用xelatex进行编译" class="headerlink" title="使用xelatex进行编译"></a>使用 xelatex 进行编译</h4><p>方式 1：以 TexStudio 为例</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png" alt="09-TexStduio默认编译器设置为xelatex.png"></p>
+<p>方式 2：以 TexStudio 为例</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/QDPigSsTOUCvRtG.png" alt="08-使用xelatex进行编译.png"></p>
+<h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置衬线字体</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置无衬线字体</span></span><br><span class="line"><span class="keyword">\setmonofont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置等宽字体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 举个例子</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>font features：用来手动配置对应的粗体或斜体</li>
+<li> font name：字体名称</li>
+</ul>
+<blockquote>
+<p>什么是衬线字体、非衬线字体以及等宽字体？<br>参考资料：博客园：<a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></p>
+</blockquote>
+<p>由于中文字体少有对应的粗体或斜体，⟨font features⟩ 里多用其他字体来配置，比如习惯上将宋体的 BoldFont 配置为黑体，而 ItalicFont 配置为楷体。</p>
+<p>（可先跳过此段）需要注意的是：fontspec 宏包会覆盖数学字体设置。需要调用一些数学字体宏包时，应当在调用 fontspec 宏包时指定 no-math 选项。<br>（可先跳过此段）fontspec 宏包可能被其它宏包或文档类如 xeCJK、ctex 文档类）自动调用时，则在文档开头的 <code>\documentclass</code> 命令里指定 no-math 选项。</p>
+<h4 id="需求1：全文更换字体"><a href="#需求1：全文更换字体" class="headerlink" title="需求1：全文更换字体"></a>需求 1：全文更换字体</h4><p>在前言部分对字体进行设置</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%语法：\setmainfont{FONT_NAME}</span></span><br><span class="line"><span class="comment">% 比如</span></span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman} <span class="comment">%设置全文英文衬线字体为Times New Roman，注意Latex区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="需求2：中文为宋体，英文为Times-New-Roman"><a href="#需求2：中文为宋体，英文为Times-New-Roman" class="headerlink" title="需求2：中文为宋体，英文为Times New Roman"></a>需求 2：中文为宋体，英文为 Times New Roman</h4><p>在 ctex 中文文档类下，默认中文字体为宋体（衬线字体），只要将英文字体的衬线字体设置为 Times New Roman 即可满足需求</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">%设置</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/ZOpf8qynwchmGUb.png" alt="01-中文设置为宋体，英文设置为Times，英文加粗斜体也为Times.png"></p>
+<p>对于非正文字体是不是也设置成功了呢？可以测试一下标题字体与图片标题字体</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman加粗字</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman斜体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\section</span>{This is a section}</span><br><span class="line">	<span class="keyword">\subsection</span>{This is a subsection}</span><br><span class="line">	<span class="keyword">\subsubsection</span>{This is a subsubsection}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>{figure}[hbp]</span><br><span class="line">		<span class="keyword">\caption</span>{This is a caption}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png" alt="02-中宋英Times.png"></p>
+<p>可以看到 ctexart 对应的 section 标题都是加粗的，那么对于中文呢，还会是加粗的宋体吗？我们刚才只设定了英文衬线字体，普通文字、加粗、斜体文字均匀 Times New Roman 字体，</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>首先需要明确一点：<strong>汉字没有斜体</strong>．平常我们看到的加斜汉字，通常是几何变换得到的结果，非常的粗糙，并不严格满足排版要求；而真正的字形上需要精细的设计的。同时，汉字字体里面也很少加粗体的设计。<br>西文一般设有加斜，但是这与 “斜体” 并不是同一回事．加斜是指某种字族的 Italy 字系；而斜体，是指 Slant 字族．在行文中表强调时使用的是前者；在 Microsoft Word 等软件中看到的倾斜的字母 I，也代表前者．</p>
+<p>加粗和斜体通常不是加粗的宋体和宋体的斜体，而是由其他字体替代，对应的加粗体为黑体字体，斜体为楷体字体。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\section</span>{这是一个一级标题}</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{你好，欢迎来到Latex的世界} <span class="comment">%粗体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{你好，欢迎来到Latex的世界} <span class="comment">%斜体</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png" alt="03-中文字体加粗加斜的一些设置.png"></p>
+<h4 id="需求3：自定义中文字体"><a href="#需求3：自定义中文字体" class="headerlink" title="需求3：自定义中文字体"></a>需求 3：自定义中文字体</h4><p>中文方面， ctex 宏包直接定义了新的中文文档类 ctexart, ctexrep 与 ctexbook，以及 ctexbeamer 幻灯片文档类<br>ctex 宏包已经为我们提供了以下的字体命令<br>参考资料：中国 TeX 用户组. <a target="_blank" rel="noopener" href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a>（可以该网站可下载到最新版本的 CTeX 宏基手册）</p>
+<table>
+<thead>
+<tr>
+<th>字体</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>宋体</td>
+<td> songti</td>
+</tr>
+<tr>
+<td> 黑体</td>
+<td> heiti</td>
+</tr>
+<tr>
+<td> 仿宋</td>
+<td> fangsong</td>
+</tr>
+<tr>
+<td> 楷书</td>
+<td> kaishu</td>
+</tr>
+</tbody></table>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
+<p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
+<p>如何查询中文字体对应的英文名称参考资料</p>
+<figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<ol>
+<li>打开 CMD</li>
+<li> 将以上命令复制到 CMD，回车</li>
+<li>去 C 盘根目录查看 <code>list.txt</code> 文件 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![（Latex）如何查看本地中文字体的英文名称.gif](https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif)</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> CSDN：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a target="_blank" rel="noopener" href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
+</ul>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最小案例如下：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png" alt="06-我是自定义字体华文行楷.png"></p>
+<p>注意：只需要给某些文字设定字体时，请将命令和需要修改字体的文字用大括号包起来</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 以下命令会修改该命令之后的所有的文字字体，修改局部字体时不推荐这样使用，推荐使用花括号进行分组，如以上命令</span></span><br><span class="line"><span class="keyword">\huawenxingkai</span>{} 我是自定义的字体，我使用的华文行楷</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如如下案例，会导致第二行文字也变为黑体</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\heiti</span>{} 你好，欢迎来到Latex的世界</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png" alt="07-设置全局字体的方式.png"></p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> 简单粗暴&nbsp;Latex：&nbsp;<a target="_blank" rel="noopener" href="https://wklchris.github.io/">Kanglong Wu</a>&nbsp;&amp;&nbsp;<a target="_blank" rel="noopener" href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴&nbsp;LaTeX》开源仓库</a></li>
+<li><input disabled="" type="checkbox"> CSDN： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
+<li><input disabled="" type="checkbox"> 博客园：<a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
+<li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a target="_blank" rel="noopener" href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>原装咖啡
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://coffeelize.top/posts/4baf1388.html" title="Latex 字体之字族篇">https://coffeelize.top/posts/4baf1388.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Latex/" rel="tag"># Latex</a>
+              <a href="/tags/Font/" rel="tag"># Font</a>
+          </div>
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/ad84a2aa.html" rel="next" title="Latex 浮动体位置设定">
+                  Latex 浮动体位置设定 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">原装咖啡</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">40 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/posts/4baf1388.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>
