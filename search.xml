@@ -60,118 +60,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LaTeX 目录布局排版之简易教程</title>
-    <url>/posts/6eab1a4b.html</url>
-    <content><![CDATA[<p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
-<span id="more"></span>
-
-<p>测试 Tex 代码以下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>注意：每次编译生成 PDF 之后，若对目录进行了修改，需要清理编译过程中生成的辅助文件（即以下进行的每一步需求操作均需要清理清理一遍辅助文件）。如下图以 TeXstudio 为例：<br><img data-src="https://s2.loli.net/2022/05/14/nHJ6UgwhmxrIiX8.png" alt="清理辅助文件"></p>
-<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
-<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
-<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
-<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
-<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
-<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 级标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
-<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
-<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
-<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？这里有一些相关资料，或许可以帮助到你 q (≧▽≦q)。</p>
-<ul>
-<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
-<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
-<li>雷太赫排版系统简介（第二版）：包太雷</li>
-<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
-<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex 之字体颜色篇</title>
-    <url>/posts/c07914ac.html</url>
-    <content><![CDATA[<h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>使用 xcolor 宏包可用来方便地调用颜色：<br>该宏包为我们提供了 <code>\textcolor</code> , <code>\definecolor</code> 两关键命令</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%修改颜色</span></span><br><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243} <span class="comment">%定义自定义颜色</span></span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-
-<h3 id="宏包预定义的颜色命令"><a href="#宏包预定义的颜色命令" class="headerlink" title="宏包预定义的颜色命令"></a>宏包预定义的颜色命令</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{colorname}{text} <span class="comment">%修改text的颜色</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>宏包预定义的颜色及命令如下</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/i7Zn6glNyVoUTAf.png" alt="01-xcolor宏包预定义颜色.png"></p>
-<h4 id="案例1-宏包预定的颜色修改字体颜色"><a href="#案例1-宏包预定的颜色修改字体颜色" class="headerlink" title="案例1 宏包预定的颜色修改字体颜色"></a>案例 1 宏包预定的颜色修改字体颜色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%将字体颜色修改为红色</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{pink}{Pink也为xcolor宏包预定义的命令}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/NzWDuXltC1xZL7E.png" alt="02-xcolor宏包预定义的颜色命令.png"></p>
-<h4 id="案例2-设置颜色透明度"><a href="#案例2-设置颜色透明度" class="headerlink" title="案例2 设置颜色透明度"></a>案例 2 设置颜色透明度</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50}{透明度为50的红色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/NgwpToGD45a63eS.png" alt="03-调节颜色透明度.png"></p>
-<ul>
-<li>红色文字字体颜色 RGB (255,0,0)</li>
-<li> 透明度为 50% 的红色字体颜色 RGB (255,128,128)</li>
-</ul>
-<h4 id="案例3-混合色"><a href="#案例3-混合色" class="headerlink" title="案例3 混合色"></a>案例 3 混合色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!black}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的黑色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!white}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的白色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/10/hRTiszBuwZPa6kc.png" alt="091-混合色语法.png"></p>
-<ul>
-<li>red!50!black：即 50% 的红色（255,0,0）混合 50% 的黑色（0,0,0），最终得到（128,0,0）</li>
-<li>同理，red!50!white 最终得到（255,128,128）</li>
-</ul>
-<h3 id="定义新的颜色命令"><a href="#定义新的颜色命令" class="headerlink" title="定义新的颜色命令"></a>定义新的颜色命令</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="comment">%语法：\definecolor{颜色}{颜色模式}{参数序列}</span></span><br><span class="line"><span class="comment">%RGB实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{keywordcolor}{RGB}{34,34,250} <span class="comment">%定义新的颜色命令</span></span><br><span class="line"><span class="comment">%HTML实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{main}{HTML}{ff8080} <span class="comment">%注意HTML是大写，后面的参数序列不跟“#”</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>语法中的 model-list 可以是我们常使用的 RGB、CMYK、HSV 等（整合了 12 种色彩模式 rgb, cmy, cmyk, hsb, Hsb, tHsb, gray, RGB, HTML, HSB, Gray, wave）。比如说 OFFICE 系列的软件在调节颜色时，通常会提供 RGB 和 HSV 两种颜色模式</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/BoCfgJpOTbcRSZL.png" alt="05-PPT当中的颜色模式.png"></p>
-<h4 id="案例4：定义新的颜色命令"><a href="#案例4：定义新的颜色命令" class="headerlink" title="案例4：定义新的颜色命令"></a>案例 4：定义新的颜色命令</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=5in]{figs/Google-logo}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	<span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line">	<span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243}</span><br><span class="line">	<span class="keyword">\definecolor</span>{Lcolor}{RGB}{52, 170, 82}</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\textcolor</span>{Gcolor}{这是Google logo中G的颜色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{Lcolor}{这是Google logo中L的颜色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/MCAjx6dcvziGynU.png" alt="04-自定义颜色命令.png"></p>
-<h3 id="拓展应用-彩色表格"><a href="#拓展应用-彩色表格" class="headerlink" title="拓展应用 彩色表格"></a>拓展应用 彩色表格</h3><p>xcolor 宏包的 <code>\rowcolors</code> 命令 (需要 colortbl 宏包的支持)，可以分别设置表格奇偶行的背景颜色</p>
-<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：{起始行}{奇数行颜色}{偶数行颜色}，如一下示例</span></span><br><span class="line"><span class="keyword">\rowcolors</span>{1}{White}{Lavender}</span><br></pre></td></tr></tbody></table></figure>
-<p><code>\hiderowcolors</code> 命令是用来暂停显示前面设置的奇偶行颜色，否则后面的其他表格会继续显示颜色。另一个命令 <code>\showrowcolors</code> 可以用来重新激活奇偶行颜色设置。</p>
-<h4 id="案例5：彩色表格"><a href="#案例5：彩色表格" class="headerlink" title="案例5：彩色表格"></a>案例 5：彩色表格</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>[table]{xcolor} <span class="comment">%提供rowcolor命令</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\definecolor</span>{mygray}{RGB}{245, 245, 245} <span class="comment">%自定义的一种灰色颜色命令</span></span><br><span class="line"><span class="keyword">\begin</span>{table}[!ht]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\rowcolors</span>{1}{white}{mygray} <span class="comment">%彩色表格，从第一行开始，奇偶行背景色分别为白色和自定义的灰色（注意颜色名称的大小写不要写错）</span></span><br><span class="line">	<span class="keyword">\begin</span>{tabular}{cc}</span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		文献类型标识 <span class="built_in">&amp;</span> 载体类型标识 <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/OL]</span>| <span class="built_in">&amp;</span> 联机网上数据库 (database online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/MT]</span>| <span class="built_in">&amp;</span> 磁带数据库 (database on magnetic tape) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[M/CD]</span>|  <span class="built_in">&amp;</span> 光盘图书 (monograph on CD-ROM) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[CP/DK]</span>| <span class="built_in">&amp;</span> 磁盘软件 (computer program on disk) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[J/OL]</span>| <span class="built_in">&amp;</span> 网上期刊 (serial online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[EB/OL]</span>| <span class="built_in">&amp;</span> 网上电子公告 (electronic bulletin board online)<span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\hiderowcolors</span> <span class="comment">%暂停使用奇偶行颜色设定，防止对后续表格的背景色产生影响，后续如果想要开启，可以使用\showrowcolors来重新激活奇偶行颜色设置</span></span><br><span class="line">	<span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/RhMes5uTINztD4w.png" alt="09-正常表格以及彩色表格.png"></p>
-<p>需要注意的地方</p>
-<ol>
-<li><code>\usepackage[table]{xcolor} 如果仅使用</code> \usepackage{xcolor}<code>，无法识别</code> \rowcolors<code>、</code>\hiderowcolors` 等命令</li>
-<li><code>\hiderowcolors</code> 写在 tabular 环境内，否则报 <code>Misplaced \noalign</code> 错</li>
-</ol>
-<p>关于第 2 点的报错，可参考：</p>
-<ul>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@<a href="https://xovee.blog.csdn.net/" title="Xovee">Xovee</a></li>
-</ul>
-<p><img data-src="https://s2.loli.net/2022/06/07/xmkwTfgHhidRZVB.png" alt="08-彩色表格报错.png"></p>
-<h3 id="主要参考资料"><a href="#主要参考资料" class="headerlink" title="主要参考资料"></a>主要参考资料</h3><ul>
-<li><input disabled="" type="checkbox"> 雷太赫排版系统简介（第二版）：<a href="https://github.com/huangxg/lnotes">Github 仓库</a></li>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@Xovee</li>
-<li><input disabled="" type="checkbox"> 个人博客：<a href="https://liam.page/2016/07/22/using-the-tcolorbox-package-to-create-a-new-theorem-environment/">LaTeX 黑魔法（一）：tcolorbox 宏包简明教程</a> @始终</li>
-</ul>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Font</tag>
-        <tag>Color</tag>
-        <tag>Table</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LaTeX 不快速的入门笔记</title>
     <url>/posts/15e36c1c.html</url>
     <content><![CDATA[<p>说明：</p>
@@ -332,6 +220,54 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
+    <title>LaTeX 目录布局排版之简易教程</title>
+    <url>/posts/6eab1a4b.html</url>
+    <content><![CDATA[<p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
+<span id="more"></span>
+
+<p>测试 Tex 代码以下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意：每次编译生成 PDF 之后，若对目录进行了修改，需要清理编译过程中生成的辅助文件（即以下进行的每一步需求操作均需要清理清理一遍辅助文件）。如下图以 TeXstudio 为例：<br><img data-src="https://s2.loli.net/2022/05/14/nHJ6UgwhmxrIiX8.png" alt="清理辅助文件"></p>
+<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
+<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
+<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
+<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
+<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
+<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 级标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
+<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
+<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？这里有一些相关资料，或许可以帮助到你 q (≧▽≦q)。</p>
+<ul>
+<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
+<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
+<li>雷太赫排版系统简介（第二版）：包太雷</li>
+<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
+<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Latex 之 zhlipsum 中文假文宏包使用说明</title>
     <url>/posts/942e3f13.html</url>
     <content><![CDATA[<h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\zhlipsum</span>[需要从假文中抽取的段落][name=假文库] <span class="comment">%两个参数都是可选参数 </span></span><br><span class="line"><span class="keyword">\newzhlipsum</span>{自定义假文库名}{{假文段落1},{假文段落2},{假文段落n}} <span class="comment">%自定义假文库，注意假文的每个段落以大括号包裹，中间使用英文逗号隔开</span></span><br></pre></td></tr></tbody></table></figure>
@@ -403,6 +339,270 @@
       <tags>
         <tag>Latex</tag>
         <tag>宏包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex 之字体颜色篇</title>
+    <url>/posts/c07914ac.html</url>
+    <content><![CDATA[<h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>使用 xcolor 宏包可用来方便地调用颜色：<br>该宏包为我们提供了 <code>\textcolor</code> , <code>\definecolor</code> 两关键命令</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%修改颜色</span></span><br><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243} <span class="comment">%定义自定义颜色</span></span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+
+<h3 id="宏包预定义的颜色命令"><a href="#宏包预定义的颜色命令" class="headerlink" title="宏包预定义的颜色命令"></a>宏包预定义的颜色命令</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{colorname}{text} <span class="comment">%修改text的颜色</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>宏包预定义的颜色及命令如下</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/i7Zn6glNyVoUTAf.png" alt="01-xcolor宏包预定义颜色.png"></p>
+<h4 id="案例1-宏包预定的颜色修改字体颜色"><a href="#案例1-宏包预定的颜色修改字体颜色" class="headerlink" title="案例1 宏包预定的颜色修改字体颜色"></a>案例 1 宏包预定的颜色修改字体颜色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%将字体颜色修改为红色</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{pink}{Pink也为xcolor宏包预定义的命令}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/NzWDuXltC1xZL7E.png" alt="02-xcolor宏包预定义的颜色命令.png"></p>
+<h4 id="案例2-设置颜色透明度"><a href="#案例2-设置颜色透明度" class="headerlink" title="案例2 设置颜色透明度"></a>案例 2 设置颜色透明度</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50}{透明度为50的红色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/NgwpToGD45a63eS.png" alt="03-调节颜色透明度.png"></p>
+<ul>
+<li>红色文字字体颜色 RGB (255,0,0)</li>
+<li> 透明度为 50% 的红色字体颜色 RGB (255,128,128)</li>
+</ul>
+<h4 id="案例3-混合色"><a href="#案例3-混合色" class="headerlink" title="案例3 混合色"></a>案例 3 混合色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!black}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的黑色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!white}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的白色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/10/hRTiszBuwZPa6kc.png" alt="091-混合色语法.png"></p>
+<ul>
+<li>red!50!black：即 50% 的红色（255,0,0）混合 50% 的黑色（0,0,0），最终得到（128,0,0）</li>
+<li>同理，red!50!white 最终得到（255,128,128）</li>
+</ul>
+<h3 id="定义新的颜色命令"><a href="#定义新的颜色命令" class="headerlink" title="定义新的颜色命令"></a>定义新的颜色命令</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="comment">%语法：\definecolor{颜色}{颜色模式}{参数序列}</span></span><br><span class="line"><span class="comment">%RGB实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{keywordcolor}{RGB}{34,34,250} <span class="comment">%定义新的颜色命令</span></span><br><span class="line"><span class="comment">%HTML实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{main}{HTML}{ff8080} <span class="comment">%注意HTML是大写，后面的参数序列不跟“#”</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>语法中的 model-list 可以是我们常使用的 RGB、CMYK、HSV 等（整合了 12 种色彩模式 rgb, cmy, cmyk, hsb, Hsb, tHsb, gray, RGB, HTML, HSB, Gray, wave）。比如说 OFFICE 系列的软件在调节颜色时，通常会提供 RGB 和 HSV 两种颜色模式</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/BoCfgJpOTbcRSZL.png" alt="05-PPT当中的颜色模式.png"></p>
+<h4 id="案例4：定义新的颜色命令"><a href="#案例4：定义新的颜色命令" class="headerlink" title="案例4：定义新的颜色命令"></a>案例 4：定义新的颜色命令</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=5in]{figs/Google-logo}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	<span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line">	<span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243}</span><br><span class="line">	<span class="keyword">\definecolor</span>{Lcolor}{RGB}{52, 170, 82}</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\textcolor</span>{Gcolor}{这是Google logo中G的颜色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{Lcolor}{这是Google logo中L的颜色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/MCAjx6dcvziGynU.png" alt="04-自定义颜色命令.png"></p>
+<h3 id="拓展应用-彩色表格"><a href="#拓展应用-彩色表格" class="headerlink" title="拓展应用 彩色表格"></a>拓展应用 彩色表格</h3><p>xcolor 宏包的 <code>\rowcolors</code> 命令 (需要 colortbl 宏包的支持)，可以分别设置表格奇偶行的背景颜色</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：{起始行}{奇数行颜色}{偶数行颜色}，如一下示例</span></span><br><span class="line"><span class="keyword">\rowcolors</span>{1}{White}{Lavender}</span><br></pre></td></tr></tbody></table></figure>
+<p><code>\hiderowcolors</code> 命令是用来暂停显示前面设置的奇偶行颜色，否则后面的其他表格会继续显示颜色。另一个命令 <code>\showrowcolors</code> 可以用来重新激活奇偶行颜色设置。</p>
+<h4 id="案例5：彩色表格"><a href="#案例5：彩色表格" class="headerlink" title="案例5：彩色表格"></a>案例 5：彩色表格</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>[table]{xcolor} <span class="comment">%提供rowcolor命令</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\definecolor</span>{mygray}{RGB}{245, 245, 245} <span class="comment">%自定义的一种灰色颜色命令</span></span><br><span class="line"><span class="keyword">\begin</span>{table}[!ht]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\rowcolors</span>{1}{white}{mygray} <span class="comment">%彩色表格，从第一行开始，奇偶行背景色分别为白色和自定义的灰色（注意颜色名称的大小写不要写错）</span></span><br><span class="line">	<span class="keyword">\begin</span>{tabular}{cc}</span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		文献类型标识 <span class="built_in">&amp;</span> 载体类型标识 <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/OL]</span>| <span class="built_in">&amp;</span> 联机网上数据库 (database online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/MT]</span>| <span class="built_in">&amp;</span> 磁带数据库 (database on magnetic tape) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[M/CD]</span>|  <span class="built_in">&amp;</span> 光盘图书 (monograph on CD-ROM) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[CP/DK]</span>| <span class="built_in">&amp;</span> 磁盘软件 (computer program on disk) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[J/OL]</span>| <span class="built_in">&amp;</span> 网上期刊 (serial online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[EB/OL]</span>| <span class="built_in">&amp;</span> 网上电子公告 (electronic bulletin board online)<span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\hiderowcolors</span> <span class="comment">%暂停使用奇偶行颜色设定，防止对后续表格的背景色产生影响，后续如果想要开启，可以使用\showrowcolors来重新激活奇偶行颜色设置</span></span><br><span class="line">	<span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/RhMes5uTINztD4w.png" alt="09-正常表格以及彩色表格.png"></p>
+<p>需要注意的地方</p>
+<ol>
+<li><code>\usepackage[table]{xcolor} 如果仅使用</code> \usepackage{xcolor}<code>，无法识别</code> \rowcolors<code>、</code>\hiderowcolors` 等命令</li>
+<li><code>\hiderowcolors</code> 写在 tabular 环境内，否则报 <code>Misplaced \noalign</code> 错</li>
+</ol>
+<p>关于第 2 点的报错，可参考：</p>
+<ul>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@<a href="https://xovee.blog.csdn.net/" title="Xovee">Xovee</a></li>
+</ul>
+<p><img data-src="https://s2.loli.net/2022/06/07/xmkwTfgHhidRZVB.png" alt="08-彩色表格报错.png"></p>
+<h3 id="主要参考资料"><a href="#主要参考资料" class="headerlink" title="主要参考资料"></a>主要参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> 雷太赫排版系统简介（第二版）：<a href="https://github.com/huangxg/lnotes">Github 仓库</a></li>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@Xovee</li>
+<li><input disabled="" type="checkbox"> 个人博客：<a href="https://liam.page/2016/07/22/using-the-tcolorbox-package-to-create-a-new-theorem-environment/">LaTeX 黑魔法（一）：tcolorbox 宏包简明教程</a> @始终</li>
+</ul>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Font</tag>
+        <tag>Color</tag>
+        <tag>Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex 排版连字现象</title>
+    <url>/posts/794c3cfd.html</url>
+    <content><![CDATA[<p>西文排版中经常会出现连字（Ligatures），常见的有 <code>ff</code> 、 <code>fi</code> 、 <code>fl</code> 、 <code>ffi</code> 、 <code>ffl</code>。</p>
+<blockquote>
+<p>在使用知云翻译英文文献的时候，有时候就是碰到这些连字导致无法正常识别连字所对应的英文 (⊙﹏⊙)，导致翻译出现问题</p>
+</blockquote>
+<span id="more"></span>
+
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	It's difficule to find <span class="keyword">\ldots</span> .</span><br><span class="line">	</span><br><span class="line">	It's dif{}f{}icult to f{}ind <span class="keyword">\ldots</span> .</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/08/6OkowS7Zhfc1gTn.png" alt="01-连字与非连字.png"></p>
+<p>几乎所有的 OpenType 字体都包含标准的连字（fl fi ffi）←比如你仔细看左边这几个词有连字效果，也有一些罕见的或历史的连字，例如 st、ct 和 tz。连字功能默认是关闭的，可以通过如下命令来激活这些连字</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法\setmainfont[Ligatures=Rare]{(font)}</span></span><br><span class="line"><span class="keyword">\setmainfont</span>[Ligatures=Rare]{Times New Roman} <span class="comment">%激活连字功能</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="案例1-激活英文连字"><a href="#案例1-激活英文连字" class="headerlink" title="案例1 激活英文连字"></a>案例 1 激活英文连字</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[Ligatures=Rare]{Times New Roman}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="comment">%语法\setmainfont[Ligatures=Rare]{(font)}</span></span><br><span class="line">	It's difficult to find <span class="keyword">\ldots</span> .</span><br><span class="line">	</span><br><span class="line">	It's dif{}f{}icult to f{}ind <span class="keyword">\ldots</span> .</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/08/x4Ejoaluqz6Y7Df.png" alt="04-正常非连字与激活连字.png"></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LaTeX2e 介绍（版本 5.01）</li>
+</ul>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Font</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTeX 图片双语标题指南</title>
+    <url>/posts/b3daf09.html</url>
+    <content><![CDATA[<p>本案例可能需要使用到的宏包</p>
+<ul>
+<li>graphicx</li>
+<li>bicaption</li>
+<li> 案例示范图片下载链接： <a href="https://sm.ms/image/tr6LsNaFwvZkjnh">Cat2</a> ； <a href="https://sm.ms/image/7vdxgA1Rz6OFqyr">QHU’s landscape</a></li>
+</ul>
+<span id="more"></span>
+
+<h3 id="方式-1：通过计数器"><a href="#方式-1：通过计数器" class="headerlink" title="方式 1：通过计数器"></a>方式 1：通过计数器</h3><p>难点：插入图片之后，Latex 是如何知道这张图片是图 2（而不是图 3，图 4）呢？原因在于计数器。通过 figure 环境添加图片之后，计数器自动加一。</p>
+<p>如果我们为图片添加了第二个标题的话，第一个标题（中文标题）为图 1，第二个标题（英文标题）就会变为图 2 了，而这两个标题明明是指同一张图片，此时就需要在添加第二个标题之前将计数器再减掉 1。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/Df6uG7R91FePr45.png" alt="01-图片双语标题示例.png"></p>
+<p>每句代码的意思已经写在注释中了，那么在插入第二章图片试一下是否有问题</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=3in]{fig/QHU}</span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{青海大学美景} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">    <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{QHU's grand landscape} </span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">    <span class="keyword">\label</span>{QHU-landscape}</span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/gNRizltmPkw6AoI.png" alt="02-图片双语标题之插入多图示例.png"></p>
+<p>图片的图例没有问题，可是为什么图 2 会在那段文字的上方去了呢？原因在于 Latex 排版时会自动为我们排版出尽可能少的页面空白，让页面看起来更美观。这或许也正是 figure 环境为浮动体的体现吧<br>那么可以在第二章图片的 figure 环境后添加 <code>htbp</code> 参数，让 Latex 按照我们的要求进行排版</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% ...</span></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="comment">% ...</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/SLcTC9gbF8Hld75.png" alt="02-图片双语标题之插入多图示例htbp.png"></p>
+<p>浮动体中有关插图位置的参数，详细规则见文末参考资料 1</p>
+<ul>
+<li>h: here 将图片插到此处</li>
+<li> t: top 将图片插到页顶</li>
+<li> b: bottom&nbsp;将图片插到页底</li>
+<li> p: page 插图独立一页</li>
+<li> H: 将图片固定在此处</li>
+</ul>
+<p>一般参数取 h 或 H 就好了，当然也可以写多个参数，如 htbp, 此时参数会按照顺序执行，首先尝试用 h，如果不行再依次使用其他参数 (其实效果和单独一个 h 差不多)。</p>
+<h3 id="方式-2：通过-bicaption-宏包"><a href="#方式-2：通过-bicaption-宏包" class="headerlink" title="方式 2：通过 bicaption 宏包"></a>方式 2：通过 bicaption 宏包</h3><p>直接使用 bicaption 宏包就比较简单啦，毕竟宏包的开发作者就是针对这个双语标题开发出来的嘛。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption} <span class="comment">%使用双语标题宏包</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/6tQdf7kMcKrEzyF.png" alt="04-使用bicaption宏包图片示例.png"></p>
+<p>很遗憾，并没有像我们预想的那样，第二个标题的图例还是中文。宏包作者没有直接为我们定义好第二个标题的图例是有原因的，他不针对中文用户，对于其他需求，比如第一个标题为母语，第二个标题为俄语呢，通过我们自己的需求来设置第二个标题的图例是不是更好一些。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\captionsetup</span>[figure][bi-second]{name=Fig}&nbsp;<span class="comment">%设置图的第二标题图例为Fig</span></span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/02/GCsvxadEjpo5i7Y.png" alt="05-使用bicaption宏包设置第二标题图例.png"></p>
+<p>参考资料：</p>
+<ol>
+<li>CSDN： <a href="https://blog.csdn.net/sdu_hao/article/details/103392927">LaTex 论文排版 | (19) LaTex 中的插图问题</a> @CoreJT</li>
+<li>Latex 官方中文文档： 一份（不太）简短的 LATEX2ε 介绍</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex 字体之字族篇</title>
+    <url>/posts/4baf1388.html</url>
+    <content><![CDATA[<h3 id="字族、字系与字形"><a href="#字族、字系与字形" class="headerlink" title="字族、字系与字形"></a>字族、字系与字形</h3><p>字体 (typeface) 的概念非常令人恼火，在电子化时代，基本上也都以字体 (font) 作为替代的称呼。字族、字系与字形这三者大概可以并称字体</p>
+<ul>
+<li>宋体、黑体、楷体，这属于字族</li>
+<li>加粗、加斜属于字系和字形</li>
+<li>五号、小四属于字号</li>
+</ul>
+<h3 id="fontspec-宏包"><a href="#fontspec-宏包" class="headerlink" title="fontspec 宏包"></a>fontspec 宏包</h3><p>fontspec 是一个基于 XeLaTeX 和 LuaLaTeX 的宏包（此处划重点），所以在编译时要注意不能使用 PdfLaTeX，否则会出现编译错误（建议使用 <strong>XeLaTex</strong>）。</p>
+<h3 id="使用-fontspec-宏包更改字体"><a href="#使用-fontspec-宏包更改字体" class="headerlink" title="使用 fontspec 宏包更改字体"></a>使用 fontspec 宏包更改字体</h3><p>xelatex 编译命令能够支持直接调用系统安装的 .ttf 或 .otf 格式字体，xelatex 命令下支持用户调用字体的宏包是 fontspec</p>
+<blockquote>
+<p>如何使用 xelatex 进行编译</p>
+<ul>
+<li>可以将 xelatex 作为编辑器的默认编译器，编译即自动使用 xelatex（推荐该方式）</li>
+<li>或者找到 xelatex 命令</li>
+</ul>
+</blockquote>
+<h4 id="使用xelatex进行编译"><a href="#使用xelatex进行编译" class="headerlink" title="使用xelatex进行编译"></a>使用 xelatex 进行编译</h4><p>方式 1：以 TexStudio 为例</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png" alt="09-TexStduio默认编译器设置为xelatex.png"></p>
+<p>方式 2：以 TexStudio 为例</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/QDPigSsTOUCvRtG.png" alt="08-使用xelatex进行编译.png"></p>
+<h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置衬线字体</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置无衬线字体</span></span><br><span class="line"><span class="keyword">\setmonofont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置等宽字体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 举个例子</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>font features：用来手动配置对应的粗体或斜体</li>
+<li> font name：字体名称</li>
+</ul>
+<blockquote>
+<p>什么是衬线字体、非衬线字体以及等宽字体？<br>参考资料：博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></p>
+</blockquote>
+<p>由于中文字体少有对应的粗体或斜体，⟨font features⟩ 里多用其他字体来配置，比如习惯上将宋体的 BoldFont 配置为黑体，而 ItalicFont 配置为楷体。</p>
+<p>（可先跳过此段）需要注意的是：fontspec 宏包会覆盖数学字体设置。需要调用一些数学字体宏包时，应当在调用 fontspec 宏包时指定 no-math 选项。<br>（可先跳过此段）fontspec 宏包可能被其它宏包或文档类如 xeCJK、ctex 文档类）自动调用时，则在文档开头的 <code>\documentclass</code> 命令里指定 no-math 选项。</p>
+<h4 id="需求1：全文更换字体"><a href="#需求1：全文更换字体" class="headerlink" title="需求1：全文更换字体"></a>需求 1：全文更换字体</h4><p>在前言部分对字体进行设置</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\setmainfont{FONT_NAME}</span></span><br><span class="line"><span class="comment">% 比如</span></span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman} <span class="comment">%设置全文英文衬线字体为Times New Roman，注意Latex区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="需求2：中文为宋体，英文为Times-New-Roman"><a href="#需求2：中文为宋体，英文为Times-New-Roman" class="headerlink" title="需求2：中文为宋体，英文为Times New Roman"></a>需求 2：中文为宋体，英文为 Times New Roman</h4><p>在 ctex 中文文档类下，默认中文字体为宋体（衬线字体），只要将英文字体的衬线字体设置为 Times New Roman 即可满足需求</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">%设置</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/ZOpf8qynwchmGUb.png" alt="01-中文设置为宋体，英文设置为Times，英文加粗斜体也为Times.png"></p>
+<p>对于非正文字体是不是也设置成功了呢？可以测试一下标题字体与图片标题字体</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman加粗字</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman斜体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\section</span>{This is a section}</span><br><span class="line">	<span class="keyword">\subsection</span>{This is a subsection}</span><br><span class="line">	<span class="keyword">\subsubsection</span>{This is a subsubsection}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>{figure}[hbp]</span><br><span class="line">		<span class="keyword">\caption</span>{This is a caption}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png" alt="02-中宋英Times.png"></p>
+<p>可以看到 ctexart 对应的 section 标题都是加粗的，那么对于中文呢，还会是加粗的宋体吗？我们刚才只设定了英文衬线字体，普通文字、加粗、斜体文字均匀 Times New Roman 字体，</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>首先需要明确一点：<strong>汉字没有斜体</strong>．平常我们看到的加斜汉字，通常是几何变换得到的结果，非常的粗糙，并不严格满足排版要求；而真正的字形上需要精细的设计的。同时，汉字字体里面也很少加粗体的设计。<br>西文一般设有加斜，但是这与 “斜体” 并不是同一回事．加斜是指某种字族的 Italy 字系；而斜体，是指 Slant 字族．在行文中表强调时使用的是前者；在 Microsoft Word 等软件中看到的倾斜的字母 I，也代表前者．</p>
+<p>加粗和斜体通常不是加粗的宋体和宋体的斜体，而是由其他字体替代，对应的加粗体为黑体字体，斜体为楷体字体。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\section</span>{这是一个一级标题}</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{你好，欢迎来到Latex的世界} <span class="comment">%粗体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{你好，欢迎来到Latex的世界} <span class="comment">%斜体</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png" alt="03-中文字体加粗加斜的一些设置.png"></p>
+<h4 id="需求3：自定义中文字体"><a href="#需求3：自定义中文字体" class="headerlink" title="需求3：自定义中文字体"></a>需求 3：自定义中文字体</h4><p>中文方面， ctex 宏包直接定义了新的中文文档类 ctexart, ctexrep 与 ctexbook，以及 ctexbeamer 幻灯片文档类<br>ctex 宏包已经为我们提供了以下的字体命令<br>参考资料：中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a>（可以该网站可下载到最新版本的 CTeX 宏基手册）</p>
+<table>
+<thead>
+<tr>
+<th align="center">字体</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">宋体</td>
+<td align="center"> songti</td>
+</tr>
+<tr>
+<td align="center"> 黑体</td>
+<td align="center"> heiti</td>
+</tr>
+<tr>
+<td align="center"> 仿宋</td>
+<td align="center"> fangsong</td>
+</tr>
+<tr>
+<td align="center"> 楷书</td>
+<td align="center"> kaishu</td>
+</tr>
+</tbody></table>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
+<p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
+<p>如何查询中文字体对应的英文名称参考资料</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<ol>
+<li>打开 CMD</li>
+<li> 将以上命令复制到 CMD，回车</li>
+<li>去 C 盘根目录查看 <code>list.txt</code> 文件</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif" alt="（Latex）如何查看本地中文字体的英文名称.gif"></p>
+<p>参考资料：</p>
+<ul>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
+</ul>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最小案例如下：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png" alt="06-我是自定义字体华文行楷.png"></p>
+<p>注意：只需要给某些文字设定字体时，请将命令和需要修改字体的文字用大括号包起来</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line">{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 以下命令会修改该命令之后的所有的文字字体，修改局部字体时不推荐这样使用，推荐使用花括号进行分组，如以上命令</span></span><br><span class="line"><span class="keyword">\huawenxingkai</span>{} 我是自定义的字体，我使用的华文行楷</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如如下案例，会导致第二行文字也变为黑体</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\heiti</span>{} 你好，欢迎来到Latex的世界</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png" alt="07-设置全局字体的方式.png"></p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> 简单粗暴&nbsp;Latex：&nbsp;<a href="https://wklchris.github.io/">Kanglong Wu</a>&nbsp;&amp;&nbsp;<a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴&nbsp;LaTeX》开源仓库</a></li>
+<li><input disabled="" type="checkbox"> CSDN： <a href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
+<li><input disabled="" type="checkbox"> 博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
+<li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Font</tag>
       </tags>
   </entry>
   <entry>
@@ -614,81 +814,49 @@
       </tags>
   </entry>
   <entry>
-    <title>LaTeX 图片双语标题指南</title>
-    <url>/posts/b3daf09.html</url>
-    <content><![CDATA[<p>本案例可能需要使用到的宏包</p>
+    <title>Latex 浮动体位置设定</title>
+    <url>/posts/ad84a2aa.html</url>
+    <content><![CDATA[<p>本文参考资料如下：</p>
 <ul>
-<li>graphicx</li>
-<li>bicaption</li>
-<li> 案例示范图片下载链接： <a href="https://sm.ms/image/tr6LsNaFwvZkjnh">Cat2</a> ； <a href="https://sm.ms/image/7vdxgA1Rz6OFqyr">QHU’s landscape</a></li>
+<li><input disabled="" type="checkbox"> Bilibili： <a href="https://www.bilibili.com/video/BV1r4411o7KJ?spm_id_from=333.337.search-card.all.click">林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区</a></li>
+<li><input disabled="" type="checkbox"> Latex 工作室： <a href="https://www.latexstudio.net/archives/12049">漫谈 LaTeX 排版常见概念误区</a></li>
+<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LATEX 2ε 介绍</li>
 </ul>
 <span id="more"></span>
 
-<h3 id="方式-1：通过计数器"><a href="#方式-1：通过计数器" class="headerlink" title="方式 1：通过计数器"></a>方式 1：通过计数器</h3><p>难点：插入图片之后，Latex 是如何知道这张图片是图 2（而不是图 3，图 4）呢？原因在于计数器。通过 figure 环境添加图片之后，计数器自动加一。</p>
-<p>如果我们为图片添加了第二个标题的话，第一个标题（中文标题）为图 1，第二个标题（英文标题）就会变为图 2 了，而这两个标题明明是指同一张图片，此时就需要在添加第二个标题之前将计数器再减掉 1。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/Df6uG7R91FePr45.png" alt="01-图片双语标题示例.png"></p>
-<p>每句代码的意思已经写在注释中了，那么在插入第二章图片试一下是否有问题</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制标题与图片之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{这是一只可爱的猫} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">        <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">        <span class="keyword">\vspace</span>{-10pt} <span class="comment">%控制第二个标题与第一个标题之间的垂直距离</span></span><br><span class="line">        <span class="keyword">\caption</span>{This is a cute cat} </span><br><span class="line">        <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">        <span class="keyword">\label</span>{Bigcat}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=3in]{fig/QHU}</span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{青海大学美景} <span class="comment">%使用ctexart文档类，默认图例为中文“图”</span></span><br><span class="line">    <span class="keyword">\addtocounter</span>{figure}{-1} <span class="comment">%使用caption命令后，figure的计数器默认加一，此时再添加英文的标题，计数器就会变成2了，所以计数器减1，中英文标题计数器仍保持一致</span></span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{Fig} <span class="comment">%将图例改为英文“Fig”</span></span><br><span class="line">    <span class="keyword">\vspace</span>{-10pt} </span><br><span class="line">    <span class="keyword">\caption</span>{QHU's grand landscape} </span><br><span class="line">    <span class="keyword">\renewcommand</span>{<span class="keyword">\figurename</span>}{图} <span class="comment">%将图例的再次改为中文，修改为默认值，以防影响下方图片的图例</span></span><br><span class="line">    <span class="keyword">\label</span>{QHU-landscape}</span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/gNRizltmPkw6AoI.png" alt="02-图片双语标题之插入多图示例.png"></p>
-<p>图片的图例没有问题，可是为什么图 2 会在那段文字的上方去了呢？原因在于 Latex 排版时会自动为我们排版出尽可能少的页面空白，让页面看起来更美观。这或许也正是 figure 环境为浮动体的体现吧<br>那么可以在第二章图片的 figure 环境后添加 <code>htbp</code> 参数，让 Latex 按照我们的要求进行排版</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% ...</span></span><br><span class="line">以上是本示例的第一张图片：<span class="keyword">\ref</span>{Bigcat}，接下来插入第二章图片：</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{figure}[htbp]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="comment">% ...</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/SLcTC9gbF8Hld75.png" alt="02-图片双语标题之插入多图示例htbp.png"></p>
-<p>浮动体中有关插图位置的参数，详细规则见文末参考资料 1</p>
-<ul>
-<li>h: here 将图片插到此处</li>
-<li> t: top 将图片插到页顶</li>
-<li> b: bottom&nbsp;将图片插到页底</li>
-<li> p: page 插图独立一页</li>
-<li> H: 将图片固定在此处</li>
-</ul>
-<p>一般参数取 h 或 H 就好了，当然也可以写多个参数，如 htbp, 此时参数会按照顺序执行，首先尝试用 h，如果不行再依次使用其他参数 (其实效果和单独一个 h 差不多)。</p>
-<h3 id="方式-2：通过-bicaption-宏包"><a href="#方式-2：通过-bicaption-宏包" class="headerlink" title="方式 2：通过 bicaption 宏包"></a>方式 2：通过 bicaption 宏包</h3><p>直接使用 bicaption 宏包就比较简单啦，毕竟宏包的开发作者就是针对这个双语标题开发出来的嘛。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption} <span class="comment">%使用双语标题宏包</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/6tQdf7kMcKrEzyF.png" alt="04-使用bicaption宏包图片示例.png"></p>
-<p>很遗憾，并没有像我们预想的那样，第二个标题的图例还是中文。宏包作者没有直接为我们定义好第二个标题的图例是有原因的，他不针对中文用户，对于其他需求，比如第一个标题为母语，第二个标题为俄语呢，通过我们自己的需求来设置第二个标题的图例是不是更好一些。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{bicaption}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\captionsetup</span>[figure][bi-second]{name=Fig}&nbsp;<span class="comment">%设置图的第二标题图例为Fig</span></span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=1.5in]{fig/cat2}</span><br><span class="line">		<span class="keyword">\bicaption</span>{这是一种可爱的猫}{This is a cute cat}</span><br><span class="line">		<span class="keyword">\label</span>{Bigcat}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/02/GCsvxadEjpo5i7Y.png" alt="05-使用bicaption宏包设置第二标题图例.png"></p>
-<p>参考资料：</p>
-<ol>
-<li>CSDN： <a href="https://blog.csdn.net/sdu_hao/article/details/103392927">LaTex 论文排版 | (19) LaTex 中的插图问题</a> @CoreJT</li>
-<li>Latex 官方中文文档： 一份（不太）简短的 LATEX2ε 介绍</li>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>figure 环境和 table 环境是最常见的浮动体环境，将这些浮动体插入文档中时，难免会出现 Latex 排版的图表位置和我们想要插入位置不同的情况，这篇文章将会对浮动体的一些概念和误区做一些较为详细的说明，希望对我还有阅读的你们有用 o (^▽^) o。自己接触 Latex 也还只有一个月左右，文中若有错误之处还请指正。</p>
+<h3 id="为什么会有浮动体"><a href="#为什么会有浮动体" class="headerlink" title="为什么会有浮动体"></a>为什么会有浮动体</h3><p>内容丰富的文章或者书籍往往包含许多图片和表格等内容。这些内容的尺寸往往太大，导致分页困难。Latex 为此引入了浮动体的机制，令大块的内容可以脱离上下文，放置在合适的位置。<br>LATEX 预定义了两类浮动体环境 figure 和 table。习惯上 figure 里放图片，table 里放表格，但并没有严格限制，可以在任何一个浮动体里放置文字、公式、表格、图片等等任意内容。<br>实际上，插入图片也可以不放入 figure 环境当中，直接通过 includegraphics 命令插入图片即可（比如有的简历模板中插入照片时不推荐使用 figure 浮动体环境）</p>
+<h3 id="为什么叫做浮动体"><a href="#为什么叫做浮动体" class="headerlink" title="为什么叫做浮动体"></a>为什么叫做浮动体</h3><ol>
+<li> 排版出来供阅读的文本是主体，而图、表为辅；</li>
+<li> 插在页面的文本段落之间，打断或妨碍阅读节奏（ reading flow）；</li>
+<li> 那么浮动体的意义在于：图、表都尽量闪一边去，不要打断我的阅读节奏，闪到页面顶部、底部，甚至是页面之后都行，就是插在段落之间影响我阅读</li>
 </ol>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex 排版连字现象</title>
-    <url>/posts/794c3cfd.html</url>
-    <content><![CDATA[<p>西文排版中经常会出现连字（Ligatures），常见的有 <code>ff</code> 、 <code>fi</code> 、 <code>fl</code> 、 <code>ffi</code> 、 <code>ffl</code>。</p>
+<p>实际上，这和我们使用 Word 插入图片在概念上有比较大的出入，我们习惯于在提及到图表内容的段落的下一段插入相应的图表，但这排版出来的效果确实影响到整体的阅读体验了，页面看起来也不美观。</p>
 <blockquote>
-<p>在使用知云翻译英文文献的时候，有时候就是碰到这些连字导致无法正常识别连字所对应的英文 (⊙﹏⊙)，导致翻译出现问题</p>
+<p>Q：有人会说：我插入的图和表不应该就在我交叉引用的下一段出现吗，图和说明不在同一页，那读者怎么读得明白啊？<br>A：那么交叉引用 \label 和 \ref 的意义何在呢</p>
 </blockquote>
-<span id="more"></span>
+<p><img data-src="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png" alt="07-Word排版插入的思路.png"></p>
+<h3 id="浮动体位置参数"><a href="#浮动体位置参数" class="headerlink" title="浮动体位置参数"></a>浮动体位置参数</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table}[位置参数]</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	It's difficule to find <span class="keyword">\ldots</span> .</span><br><span class="line">	</span><br><span class="line">	It's dif{}f{}icult to f{}ind <span class="keyword">\ldots</span> .</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/08/6OkowS7Zhfc1gTn.png" alt="01-连字与非连字.png"></p>
-<p>几乎所有的 OpenType 字体都包含标准的连字（fl fi ffi）←比如你仔细看左边这几个词有连字效果，也有一些罕见的或历史的连字，例如 st、ct 和 tz。连字功能默认是关闭的，可以通过如下命令来激活这些连字</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法\setmainfont[Ligatures=Rare]{(font)}</span></span><br><span class="line"><span class="keyword">\setmainfont</span>[Ligatures=Rare]{Times New Roman} <span class="comment">%激活连字功能</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="案例1-激活英文连字"><a href="#案例1-激活英文连字" class="headerlink" title="案例1 激活英文连字"></a>案例 1 激活英文连字</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[Ligatures=Rare]{Times New Roman}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="comment">%语法\setmainfont[Ligatures=Rare]{(font)}</span></span><br><span class="line">	It's difficult to find <span class="keyword">\ldots</span> .</span><br><span class="line">	</span><br><span class="line">	It's dif{}f{}icult to f{}ind <span class="keyword">\ldots</span> .</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/08/x4Ejoaluqz6Y7Df.png" alt="04-正常非连字与激活连字.png"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LaTeX2e 介绍（版本 5.01）</li>
+<p>位置参数提供了一些符号用来表示浮动体允许排版的位置，如 hbp 允许浮动体排版在当前位置、底部或者单独成页。<br>h：here, 就摆这里<br>t：top, 页面顶端<br>b：bottom, 页面低端<br>p：float page（也就是只有浮动体的页面，通常由于浮动体太长了，页面插入了浮动体之后，只能塞下几行文字了，此时 latex 不会再插入那几行文字，而是单独的排版这个浮动体，即浮动体单独成页）<br>！：求你了，听听我的请求吧…(在决定位置时忽视限制)</p>
+<p>注意：</p>
+<ul>
+<li>排版位置的选取与参数里符号的顺序无关，LATEX 总是以 h-t-b-p 的优先级顺序决定浮动体位置。也就是说 <code>[!htp]</code> 和 <code>[ph!t]</code> 没有区别</li>
+<li>但是如果只给了某一个参数，比如 <code>[h]</code>，那么肯定按 h 这个参数来排版</li>
+<li>图、表缺省的位置参数是 <code>[t]</code></li>
 </ul>
+<p>浮动体的位置选取受到先后顺序的限制（注意这里所说的先后顺序与上方所说顺序没有关系）。如果某个浮动体由于参数限制、空间限制等原因在当前页无法放置，就要推迟到之后处理，并使得之后的同类浮动体一并推迟。<br>比如说我论文中的图片太多了，Latex 排版时，将许多图片一并推迟到了非常靠后的页面，此时使用 <code>\clearpage</code> 命令，会在另起一页之前，先将所有推迟处理的浮动体排版成页，此时 htbp 等位置限制被完全忽略（clearpage 可以将之前推迟的所有浮动体一口气全排出来）。</p>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><p>为了演示方便，本案例使用了 blindtext 宏包以用来生成假文</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[a4paper,twocolumn]{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{blindtext} <span class="comment">%生成假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\section</span>{Table position}</span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\begin</span>{table}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">        <span class="keyword">\end</span>{tabular}</span><br><span class="line">    <span class="keyword">\end</span>{table}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果不给表格添加位置参数，其默认的位置参数是 t</p>
+<p><img data-src="https://s2.loli.net/2022/06/06/ZSfNyHuGLwg9FQD.png" alt="01-不给位置参数则默认为顶部.png"></p>
+<p>对于双栏排版，如果想要图、表跨栏显示，如何处理？<br>双栏排版环境下，LATEX 提供了 <code>table*</code> 和 <code>figure*</code> 环境用来排版跨栏的浮动体。它们的用法与 table 和 figure 一样，不同之处为双栏的 ⟨placement⟩ 参数只能用 tp 两个位置。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table*}[t]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table*}</span><br></pre></td></tr></tbody></table></figure>
+<p>注意是 table 带星，不是 tabular 带星</p>
 <h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
       <tags>
         <tag>Latex</tag>
-        <tag>Font</tag>
       </tags>
   </entry>
   <entry>
@@ -765,6 +933,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Word 操作指南之符号篇</title>
+    <url>/posts/4fcbca1a.html</url>
+    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="输入乘号alt0215"></p>
+<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="插入带圈的数字编号"></p>
+<h3 id="插入商标注册符号"><a href="#插入商标注册符号" class="headerlink" title="插入商标注册符号"></a>插入商标注册符号</h3><p>插入 ⇒ 符号 ⇒ 其他符号 ⇒ 特殊字符</p>
+<p><img data-src="https://s2.loli.net/2022/06/03/w8D7jSdLQYBTxmk.gif" alt="（Word）插入注册商标特殊符号.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+  </entry>
+  <entry>
     <title>Word 操作指南之图像篇</title>
     <url>/posts/4a6b571e.html</url>
     <content><![CDATA[<h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
@@ -776,126 +953,13 @@
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
-    <title>Latex 字体之字族篇</title>
-    <url>/posts/4baf1388.html</url>
-    <content><![CDATA[<h3 id="字族、字系与字形"><a href="#字族、字系与字形" class="headerlink" title="字族、字系与字形"></a>字族、字系与字形</h3><p>字体 (typeface) 的概念非常令人恼火，在电子化时代，基本上也都以字体 (font) 作为替代的称呼。字族、字系与字形这三者大概可以并称字体</p>
-<ul>
-<li>宋体、黑体、楷体，这属于字族</li>
-<li>加粗、加斜属于字系和字形</li>
-<li>五号、小四属于字号</li>
-</ul>
-<h3 id="fontspec-宏包"><a href="#fontspec-宏包" class="headerlink" title="fontspec 宏包"></a>fontspec 宏包</h3><p>fontspec 是一个基于 XeLaTeX 和 LuaLaTeX 的宏包（此处划重点），所以在编译时要注意不能使用 PdfLaTeX，否则会出现编译错误（建议使用 <strong>XeLaTex</strong>）。</p>
-<h3 id="使用-fontspec-宏包更改字体"><a href="#使用-fontspec-宏包更改字体" class="headerlink" title="使用 fontspec 宏包更改字体"></a>使用 fontspec 宏包更改字体</h3><p>xelatex 编译命令能够支持直接调用系统安装的 .ttf 或 .otf 格式字体，xelatex 命令下支持用户调用字体的宏包是 fontspec</p>
-<blockquote>
-<p>如何使用 xelatex 进行编译</p>
-<ul>
-<li>可以将 xelatex 作为编辑器的默认编译器，编译即自动使用 xelatex（推荐该方式）</li>
-<li>或者找到 xelatex 命令</li>
-</ul>
-</blockquote>
-<h4 id="使用xelatex进行编译"><a href="#使用xelatex进行编译" class="headerlink" title="使用xelatex进行编译"></a>使用 xelatex 进行编译</h4><p>方式 1：以 TexStudio 为例</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png" alt="09-TexStduio默认编译器设置为xelatex.png"></p>
-<p>方式 2：以 TexStudio 为例</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/QDPigSsTOUCvRtG.png" alt="08-使用xelatex进行编译.png"></p>
-<h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置衬线字体</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置无衬线字体</span></span><br><span class="line"><span class="keyword">\setmonofont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置等宽字体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 举个例子</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>font features：用来手动配置对应的粗体或斜体</li>
-<li> font name：字体名称</li>
-</ul>
-<blockquote>
-<p>什么是衬线字体、非衬线字体以及等宽字体？<br>参考资料：博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></p>
-</blockquote>
-<p>由于中文字体少有对应的粗体或斜体，⟨font features⟩ 里多用其他字体来配置，比如习惯上将宋体的 BoldFont 配置为黑体，而 ItalicFont 配置为楷体。</p>
-<p>（可先跳过此段）需要注意的是：fontspec 宏包会覆盖数学字体设置。需要调用一些数学字体宏包时，应当在调用 fontspec 宏包时指定 no-math 选项。<br>（可先跳过此段）fontspec 宏包可能被其它宏包或文档类如 xeCJK、ctex 文档类）自动调用时，则在文档开头的 <code>\documentclass</code> 命令里指定 no-math 选项。</p>
-<h4 id="需求1：全文更换字体"><a href="#需求1：全文更换字体" class="headerlink" title="需求1：全文更换字体"></a>需求 1：全文更换字体</h4><p>在前言部分对字体进行设置</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\setmainfont{FONT_NAME}</span></span><br><span class="line"><span class="comment">% 比如</span></span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman} <span class="comment">%设置全文英文衬线字体为Times New Roman，注意Latex区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
-
-
-<h4 id="需求2：中文为宋体，英文为Times-New-Roman"><a href="#需求2：中文为宋体，英文为Times-New-Roman" class="headerlink" title="需求2：中文为宋体，英文为Times New Roman"></a>需求 2：中文为宋体，英文为 Times New Roman</h4><p>在 ctex 中文文档类下，默认中文字体为宋体（衬线字体），只要将英文字体的衬线字体设置为 Times New Roman 即可满足需求</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">%设置</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/ZOpf8qynwchmGUb.png" alt="01-中文设置为宋体，英文设置为Times，英文加粗斜体也为Times.png"></p>
-<p>对于非正文字体是不是也设置成功了呢？可以测试一下标题字体与图片标题字体</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman加粗字</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman斜体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\section</span>{This is a section}</span><br><span class="line">	<span class="keyword">\subsection</span>{This is a subsection}</span><br><span class="line">	<span class="keyword">\subsubsection</span>{This is a subsubsection}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>{figure}[hbp]</span><br><span class="line">		<span class="keyword">\caption</span>{This is a caption}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png" alt="02-中宋英Times.png"></p>
-<p>可以看到 ctexart 对应的 section 标题都是加粗的，那么对于中文呢，还会是加粗的宋体吗？我们刚才只设定了英文衬线字体，普通文字、加粗、斜体文字均匀 Times New Roman 字体，</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>首先需要明确一点：<strong>汉字没有斜体</strong>．平常我们看到的加斜汉字，通常是几何变换得到的结果，非常的粗糙，并不严格满足排版要求；而真正的字形上需要精细的设计的。同时，汉字字体里面也很少加粗体的设计。<br>西文一般设有加斜，但是这与 “斜体” 并不是同一回事．加斜是指某种字族的 Italy 字系；而斜体，是指 Slant 字族．在行文中表强调时使用的是前者；在 Microsoft Word 等软件中看到的倾斜的字母 I，也代表前者．</p>
-<p>加粗和斜体通常不是加粗的宋体和宋体的斜体，而是由其他字体替代，对应的加粗体为黑体字体，斜体为楷体字体。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\section</span>{这是一个一级标题}</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{你好，欢迎来到Latex的世界} <span class="comment">%粗体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{你好，欢迎来到Latex的世界} <span class="comment">%斜体</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png" alt="03-中文字体加粗加斜的一些设置.png"></p>
-<h4 id="需求3：自定义中文字体"><a href="#需求3：自定义中文字体" class="headerlink" title="需求3：自定义中文字体"></a>需求 3：自定义中文字体</h4><p>中文方面， ctex 宏包直接定义了新的中文文档类 ctexart, ctexrep 与 ctexbook，以及 ctexbeamer 幻灯片文档类<br>ctex 宏包已经为我们提供了以下的字体命令<br>参考资料：中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a>（可以该网站可下载到最新版本的 CTeX 宏基手册）</p>
-<table>
-<thead>
-<tr>
-<th align="center">字体</th>
-<th align="center">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">宋体</td>
-<td align="center"> songti</td>
-</tr>
-<tr>
-<td align="center"> 黑体</td>
-<td align="center"> heiti</td>
-</tr>
-<tr>
-<td align="center"> 仿宋</td>
-<td align="center"> fangsong</td>
-</tr>
-<tr>
-<td align="center"> 楷书</td>
-<td align="center"> kaishu</td>
-</tr>
-</tbody></table>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
-<p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
-<p>如何查询中文字体对应的英文名称参考资料</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
-
-<ol>
-<li>打开 CMD</li>
-<li> 将以上命令复制到 CMD，回车</li>
-<li>去 C 盘根目录查看 <code>list.txt</code> 文件</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif" alt="（Latex）如何查看本地中文字体的英文名称.gif"></p>
-<p>参考资料：</p>
-<ul>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
-<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
-</ul>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最小案例如下：</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png" alt="06-我是自定义字体华文行楷.png"></p>
-<p>注意：只需要给某些文字设定字体时，请将命令和需要修改字体的文字用大括号包起来</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line">{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 以下命令会修改该命令之后的所有的文字字体，修改局部字体时不推荐这样使用，推荐使用花括号进行分组，如以上命令</span></span><br><span class="line"><span class="keyword">\huawenxingkai</span>{} 我是自定义的字体，我使用的华文行楷</span><br></pre></td></tr></tbody></table></figure>
-
-<p>比如如下案例，会导致第二行文字也变为黑体</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\heiti</span>{} 你好，欢迎来到Latex的世界</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png" alt="07-设置全局字体的方式.png"></p>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><input disabled="" type="checkbox"> 简单粗暴&nbsp;Latex：&nbsp;<a href="https://wklchris.github.io/">Kanglong Wu</a>&nbsp;&amp;&nbsp;<a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴&nbsp;LaTeX》开源仓库</a></li>
-<li><input disabled="" type="checkbox"> CSDN： <a href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
-<li><input disabled="" type="checkbox"> 博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
-<li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
-<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Font</tag>
-      </tags>
+    <title>Word 操作指南之表格篇</title>
+    <url>/posts/494c263d.html</url>
+    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
+<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
+<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
+<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
     <title>Word 操作指南之配置篇</title>
@@ -907,15 +971,6 @@
       <tags>
         <tag>Word</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Word 操作指南之符号篇</title>
-    <url>/posts/4fcbca1a.html</url>
-    <content><![CDATA[<h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="输入乘号alt0215"></p>
-<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="插入带圈的数字编号"></p>
-<h3 id="插入商标注册符号"><a href="#插入商标注册符号" class="headerlink" title="插入商标注册符号"></a>插入商标注册符号</h3><p>插入 ⇒ 符号 ⇒ 其他符号 ⇒ 特殊字符</p>
-<p><img data-src="https://s2.loli.net/2022/06/03/w8D7jSdLQYBTxmk.gif" alt="（Word）插入注册商标特殊符号.gif"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -934,15 +989,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之表格篇</title>
-    <url>/posts/494c263d.html</url>
-    <content><![CDATA[<h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
-<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
-<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
-<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
   </entry>
   <entry>
     <title>Homepage 实现只预览摘要而不显示全文功能</title>
@@ -965,52 +1011,6 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex 浮动体位置设定</title>
-    <url>/posts/ad84a2aa.html</url>
-    <content><![CDATA[<p>本文参考资料如下：</p>
-<ul>
-<li><input disabled="" type="checkbox"> Bilibili： <a href="https://www.bilibili.com/video/BV1r4411o7KJ?spm_id_from=333.337.search-card.all.click">林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区</a></li>
-<li><input disabled="" type="checkbox"> Latex 工作室： <a href="https://www.latexstudio.net/archives/12049">漫谈 LaTeX 排版常见概念误区</a></li>
-<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LATEX 2ε 介绍</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>figure 环境和 table 环境是最常见的浮动体环境，将这些浮动体插入文档中时，难免会出现 Latex 排版的图表位置和我们想要插入位置不同的情况，这篇文章将会对浮动体的一些概念和误区做一些较为详细的说明，希望对我还有阅读的你们有用 o (^▽^) o。自己接触 Latex 也还只有一个月左右，文中若有错误之处还请指正。</p>
-<h3 id="为什么会有浮动体"><a href="#为什么会有浮动体" class="headerlink" title="为什么会有浮动体"></a>为什么会有浮动体</h3><p>内容丰富的文章或者书籍往往包含许多图片和表格等内容。这些内容的尺寸往往太大，导致分页困难。Latex 为此引入了浮动体的机制，令大块的内容可以脱离上下文，放置在合适的位置。<br>LATEX 预定义了两类浮动体环境 figure 和 table。习惯上 figure 里放图片，table 里放表格，但并没有严格限制，可以在任何一个浮动体里放置文字、公式、表格、图片等等任意内容。<br>实际上，插入图片也可以不放入 figure 环境当中，直接通过 includegraphics 命令插入图片即可（比如有的简历模板中插入照片时不推荐使用 figure 浮动体环境）</p>
-<h3 id="为什么叫做浮动体"><a href="#为什么叫做浮动体" class="headerlink" title="为什么叫做浮动体"></a>为什么叫做浮动体</h3><ol>
-<li> 排版出来供阅读的文本是主体，而图、表为辅；</li>
-<li> 插在页面的文本段落之间，打断或妨碍阅读节奏（ reading flow）；</li>
-<li> 那么浮动体的意义在于：图、表都尽量闪一边去，不要打断我的阅读节奏，闪到页面顶部、底部，甚至是页面之后都行，就是插在段落之间影响我阅读</li>
-</ol>
-<p>实际上，这和我们使用 Word 插入图片在概念上有比较大的出入，我们习惯于在提及到图表内容的段落的下一段插入相应的图表，但这排版出来的效果确实影响到整体的阅读体验了，页面看起来也不美观。</p>
-<blockquote>
-<p>Q：有人会说：我插入的图和表不应该就在我交叉引用的下一段出现吗，图和说明不在同一页，那读者怎么读得明白啊？<br>A：那么交叉引用 \label 和 \ref 的意义何在呢</p>
-</blockquote>
-<p><img data-src="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png" alt="07-Word排版插入的思路.png"></p>
-<h3 id="浮动体位置参数"><a href="#浮动体位置参数" class="headerlink" title="浮动体位置参数"></a>浮动体位置参数</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table}[位置参数]</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>位置参数提供了一些符号用来表示浮动体允许排版的位置，如 hbp 允许浮动体排版在当前位置、底部或者单独成页。<br>h：here, 就摆这里<br>t：top, 页面顶端<br>b：bottom, 页面低端<br>p：float page（也就是只有浮动体的页面，通常由于浮动体太长了，页面插入了浮动体之后，只能塞下几行文字了，此时 latex 不会再插入那几行文字，而是单独的排版这个浮动体，即浮动体单独成页）<br>！：求你了，听听我的请求吧…(在决定位置时忽视限制)</p>
-<p>注意：</p>
-<ul>
-<li>排版位置的选取与参数里符号的顺序无关，LATEX 总是以 h-t-b-p 的优先级顺序决定浮动体位置。也就是说 <code>[!htp]</code> 和 <code>[ph!t]</code> 没有区别</li>
-<li>但是如果只给了某一个参数，比如 <code>[h]</code>，那么肯定按 h 这个参数来排版</li>
-<li>图、表缺省的位置参数是 <code>[t]</code></li>
-</ul>
-<p>浮动体的位置选取受到先后顺序的限制（注意这里所说的先后顺序与上方所说顺序没有关系）。如果某个浮动体由于参数限制、空间限制等原因在当前页无法放置，就要推迟到之后处理，并使得之后的同类浮动体一并推迟。<br>比如说我论文中的图片太多了，Latex 排版时，将许多图片一并推迟到了非常靠后的页面，此时使用 <code>\clearpage</code> 命令，会在另起一页之前，先将所有推迟处理的浮动体排版成页，此时 htbp 等位置限制被完全忽略（clearpage 可以将之前推迟的所有浮动体一口气全排出来）。</p>
-<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><p>为了演示方便，本案例使用了 blindtext 宏包以用来生成假文</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[a4paper,twocolumn]{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{blindtext} <span class="comment">%生成假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\section</span>{Table position}</span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\begin</span>{table}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">        <span class="keyword">\end</span>{tabular}</span><br><span class="line">    <span class="keyword">\end</span>{table}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>如果不给表格添加位置参数，其默认的位置参数是 t</p>
-<p><img data-src="https://s2.loli.net/2022/06/06/ZSfNyHuGLwg9FQD.png" alt="01-不给位置参数则默认为顶部.png"></p>
-<p>对于双栏排版，如果想要图、表跨栏显示，如何处理？<br>双栏排版环境下，LATEX 提供了 <code>table*</code> 和 <code>figure*</code> 环境用来排版跨栏的浮动体。它们的用法与 table 和 figure 一样，不同之处为双栏的 ⟨placement⟩ 参数只能用 tp 两个位置。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table*}[t]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table*}</span><br></pre></td></tr></tbody></table></figure>
-<p>注意是 table 带星，不是 tabular 带星</p>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
-      <tags>
-        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -1076,27 +1076,6 @@
 <h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
   </entry>
   <entry>
-    <title>为什么放弃使用 remnote</title>
-    <url>/posts/b0b73b25.html</url>
-    <content><![CDATA[<ol>
-<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
-<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
-<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
-<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
-<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
-<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
-<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
-<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
-<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
-<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
-<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
-<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
-<li>待续…</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统超级大BUG之无法彻底删除文件"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>为什么我要写博客</title>
     <url>/posts/b76b2678.html</url>
     <content><![CDATA[<p>在回答这个问题之前，先思考一下为什么我之前没有写博客：</p>
@@ -1129,6 +1108,83 @@
 <h2 id="如何去写好博客"><a href="#如何去写好博客" class="headerlink" title="如何去写好博客"></a>如何去写好博客</h2><p>我们需要有假想观众，写出来的东西是一种媒介，是写给人看的，起码自己会去读吧。所以，要带着让别人读懂的目标去写，然后就是琢磨怎样写能让别人更容易读懂。<br>假设自己是某个领域的小白，去网上搜索这个领域的相关资料，搜到了一些技术博客，而某些博客的文章，没有前因，没有后果，对于小白来说是可以想象是一种怎么样的体验呢。“这写的啥东西呀，看起来和自己想要的内容相关，又好像不相关，然后随便划拉几下，关掉了博客”。别说小白，可能过段时间连自己都不知道为什么要写这个东西了。因此，在写博客的过程中，想象我们的读者是个初学者，不要一开始在认为自己懂了的前提下直接下结论。最好可以说说自己在处理过程中碰到的问题，写下这篇博客缘由以及一些注意事项，这样也方便自己以后在看自己的博客时也能马上进入状态理解以前想要表达的意思。</p>
 <p>再有，多看看多学学其他道友们是如何写作以及表达的吧。</p>
 <p>最后，分享《论语》当中的一段话：司马牛忧曰：“人皆有兄弟，我独亡。” 子夏曰：“商闻之矣：死生有命，富贵在天。君子敬而无失，与人恭而有礼，四海之内皆兄弟也。君子何患乎无兄弟也？”</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>为什么放弃使用 remnote</title>
+    <url>/posts/b0b73b25.html</url>
+    <content><![CDATA[<ol>
+<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
+<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
+<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
+<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
+<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
+<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
+<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
+<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
+<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
+<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
+<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
+<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
+<li>待续…</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统超级大BUG之无法彻底删除文件"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>图片压缩指南</title>
+    <url>/posts/5566e923.html</url>
+    <content><![CDATA[<h3 id="1、Imagine-本地图片压缩"><a href="#1、Imagine-本地图片压缩" class="headerlink" title="1、Imagine 本地图片压缩"></a>1、Imagine 本地图片压缩</h3><p>Github 项目名称：Imagine； <a href="https://github.com/meowtec/Imagine">GitHub 仓库</a></p>
+<blockquote>
+<p>Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.</p>
+</blockquote>
+<p>优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地<br>缺点：无法处理 gif 图片</p>
+<span id="more"></span>
+<p><img data-src="https://s2.loli.net/2022/03/31/funvePYGOx9qXBy.png" alt="ImagineUI界面"></p>
+<h3 id="2、Compressio-app"><a href="#2、Compressio-app" class="headerlink" title="2、Compressio.app"></a>2、Compressio.app</h3><p>在线 GIF 压缩 [Compressio.app]： <a href="https://compressio.app/">开源网址</a><br>github 仓库： <a href="https://github.com/twoabd/CompressioWeb">网址</a></p>
+<p>优点：开源免费；跨设备运行；免安装；可自行搭建服务器<br>缺点：可能会涉及到隐私问题<br><img data-src="https://s2.loli.net/2022/03/31/71XCLTIxyQPoZnN.png" alt="Compressio.app界面"></p>
+<h3 id="3、本地图片压缩-Compress-images"><a href="#3、本地图片压缩-Compress-images" class="headerlink" title="3、本地图片压缩 Compress-images"></a>3、本地图片压缩 Compress-images</h3><p>GitHub 仓库： <a href="https://github.com/Yuriy-Svetlov/compress-images">Compress-images</a></p>
+<p>命令行安装以下依赖：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install compress-images --save</span><br><span class="line"></span><br><span class="line">npm install pngquant-bin@6.0.1 --save</span><br><span class="line">npm install gifsicle@5.2.1 --save</span><br><span class="line"></span><br><span class="line">注意不要升级随便升级版本，比如下面这段代码，升级之后报错（不知道为什么，可能识别不了）</span><br><span class="line">npm install gifsicle --save</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="1、使用方法："><a href="#1、使用方法：" class="headerlink" title="1、使用方法："></a>1、使用方法：</h4><p>请查阅下载的文档中的 example 示例的 Manual.txt</p>
+<ol>
+<li><p> 从 GitHub 仓库下载项目：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:semiromid/compress-images.git   </span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> 删除所有文件夹，除了 example 文件夹</p>
+</li>
+<li><p> 在 example 文件夹打开命令行工具（vscode 打开），如下命令安装依赖</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install compress-images --save</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> 如遇到一下情况的报错，可能是不适合运行在某些系统上，可能需要对 example 文件中的 compress_images.js 做修改。<br>PS: win7 测试，在压缩 png 图片时，需要将 pngquant 参数改为 pngcrush</p>
+</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/03/31/FUIVzy28SxogD7j.png" alt="pngquant2pngcrush"></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[1] <span class="string">"npm install pngquant-bin@6.0.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'pngquant'</span> on other PNG engine, as example on <span class="string">"pngcrush"</span>.</span><br><span class="line">{png: {engine: <span class="string">'pngcrush'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}},</span><br><span class="line"></span><br><span class="line">[2] <span class="string">"npm install gifsicle@5.2.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'gifsicle'</span> on other GIF engine, as example <span class="string">"gif2webp"</span></span><br><span class="line">{gif: {engine: <span class="string">'gif2webp'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<ol>
+<li> 运行 minify_Img.bat，如果报错缺少什么依赖，继续在命令行中安装</li>
+</ol>
+<h4 id="2、可能会遇到的问题："><a href="#2、可能会遇到的问题：" class="headerlink" title="2、可能会遇到的问题："></a>2、可能会遇到的问题：</h4><ol>
+<li> 如果图片名太长，可能不能压缩处理，可先重命名在压缩</li>
+<li> 安装依赖可能会出现网络问题</li>
+<li> 最常见的错误就是上方第四点 pngquant|pngcrush；gifsicle|gif2webp 可能需要切换</li>
+</ol>
+<h4 id="3、自定义配置："><a href="#3、自定义配置：" class="headerlink" title="3、自定义配置："></a>3、自定义配置：</h4><ol>
+<li> 下载的示例库已经创建好了输入文件夹和输出文件夹，层级关系已经设置好了。其实我们也可以自定义设置 input 和 output 文件夹</li>
+</ol>
+<p><img data-src="/_posts/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%8C%87%E5%8D%97/Image-Compress_Compressio.app%E7%95%8C%E9%9D%A2.png" alt="compress_images.js自定义设置界面"></p>
+<ol start="2">
+<li> 自定义配置参考文档：GitHub 仓库给了 7 中实例， <a href="https://github.com/Yuriy-Svetlov/compress-images">点击查看</a><br>举例其中的集中方式：<br>[1] 系数默认配置 </li>
+</ol>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">"compress-images"</span>),</span><br><span class="line">  INPUT_path_to_your_images,</span><br><span class="line">  OUTPUT_path;</span><br><span class="line"></span><br><span class="line">INPUT_path_to_your_images = <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}"</span>;</span><br><span class="line">OUTPUT_path = <span class="string">"build/img/"</span>;</span><br><span class="line"></span><br><span class="line">compress_images(INPUT_path_to_your_images, OUTPUT_path, { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> }, <span class="literal">false</span>,</span><br><span class="line">                { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"mozjpeg"</span>, <span class="attr">command</span>: [<span class="string">"-quality"</span>, <span class="string">"60"</span>] } },</span><br><span class="line">                { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="string">"pngquant"</span>, <span class="attr">command</span>: [<span class="string">"--quality=20-50"</span>, <span class="string">"-o"</span>] } },</span><br><span class="line">                { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="string">"svgo"</span>, <span class="attr">command</span>: <span class="string">"--multipass"</span> } },</span><br><span class="line">                { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="string">"gifsicle"</span>, <span class="attr">command</span>: [<span class="string">"--colors"</span>, <span class="string">"64"</span>, <span class="string">"--use-col=web"</span>] } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error, completed, statistic</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">    <span class="built_in">console</span>.log(completed);</span><br><span class="line">    <span class="built_in">console</span>.log(statistic);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[2]jpg⇒webp</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We will be compressing images [jpg] with two algorithms, [webp] and [jpg];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg] ---to---&gt; [webp]</span></span><br><span class="line">compress_images(</span><br><span class="line">  <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">  <span class="string">"build/img/"</span>,</span><br><span class="line">  { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> },</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"webp"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>{</span><br><span class="line">    <span class="keyword">if</span> (err === <span class="literal">null</span>) {</span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(</span><br><span class="line">        <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">        <span class="string">"build/img/"</span>,</span><br><span class="line">        { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span> },</span><br><span class="line">        <span class="literal">false</span>,</span><br><span class="line">        { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"jpegtran"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{}</span><br><span class="line">      );</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="built_in">console</span>.error(err);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[3] jpg (webp)+gif (gifsicle)+png (webp)+svg (svgo)，括号中的为压缩算法 / 格式转换</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg+gif+png+svg] ---to---&gt; [jpg(webp)+gif(gifsicle)+png(webp)+svg(svgo)]</span></span><br><span class="line">compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG,gif,png,svg}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span>}, <span class="literal">false</span>,</span><br><span class="line">                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="string">'svgo'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="string">'gifsicle'</span>, <span class="attr">command</span>: [<span class="string">'--colors'</span>, <span class="string">'64'</span>, <span class="string">'--use-col=web'</span>]}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      <span class="comment">//-------------------------------------------------                                    </span></span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'src/img/combine/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                      {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'jpegtran'</span>, <span class="attr">command</span>: [<span class="string">'-trim'</span>, <span class="string">'-progressive'</span>, <span class="string">'-copy'</span>, <span class="string">'none'</span>, <span class="string">'-optimize'</span>]}},</span><br><span class="line">                                                      {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="comment">//[jpg(jpegtran)] ---to---&gt; [jpg(mozjpeg)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">            compress_images(<span class="string">'src/img/combine/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'mozjpeg'</span>, <span class="attr">command</span>: [<span class="string">'-quality'</span>, <span class="string">'75'</span>]}},</span><br><span class="line">                                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">                  <span class="comment">//[png] ---to---&gt; [png(pngquant)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">                  compress_images(<span class="string">'src/img/source/**/*.png'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                                  {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'pngquant'</span>, <span class="attr">command</span>: [<span class="string">'--quality=30-60'</span>, <span class="string">'-o'</span>]}},</span><br><span class="line">                                                                  {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{                                                      </span><br><span class="line">                  }); </span><br><span class="line">            });                                      </span><br><span class="line">      });</span><br><span class="line">      <span class="comment">//-------------------------------------------------</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="4、压缩效果"><a href="#4、压缩效果" class="headerlink" title="4、压缩效果"></a>4、压缩效果</h4><p><img data-src="https://s2.loli.net/2022/05/12/b8skpTMEZxOQRA7.gif" alt="图片压缩效果：文件从11M->2.2M"></p>
 ]]></content>
   </entry>
   <entry>
@@ -1309,62 +1365,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图片压缩指南</title>
-    <url>/posts/5566e923.html</url>
-    <content><![CDATA[<h3 id="1、Imagine-本地图片压缩"><a href="#1、Imagine-本地图片压缩" class="headerlink" title="1、Imagine 本地图片压缩"></a>1、Imagine 本地图片压缩</h3><p>Github 项目名称：Imagine； <a href="https://github.com/meowtec/Imagine">GitHub 仓库</a></p>
-<blockquote>
-<p>Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.</p>
-</blockquote>
-<p>优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地<br>缺点：无法处理 gif 图片</p>
-<span id="more"></span>
-<p><img data-src="https://s2.loli.net/2022/03/31/funvePYGOx9qXBy.png" alt="ImagineUI界面"></p>
-<h3 id="2、Compressio-app"><a href="#2、Compressio-app" class="headerlink" title="2、Compressio.app"></a>2、Compressio.app</h3><p>在线 GIF 压缩 [Compressio.app]： <a href="https://compressio.app/">开源网址</a><br>github 仓库： <a href="https://github.com/twoabd/CompressioWeb">网址</a></p>
-<p>优点：开源免费；跨设备运行；免安装；可自行搭建服务器<br>缺点：可能会涉及到隐私问题<br><img data-src="https://s2.loli.net/2022/03/31/71XCLTIxyQPoZnN.png" alt="Compressio.app界面"></p>
-<h3 id="3、本地图片压缩-Compress-images"><a href="#3、本地图片压缩-Compress-images" class="headerlink" title="3、本地图片压缩 Compress-images"></a>3、本地图片压缩 Compress-images</h3><p>GitHub 仓库： <a href="https://github.com/Yuriy-Svetlov/compress-images">Compress-images</a></p>
-<p>命令行安装以下依赖：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install compress-images --save</span><br><span class="line"></span><br><span class="line">npm install pngquant-bin@6.0.1 --save</span><br><span class="line">npm install gifsicle@5.2.1 --save</span><br><span class="line"></span><br><span class="line">注意不要升级随便升级版本，比如下面这段代码，升级之后报错（不知道为什么，可能识别不了）</span><br><span class="line">npm install gifsicle --save</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="1、使用方法："><a href="#1、使用方法：" class="headerlink" title="1、使用方法："></a>1、使用方法：</h4><p>请查阅下载的文档中的 example 示例的 Manual.txt</p>
-<ol>
-<li><p> 从 GitHub 仓库下载项目：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:semiromid/compress-images.git   </span><br></pre></td></tr></tbody></table></figure></li>
-<li><p> 删除所有文件夹，除了 example 文件夹</p>
-</li>
-<li><p> 在 example 文件夹打开命令行工具（vscode 打开），如下命令安装依赖</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">npm install compress-images --save</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p> 如遇到一下情况的报错，可能是不适合运行在某些系统上，可能需要对 example 文件中的 compress_images.js 做修改。<br>PS: win7 测试，在压缩 png 图片时，需要将 pngquant 参数改为 pngcrush</p>
-</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/03/31/FUIVzy28SxogD7j.png" alt="pngquant2pngcrush"></p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[1] <span class="string">"npm install pngquant-bin@6.0.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'pngquant'</span> on other PNG engine, as example on <span class="string">"pngcrush"</span>.</span><br><span class="line">{png: {engine: <span class="string">'pngcrush'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}},</span><br><span class="line"></span><br><span class="line">[2] <span class="string">"npm install gifsicle@5.2.1 --save"</span> (It does not work properly on some OS). If you get error, you need edit <span class="string">'./compress_images.js'</span> and replace <span class="string">'gifsicle'</span> on other GIF engine, as example <span class="string">"gif2webp"</span></span><br><span class="line">{gif: {engine: <span class="string">'gif2webp'</span>, <span class="built_in">command</span>: <span class="literal">false</span>}}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<ol>
-<li> 运行 minify_Img.bat，如果报错缺少什么依赖，继续在命令行中安装</li>
-</ol>
-<h4 id="2、可能会遇到的问题："><a href="#2、可能会遇到的问题：" class="headerlink" title="2、可能会遇到的问题："></a>2、可能会遇到的问题：</h4><ol>
-<li> 如果图片名太长，可能不能压缩处理，可先重命名在压缩</li>
-<li> 安装依赖可能会出现网络问题</li>
-<li> 最常见的错误就是上方第四点 pngquant|pngcrush；gifsicle|gif2webp 可能需要切换</li>
-</ol>
-<h4 id="3、自定义配置："><a href="#3、自定义配置：" class="headerlink" title="3、自定义配置："></a>3、自定义配置：</h4><ol>
-<li> 下载的示例库已经创建好了输入文件夹和输出文件夹，层级关系已经设置好了。其实我们也可以自定义设置 input 和 output 文件夹</li>
-</ol>
-<p><img data-src="/_posts/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%8C%87%E5%8D%97/Image-Compress_Compressio.app%E7%95%8C%E9%9D%A2.png" alt="compress_images.js自定义设置界面"></p>
-<ol start="2">
-<li> 自定义配置参考文档：GitHub 仓库给了 7 中实例， <a href="https://github.com/Yuriy-Svetlov/compress-images">点击查看</a><br>举例其中的集中方式：<br>[1] 系数默认配置 </li>
-</ol>
-<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">"compress-images"</span>),</span><br><span class="line">  INPUT_path_to_your_images,</span><br><span class="line">  OUTPUT_path;</span><br><span class="line"></span><br><span class="line">INPUT_path_to_your_images = <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}"</span>;</span><br><span class="line">OUTPUT_path = <span class="string">"build/img/"</span>;</span><br><span class="line"></span><br><span class="line">compress_images(INPUT_path_to_your_images, OUTPUT_path, { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> }, <span class="literal">false</span>,</span><br><span class="line">                { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"mozjpeg"</span>, <span class="attr">command</span>: [<span class="string">"-quality"</span>, <span class="string">"60"</span>] } },</span><br><span class="line">                { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="string">"pngquant"</span>, <span class="attr">command</span>: [<span class="string">"--quality=20-50"</span>, <span class="string">"-o"</span>] } },</span><br><span class="line">                { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="string">"svgo"</span>, <span class="attr">command</span>: <span class="string">"--multipass"</span> } },</span><br><span class="line">                { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="string">"gifsicle"</span>, <span class="attr">command</span>: [<span class="string">"--colors"</span>, <span class="string">"64"</span>, <span class="string">"--use-col=web"</span>] } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">error, completed, statistic</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">    <span class="built_in">console</span>.log(completed);</span><br><span class="line">    <span class="built_in">console</span>.log(statistic);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"-------------"</span>);</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>[2]jpg⇒webp</p>
-<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We will be compressing images [jpg] with two algorithms, [webp] and [jpg];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg] ---to---&gt; [webp]</span></span><br><span class="line">compress_images(</span><br><span class="line">  <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">  <span class="string">"build/img/"</span>,</span><br><span class="line">  { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span> },</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"webp"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>{</span><br><span class="line">    <span class="keyword">if</span> (err === <span class="literal">null</span>) {</span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(</span><br><span class="line">        <span class="string">"src/img/**/*.{jpg,JPG,jpeg,JPEG}"</span>,</span><br><span class="line">        <span class="string">"build/img/"</span>,</span><br><span class="line">        { <span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span> },</span><br><span class="line">        <span class="literal">false</span>,</span><br><span class="line">        { <span class="attr">jpg</span>: { <span class="attr">engine</span>: <span class="string">"jpegtran"</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">png</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">svg</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        { <span class="attr">gif</span>: { <span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span> } },</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{}</span><br><span class="line">      );</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="built_in">console</span>.error(err);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
-
-<p>[3] jpg (webp)+gif (gifsicle)+png (webp)+svg (svgo)，括号中的为压缩算法 / 格式转换</p>
-<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> compress_images = <span class="built_in">require</span>(<span class="string">'compress-images'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//[jpg+gif+png+svg] ---to---&gt; [jpg(webp)+gif(gifsicle)+png(webp)+svg(svgo)]</span></span><br><span class="line">compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG,gif,png,svg}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">true</span>}, <span class="literal">false</span>,</span><br><span class="line">                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'webp'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="string">'svgo'</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="string">'gifsicle'</span>, <span class="attr">command</span>: [<span class="string">'--colors'</span>, <span class="string">'64'</span>, <span class="string">'--use-col=web'</span>]}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      <span class="comment">//-------------------------------------------------                                    </span></span><br><span class="line">      <span class="comment">//[jpg] ---to---&gt; [jpg(jpegtran)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">      compress_images(<span class="string">'src/img/source/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'src/img/combine/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                      {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'jpegtran'</span>, <span class="attr">command</span>: [<span class="string">'-trim'</span>, <span class="string">'-progressive'</span>, <span class="string">'-copy'</span>, <span class="string">'none'</span>, <span class="string">'-optimize'</span>]}},</span><br><span class="line">                                                      {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                      {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">            <span class="comment">//[jpg(jpegtran)] ---to---&gt; [jpg(mozjpeg)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">            compress_images(<span class="string">'src/img/combine/**/*.{jpg,JPG,jpeg,JPEG}'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                            {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="string">'mozjpeg'</span>, <span class="attr">command</span>: [<span class="string">'-quality'</span>, <span class="string">'75'</span>]}},</span><br><span class="line">                                                            {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                            {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">                  <span class="comment">//[png] ---to---&gt; [png(pngquant)] WARNING!!! autoupdate  - recommended to turn this off, it's not needed here - autoupdate: false</span></span><br><span class="line">                  compress_images(<span class="string">'src/img/source/**/*.png'</span>, <span class="string">'build/img/'</span>, {<span class="attr">compress_force</span>: <span class="literal">false</span>, <span class="attr">statistic</span>: <span class="literal">true</span>, <span class="attr">autoupdate</span>: <span class="literal">false</span>}, <span class="literal">false</span>,</span><br><span class="line">                                                                  {<span class="attr">jpg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">png</span>: {<span class="attr">engine</span>: <span class="string">'pngquant'</span>, <span class="attr">command</span>: [<span class="string">'--quality=30-60'</span>, <span class="string">'-o'</span>]}},</span><br><span class="line">                                                                  {<span class="attr">svg</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}},</span><br><span class="line">                                                                  {<span class="attr">gif</span>: {<span class="attr">engine</span>: <span class="literal">false</span>, <span class="attr">command</span>: <span class="literal">false</span>}}, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{                                                      </span><br><span class="line">                  }); </span><br><span class="line">            });                                      </span><br><span class="line">      });</span><br><span class="line">      <span class="comment">//-------------------------------------------------</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="4、压缩效果"><a href="#4、压缩效果" class="headerlink" title="4、压缩效果"></a>4、压缩效果</h4><p><img data-src="https://s2.loli.net/2022/05/12/b8skpTMEZxOQRA7.gif" alt="图片压缩效果：文件从11M->2.2M"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>新建文档指南</title>
     <url>/posts/295a526.html</url>
     <content><![CDATA[<ol>
@@ -1378,17 +1378,6 @@
 <li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>此处心安是吾乡</title>
-    <url>/posts/d784b47d.html</url>
-    <content><![CDATA[<h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
-<h3 id="冬"><a href="#冬" class="headerlink" title="冬"></a>冬</h3><p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬.jpeg"></p>
-<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚.jpeg"></p>
-]]></content>
-      <tags>
-        <tag>hexo配置</tag>
-      </tags>
   </entry>
   <entry>
     <title>谷歌拼音输入法</title>
@@ -1433,5 +1422,16 @@
 <p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
 <p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>此处心安是吾乡</title>
+    <url>/posts/d784b47d.html</url>
+    <content><![CDATA[<h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
+<h3 id="冬"><a href="#冬" class="headerlink" title="冬"></a>冬</h3><p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬.jpeg"></p>
+<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚.jpeg"></p>
+]]></content>
+      <tags>
+        <tag>hexo配置</tag>
+      </tags>
   </entry>
 </search>
