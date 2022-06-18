@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>智朋的个人博客</title>
+  <icon>https://coffeelize.top/images/cat-avatar.jpg</icon>
+  <subtitle>道阻且长，行则将至</subtitle>
+  <link href="https://coffeelize.top/atom.xml" rel="self"/>
+  
+  <link href="https://coffeelize.top/"/>
+  <updated>2022-06-18T01:49:43.619Z</updated>
+  <id>https://coffeelize.top/</id>
+  
+  <author>
+    <name>原装咖啡</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>谷歌拼音输入法</title>
+    <link href="https://coffeelize.top/posts/6505432e.html"/>
+    <id>https://coffeelize.top/posts/6505432e.html</id>
+    <published>2022-06-18T01:47:15.000Z</published>
+    <updated>2022-06-18T01:49:43.619Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;想要了解 Windows 上的谷歌拼音输入法？&lt;br&gt;可以试着阅读以下这篇文章： &lt;a href=&quot;https://mp.weixin.qq.com/s/9-DMXTUqjBiaTjhJ8triiw&quot;&gt;谷歌拼音输入法（PC）不完全使用指南&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;优势-and-劣势&quot;&gt;&lt;a href=&quot;#优势-and-劣势&quot; class=&quot;headerlink&quot; title=&quot;优势 and 劣势&quot;&gt;&lt;/a&gt;优势 and 劣势&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;完全离线&lt;/li&gt;
+&lt;li&gt;已停止更新（实际上已经下架，Google 不在提供维护）&lt;/li&gt;
+&lt;li&gt;可导入 / 导出用户词典及自定义短语&lt;/li&gt;
+&lt;li&gt;体积超小（压缩包 15M）、最流畅、皮肤最简洁的输入法&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>屏蔽内容农场简明指南</title>
+    <link href="https://coffeelize.top/posts/aa1c9829.html"/>
+    <id>https://coffeelize.top/posts/aa1c9829.html</id>
+    <published>2022-06-13T10:08:18.000Z</published>
+    <updated>2022-06-13T10:12:19.373Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;注：以下各个仓库 / 插件的安装，官方教程都写得非常清楚，本文不再赘述，对此话题感兴趣的朋友可以阅读文末的阅读列表&lt;/p&gt;
+&lt;h3 id=&quot;什么是内容农场&quot;&gt;&lt;a href=&quot;#什么是内容农场&quot; class=&quot;headerlink&quot; title=&quot;什么是内容农场&quot;&gt;&lt;/a&gt;什么是内容农场&lt;/h3&gt;&lt;p&gt;内容农场（英文：content farm）是指为了牟取广告费等商业利益或出于控制舆论、带风向等特殊目的，快速生产大量网路文章来吸引流量的网站。此类网站通常找不到作者、管理者、网站负责人，也不会主动管理产出的内容，对侵权或错误内容投诉的处理也很消极。其产出内容多半都是缺乏原创性且真实性无法保证的内容，且有极高比例是盗用、盗译自他人的原创图文，或由非专业写手胡乱拼凑网路文章而来，因而多半缺乏可靠来源、品质低劣、不具参考价值、传播误导讯息，也经常掺杂大量广告或恶意程式&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Search" scheme="https://coffeelize.top/tags/Search/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 之 zhlipsum 中文假文宏包使用说明</title>
+    <link href="https://coffeelize.top/posts/942e3f13.html"/>
+    <id>https://coffeelize.top/posts/942e3f13.html</id>
+    <published>2022-06-12T02:10:35.000Z</published>
+    <updated>2022-06-12T02:17:04.083Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;速览&quot;&gt;&lt;a href=&quot;#速览&quot; class=&quot;headerlink&quot; title=&quot;速览&quot;&gt;&lt;/a&gt;速览&lt;/h3&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\usepackage&lt;/span&gt;{zhlipsum}&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\zhlipsum&lt;/span&gt;[需要从假文中抽取的段落][name=假文库] &lt;span class=&quot;comment&quot;&gt;%两个参数都是可选参数 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\newzhlipsum&lt;/span&gt;{自定义假文库名}{{假文段落1},{假文段落2},{假文段落n}} &lt;span class=&quot;comment&quot;&gt;%自定义假文库，注意假文的每个段落以大括号包裹，中间使用英文逗号隔开&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以下几个案例将分别从这三句命令对本宏包进行说明&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+    <category term="宏包" scheme="https://coffeelize.top/tags/%E5%AE%8F%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 之字体颜色篇</title>
+    <link href="https://coffeelize.top/posts/c07914ac.html"/>
+    <id>https://coffeelize.top/posts/c07914ac.html</id>
+    <published>2022-06-10T07:06:16.000Z</published>
+    <updated>2022-06-10T07:13:24.268Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;速览&quot;&gt;&lt;a href=&quot;#速览&quot; class=&quot;headerlink&quot; title=&quot;速览&quot;&gt;&lt;/a&gt;速览&lt;/h3&gt;&lt;p&gt;使用 xcolor 宏包可用来方便地调用颜色：&lt;br&gt;该宏包为我们提供了 &lt;code&gt;\textcolor&lt;/code&gt; , &lt;code&gt;\definecolor&lt;/code&gt; 两关键命令&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\textcolor&lt;/span&gt;{red}{Red为xcolor宏包预定义的命令} &lt;span class=&quot;comment&quot;&gt;%修改颜色&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%语法：\definecolor{name}{model-list}{spec-list}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\definecolor&lt;/span&gt;{Gcolor}{RGB}{66, 134, 243} &lt;span class=&quot;comment&quot;&gt;%定义自定义颜色&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+    <category term="Font" scheme="https://coffeelize.top/tags/Font/"/>
+    
+    <category term="Color" scheme="https://coffeelize.top/tags/Color/"/>
+    
+    <category term="Table" scheme="https://coffeelize.top/tags/Table/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 行间距设定</title>
+    <link href="https://coffeelize.top/posts/a0663e6a.html"/>
+    <id>https://coffeelize.top/posts/a0663e6a.html</id>
+    <published>2022-06-09T00:08:14.000Z</published>
+    <updated>2022-06-09T09:59:23.392Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h3&gt;&lt;h4 id=&quot;查看文中某段的行间距&quot;&gt;&lt;a href=&quot;#查看文中某段的行间距&quot; class=&quot;headerlink&quot; title=&quot;查看文中某段的行间距&quot;&gt;&lt;/a&gt;查看文中某段的行间距&lt;/h4&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\the&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;\baselineskip&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;%查看当前的行间距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;案例 1 查看当前的行间距&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;figcaption&gt;&lt;span&gt;EXAMPE-default-line-skip.tex&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\documentclass&lt;/span&gt;{ctexart}&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\begin&lt;/span&gt;{document}&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;%默认行间距&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;\the&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;\baselineskip&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\end&lt;/span&gt;{document}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 排版连字现象</title>
+    <link href="https://coffeelize.top/posts/794c3cfd.html"/>
+    <id>https://coffeelize.top/posts/794c3cfd.html</id>
+    <published>2022-06-08T03:46:35.000Z</published>
+    <updated>2022-06-10T03:06:16.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;西文排版中经常会出现连字（Ligatures），常见的有 &lt;code&gt;ff&lt;/code&gt; 、 &lt;code&gt;fi&lt;/code&gt; 、 &lt;code&gt;fl&lt;/code&gt; 、 &lt;code&gt;ffi&lt;/code&gt; 、 &lt;code&gt;ffl&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在使用知云翻译英文文献的时候，有时候就是碰到这些连字导致无法正常识别连字所对应的英文 (⊙﹏⊙)，导致翻译出现问题&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+    <category term="Font" scheme="https://coffeelize.top/tags/Font/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 字体之字族篇</title>
+    <link href="https://coffeelize.top/posts/4baf1388.html"/>
+    <id>https://coffeelize.top/posts/4baf1388.html</id>
+    <published>2022-06-07T07:50:44.000Z</published>
+    <updated>2022-06-07T08:10:35.143Z</updated>
+    
+    
+    <summary type="html">description：字体包括字族、字系与字形，本文针对字体中的字族（也就是常说的自定义字体）以及fontspec宏包进行说明，并附上3个编写毕业论文模板时可能会用到的使用场景(1、全文更换字体 2、中文宋体，英文Times New Roman字体 3、自定义中文字体)</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+    <category term="Font" scheme="https://coffeelize.top/tags/Font/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 浮动体位置设定</title>
+    <link href="https://coffeelize.top/posts/ad84a2aa.html"/>
+    <id>https://coffeelize.top/posts/ad84a2aa.html</id>
+    <published>2022-06-06T15:07:13.000Z</published>
+    <updated>2022-06-06T16:51:50.935Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文参考资料如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Bilibili： &lt;a href=&quot;https://www.bilibili.com/video/BV1r4411o7KJ?spm_id_from=333.337.search-card.all.click&quot;&gt;林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Latex 工作室： &lt;a href=&quot;https://www.latexstudio.net/archives/12049&quot;&gt;漫谈 LaTeX 排版常见概念误区&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Latex 官方文档：一份不太简短的 LATEX 2ε 介绍&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 引用参考文献指南</title>
+    <link href="https://coffeelize.top/posts/9536b099.html"/>
+    <id>https://coffeelize.top/posts/9536b099.html</id>
+    <published>2022-06-05T02:07:55.000Z</published>
+    <updated>2022-06-06T00:15:56.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;主要内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; LaTeX 引用参考文献 ——Bibtex 格式说明&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; LaTeX 引用参考文献 ——BibTex 参考文献格式大全&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 参考文献类型及其标识</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Beamer 教程之框架篇</title>
+    <link href="https://coffeelize.top/posts/57e904f9.html"/>
+    <id>https://coffeelize.top/posts/57e904f9.html</id>
+    <published>2022-06-03T02:48:03.000Z</published>
+    <updated>2022-06-04T08:10:56.000Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;为什么使用Beamer&quot;&gt;&lt;a href=&quot;#为什么使用Beamer&quot; class=&quot;headerlink&quot; title=&quot;为什么使用Beamer&quot;&gt;&lt;/a&gt;为什么使用 Beamer&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;学术偏好，就是任性&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;和 LATEX 搭配，兼容 LATEX 命令&lt;/li&gt;
+&lt;li&gt;高度可读性与清晰的逻辑&lt;/li&gt;
+&lt;li&gt;输出为 PDF，跨平台显示无差异&lt;/li&gt;
+&lt;li&gt;详见为什么使用 LaTeX&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+    <category term="Beamer" scheme="https://coffeelize.top/tags/Beamer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX 图片双语标题指南</title>
+    <link href="https://coffeelize.top/posts/b3daf09.html"/>
+    <id>https://coffeelize.top/posts/b3daf09.html</id>
+    <published>2022-06-02T13:45:02.000Z</published>
+    <updated>2022-06-06T15:08:25.703Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本案例可能需要使用到的宏包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;graphicx&lt;/li&gt;
+&lt;li&gt;bicaption&lt;/li&gt;
+&lt;li&gt; 案例示范图片下载链接： &lt;a href=&quot;https://sm.ms/image/tr6LsNaFwvZkjnh&quot;&gt;Cat2&lt;/a&gt; ； &lt;a href=&quot;https://sm.ms/image/7vdxgA1Rz6OFqyr&quot;&gt;QHU’s landscape&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex 图片并排及子图标题设置</title>
+    <link href="https://coffeelize.top/posts/undefined.html"/>
+    <id>https://coffeelize.top/posts/undefined.html</id>
+    <published>2022-06-01T05:52:56.000Z</published>
+    <updated>2022-06-02T13:58:25.624Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Latex-图片并排及子图标题设置&quot;&gt;&lt;a href=&quot;#Latex-图片并排及子图标题设置&quot; class=&quot;headerlink&quot; title=&quot;Latex 图片并排及子图标题设置&quot;&gt;&lt;/a&gt;Latex 图片并排及子图标题设置&lt;/h2&gt;&lt;p&gt;以下案例中可能使用到的宏包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 需要图片：graphics&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 需要子图表：subfigure&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 需要给每个图片定义小标题：subcaption&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 修改图片的标题样式：caption&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 案例中使用到的图片： &lt;a href=&quot;https://sm.ms/image/W9pfLrXMi6uCFtT&quot;&gt;下载地址&lt;/a&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX 目录布局排版之简易教程</title>
+    <link href="https://coffeelize.top/posts/6eab1a4b.html"/>
+    <id>https://coffeelize.top/posts/6eab1a4b.html</id>
+    <published>2022-05-11T09:12:45.000Z</published>
+    <updated>2022-05-15T08:17:07.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX 不快速的入门笔记</title>
+    <link href="https://coffeelize.top/posts/15e36c1c.html"/>
+    <id>https://coffeelize.top/posts/15e36c1c.html</id>
+    <published>2022-04-11T01:23:19.000Z</published>
+    <updated>2022-04-11T14:22:14.224Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以下代码块中的内容均匀 LaTeX 语法&lt;/li&gt;
+&lt;li&gt;参考视频： &lt;a href=&quot;https://www.bilibili.com/video/BV1s7411U7Pr?p=2&quot;&gt;刘海洋・LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX 知识&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在线表格转 latex：&lt;a href=&quot;https://tablesgenerator.com/latex_tables&quot;&gt;https://tablesgenerator.com/latex_tables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; 推荐：在线 Latex 公式编辑器 &lt;a href=&quot;https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn&quot;&gt;Equation Editor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; 推荐博客：&lt;a href=&quot;https://liam.page/categories/LaTeX/&quot;&gt;始终&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sketch 绘图指南</title>
+    <link href="https://coffeelize.top/posts/82ded38b.html"/>
+    <id>https://coffeelize.top/posts/82ded38b.html</id>
+    <published>2022-03-31T15:51:46.000Z</published>
+    <updated>2022-05-12T09:15:31.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;初衷： &lt;a href=&quot;https://draveness.me/sketch-and-sketch/&quot;&gt;技术文章配图指南&lt;/a&gt;&lt;br&gt;参考视频： &lt;a href=&quot;https://www.youtube.com/watch?v=6KpYC6ckShw&amp;amp;list=PLwO1Ou6RaKN7ZE3r_TbyAw4rCZq7QODyb&quot;&gt;sketch 教程壹天上手&lt;/a&gt;&lt;br&gt;参考视频教程： &lt;a href=&quot;https://www.sketch.net.cn/lengmenjiqiao.html&quot;&gt;冷门但好用的 SKETCH 高频技巧&lt;/a&gt;&lt;br&gt;参考视频： &lt;a href=&quot;https://www.bilibili.com/video/BV1f7411w7H9?p=1&quot;&gt;Sketch Symbols 控件功能 - 善用组件 早点下班 - 新像素 UI 设计培训&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>图片压缩指南</title>
+    <link href="https://coffeelize.top/posts/5566e923.html"/>
+    <id>https://coffeelize.top/posts/5566e923.html</id>
+    <published>2022-03-30T11:43:38.000Z</published>
+    <updated>2022-05-12T09:33:48.000Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;1、Imagine-本地图片压缩&quot;&gt;&lt;a href=&quot;#1、Imagine-本地图片压缩&quot; class=&quot;headerlink&quot; title=&quot;1、Imagine 本地图片压缩&quot;&gt;&lt;/a&gt;1、Imagine 本地图片压缩&lt;/h3&gt;&lt;p&gt;Github 项目名称：Imagine； &lt;a href=&quot;https://github.com/meowtec/Imagine&quot;&gt;GitHub 仓库&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;优点：UI 界面，参数可视化可调；开源免费；支持中文；支持转为 webp 格式图片；本地&lt;br&gt;缺点：无法处理 gif 图片&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Word 操作指南之符号篇</title>
+    <link href="https://coffeelize.top/posts/4fcbca1a.html"/>
+    <id>https://coffeelize.top/posts/4fcbca1a.html</id>
+    <published>2022-03-06T14:15:33.000Z</published>
+    <updated>2022-06-03T02:06:51.000Z</updated>
+    
+    
+    <summary type="html">多图警告⚠️！</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Word 操作指南之表格篇</title>
+    <link href="https://coffeelize.top/posts/494c263d.html"/>
+    <id>https://coffeelize.top/posts/494c263d.html</id>
+    <published>2022-03-06T11:12:00.000Z</published>
+    <updated>2022-05-12T09:30:03.000Z</updated>
+    
+    
+    <summary type="html">多图警告⚠️！</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Word 操作指南之图像篇</title>
+    <link href="https://coffeelize.top/posts/4a6b571e.html"/>
+    <id>https://coffeelize.top/posts/4a6b571e.html</id>
+    <published>2022-03-06T11:10:27.000Z</published>
+    <updated>2022-05-12T09:25:49.000Z</updated>
+    
+    
+    <summary type="html">多图警告⚠️！</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Word 操作指南之配置篇</title>
+    <link href="https://coffeelize.top/posts/17b2576b.html"/>
+    <id>https://coffeelize.top/posts/17b2576b.html</id>
+    <published>2022-03-03T14:24:56.000Z</published>
+    <updated>2022-05-12T09:27:09.000Z</updated>
+    
+    
+    <summary type="html">多图警告⚠️！</summary>
+    
+    
+    
+    
+    <category term="Word" scheme="https://coffeelize.top/tags/Word/"/>
+    
+  </entry>
+  
+</feed>
