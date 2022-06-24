@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coffeelize.top/posts/e804a7a.html</loc>
+    
+    <lastmod>2022-06-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/posts/6505432e.html</loc>
     
     <lastmod>2022-06-18</lastmod>
@@ -301,7 +310,7 @@
 
   <url>
     <loc>https://coffeelize.top/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -309,84 +318,91 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Latex/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/Beamer/</loc>
-    <lastmod>2022-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Final-cut-Pro/</loc>
-    <lastmod>2022-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/quizlet/</loc>
-    <lastmod>2022-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Font/</loc>
-    <lastmod>2022-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Color/</loc>
-    <lastmod>2022-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Table/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/%E5%AE%8F%E5%8C%85/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Word/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <loc>https://coffeelize.top/tags/Font/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Color/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Table/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Math/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Final-cut-Pro/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/quizlet/</loc>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/hexo/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/Search/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coffeelize.top/tags/hexo%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-06-18</lastmod>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Word/</loc>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

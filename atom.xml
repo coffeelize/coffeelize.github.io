@@ -6,7 +6,7 @@
   <link href="https://coffeelize.top/atom.xml" rel="self"/>
   
   <link href="https://coffeelize.top/"/>
-  <updated>2022-06-18T01:49:43.619Z</updated>
+  <updated>2022-06-24T10:49:11.830Z</updated>
   <id>https://coffeelize.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Latex 之特殊数学字体</title>
+    <link href="https://coffeelize.top/posts/e804a7a.html"/>
+    <id>https://coffeelize.top/posts/e804a7a.html</id>
+    <published>2022-06-24T10:47:14.000Z</published>
+    <updated>2022-06-24T10:49:11.830Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="黑板粗体"><a href="#黑板粗体" class="headerlink" title="黑板粗体"></a>黑板粗体</h3><p>在 LaTeX 中，我们可以用&nbsp;<code>\mathbb{R}</code>&nbsp;输出表示实数集合的字母 R，这一命令来自&nbsp;<code>amsfonts</code>&nbsp;宏包。</p><span id="more"></span><p>注：<code>\mathbb</code> 只能在数学环境中使用</p><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\[</span> </span><br><span class="line"><span class="keyword">\mathbb</span>{C}</span><br><span class="line"><span class="keyword">\mathbb</span>{R}</span><br><span class="line"> <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2022/06/24/ahKcPVzHQCOREA2.png" alt="01-数学特殊符号之mathbb.png"></p><p>以下用法会报错</p><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\mathbb</span>{C}</span><br><span class="line"><span class="keyword">\mathbb</span>{R}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><h3 id="书法体与花体"><a href="#书法体与花体" class="headerlink" title="书法体与花体"></a>书法体与花体</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\usepackage</span>{mathrsfs}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\[</span> </span><br><span class="line"><span class="keyword">\mathcal</span>{ABCDEFG} <span class="comment">%需加载amsfonts宏包</span></span><br><span class="line"><span class="keyword">\mathscr</span>{ABCDEFG} <span class="comment">%需加载mathrsfs宏包</span></span><br><span class="line"> <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2022/06/24/qApZ9RLsNnBPOoG.png" alt="04-书写字体及花体.png"></p><h3 id="更多数学字体"><a href="#更多数学字体" class="headerlink" title="更多数学字体"></a>更多数学字体</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\[</span> </span><br><span class="line"><span class="keyword">\mathbb</span>{C} <span class="comment">%黑板粗体</span></span><br><span class="line"><span class="keyword">\mathbb</span>{R} <span class="comment">%黑板粗体</span></span><br><span class="line"><span class="keyword">\mathcal</span>{A} <span class="comment">%指math calligraphy，书法（美术）字</span></span><br><span class="line"><span class="keyword">\mathrm</span>{i} <span class="comment">%math roman</span></span><br><span class="line"><span class="keyword">\mathbf</span>{A} <span class="comment">%math boldface</span></span><br><span class="line"> <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2022/06/24/AR4IaJ72HZPjVf5.png" alt="02-数学特殊符号.png"></p><p>对于某些字母的花体、黑板粗体形式代表的意义请参见：</p><ul><li>CSDN：<a href="https://blog.csdn.net/lanchunhui/article/details/54633576">LaTeX —— 特殊符号与数学字体</a></li></ul><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\begin</span>{equation}</span><br><span class="line"><span class="keyword">\mathsf</span>{f(x,y) = 3(x+y)y / (2xy-7)}</span><br><span class="line"><span class="keyword">\end</span>{equation}</span><br><span class="line"><span class="keyword">\begin</span>{equation}</span><br><span class="line"> <span class="keyword">\mathtt</span>{f(x,y) = 3(x+y)y / (2xy-7)} <span class="comment">%打字机字体（等宽字体）</span></span><br><span class="line"><span class="keyword">\end</span>{equation}</span><br><span class="line"><span class="keyword">\begin</span>{equation}</span><br><span class="line"> <span class="keyword">\mathit</span>{f(x,y) = 3(x+y)y / (2xy-7)}</span><br><span class="line"><span class="keyword">\end</span>{equation}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2022/06/24/HpSz2D9eOuAYRVn.png" alt="03-数学公式字体（衬线非衬线斜体）.png"></p><h3 id="数学特殊字体一览表"><a href="#数学特殊字体一览表" class="headerlink" title="数学特殊字体一览表"></a>数学特殊字体一览表</h3><table><thead><tr><th>字体</th><th align="center">命令</th><th align="center">说明（需要使用宏包）</th></tr></thead><tbody><tr><td>罗马字体</td><td align="center"> mathrm</td><td align="center"></td></tr><tr><td> 斜体</td><td align="center"> mathit</td><td align="center"></td></tr><tr><td> 粗体</td><td align="center"> mathbf</td><td align="center"></td></tr><tr><td> 无衬线</td><td align="center"> mathsf</td><td align="center"></td></tr><tr><td> 打字机字体</td><td align="center"> mathtt</td><td align="center"></td></tr><tr><td> 书法字体</td><td align="center"> mathcal</td><td align="center"></td></tr><tr><td> 黑板粗体</td><td align="center"> mathbb</td><td align="center">usepackage{amsfonts}</td></tr><tr><td> 花体</td><td align="center"> mathscr</td><td align="center">usepackage{mathrsfs}</td></tr></tbody></table><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li>CSDN：<a href="https://blog.csdn.net/lanchunhui/article/details/54633576">LaTeX —— 特殊符号与数学字体</a></li><li>博客园：<a href="https://www.cnblogs.com/MTandHJ/p/10527926.html">Latex (数学）</a>@馒头 and 花卷</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;黑板粗体&quot;&gt;&lt;a href=&quot;#黑板粗体&quot; class=&quot;headerlink&quot; title=&quot;黑板粗体&quot;&gt;&lt;/a&gt;黑板粗体&lt;/h3&gt;&lt;p&gt;在 LaTeX 中，我们可以用&amp;nbsp;&lt;code&gt;\mathbb{R}&lt;/code&gt;&amp;nbsp;输出表示实数集合的字母 R，这一命令来自&amp;nbsp;&lt;code&gt;amsfonts&lt;/code&gt;&amp;nbsp;宏包。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
+    
+    <category term="Font" scheme="https://coffeelize.top/tags/Font/"/>
+    
+    <category term="Math" scheme="https://coffeelize.top/tags/Math/"/>
+    
+  </entry>
   
   <entry>
     <title>谷歌拼音输入法</title>
@@ -426,25 +449,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Word 操作指南之配置篇</title>
-    <link href="https://coffeelize.top/posts/17b2576b.html"/>
-    <id>https://coffeelize.top/posts/17b2576b.html</id>
-    <published>2022-03-03T14:24:56.000Z</published>
-    <updated>2022-05-12T09:27:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p><p>2、长按 Alt 键配合数字键🔢调用快速访问工具栏功能按钮<br><img data-src="https://s2.loli.net/2022/03/03/WbwhFVMLZTBNH3A.gif" alt="长按ALT键+数字按键可以实现快速访问工具栏工具的使用"></p><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>1、文档设置不压缩图片<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p><h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-    
-    
-    <summary type="html">多图警告⚠️！</summary>
-    
-    
-    
-    
-    <category term="Word" scheme="https://coffeelize.top/tags/Word/"/>
     
   </entry>
   
