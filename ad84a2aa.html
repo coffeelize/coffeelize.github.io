@@ -23,31 +23,31 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="多图警告⚠️！">
+<meta name="description" content="本文参考资料如下：   Bilibili： 林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区  Latex 工作室： 漫谈 LaTeX 排版常见概念误区  Latex 官方文档：一份不太简短的 LATEX 2ε 介绍">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Word 操作指南之图像篇">
-<meta property="og:url" content="https://coffeelize.top/posts/4a6b571e.html">
+<meta property="og:title" content="Latex 浮动体位置设定">
+<meta property="og:url" content="https://coffeelize.top/ad84a2aa.html">
 <meta property="og:site_name" content="智朋的个人博客">
-<meta property="og:description" content="多图警告⚠️！">
+<meta property="og:description" content="本文参考资料如下：   Bilibili： 林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区  Latex 工作室： 漫谈 LaTeX 排版常见概念误区  Latex 官方文档：一份不太简短的 LATEX 2ε 介绍">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif">
-<meta property="og:image" content="https://s2.loli.net/2022/03/03/QDzKE3mXZW76NGL.gif">
-<meta property="og:image" content="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif">
-<meta property="article:published_time" content="2022-03-06T11:10:27.000Z">
-<meta property="article:modified_time" content="2022-05-12T09:25:49.000Z">
+<meta property="og:image" content="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/06/ZSfNyHuGLwg9FQD.png">
+<meta property="article:published_time" content="2022-06-06T15:07:13.000Z">
+<meta property="article:modified_time" content="2022-06-06T16:51:50.935Z">
 <meta property="article:author" content="原装咖啡">
+<meta property="article:tag" content="Latex">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png">
 
 
-<link rel="canonical" href="https://coffeelize.top/posts/4a6b571e.html">
+<link rel="canonical" href="https://coffeelize.top/ad84a2aa.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/4a6b571e.html","path":"posts/4a6b571e.html","title":"Word 操作指南之图像篇"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/ad84a2aa.html","path":"/ad84a2aa.html","title":"Latex 浮动体位置设定"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Word 操作指南之图像篇 | 智朋的个人博客</title>
+<title>Latex 浮动体位置设定 | 智朋的个人博客</title>
   
 
 
@@ -167,7 +167,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E8%AE%BE%E7%BD%AE%E4%B8%8D%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87"><span class="nav-number">1.</span> <span class="nav-text">文档设置不压缩图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E9%A2%98%E6%B3%A8"><span class="nav-number">2.</span> <span class="nav-text">刷新题注</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">图片显示问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%85%E7%BB%AD%E2%80%A6"><span class="nav-number">4.</span> <span class="nav-text">待续…</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E6%B5%AE%E5%8A%A8%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">为什么会有浮动体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E5%81%9A%E6%B5%AE%E5%8A%A8%E4%BD%93"><span class="nav-number">3.</span> <span class="nav-text">为什么叫做浮动体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E4%BD%93%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">浮动体位置参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number">5.</span> <span class="nav-text">案例分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%85%E7%BB%AD%E2%80%A6"><span class="nav-number">6.</span> <span class="nav-text">待续…</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,7 +246,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/4a6b571e.html">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/ad84a2aa.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cat-avatar.jpg">
@@ -259,7 +259,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Word 操作指南之图像篇
+          Latex 浮动体位置设定
         </h1>
 
         <div class="post-meta-container">
@@ -270,14 +270,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-03-06 19:10:27" itemprop="dateCreated datePublished" datetime="2022-03-06T19:10:27+08:00">2022-03-06</time>
+      <time title="创建时间：2022-06-06 23:07:13" itemprop="dateCreated datePublished" datetime="2022-06-06T23:07:13+08:00">2022-06-06</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-05-12 17:25:49" itemprop="dateModified" datetime="2022-05-12T17:25:49+08:00">2022-05-12</time>
+        <time title="修改时间：2022-06-07 00:51:50" itemprop="dateModified" datetime="2022-06-07T00:51:50+08:00">2022-06-07</time>
       </span>
 
   
@@ -289,8 +289,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/posts/4a6b571e.html#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/posts/4a6b571e.html" data-xid="/posts/4a6b571e.html" itemprop="commentCount"></span>
+    <a title="waline" href="/ad84a2aa.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/ad84a2aa.html" data-xid="/ad84a2aa.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -300,18 +300,17 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>208</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
-            <div class="post-description">多图警告⚠️！</div>
         </div>
       </header>
 
@@ -319,13 +318,45 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
-<p><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
-<h2 id="刷新题注"><a href="#刷新题注" class="headerlink" title="刷新题注"></a>刷新题注</h2><p>选择图注域代码（或者全选文档），快捷键 F9 刷新</p>
-<p><img data-src="https://s2.loli.net/2022/03/03/QDzKE3mXZW76NGL.gif" alt="F9刷新题注"></p>
-<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>文字说明：如果图片为嵌入型（默认的），在段落中只显示一部分，很有可能是因为段落行间距的问题，此时需要将图片的行间距设置为单倍行距。<br><img data-src="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif" alt="插入图片显示不全，对图片进行单倍行距设置"></p>
-<p>为什么会这样：整段文字的行间距都是固定的 20 磅，插入图片后，上一行与下一行的行间距仍然只是 20 磅，因此只能看到 20 磅高度的图片</p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>
+        <p>本文参考资料如下：</p>
+<ul>
+<li><input disabled="" type="checkbox"> Bilibili： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1r4411o7KJ?spm_id_from=333.337.search-card.all.click">林莲枝直播录屏 - 漫谈 LaTeX 排版常见概念误区</a></li>
+<li><input disabled="" type="checkbox"> Latex 工作室： <a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/12049">漫谈 LaTeX 排版常见概念误区</a></li>
+<li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LATEX 2ε 介绍</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>figure 环境和 table 环境是最常见的浮动体环境，将这些浮动体插入文档中时，难免会出现 Latex 排版的图表位置和我们想要插入位置不同的情况，这篇文章将会对浮动体的一些概念和误区做一些较为详细的说明，希望对我还有阅读的你们有用 o (^▽^) o。自己接触 Latex 也还只有一个月左右，文中若有错误之处还请指正。</p>
+<h3 id="为什么会有浮动体"><a href="#为什么会有浮动体" class="headerlink" title="为什么会有浮动体"></a>为什么会有浮动体</h3><p>内容丰富的文章或者书籍往往包含许多图片和表格等内容。这些内容的尺寸往往太大，导致分页困难。Latex 为此引入了浮动体的机制，令大块的内容可以脱离上下文，放置在合适的位置。<br>LATEX 预定义了两类浮动体环境 figure 和 table。习惯上 figure 里放图片，table 里放表格，但并没有严格限制，可以在任何一个浮动体里放置文字、公式、表格、图片等等任意内容。<br>实际上，插入图片也可以不放入 figure 环境当中，直接通过 includegraphics 命令插入图片即可（比如有的简历模板中插入照片时不推荐使用 figure 浮动体环境）</p>
+<h3 id="为什么叫做浮动体"><a href="#为什么叫做浮动体" class="headerlink" title="为什么叫做浮动体"></a>为什么叫做浮动体</h3><ol>
+<li> 排版出来供阅读的文本是主体，而图、表为辅；</li>
+<li> 插在页面的文本段落之间，打断或妨碍阅读节奏（ reading flow）；</li>
+<li> 那么浮动体的意义在于：图、表都尽量闪一边去，不要打断我的阅读节奏，闪到页面顶部、底部，甚至是页面之后都行，就是插在段落之间影响我阅读</li>
+</ol>
+<p>实际上，这和我们使用 Word 插入图片在概念上有比较大的出入，我们习惯于在提及到图表内容的段落的下一段插入相应的图表，但这排版出来的效果确实影响到整体的阅读体验了，页面看起来也不美观。</p>
+<blockquote>
+<p>Q：有人会说：我插入的图和表不应该就在我交叉引用的下一段出现吗，图和说明不在同一页，那读者怎么读得明白啊？<br>A：那么交叉引用 \label 和 \ref 的意义何在呢</p>
+</blockquote>
+<p><img data-src="https://s2.loli.net/2022/06/06/YOey3Fos6hnWuCj.png" alt="07-Word排版插入的思路.png"></p>
+<h3 id="浮动体位置参数"><a href="#浮动体位置参数" class="headerlink" title="浮动体位置参数"></a>浮动体位置参数</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table}[位置参数]</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>位置参数提供了一些符号用来表示浮动体允许排版的位置，如 hbp 允许浮动体排版在当前位置、底部或者单独成页。<br>h：here, 就摆这里<br>t：top, 页面顶端<br>b：bottom, 页面低端<br>p：float page（也就是只有浮动体的页面，通常由于浮动体太长了，页面插入了浮动体之后，只能塞下几行文字了，此时 latex 不会再插入那几行文字，而是单独的排版这个浮动体，即浮动体单独成页）<br>！：求你了，听听我的请求吧…(在决定位置时忽视限制)</p>
+<p>注意：</p>
+<ul>
+<li>排版位置的选取与参数里符号的顺序无关，LATEX 总是以 h-t-b-p 的优先级顺序决定浮动体位置。也就是说 <code>[!htp]</code> 和 <code>[ph!t]</code> 没有区别</li>
+<li>但是如果只给了某一个参数，比如 <code>[h]</code>，那么肯定按 h 这个参数来排版</li>
+<li>图、表缺省的位置参数是 <code>[t]</code></li>
+</ul>
+<p>浮动体的位置选取受到先后顺序的限制（注意这里所说的先后顺序与上方所说顺序没有关系）。如果某个浮动体由于参数限制、空间限制等原因在当前页无法放置，就要推迟到之后处理，并使得之后的同类浮动体一并推迟。<br>比如说我论文中的图片太多了，Latex 排版时，将许多图片一并推迟到了非常靠后的页面，此时使用 <code>\clearpage</code> 命令，会在另起一页之前，先将所有推迟处理的浮动体排版成页，此时 htbp 等位置限制被完全忽略（clearpage 可以将之前推迟的所有浮动体一口气全排出来）。</p>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><p>为了演示方便，本案例使用了 blindtext 宏包以用来生成假文</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[a4paper,twocolumn]{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{blindtext} <span class="comment">%生成假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\section</span>{Table position}</span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">\begin</span>{table}</span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\hline</span></span><br><span class="line">        <span class="keyword">\end</span>{tabular}</span><br><span class="line">    <span class="keyword">\end</span>{table}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">\blindtext</span>[3] <span class="comment">%生成假文</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果不给表格添加位置参数，其默认的位置参数是 t</p>
+<p><img data-src="https://s2.loli.net/2022/06/06/ZSfNyHuGLwg9FQD.png" alt="01-不给位置参数则默认为顶部.png"></p>
+<p>对于双栏排版，如果想要图、表跨栏显示，如何处理？<br>双栏排版环境下，LATEX 提供了 <code>table*</code> 和 <code>figure*</code> 环境用来排版跨栏的浮动体。它们的用法与 table 和 figure 一样，不同之处为双栏的 ⟨placement⟩ 参数只能用 tp 两个位置。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{table*}[t]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\begin</span>{tabular}{ccc}</span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table*}</span><br></pre></td></tr></tbody></table></figure>
+<p>注意是 table 带星，不是 tabular 带星</p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>
     </div>
 
     
@@ -366,7 +397,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://coffeelize.top/posts/4a6b571e.html" title="Word 操作指南之图像篇">https://coffeelize.top/posts/4a6b571e.html</a>
+      <a href="https://coffeelize.top/ad84a2aa.html" title="Latex 浮动体位置设定">https://coffeelize.top/ad84a2aa.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -374,17 +405,20 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Latex/" rel="tag"># Latex</a>
+          </div>
 
         
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/494c263d.html" rel="prev" title="Word 操作指南之表格篇">
-                  <i class="fa fa-chevron-left"></i> Word 操作指南之表格篇
+                <a href="/4baf1388.html" rel="prev" title="Latex 字体之字族篇">
+                  <i class="fa fa-chevron-left"></i> Latex 字体之字族篇
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/17b2576b.html" rel="next" title="Word 操作指南之配置篇">
-                  Word 操作指南之配置篇 <i class="fa fa-chevron-right"></i>
+                <a href="/9536b099.html" rel="next" title="Latex 引用参考文献指南">
+                  Latex 引用参考文献指南 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -513,7 +547,7 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/posts/4a6b571e.html"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/ad84a2aa.html"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 
