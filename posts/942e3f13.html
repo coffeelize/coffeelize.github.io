@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="G2H8dHq6QIE9GJ3RiIGetZP_i7GIHeB7HsJunnlSPiw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="速览1234\usepackage{zhlipsum}%...\zhlipsum[需要从假文中抽取的段落][name&#x3D;假文库] %两个参数都是可选参数 \newzhlipsum{自定义假文库名}{{假文段落1},{假文段落2},{假文段落n}} %自定义假文库，注意假文的每个段落以大括号包裹，中间使用英文逗号隔开 以下几个案例将分别从这三句命令对本宏包进行说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latex 之 zhlipsum 中文假文宏包使用说明">
+<meta property="og:url" content="https://coffeelize.top/posts/942e3f13.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="速览1234\usepackage{zhlipsum}%...\zhlipsum[需要从假文中抽取的段落][name&#x3D;假文库] %两个参数都是可选参数 \newzhlipsum{自定义假文库名}{{假文段落1},{假文段落2},{假文段落n}} %自定义假文库，注意假文的每个段落以大括号包裹，中间使用英文逗号隔开 以下几个案例将分别从这三句命令对本宏包进行说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/06/09/XLpl76uegcFkQfV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/09/ZDcPmafGRMed15n.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/09/LxfEUIdY4TgNvZV.png">
+<meta property="article:published_time" content="2022-06-12T02:10:35.000Z">
+<meta property="article:modified_time" content="2022-06-12T02:17:04.083Z">
+<meta property="article:author" content="原装咖啡">
+<meta property="article:tag" content="Latex">
+<meta property="article:tag" content="宏包">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/09/XLpl76uegcFkQfV.png">
+
+
+<link rel="canonical" href="https://coffeelize.top/posts/942e3f13.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/942e3f13.html","path":"posts/942e3f13.html","title":"Latex 之 zhlipsum 中文假文宏包使用说明"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Latex 之 zhlipsum 中文假文宏包使用说明 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="智朋的个人博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长，行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-札记&留言板"><a href="/notes/" rel="section"><i class="fa fa-fw fa-sticky-note fa-fw"></i>札记&留言板</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9F%E8%A7%88"><span class="nav-number">1.</span> <span class="nav-text">速览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E5%81%87%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">中文假文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E6%97%A0%E6%84%8F%E4%B9%89%E7%9A%84%E5%81%87%E6%96%87%E4%B8%AD%E9%80%89%E5%AE%9A%E6%AE%B5%E8%90%BD"><span class="nav-number">2.1.</span> <span class="nav-text">从无意义的假文中选定段落</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E6%8C%87%E5%AE%9A%E5%81%87%E6%96%87%E5%BA%93%E4%B8%AD%E6%8A%BD%E5%8F%96%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text">从指定假文库中抽取段落</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%81%87%E6%96%87%E5%BA%93"><span class="nav-number">2.3.</span> <span class="nav-text">自定义假文库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%B1%E6%96%87%E5%81%87%E6%96%87"><span class="nav-number">3.</span> <span class="nav-text">英文假文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%85%E7%BB%AD%E2%80%A6"><span class="nav-number">4.</span> <span class="nav-text">待续…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="原装咖啡"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">原装咖啡</p>
+  <div class="site-description" itemprop="description">Sometimes it's the very people who no one imagines anything of who do the things that no one can imagine.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuanzhuangkafei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuanzhuangkafei" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ghgxj.xyz/" title="https:&#x2F;&#x2F;ghgxj.xyz&#x2F;" rel="noopener" target="_blank">ZXC's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/942e3f13.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="原装咖啡">
+      <meta itemprop="description" content="Sometimes it's the very people who no one imagines anything of who do the things that no one can imagine.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Latex 之 zhlipsum 中文假文宏包使用说明
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-06-12 10:10:35 / 修改时间：10:17:04" itemprop="dateCreated datePublished" datetime="2022-06-12T10:10:35+08:00">2022-06-12</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/942e3f13.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/942e3f13.html" data-xid="/posts/942e3f13.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\zhlipsum</span>[需要从假文中抽取的段落][name=假文库] <span class="comment">%两个参数都是可选参数 </span></span><br><span class="line"><span class="keyword">\newzhlipsum</span>{自定义假文库名}{{假文段落1},{假文段落2},{假文段落n}} <span class="comment">%自定义假文库，注意假文的每个段落以大括号包裹，中间使用英文逗号隔开</span></span><br></pre></td></tr></tbody></table></figure>
+<p>以下几个案例将分别从这三句命令对本宏包进行说明</p>
+<span id="more"></span>
+
+<h3 id="中文假文"><a href="#中文假文" class="headerlink" title="中文假文"></a>中文假文</h3><h4 id="从无意义的假文中选定段落"><a href="#从无意义的假文中选定段落" class="headerlink" title="从无意义的假文中选定段落"></a>从无意义的假文中选定段落</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="comment">%zhlipsum第一个可选参数为选取段落参数</span></span><br><span class="line">    <span class="keyword">\zhlipsum</span>[1] <span class="comment">%从假文中（共50段）选择第一段</span></span><br><span class="line">    <span class="keyword">\zhlipsum</span>	<span class="comment">%也可以不加参数，默认输出1-3段</span></span><br><span class="line">    <span class="keyword">\zhlipsum</span>[1-2] <span class="comment">%从假文中选择第1-2段 ，可以以“数字-数字”的形式指定</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/09/XLpl76uegcFkQfV.png" alt="01-从假文中抽取段落.png"></p>
+<h4 id="从指定假文库中抽取段落"><a href="#从指定假文库中抽取段落" class="headerlink" title="从指定假文库中抽取段落"></a>从指定假文库中抽取段落</h4><p>宏包作者预定义了 6 个假文库</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">段落数</th>
+<th align="center">简体 / 繁体</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"> simp</td>
+<td align="center">50</td>
+<td align="center"> 简</td>
+<td align="center">无意义随机假文</td>
+</tr>
+<tr>
+<td align="center"> trad</td>
+<td align="center">50</td>
+<td align="center"> 繁</td>
+<td align="center">无意义随机假文</td>
+</tr>
+<tr>
+<td align="center"> nanshanjing</td>
+<td align="center">43</td>
+<td align="center"> 繁</td>
+<td align="center">《山海经・南山经》</td>
+</tr>
+<tr>
+<td align="center">xiangyu</td>
+<td align="center">45</td>
+<td align="center"> 繁</td>
+<td align="center">司马迁《史记项羽本纪》</td>
+</tr>
+<tr>
+<td align="center">zhufu</td>
+<td align="center">110</td>
+<td align="center"> 简</td>
+<td align="center">鲁迅《祝福》</td>
+</tr>
+<tr>
+<td align="center">aspirin</td>
+<td align="center">66</td>
+<td align="center"> 简</td>
+<td align="center">维基百科条目：阿司匹林 </td>
+</tr>
+</tbody></table>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="comment">%zhlipsum第二个可选参数为选取的假文库，默认有6中</span></span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1-3][name=zhufu] <span class="comment">%从鲁迅《祝福》库中选取前1-3段</span></span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1-3][name=xiangyu] <span class="comment">%从司马迁《史记·项羽本纪》库中选取前1-3段</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/09/ZDcPmafGRMed15n.png" alt="02-从指定假文库中抽取段落.png"></p>
+<h4 id="自定义假文库"><a href="#自定义假文库" class="headerlink" title="自定义假文库"></a>自定义假文库</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\newzhlipsum</span>{chibifu}{ <span class="comment">%自定义假文库，假文库名为chibifu，假文库共5段，每段之间使用英文逗号进行分隔</span></span><br><span class="line">	{壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。},</span><br><span class="line">	{于是饮酒乐甚，扣舷而歌之。歌曰：“桂棹兮兰桨，击空明兮溯流光。渺渺兮予怀，望美人兮天一方。”客有吹洞箫者，倚歌而和之。其声呜呜然，如怨如慕，如泣如诉；余音袅袅，不绝如缕。舞幽壑之潜蛟，泣孤舟之嫠妇。},</span><br><span class="line">	{苏子愀然，正襟危坐，而问客曰：“何为其然也？”客曰：“‘月明星稀，乌鹊南飞。’此非曹孟德之诗乎？西望夏口，东望武昌，山川相缪，郁乎苍苍，此非孟德之困于周郎者乎？方其破荆州，下江陵，顺流而东也，舳舻千里，旌旗蔽空，酾酒临江，横槊赋诗，固一世之雄也，而今安在哉？况吾与子渔樵于江渚之上，侣鱼虾而友麋鹿，驾一叶之扁舟，举匏樽以相属。寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。挟飞仙以遨游，抱明月而长终。知不可乎骤得，托遗响于悲风。”},</span><br><span class="line">	{苏子曰：“客亦知夫水与月乎？逝者如斯，而未尝往也；盈虚者如彼，而卒莫消长也。盖将自其变者而观之，则天地曾不能以一瞬；自其不变者而观之，则物与我皆无尽也，而又何羡乎！且夫天地之间，物各有主，苟非吾之所有，虽一毫而莫取。惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭。是造物者之无尽藏也，而吾与子之所共适。”},</span><br><span class="line">	{客喜而笑，洗盏更酌。肴核既尽，杯盘狼籍。相与枕藉乎舟中，不知东方之既白。}</span><br><span class="line">}</span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1-3][name=chibifu] <span class="comment">%假文选择自定义的赤壁赋的前3段</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/09/LxfEUIdY4TgNvZV.png" alt="03-从自定义的假文库中抽取前3段.png"></p>
+<h3 id="英文假文"><a href="#英文假文" class="headerlink" title="英文假文"></a>英文假文</h3><p>英文假文 blindtext 宏包使用案可参考之前所写文章：<a href="https://coffeelize.top/posts/ad84a2aa.html#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90">Latex 浮动体位置设定</a> @<a href="https://coffeelize.top/">智朋的个人博客</a></p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li> zhlipsum 宏包官方文档：<a href="zhlipsum: 中文乱数假文（Lorem ipsum）">zhlipsum: 中文乱数假文（Lorem ipsum）</a>@曾祥东</li>
+<li> 古诗文网：<a target="_blank" rel="noopener" href="https://so.gushiwen.cn/shiwenv_4cac23b07849.aspx">赤壁赋</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="reward-container">
+  <div>如果您觉得我的文章质量不错，对您有用的话，不妨小额捐助我一下，让我有动力继续写出更多好文章。Buy me a coffee(*^▽^*)</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/Wechartpay.webp" alt="原装咖啡 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/Alipay.webp" alt="原装咖啡 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>原装咖啡
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://coffeelize.top/posts/942e3f13.html" title="Latex 之 zhlipsum 中文假文宏包使用说明">https://coffeelize.top/posts/942e3f13.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Latex/" rel="tag"># Latex</a>
+              <a href="/tags/%E5%AE%8F%E5%8C%85/" rel="tag"># 宏包</a>
+          </div>
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/aa1c9829.html" rel="prev" title="屏蔽内容农场简明指南">
+                  <i class="fa fa-chevron-left"></i> 屏蔽内容农场简明指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/c07914ac.html" rel="next" title="Latex 之字体颜色篇">
+                  Latex 之字体颜色篇 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">原装咖啡</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">64k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">58 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/posts/942e3f13.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "default";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Reddit,Evernote,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

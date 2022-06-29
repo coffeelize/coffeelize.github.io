@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="G2H8dHq6QIE9GJ3RiIGetZP_i7GIHeB7HsJunnlSPiw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="说明：  以下代码块中的内容均匀 LaTeX 语法 参考视频： 刘海洋・LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX 知识 在线表格转 latex：https:&#x2F;&#x2F;tablesgenerator.com&#x2F;latex_tables  推荐：在线 Latex 公式编辑器 Equation Editor  推荐博客：始终">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX 不快速的入门笔记">
+<meta property="og:url" content="https://coffeelize.top/posts/15e36c1c.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="说明：  以下代码块中的内容均匀 LaTeX 语法 参考视频： 刘海洋・LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX 知识 在线表格转 latex：https:&#x2F;&#x2F;tablesgenerator.com&#x2F;latex_tables  推荐：在线 Latex 公式编辑器 Equation Editor  推荐博客：始终">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/11/GusSoQfzDnMPVkW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/11/um2tfF4CIDr1QeR.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/11/xdvmRY2ZhGIBeaw.png">
+<meta property="article:published_time" content="2022-04-11T01:23:19.000Z">
+<meta property="article:modified_time" content="2022-04-11T14:22:14.224Z">
+<meta property="article:author" content="原装咖啡">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/11/GusSoQfzDnMPVkW.png">
+
+
+<link rel="canonical" href="https://coffeelize.top/posts/15e36c1c.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/15e36c1c.html","path":"posts/15e36c1c.html","title":"LaTeX 不快速的入门笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LaTeX 不快速的入门笔记 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="智朋的个人博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长，行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-札记&留言板"><a href="/notes/" rel="section"><i class="fa fa-fw fa-sticky-note fa-fw"></i>札记&留言板</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">源代码结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">格式化命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">4.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">7.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">8.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%E6%96%87%E6%9C%AC"><span class="nav-number">9.</span> <span class="nav-text">正文文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%E7%AC%A6%E5%8F%B7"><span class="nav-number">9.1.</span> <span class="nav-text">正文符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F"><span class="nav-number">9.2.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7"><span class="nav-number">9.3.</span> <span class="nav-text">数学符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F-1"><span class="nav-number">9.4.</span> <span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%91%E6%8A%80%E5%8A%9F%E8%83%BD"><span class="nav-number">9.5.</span> <span class="nav-text">科技功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%8C%96%E5%AD%A6%E5%BC%8F"><span class="nav-number">9.6.</span> <span class="nav-text">编写化学式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E4%B8%8E%E6%96%87%E6%9C%AC%E5%9D%97"><span class="nav-number">9.7.</span> <span class="nav-text">列表与文本块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%84%E5%BD%95%E4%BB%A3%E7%A0%81"><span class="nav-number">9.8.</span> <span class="nav-text">抄录代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E4%BB%A3%E7%A0%81%EF%BC%9A%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE"><span class="nav-number">9.8.1.</span> <span class="nav-text">高级代码：语法高亮</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%84"><span class="nav-number">9.9.</span> <span class="nav-text">算法结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E4%B8%8E%E6%B5%AE%E5%8A%A8%E7%8E%AF%E5%A2%83"><span class="nav-number">10.</span> <span class="nav-text">图表与浮动环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%9B%BE"><span class="nav-number">10.1.</span> <span class="nav-text">插图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%94%BB%E5%9B%BE"><span class="nav-number">10.1.1.</span> <span class="nav-text">代码画图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E4%BD%93"><span class="nav-number">10.2.</span> <span class="nav-text">浮动体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7"><span class="nav-number">11.</span> <span class="nav-text">自动化工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E7%8C%AE%E6%A0%BC%E5%BC%8F"><span class="nav-number">12.</span> <span class="nav-text">设置文献格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F"><span class="nav-number">13.</span> <span class="nav-text">设计文档格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="nav-number">13.1.</span> <span class="nav-text">基本原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%86%85%E5%AE%B9%E7%9B%B8%E5%85%B3%E7%9A%84%E5%91%BD%E4%BB%A4%E4%B8%8E%E7%8E%AF%E5%A2%83"><span class="nav-number">13.2.</span> <span class="nav-text">使用内容相关的命令与环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%8F%E5%8C%85"><span class="nav-number">13.3.</span> <span class="nav-text">使用宏包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6%E5%8A%9F%E8%83%BD"><span class="nav-number">14.</span> <span class="nav-text">格式控制功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">14.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%8F%B7"><span class="nav-number">14.2.</span> <span class="nav-text">字号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90"><span class="nav-number">14.3.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E7%99%BD%E9%97%B4%E8%B7%9D"><span class="nav-number">14.4.</span> <span class="nav-text">空白间距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E9%9D%A2%E5%B8%83%E5%B1%80"><span class="nav-number">15.</span> <span class="nav-text">版面布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E6%96%AD%E8%A1%8C"><span class="nav-number">15.1.</span> <span class="nav-text">分页断行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%92%E5%AD%90"><span class="nav-number">15.2.</span> <span class="nav-text">盒子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%BA%94%E7%94%A8%E4%BA%8E%E6%96%87%E6%A1%A3"><span class="nav-number">16.</span> <span class="nav-text">格式应用于文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%A8%E5%AF%BC%E8%A8%80%E5%8C%BA%E5%8D%95%E7%8B%AC%E8%AE%BE%E7%BD%AE%E6%A0%BC%E5%BC%8F"><span class="nav-number">16.1.</span> <span class="nav-text">使用在导言区单独设置格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E5%92%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">16.2.</span> <span class="nav-text">利用自定义命令和环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%A0%E8%8A%82%E6%A0%87%E9%A2%98"><span class="nav-number">16.3.</span> <span class="nav-text">章节标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8%E6%A0%87%E9%A2%98"><span class="nav-number">16.4.</span> <span class="nav-text">浮动标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%9A%E5%88%B6"><span class="nav-number">16.5.</span> <span class="nav-text">列表环境的定制</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="原装咖啡"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">原装咖啡</p>
+  <div class="site-description" itemprop="description">Sometimes it's the very people who no one imagines anything of who do the things that no one can imagine.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuanzhuangkafei" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuanzhuangkafei" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ghgxj.xyz/" title="https:&#x2F;&#x2F;ghgxj.xyz&#x2F;" rel="noopener" target="_blank">ZXC's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/15e36c1c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="原装咖啡">
+      <meta itemprop="description" content="Sometimes it's the very people who no one imagines anything of who do the things that no one can imagine.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX 不快速的入门笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-04-11 09:23:19 / 修改时间：22:22:14" itemprop="dateCreated datePublished" datetime="2022-04-11T09:23:19+08:00">2022-04-11</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/15e36c1c.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/15e36c1c.html" data-xid="/posts/15e36c1c.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>说明：</p>
+<ul>
+<li>以下代码块中的内容均匀 LaTeX 语法</li>
+<li>参考视频： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1s7411U7Pr?p=2">刘海洋・LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX 知识</a></li>
+<li>在线表格转 latex：<a target="_blank" rel="noopener" href="https://tablesgenerator.com/latex_tables">https://tablesgenerator.com/latex_tables</a></li>
+<li> 推荐：在线 Latex 公式编辑器 <a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">Equation Editor</a></li>
+<li> 推荐博客：<a target="_blank" rel="noopener" href="https://liam.page/categories/LaTeX/">始终</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>命令以反斜杠开头，后面可跟花括号加参数，后面跟中括号表示可选参数</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[11pt,twoside,a4paper]{article}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]{ctexart}</span><br><span class="line">% 这里的 ctexart，支持简体中文和英文的混排，指定文档的编码类型为 UTF8 格式</span><br></pre></td></tr></tbody></table></figure>
+
+<p>UTF8 是 TeXworks 编辑器默认使用的编码类型</p>
+<p>中文的文档类为 ctexart（Chinese tex article）</p>
+<p>.tex⇒.pdf<br>英文推荐：pdflatex<br>中文推荐：xelatex</p>
+<h2 id="源代码结构"><a href="#源代码结构" class="headerlink" title="源代码结构"></a>源代码结构</h2><p>documentclass 和 begin 之间的内容为导言（前言 preamble）「有点类似 HTML 当中的 head 标签」<br>介于 begin 和 end 之间的内容为正文「类似于 HTML 中是 body」</p>
+<h2 id="格式化命令"><a href="#格式化命令" class="headerlink" title="格式化命令"></a>格式化命令</h2><p> 加粗：\textbf {要加粗的内容}<br> 说明：bf 也就是 bold font 的缩写<br> 斜体：\textit {要斜体的内容}<br> 下划线：underline {下划线内容}</p>
+<p> 添加一个段落：输入两个换行符；「单独一个换行符只会生成一个空格」</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">% 章节</span><br><span class="line">\section{章节的名字}</span><br><span class="line">第一个章节中的内容</span><br><span class="line">\subsection{第一个章节的子章节}</span><br><span class="line">\subsubsection{三级章节}</span><br><span class="line">\section{另一章节的名字}</span><br><span class="line">第二个章节中的内容</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>Latex 本身不支持插图功能，需要使用 graphicx 宏包辅助支持<br>如何控制图片的大小呢？在 graphicx 命令后加可选参数</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\graphicx[width=0.5\textwidth]{这里是图片的名字}</span><br><span class="line">% textwidth 表示当前文本区域的宽度，常用可选参数有：width,height,scale,angle</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果要为图片添加图注信息，则将图片嵌套在 figure 环境当中</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin{figure}</span><br><span class="line">\centering  % 将图片居中对齐</span><br><span class="line">\includegraphics{图片名字}</span><br><span class="line">\caption{这个是图片的标题}</span><br><span class="line">\end{figure}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表：enumerate<br>无序列表：itemize</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin{itemize}</span><br><span class="line">\item 列表项 1</span><br><span class="line">\item 列表项 2</span><br><span class="line">\item 列表项 3</span><br><span class="line">\end{itemize}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><p>行内公式：可以使用 inline equation 直接在段落内添加公式，写在两个美元符号中间<br>行间公式：使用 equation 环境，「可以将环境简写为」</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\[</span><br><span class="line">公式内容</span><br><span class="line">\]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>一般符号：α，β……<br>指数上下标形式：^ and _<br>分式和根式</p>
+<p>推荐：在线 Latex 公式编辑器 <a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">Equation Editor</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>创建环境 tabular</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\end{itemize}</span><br><span class="line">\begin{tabular}{ c c c}</span><br><span class="line">a11 &amp; a12 &amp; a13 \\</span><br><span class="line">\hline</span><br><span class="line">a21 &amp; a22 &amp; a23 \\</span><br><span class="line">\hline</span><br><span class="line">\end{tabular}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>ccc 表示共表格共 3 列，且三列为居中对齐，如果是 CRR，表示第一列居中对齐，第二三列为右对齐</li>
+<li>单元格与单元格用 &amp; 隔开</li>
+<li>表格一行结束使用两个反斜杠 \</li>
+<li> 如果在参数 ccc 中插入竖线 | c|c|c|，可为表格添加垂直方向的边框</li>
+<li>水平方向的边框通过 <code>\hline</code> 添加<br>和图片类似，如果表注，需要将表格添加的表的环境中「开始是 tabular，需要嵌入 table 环境中」，再使用 \caption {} 添加表注</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>百分号开头，和 matlab 相同</p>
+<h2 id="正文文本"><a href="#正文文本" class="headerlink" title="正文文本"></a>正文文本</h2><p>一个换行符等同于一个空格，多个空格的效果与一个相同<br>自然段分段式空一行</p>
+<p>标题：title、author、date——maketitle<br>摘要 / 前言：abstract 环境 /chapter<br>目录：tableofcontents<br>章节：chapter，section<br>附录：appendix+chapter 或 section<br>文献：bibliography（自动生成参考文献）<br>索引：printindex</p>
+<p>章节层次结构：</p>
+<ul>
+<li>part：可选的最高层</li>
+<li> chapter：report，book 类最高层</li>
+<li> section：article 类最高层</li>
+<li> subsection</li>
+<li>subsubsection：默认不编号，不编目录</li>
+<li> paragraph：默认不编号，不编目录</li>
+<li> subparagraph：默认不编号，不编目录</li>
+</ul>
+<h3 id="正文符号"><a href="#正文符号" class="headerlink" title="正文符号"></a>正文符号</h3><p>一些符号被 latex 宏语言占用，需要以命令形式输入：<br>比如反斜杠：<code>\textbackslash</code></p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><ul>
+<li>行内公式</li>
+<li>列表（显示公式）公式<ul>
+<li>简单不编号的公式使用命令 <code>\[ \]</code></li>
+<li>基本的编号的公式用 <strong>eq</strong>uation 环境（<strong>beq</strong> tab 键即可出来）</li>
+<li>更复杂的结构，使用 amsmath 宏包…</li>
+</ul>
+</li>
+</ul>
+<p>上标和下标：<code>^ and _</code><br>分式：<code>frac{分子}{分母}</code><br>根式：<code>sqrt[次数]{根号下}</code><br>矩阵：amsmath 宏包提供了专门的矩阵环境，matrix，pmatrix，bmatrix 等</p>
+<h3 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h3><ul>
+<li>数学字母</li>
+<li>普通符号<ul>
+<li>乘号：\times</li>
+<li> 除号：\div</li>
+</ul>
+</li>
+<li> 二元运算符</li>
+<li>二元关系符：大于小于等于等</li>
+<li>括号</li>
+<li>标点：逗号，<code>\colon</code> 冒号，<code>\semicolon</code> 分号</li>
+<li>分式使用 \frac {分子}{分母} 形式书写；分式在行间正常大小显示，而如果在行中，则会被压缩</li>
+<li>根式使用 \sqrt [n 次]{内容}</li>
+</ul>
+<h3 id="数学公式-1"><a href="#数学公式-1" class="headerlink" title="数学公式"></a>数学公式</h3><p>amsmath 是基本的数学工具包，在包含数学公式的文档中几乎无处不在，mathtools 则对 amsmath 做了一些补充和增强</p>
+<h3 id="科技功能"><a href="#科技功能" class="headerlink" title="科技功能"></a>科技功能</h3><p>siunitx：数字单位的一揽子解决方案</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\num{-1.2345e95}</span><br><span class="line">\SI{12}{m/s}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="编写化学式"><a href="#编写化学式" class="headerlink" title="编写化学式"></a>编写化学式</h3><p>chemformula 宏包（\ch 命令）</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\ch{2 H2 + O2 -&gt; 2 H2O}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/04/11/GusSoQfzDnMPVkW.png" alt="使用Latex编辑化学反应式"></p>
+<h3 id="列表与文本块"><a href="#列表与文本块" class="headerlink" title="列表与文本块"></a>列表与文本块</h3><h3 id="抄录代码"><a href="#抄录代码" class="headerlink" title="抄录代码"></a>抄录代码</h3><p>\verb | 这里是代码 |<br>\verbatim 环境</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{verbatim}</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> inputs('hello world!')</span><br><span class="line">\end{verbatim}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/04/11/um2tfF4CIDr1QeR.png" alt="使用Latex抄录代码"></p>
+<h4 id="高级代码：语法高亮"><a href="#高级代码：语法高亮" class="headerlink" title="高级代码：语法高亮"></a>高级代码：语法高亮</h4><p>使用 listings 宏包</p>
+<h3 id="算法结构"><a href="#算法结构" class="headerlink" title="算法结构"></a>算法结构</h3><ul>
+<li>clrscode 宏包</li>
+<li> algorithm2e 宏包</li>
+<li>…</li>
+</ul>
+<h2 id="图表与浮动环境"><a href="#图表与浮动环境" class="headerlink" title="图表与浮动环境"></a>图表与浮动环境</h2><p>画表图：使用 tabular 环境<br>表格转换为 latex 代码：<a target="_blank" rel="noopener" href="https://tablesgenerator.com/latex_tables">https://tablesgenerator.com/latex_tables</a></p>
+<p><img data-src="https://s2.loli.net/2022/04/11/xdvmRY2ZhGIBeaw.png" alt="在线表格转Latex"></p>
+<p>功能各异的表格宏包</p>
+<ul>
+<li>单元格处理：multirow、makecell</li>
+<li> 长表格：<strong>longtable</strong>、xtab</li>
+<li> 表线控制：booktabs（三线表）、diagbox（斜线表）</li>
+<li>综合应用：tabu</li>
+<li>…</li>
+</ul>
+<h3 id="插图"><a href="#插图" class="headerlink" title="插图"></a>插图</h3><p>graphics 宏包提供 \includegraphics 命令</p>
+<h4 id="代码画图"><a href="#代码画图" class="headerlink" title="代码画图"></a>代码画图</h4><p>优先使用外部工具绘图，矢量图 Lnkscape（开源），Illustrator，甚至是 powerpoint（保存为 PDF 格式），数学图形使用 matlab 之类</p>
+<h3 id="浮动体"><a href="#浮动体" class="headerlink" title="浮动体"></a>浮动体</h3><ul>
+<li>figure 环境</li>
+<li> table 环境<br>其他环境可以使用 float 宏包得到<br>浮动体的标题使用 \caption 命令得到，自动编号</li>
+</ul>
+<h2 id="自动化工具"><a href="#自动化工具" class="headerlink" title="自动化工具"></a>自动化工具</h2><ul>
+<li>自动目录</li>
+<li>交叉引用</li>
+<li> PDF 的链接与书签（hyperref 宏包）</li>
+<li>BIBTex<ul>
+<li>.bib 数据库<ul>
+<li> JabRef：管理 bib 数据库</li>
+</ul>
+</li>
+<li> \cite 命令引用</li>
+<li>末尾 \bibliography {math} 引用</li>
+</ul>
+</li>
+</ul>
+<h2 id="设置文献格式"><a href="#设置文献格式" class="headerlink" title="设置文献格式"></a>设置文献格式</h2><p>选用合适的.bst 格式，比如 plainnat，gbt7714-plain<br>natbib 与作者 - 年格式<br>利用 custom-bib 产生定制的格式文件<br>bilatex+biber：文献处理的新方式</p>
+<h2 id="设计文档格式"><a href="#设计文档格式" class="headerlink" title="设计文档格式"></a>设计文档格式</h2><h3 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h3><p>格式与内容分离，不要在意细节上 Latex 的一大卖点</p>
+<h3 id="使用内容相关的命令与环境"><a href="#使用内容相关的命令与环境" class="headerlink" title="使用内容相关的命令与环境"></a>使用内容相关的命令与环境</h3><p>只使用语义相关的的命令<br>比如推荐 emph，不推荐使用 textit<br>推荐 caption {流程图}，不推荐 textbf {图 1:} 流程图</p>
+<h3 id="使用宏包"><a href="#使用宏包" class="headerlink" title="使用宏包"></a>使用宏包</h3><h2 id="格式控制功能"><a href="#格式控制功能" class="headerlink" title="格式控制功能"></a>格式控制功能</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>rmfamily,textrm<br>sffamily,textsf<br>ttfamily,texttt</p>
+<h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><p>zihao{5},zihao{-3}</p>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>\centering,\raggedleft,\raggedright</p>
+<h3 id="空白间距"><a href="#空白间距" class="headerlink" title="空白间距"></a>空白间距</h3><p>\hspace{2cm},vspace{3cm}</p>
+<h2 id="版面布局"><a href="#版面布局" class="headerlink" title="版面布局"></a>版面布局</h2><p>geometry 宏包<br>fancyhdr 宏包（设置页眉页脚）</p>
+<h3 id="分页断行"><a href="#分页断行" class="headerlink" title="分页断行"></a>分页断行</h3><p>linebreak、<code>\\</code>(一般表格的时候使用)<br>pagebreak，newpage，clearpage，cleardoublepage</p>
+<h3 id="盒子"><a href="#盒子" class="headerlink" title="盒子"></a>盒子</h3><p>\mbox {内容}<br>\parbox {4em}{内容}，minipage</p>
+<h2 id="格式应用于文档"><a href="#格式应用于文档" class="headerlink" title="格式应用于文档"></a>格式应用于文档</h2><h3 id="使用在导言区单独设置格式"><a href="#使用在导言区单独设置格式" class="headerlink" title="使用在导言区单独设置格式"></a>使用在导言区单独设置格式</h3><p>直接设置相关参数：如 parindent，parskip，linespread（几倍行距），pagestyle（页眉页脚）<br>修改部分命令定义：thesection,labelenumi,descriptionlabe1,figurename<br>利用工具宏包完成设置：toclof 宏包设置目录格式</p>
+<h3 id="利用自定义命令和环境"><a href="#利用自定义命令和环境" class="headerlink" title="利用自定义命令和环境"></a>利用自定义命令和环境</h3><p>例如，为程序名定义一个命令</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\newcommand\prg[1]{\textsf{#1}}</span><br><span class="line">程序 \prg{sort} 很有用</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此后，如果想要修改 sort 的样式，那么直接修改我们自定义的命令，比如</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\newcommand\prg[1]{\textbf{\huge #1}}</span><br><span class="line">% huge 可以将 sort 字体变大</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="章节标题"><a href="#章节标题" class="headerlink" title="章节标题"></a>章节标题</h3><p>ctex 宏包及文档类，用 \ctexset 定制，西文用 titlesec 等</p>
+<h3 id="浮动标题"><a href="#浮动标题" class="headerlink" title="浮动标题"></a>浮动标题</h3><p>caption 宏包<br>texdoc caption</p>
+<h3 id="列表环境的定制"><a href="#列表环境的定制" class="headerlink" title="列表环境的定制"></a>列表环境的定制</h3><p>enumitem 宏包</p>
+<p>如设置列表不设置多倍行距</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="reward-container">
+  <div>如果您觉得我的文章质量不错，对您有用的话，不妨小额捐助我一下，让我有动力继续写出更多好文章。Buy me a coffee(*^▽^*)</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/Wechartpay.webp" alt="原装咖啡 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/Alipay.webp" alt="原装咖啡 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>原装咖啡
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://coffeelize.top/posts/15e36c1c.html" title="LaTeX 不快速的入门笔记">https://coffeelize.top/posts/15e36c1c.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/6eab1a4b.html" rel="prev" title="LaTeX 目录布局排版之简易教程">
+                  <i class="fa fa-chevron-left"></i> LaTeX 目录布局排版之简易教程
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/82ded38b.html" rel="next" title="sketch 绘图指南">
+                  sketch 绘图指南 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">原装咖啡</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">64k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">58 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"支持匿名评论啰！若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/posts/15e36c1c.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "default";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Reddit,Evernote,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>
