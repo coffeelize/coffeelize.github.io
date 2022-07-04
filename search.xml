@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Final Cut Pro 常用快捷键总结及练习</title>
-    <url>/posts/3ac6e730.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
-<ul>
-<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
-<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
-<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
-<li>……</li>
+    <title>Beamer 教程之框架篇</title>
+    <url>/posts/57e904f9.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="为什么使用Beamer"><a href="#为什么使用Beamer" class="headerlink" title="为什么使用Beamer"></a>为什么使用 Beamer</h3><ul>
+<li><del>学术偏好，就是任性</del></li>
+<li>和 LATEX 搭配，兼容 LATEX 命令</li>
+<li>高度可读性与清晰的逻辑</li>
+<li>输出为 PDF，跨平台显示无差异</li>
+<li>详见为什么使用 LaTeX</li>
 </ul>
-<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
-<p>以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来可以开始测试啦：</p>
-<!-- 以下内容为quizlet测试内嵌网页 -->
-<iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&amp;x=1jj1" height="500" width="100%" style="border:0"></iframe>]]></content>
+<span id="more"></span>
+
+<h3 id="指定文档类"><a href="#指定文档类" class="headerlink" title="指定文档类"></a>指定文档类</h3><p>beamer 的文档类（顺便设置一下整个文档的字体大小），也可以指定幻灯片的比例</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%\documentclass{beamer} %使用默认的格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 指定beamer文档文字大小</span></span><br><span class="line"><span class="keyword">\documentclas</span>[14pt]{beamer}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 43是幻灯片比例4:3，同理如果想设置16:9的格式则用169即可</span></span><br><span class="line"><span class="comment">%\documentclass[aspectratio=43,19pt, utf8, mathserif]{beamer}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="设置中文环境"><a href="#设置中文环境" class="headerlink" title="设置中文环境"></a>设置中文环境</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 中文环境设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xeCJK} <span class="comment">%导入中文包，关键</span></span><br><span class="line"><span class="keyword">\setCJKmainfont</span>{SimHei} <span class="comment">%中文字体采用宋体</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="设置图片环境"><a href="#设置图片环境" class="headerlink" title="设置图片环境"></a>设置图片环境</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 设置图片环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx} <span class="comment">% 插入图片宏包</span></span><br><span class="line"><span class="keyword">\graphicspath</span>{images/} <span class="comment">% 设置图片路径</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="设置目录"><a href="#设置目录" class="headerlink" title="设置目录"></a>设置目录</h3><p>在每一小节前插入一张带有该节标题高亮的目录<br>需要理解的是：我们创建了多张带有不同命名的幻灯片，但是在程序看来，他们不会将这些不同名称的幻灯片标题作为该文档的目录结构，而是和普通的科技论文格式一样，需要使用到 section、subsection 等带有语义的命令来实现文档结构的划分</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="comment">%\begin{document}</span></span><br><span class="line"><span class="comment">%--------------</span></span><br><span class="line"><span class="comment">% 每个章节都有小目录</span></span><br><span class="line"><span class="comment">%--------------</span></span><br><span class="line"><span class="keyword">\AtBeginSection</span>[]</span><br><span class="line">{</span><br><span class="line">  <span class="keyword">\begin</span>{frame}</span><br><span class="line">    <span class="keyword">\frametitle</span>{Table of Contents}</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[currentsection]</span><br><span class="line">  <span class="keyword">\end</span>{frame}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如下代码，创建了 5 张幻灯片，但使用 tableofcontent 命令，不会有任何的标题被生成</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%--------------目录页--------------</span></span><br><span class="line"><span class="comment">%需要在frame环境当中，通过frametitle给该页添加幻灯片标题</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{目录}</span><br><span class="line">	<span class="comment">%插入目录</span></span><br><span class="line">	<span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第1节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{选题依据}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第2节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究内容和研究目标}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第3节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{技术路线和已取得成果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第4节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{可行性分析及创新点}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第5节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究计划及预期结果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h3><p>按照如下的框架往 beamer 当中填写内容，即可编译出自动为我们排好版的 PDF，当然这只是冰山一角，能够实现一些最基础的功能和最基本的框架，希望能够对你有所帮助呀 o (^▽^) o</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt]{beamer}</span><br><span class="line"><span class="comment">% 中文环境设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xeCJK} <span class="comment">%导入中文包，关键</span></span><br><span class="line"><span class="keyword">\setCJKmainfont</span>{SimHei} <span class="comment">%中文字体采用宋体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 作者信息</span></span><br><span class="line"><span class="keyword">\title</span>{智朋的笔记}</span><br><span class="line"><span class="keyword">\author</span>{智朋}</span><br><span class="line"><span class="keyword">\institute</span>{机械工程学院}</span><br><span class="line"></span><br><span class="line"><span class="comment">%类型为presentation</span></span><br><span class="line"><span class="keyword">\mode</span>&lt;presentation&gt; </span><br><span class="line">{</span><br><span class="line">	<span class="comment">%使用Madrid主题</span></span><br><span class="line">	<span class="keyword">\usetheme</span>{Madrid}</span><br><span class="line">	<span class="comment">%字体主题，布局主题和颜色主题</span></span><br><span class="line">	<span class="comment">%\usefonttheme{structuresmallcapsserif} </span></span><br><span class="line">	<span class="comment">%\usetheme{Berlin}</span></span><br><span class="line">	<span class="comment">%\usecolortheme{beaver}</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置图片环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx} <span class="comment">% 插入图片宏包</span></span><br><span class="line"><span class="keyword">\graphicspath</span>{images/} <span class="comment">% 设置图片路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------前言--------------</span></span><br><span class="line"><span class="comment">% 在每一个section开始的部分，tableofcontent插入一个目录页，并且会强调当前section章节</span></span><br><span class="line"><span class="keyword">\AtBeginSection</span>[]</span><br><span class="line">{</span><br><span class="line">	<span class="keyword">\begin</span>{frame}</span><br><span class="line">		<span class="keyword">\frametitle</span>{Table of Contents}</span><br><span class="line">		<span class="keyword">\tableofcontents</span>[currentsection]</span><br><span class="line">	<span class="keyword">\end</span>{frame}</span><br><span class="line">}</span><br><span class="line"><span class="comment">%--------------正文开始--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	</span><br><span class="line"><span class="comment">%--------------封面--------------</span></span><br><span class="line"><span class="keyword">\frame</span>{<span class="keyword">\titlepage</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------目录页--------------</span></span><br><span class="line"><span class="comment">%需要在frame环境当中，通过frametitle给该页添加幻灯片标题</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{目录}</span><br><span class="line">	<span class="comment">%插入目录</span></span><br><span class="line">	<span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第1节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{选题依据}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究背景}</span><br><span class="line">		研究背景研究背景研究背景研究背景研究背景研究背景研究背景研究背景研究背景研究背景</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{国内外研究现状}</span><br><span class="line">	国内外研究现状国内外研究现状国内外研究现状国内外研究现状国内外研究现状国内外研究现状</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{存在的问题}</span><br><span class="line">		<span class="keyword">\item</span> 问题1</span><br><span class="line">		存在的问题存在的问题存在的问题存在的问题存在的问题</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">\item</span> 问题2</span><br><span class="line">		存在的问题存在的问题存在的问题存在的问题存在的问题</span><br><span class="line">		</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第2节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{研究内容和研究目标}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究内容和研究目标}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第3节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{技术路线和已取得成果}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{技术路线和已取得成果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第4节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{可行性分析及创新点}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{可行性分析及创新点}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第5节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{研究计划及预期结果}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究计划及预期结果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/03/z31gATxKupUMeFR.png" alt="01-beamer框架导出的PDF.png"></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> Latex 工作室：<a href="https://www.latexstudio.net/archives/51704.html">Beamer v3.0 指南 (黄旭华译)</a></li>
+<li><input disabled="" type="checkbox"> Latex 工作室：<a href="https://www.latexstudio.net/index/details/index/mid/913.html">使用 Beamer 制作学术讲稿</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://lianxh.cn/news/4700422eee871.html">连享会工具：Beamer 幻灯片制作</a></li>
+</ul>
+]]></content>
       <tags>
-        <tag>Final cut Pro</tag>
-        <tag>quizlet</tag>
-        <tag>App</tag>
+        <tag>Latex</tag>
+        <tag>Beamer</tag>
       </tags>
   </entry>
   <entry>
@@ -199,6 +219,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Final Cut Pro 常用快捷键总结及练习</title>
+    <url>/posts/3ac6e730.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>事情是这样的：英语视听说这门课程布置了短文朗读和小组讨论作业，需要将作业打包成一个视频。从编辑视频的角度来说不难，就是将几个视频合并成一个视频，给视频中的出现的角色添加姓名（比如通过添加字幕来实现）；而刚好 Windows 笔记本放实验室了，只带了一台刚买的 Mac，剪辑操作极其痛苦。<br>比如：</p>
+<ul>
+<li>Final Cut Pro 当中的预览功能「当时候也不知道这个叫啥」，鼠标一划过去就会自动预览，而且自带倍速效果，那个倍速播放的声音真难受</li>
+<li>添加完字幕之后，导出的是 itt 的字幕格式，普通的播放器都不支持加载这种格式的字幕</li>
+<li>导出视频不知道导出什么类型的视频「参数不知道调」，导致几个几十兆的视频剪辑一下瞬间变成一个 G</li>
+<li>……</li>
+</ul>
+<p>利用假期的时间，个人认为稍微学习一下 Mac 上的剪辑软件还是挺有用的，至少对于应付临时作业来说。至于选择哪一款软件学习，首选最易上手的 Final Cut Pro。</p>
+<p>以下为我创建的基于 quizlet 的 Final Cut Pro 快捷键练习测试，接下来可以开始测试啦：</p>
+<!-- 以下内容为quizlet测试内嵌网页 -->
+<iframe src="https://quizlet.com/655782103/match/embed?i=24q5fr&amp;x=1jj1" height="500" width="100%" style="border:0"></iframe>]]></content>
+      <tags>
+        <tag>Final cut Pro</tag>
+        <tag>quizlet</tag>
+        <tag>App</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX 不快速的入门笔记</title>
     <url>/posts/15e36c1c.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>说明：</p>
@@ -359,46 +399,6 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">\usepackage{enumerate}</span><br><span class="line">\setlist{nosep}</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
-    <title>Beamer 教程之框架篇</title>
-    <url>/posts/57e904f9.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="为什么使用Beamer"><a href="#为什么使用Beamer" class="headerlink" title="为什么使用Beamer"></a>为什么使用 Beamer</h3><ul>
-<li><del>学术偏好，就是任性</del></li>
-<li>和 LATEX 搭配，兼容 LATEX 命令</li>
-<li>高度可读性与清晰的逻辑</li>
-<li>输出为 PDF，跨平台显示无差异</li>
-<li>详见为什么使用 LaTeX</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="指定文档类"><a href="#指定文档类" class="headerlink" title="指定文档类"></a>指定文档类</h3><p>beamer 的文档类（顺便设置一下整个文档的字体大小），也可以指定幻灯片的比例</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%\documentclass{beamer} %使用默认的格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 指定beamer文档文字大小</span></span><br><span class="line"><span class="keyword">\documentclas</span>[14pt]{beamer}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 43是幻灯片比例4:3，同理如果想设置16:9的格式则用169即可</span></span><br><span class="line"><span class="comment">%\documentclass[aspectratio=43,19pt, utf8, mathserif]{beamer}</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="设置中文环境"><a href="#设置中文环境" class="headerlink" title="设置中文环境"></a>设置中文环境</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 中文环境设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xeCJK} <span class="comment">%导入中文包，关键</span></span><br><span class="line"><span class="keyword">\setCJKmainfont</span>{SimHei} <span class="comment">%中文字体采用宋体</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="设置图片环境"><a href="#设置图片环境" class="headerlink" title="设置图片环境"></a>设置图片环境</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 设置图片环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx} <span class="comment">% 插入图片宏包</span></span><br><span class="line"><span class="keyword">\graphicspath</span>{images/} <span class="comment">% 设置图片路径</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="设置目录"><a href="#设置目录" class="headerlink" title="设置目录"></a>设置目录</h3><p>在每一小节前插入一张带有该节标题高亮的目录<br>需要理解的是：我们创建了多张带有不同命名的幻灯片，但是在程序看来，他们不会将这些不同名称的幻灯片标题作为该文档的目录结构，而是和普通的科技论文格式一样，需要使用到 section、subsection 等带有语义的命令来实现文档结构的划分</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="comment">%\begin{document}</span></span><br><span class="line"><span class="comment">%--------------</span></span><br><span class="line"><span class="comment">% 每个章节都有小目录</span></span><br><span class="line"><span class="comment">%--------------</span></span><br><span class="line"><span class="keyword">\AtBeginSection</span>[]</span><br><span class="line">{</span><br><span class="line">  <span class="keyword">\begin</span>{frame}</span><br><span class="line">    <span class="keyword">\frametitle</span>{Table of Contents}</span><br><span class="line">    <span class="keyword">\tableofcontents</span>[currentsection]</span><br><span class="line">  <span class="keyword">\end</span>{frame}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>如下代码，创建了 5 张幻灯片，但使用 tableofcontent 命令，不会有任何的标题被生成</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%--------------目录页--------------</span></span><br><span class="line"><span class="comment">%需要在frame环境当中，通过frametitle给该页添加幻灯片标题</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{目录}</span><br><span class="line">	<span class="comment">%插入目录</span></span><br><span class="line">	<span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第1节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{选题依据}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第2节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究内容和研究目标}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第3节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{技术路线和已取得成果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第4节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{可行性分析及创新点}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第5节--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究计划及预期结果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h3><p>按照如下的框架往 beamer 当中填写内容，即可编译出自动为我们排好版的 PDF，当然这只是冰山一角，能够实现一些最基础的功能和最基本的框架，希望能够对你有所帮助呀 o (^▽^) o</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt]{beamer}</span><br><span class="line"><span class="comment">% 中文环境设置</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xeCJK} <span class="comment">%导入中文包，关键</span></span><br><span class="line"><span class="keyword">\setCJKmainfont</span>{SimHei} <span class="comment">%中文字体采用宋体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 作者信息</span></span><br><span class="line"><span class="keyword">\title</span>{智朋的笔记}</span><br><span class="line"><span class="keyword">\author</span>{智朋}</span><br><span class="line"><span class="keyword">\institute</span>{机械工程学院}</span><br><span class="line"></span><br><span class="line"><span class="comment">%类型为presentation</span></span><br><span class="line"><span class="keyword">\mode</span>&lt;presentation&gt; </span><br><span class="line">{</span><br><span class="line">	<span class="comment">%使用Madrid主题</span></span><br><span class="line">	<span class="keyword">\usetheme</span>{Madrid}</span><br><span class="line">	<span class="comment">%字体主题，布局主题和颜色主题</span></span><br><span class="line">	<span class="comment">%\usefonttheme{structuresmallcapsserif} </span></span><br><span class="line">	<span class="comment">%\usetheme{Berlin}</span></span><br><span class="line">	<span class="comment">%\usecolortheme{beaver}</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置图片环境</span></span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx} <span class="comment">% 插入图片宏包</span></span><br><span class="line"><span class="keyword">\graphicspath</span>{images/} <span class="comment">% 设置图片路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------前言--------------</span></span><br><span class="line"><span class="comment">% 在每一个section开始的部分，tableofcontent插入一个目录页，并且会强调当前section章节</span></span><br><span class="line"><span class="keyword">\AtBeginSection</span>[]</span><br><span class="line">{</span><br><span class="line">	<span class="keyword">\begin</span>{frame}</span><br><span class="line">		<span class="keyword">\frametitle</span>{Table of Contents}</span><br><span class="line">		<span class="keyword">\tableofcontents</span>[currentsection]</span><br><span class="line">	<span class="keyword">\end</span>{frame}</span><br><span class="line">}</span><br><span class="line"><span class="comment">%--------------正文开始--------------</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	</span><br><span class="line"><span class="comment">%--------------封面--------------</span></span><br><span class="line"><span class="keyword">\frame</span>{<span class="keyword">\titlepage</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------目录页--------------</span></span><br><span class="line"><span class="comment">%需要在frame环境当中，通过frametitle给该页添加幻灯片标题</span></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{目录}</span><br><span class="line">	<span class="comment">%插入目录</span></span><br><span class="line">	<span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第1节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{选题依据}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究背景}</span><br><span class="line">		研究背景研究背景研究背景研究背景研究背景研究背景研究背景研究背景研究背景研究背景</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{国内外研究现状}</span><br><span class="line">	国内外研究现状国内外研究现状国内外研究现状国内外研究现状国内外研究现状国内外研究现状</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{存在的问题}</span><br><span class="line">		<span class="keyword">\item</span> 问题1</span><br><span class="line">		存在的问题存在的问题存在的问题存在的问题存在的问题</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">\item</span> 问题2</span><br><span class="line">		存在的问题存在的问题存在的问题存在的问题存在的问题</span><br><span class="line">		</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第2节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{研究内容和研究目标}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究内容和研究目标}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第3节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{技术路线和已取得成果}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{技术路线和已取得成果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第4节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{可行性分析及创新点}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{可行性分析及创新点}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="comment">%--------------第5节--------------</span></span><br><span class="line"><span class="keyword">\section</span>{研究计划及预期结果}</span><br><span class="line"><span class="keyword">\begin</span>{frame}</span><br><span class="line">	<span class="keyword">\frametitle</span>{研究计划及预期结果}</span><br><span class="line"><span class="keyword">\end</span>{frame}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/03/z31gATxKupUMeFR.png" alt="01-beamer框架导出的PDF.png"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><input disabled="" type="checkbox"> Latex 工作室：<a href="https://www.latexstudio.net/archives/51704.html">Beamer v3.0 指南 (黄旭华译)</a></li>
-<li><input disabled="" type="checkbox"> Latex 工作室：<a href="https://www.latexstudio.net/index/details/index/mid/913.html">使用 Beamer 制作学术讲稿</a></li>
-<li><input disabled="" type="checkbox"> <a href="https://lianxh.cn/news/4700422eee871.html">连享会工具：Beamer 幻灯片制作</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Beamer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hyperref 之图表交叉引用</title>
     <url>/posts/fa36ec1e.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="常规的交叉引用"><a href="#常规的交叉引用" class="headerlink" title="常规的交叉引用"></a>常规的交叉引用</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="comment">%\usepackage{hyperref}</span></span><br><span class="line"><span class="comment">%\def\figureautorefname{图}%</span></span><br><span class="line"><span class="comment">%\def\tableautorefname{表}%</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\section</span>{第一章}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>{figure} [htbp]</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>{example-image-duck}</span><br><span class="line">		<span class="keyword">\caption</span>{This is a duck image}</span><br><span class="line">		<span class="keyword">\label</span>{duck}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	</span><br><span class="line">	这是一段正文，这里需要交叉引用这张图片。由<span class="keyword">\ref</span>{duck}可知，图片当中是一只鸭子。</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
@@ -438,54 +438,6 @@
       <tags>
         <tag>Latex</tag>
         <tag>宏包</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LaTeX 目录布局排版之简易教程</title>
-    <url>/posts/6eab1a4b.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
-<span id="more"></span>
-
-<p>测试 Tex 代码以下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>注意：每次编译生成 PDF 之后，若对目录进行了修改，需要清理编译过程中生成的辅助文件（即以下进行的每一步需求操作均需要清理清理一遍辅助文件）。如下图以 TeXstudio 为例：<br><img data-src="https://s2.loli.net/2022/05/14/nHJ6UgwhmxrIiX8.png" alt="清理辅助文件"></p>
-<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
-<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
-<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
-<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
-<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
-<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 级标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
-<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
-<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
-<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？这里有一些相关资料，或许可以帮助到你 q (≧▽≦q)。</p>
-<ul>
-<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
-<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
-<li>雷太赫排版系统简介（第二版）：包太雷</li>
-<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
-<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -548,59 +500,47 @@
       </tags>
   </entry>
   <entry>
-    <title>Latex 中的水平和垂直间距</title>
-    <url>/posts/1c063acd.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h2><p>本节的主体内容摘自：一份不太简短的 LaTeX2e 介绍（版本 5.01），根据自己的理解为该内容补充了一些案例和代码注释。本文将主要介绍一下几个命令</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\hspace</span>{length}</span><br><span class="line"><span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{n}}</span><br><span class="line"><span class="keyword">\setlength</span>{parameter}{length}</span><br><span class="line"><span class="keyword">\addtolength</span>{parameter}{length}</span><br><span class="line"><span class="keyword">\usepackage</span>{layout}</span><br></pre></td></tr></tbody></table></figure>
+    <title>LaTeX 目录布局排版之简易教程</title>
+    <url>/posts/6eab1a4b.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>说明：由于许多学校毕业设计所使用的 LaTeX 模板采用的文档类是 ctexbook，因此本教程针对该文档类进行说明，方便日后同学们自行设计模板。需要使用到的宏包：tocloft</p>
 <span id="more"></span>
 
-<h2 id="水平间距"><a href="#水平间距" class="headerlink" title="水平间距"></a>水平间距</h2><h3 id="hspace命令"><a href="#hspace命令" class="headerlink" title="hspace命令"></a>hspace 命令</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\hspace</span>{length}</span><br><span class="line"><span class="keyword">\hspace</span>*{length} <span class="comment">%如果这个水平间距在行首或者行末也需要保持的话，可以使用带星的命令</span></span><br></pre></td></tr></tbody></table></figure>
+<p>测试 Tex 代码以下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[12pt]{ctexbook}</span><br><span class="line"><span class="keyword">\usepackage</span>{tocloft}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line">    <span class="keyword">\chapter</span>{引言}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第一章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第二章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{这是第三章}</span><br><span class="line">    <span class="keyword">\section</span>{北京}</span><br><span class="line">    <span class="keyword">\section</span>{方法}</span><br><span class="line">    <span class="keyword">\section</span>{结果}</span><br><span class="line">    <span class="keyword">\section</span>{结论}</span><br><span class="line">    <span class="keyword">\chapter</span>{结论}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="案例1：单行文字中设置水平间距"><a href="#案例1：单行文字中设置水平间距" class="headerlink" title="案例1：单行文字中设置水平间距"></a>案例 1：单行文字中设置水平间距</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum} <span class="comment">%中文假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1]</span><br><span class="line">	<span class="keyword">\vspace</span>{60pt} <span class="comment">%增加垂直间距</span></span><br><span class="line">	<span class="keyword">\noindent</span> 本人签名：<span class="keyword">\underline</span>{<span class="keyword">\hspace</span>{3.5cm}} <span class="comment">%填充3.5cm的下划线</span></span><br><span class="line">	<span class="keyword">\hspace</span>{2cm}日期：<span class="keyword">\underline</span>{<span class="keyword">\hspace</span>{3.5cm}} <span class="comment">%与“本人签名”之间水平间距2cm</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+<p>注意：每次编译生成 PDF 之后，若对目录进行了修改，需要清理编译过程中生成的辅助文件（即以下进行的每一步需求操作均需要清理清理一遍辅助文件）。如下图以 TeXstudio 为例：<br><img data-src="https://s2.loli.net/2022/05/14/nHJ6UgwhmxrIiX8.png" alt="清理辅助文件"></p>
+<h3 id="需求-1：修改章节标题格式样式"><a href="#需求-1：修改章节标题格式样式" class="headerlink" title="需求 1：修改章节标题格式样式"></a>需求 1：修改章节标题格式样式</h3><p>ctexbook 文档类在生成目录时，自动将 Chater 的章节名设置为 “第某章”，而如果只需要阿拉伯数字就行，如何设置，需求如图所示</p>
+<p>在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img data-src="https://s2.loli.net/2022/06/30/8szcNnwRuUYHrE1.png" alt="01-hspace命令增加水平间隔.png"></p>
-<p>关于以上代码中的 zhlipsum 中文假文宏包的使用：可参考 <a href="https://coffeelize.top/posts/942e3f13.html">Latex 之 zhlipsum 中文假文宏包使用说明</a></p>
-<h3 id="stretch命令"><a href="#stretch命令" class="headerlink" title="stretch命令"></a>stretch 命令</h3><p>stretch 将产生一个可变长的长度（弹性长度），产生一个能把<strong>行内</strong>剩余所有空隙填满的空白，如果多个 <code>\hspace{\stretch{n}}</code> 命令位于同一行，那么它们将根据伸缩参数分配空间，非常类似于 HTML 当中的 flex 布局（分蛋糕）</p>
-<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\stretch</span>{n} <span class="comment">%这是一个长度，可嵌在\hspace命令中使用</span></span><br><span class="line"><span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{n}}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例 2</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\noindent</span> 居庙堂之高则忧其民 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} }处江湖之远则忧其君<span class="comment">%只分一块蛋糕，行内所有的空余空间全部都分给了\stretch{1} </span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\noindent</span> 而或长烟一空 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 皓月千里 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 浮光跃金 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 静影沉璧 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 渔歌互答 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 此乐何极！ </span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+<p>以上代码中，name={,} 表示在章节前后插入文本，表如 name={第，章} 就是 ctexbook 章节标题（Chapter）默认的格式<br><img data-src="https://s2.loli.net/2022/05/11/LoHp6jiqKFJD873.png" alt="01-修改章节标题格式样式.png"></p>
+<h3 id="需求-2：设置导引符为垂直居中的小圆点"><a href="#需求-2：设置导引符为垂直居中的小圆点" class="headerlink" title="需求 2：设置导引符为垂直居中的小圆点"></a>需求 2：设置导引符为垂直居中的小圆点</h3><p>导引符（标题与页码之间的点点）为什么不能垂直居中显示呢？可不可以设置为垂直居中？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img data-src="https://s2.loli.net/2022/06/30/eqFrafvpOnwVCDg.png" alt="02-stretch弹性长度.png"></p>
-<p>同样，对于垂直间距，也存在水平间距对应的命令：hspace ⇒ vspace</p>
-<h2 id="垂直间距"><a href="#垂直间距" class="headerlink" title="垂直间距"></a>垂直间距</h2><p>在页面中，段落、章节标题、行间公式、列表、浮动体等元素之间的间距是 latex 预设的。比如 <code>\parskip</code>，默认设置为 0pt plus 1pt（弹性长度）。</p>
-<blockquote>
-<p>什么是 “弹性长度”：如 12pt plus 2pt minus 3pt 表示基础长度为 12pt，可以伸展到 14pt，也可以收缩到 9pt。也可只定义 plus 或者 minus 的部分，如 0pt plus 5pt</p>
-</blockquote>
-<p>如果我们想要人为地增加段落之间的垂直间距，可以在两个段落之间的位置使用 <code>\vspace</code> 命令：</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line">A paragraph.</span><br><span class="line"><span class="keyword">\vspace</span>{2ex}</span><br><span class="line">Another paragraph.</span><br></pre></td></tr></tbody></table></figure>
-<p><code>\vspace</code> 命令生成的垂直间距在一页的顶端或底端可能被 “吞掉”，对应地，<code>\vspace*</code> 命令产生不会因断页而消失的垂直间距。</p>
-<h2 id="更有趣的长度"><a href="#更有趣的长度" class="headerlink" title="更有趣的长度"></a>更有趣的长度</h2><h3 id="setlength：给参数一个固定的值"><a href="#setlength：给参数一个固定的值" class="headerlink" title="setlength：给参数一个固定的值"></a>setlength：给参数一个固定的值</h3><p>语法</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{parameter}{length} </span><br></pre></td></tr></tbody></table></figure>
+<p><code>\cdot</code> 表示垂直居中的小圆点符号，左右两旁添加 $ 表示位于公式的环境中<br><img data-src="https://s2.loli.net/2022/05/11/fP64LCgKwmEqBap.png" alt="02-设置导引符为垂直居中的小圆点.png"></p>
+<h3 id="需求-3：设置导引符符号间距"><a href="#需求-3：设置导引符符号间距" class="headerlink" title="需求 3：设置导引符符号间距"></a>需求 3：设置导引符符号间距</h3><p>这些导引符的间隔太稀疏了，能不能紧密一点？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/E9OFJxLuUyYsMmQ.png" alt="03-设置导引符符号间距.png"></p>
+<h3 id="需求-4：设置章节与页码之间的导引符"><a href="#需求-4：设置章节与页码之间的导引符" class="headerlink" title="需求 4：设置章节与页码之间的导引符"></a>需求 4：设置章节与页码之间的导引符</h3><p>为什么章节标题与页码之间没有导引符（小圆点），能不能也加上？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/05/11/JNhXETOp2aYbdBc.png" alt="04-设置章节与页码之间的导引符.png"></p>
+<h3 id="需求-5：设置各章节之间的间距"><a href="#需求-5：设置各章节之间的间距" class="headerlink" title="需求 5：设置各章节之间的间距"></a>需求 5：设置各章节之间的间距</h3><p>为什么章节标题与二级标题之间间隔比二级标题与二级标题之间的间隔要宽呢，能不能将这几者之间的间隔设为一致？<br>继续在 <code>\usepackage{tocloft}</code> 的下方添加如下代码</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\CTEXsetup</span>[name={,},number={<span class="keyword">\arabic</span>{chapter}}]{chapter}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdot</span>}{<span class="built_in">$</span><span class="keyword">\cdot</span><span class="built_in">$</span>}<span class="comment">%设置垂直居中的小圆点</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftdotsep</span>}{1.5}<span class="comment">%设置点间距</span></span><br><span class="line"><span class="keyword">\renewcommand</span><span class="keyword">\cftchapdotsep</span>{2}<span class="comment">%设置章节标题与页码间的导引符</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{0pt}<span class="comment">%一级标题（章节标题）间隔</span></span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforesecskip</span>}{0pt}<span class="comment">%二级标题间隔</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="addtolength：给参数增加一个长度"><a href="#addtolength：给参数增加一个长度" class="headerlink" title="addtolength：给参数增加一个长度"></a>addtolength：给参数增加一个长度</h3><p>语法</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\addtolength</span>{parameter}{length}</span><br></pre></td></tr></tbody></table></figure>
+<p>当然，这里只设置了 1，2 级标题之间的间距，若想设置 3 级标题之间的间距，可以设置 <code>\setlength{\cftbeforesubsecskip}{0pt}</code><br><img data-src="https://s2.loli.net/2022/05/11/h9UZMI5e7arNCxl.png" alt="05-设置各章节之间的间距.png"></p>
+<h3 id="需求-6：设置章节标题前后间距"><a href="#需求-6：设置章节标题前后间距" class="headerlink" title="需求 6：设置章节标题前后间距"></a>需求 6：设置章节标题前后间距</h3><p>目录当中如何设置显示到几级标题呢？比如我想设置只显示到三级标题就不显示了，可以设置吗？</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{3}<span class="comment">%设置目录深度至三级标题</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>第二个命令实际上比 <code>\setlength</code> 更为实用，因为可以相对于现有的设置来获得所需的结果。比如，为了将文本的宽度增加 1cm，我将如下的命令放置在文档导言区</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\addtolength</span>{<span class="keyword">\hoffset</span>}{-0.5cm} <span class="comment">%页面左右两侧均有hoffset，两边减小的空隙等于版心增加的间隙，页面总宽度不变</span></span><br><span class="line"><span class="keyword">\addtolength</span>{<span class="keyword">\textwidth</span>}{1cm}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>比如使用默认的 ctexart 文档类，其默认的布局参数如下所示：<br>PS：按住 Ctrl 键或 Command 键 + 滚动鼠标中键可进行放大，亦可全屏观看</p>
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="920" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FDPHqCfO5AosR8AmT9eg9TJ%2F%25E5%258D%259A%25E5%25AE%25A2%25E6%258F%2592%25E5%259B%25BE%3Fnode-id%3D15%253A113" allowfullscreen=""></iframe>
-
-<h2 id="如何查看文档的页面布局参数"><a href="#如何查看文档的页面布局参数" class="headerlink" title="如何查看文档的页面布局参数"></a>如何查看文档的页面布局参数</h2><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{layout} <span class="comment">%在导言区使用Layout宏包</span></span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\layout</span> <span class="comment">%在正文区使用layout命令</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>比如</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{layout}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\layout</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-<p>输出文档布局参数如下</p>
-<p><img data-src="https://s2.loli.net/2022/06/30/xNjubEhvnzUDOAc.png" alt="03-页面相关的所有距离参数.png"></p>
-<p>只要可能，就应该避免在 Latex 文档中使用绝对长度。比如说通过 <code>\textwidth</code> 可作为图片的宽度，使其恰好充满整个页面<br>下面的三个命令允许你获得一个文本串的宽度、高度以及深度</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\settoheight</span>{variable}{text} <span class="comment">%获取text的宽度，将其值传给variable变量</span></span><br><span class="line"><span class="keyword">\settodepth</span>{variable}{text} </span><br><span class="line"><span class="keyword">\settowidth</span>{variable}{text}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">		<span class="keyword">\settowidth</span>{<span class="keyword">\parindent</span>}{666666} <span class="comment">%修改段落缩进值，将缩进值设为6个数字字符长度（3个汉字宽度）传给\parindent</span></span><br><span class="line">		</span><br><span class="line">		壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。</span><br><span class="line">		</span><br><span class="line">		于是饮酒乐甚，扣舷而歌之。歌曰：“桂棹兮兰桨，击空明兮溯流光。渺渺兮予怀，望美人兮天一方。”客有吹洞箫者，倚歌而和之。其声呜呜然，如怨如慕，如泣如诉；余音袅袅，不绝如缕。舞幽壑之潜蛟，泣孤舟之嫠妇。</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/30/de3Cpwntj8yrFIM.png" alt="05-通过settowidth获取文本的宽度.png"></p>
-<p><img data-src="https://s2.loli.net/2022/06/30/WVEiY19y2tZN4Sn.png" alt="06-settowidth的实际应用.png"></p>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>Latex&nbsp;官方文档：一份不太简短的 LaTeX2e 介绍（版本 5.01）</li>
-<li>ctex.org：<a href="http://www.ctex.org/documents/packages/">CTEX - 在线文档 - TeX/LaTeX 常用宏包</a></li>
+<p>除此之外，如何将目录的布局设置得更好看一些，比如将一级标题和二级标题之间的层次更加清晰，可以在章节标题段前段后添加些间隔，如下所示</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\cftbeforechapskip</span>}{5pt}<span class="comment">%一级标题（章节标题）前间隔</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\cftchapafterpnum</span>}{<span class="keyword">\vspace</span>{5pt}} <span class="comment">%一级标题（章节标题）后间隔</span></span><br></pre></td></tr></tbody></table></figure>
+<p><code>\vspace{5pt}</code> 表示垂直间距 5pt<br><img data-src="https://s2.loli.net/2022/05/11/xUZEGStgpLeTM7j.png" alt="06-设置章节标题前后间距.png"></p>
+<h3 id="需求-7：待续"><a href="#需求-7：待续" class="headerlink" title="需求 7：待续"></a>需求 7：待续</h3><p>怎么会有那么多需求呢？这里有一些相关资料，或许可以帮助到你 q (≧▽≦q)。</p>
+<ul>
+<li>Latex 工作室： <a href="https://www.latexstudio.net/">Latex 工作室</a></li>
+<li>简单粗暴 Latex： <a href="https://wklchris.github.io/">Kanglong Wu</a> &amp; <a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴 LaTeX》开源仓库</a></li>
+<li>雷太赫排版系统简介（第二版）：包太雷</li>
+<li>参考网页： <a href="https://www.latexstudio.net/archives/334.html">LaTeX 技巧 748：如何给目录增加些空白距离</a></li>
+<li>清华大学图书馆专题培训讲座《如何使用 LaTeX 排版论文》：<a href="https://github.com/tuna/thulib-latex-talk">如何使用 LaTeX 排版论文</a></li>
 </ul>
 ]]></content>
       <tags>
@@ -682,67 +622,63 @@
       </tags>
   </entry>
   <entry>
-    <title>Latex 之字体颜色篇</title>
-    <url>/posts/c07914ac.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>使用 xcolor 宏包可用来方便地调用颜色：<br>该宏包为我们提供了 <code>\textcolor</code> , <code>\definecolor</code> 两关键命令</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%修改颜色</span></span><br><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243} <span class="comment">%定义自定义颜色</span></span><br></pre></td></tr></tbody></table></figure>
+    <title>Latex 中的水平和垂直间距</title>
+    <url>/posts/1c063acd.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h2><p>本节的主体内容摘自：一份不太简短的 LaTeX2e 介绍（版本 5.01），根据自己的理解为该内容补充了一些案例和代码注释。本文将主要介绍一下几个命令</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\hspace</span>{length}</span><br><span class="line"><span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{n}}</span><br><span class="line"><span class="keyword">\setlength</span>{parameter}{length}</span><br><span class="line"><span class="keyword">\addtolength</span>{parameter}{length}</span><br><span class="line"><span class="keyword">\usepackage</span>{layout}</span><br></pre></td></tr></tbody></table></figure>
 <span id="more"></span>
 
-<h3 id="宏包预定义的颜色命令"><a href="#宏包预定义的颜色命令" class="headerlink" title="宏包预定义的颜色命令"></a>宏包预定义的颜色命令</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{colorname}{text} <span class="comment">%修改text的颜色</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="水平间距"><a href="#水平间距" class="headerlink" title="水平间距"></a>水平间距</h2><h3 id="hspace命令"><a href="#hspace命令" class="headerlink" title="hspace命令"></a>hspace 命令</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\hspace</span>{length}</span><br><span class="line"><span class="keyword">\hspace</span>*{length} <span class="comment">%如果这个水平间距在行首或者行末也需要保持的话，可以使用带星的命令</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>宏包预定义的颜色及命令如下</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/i7Zn6glNyVoUTAf.png" alt="01-xcolor宏包预定义颜色.png"></p>
-<h4 id="案例1-宏包预定的颜色修改字体颜色"><a href="#案例1-宏包预定的颜色修改字体颜色" class="headerlink" title="案例1 宏包预定的颜色修改字体颜色"></a>案例 1 宏包预定的颜色修改字体颜色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%将字体颜色修改为红色</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{pink}{Pink也为xcolor宏包预定义的命令}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="案例1：单行文字中设置水平间距"><a href="#案例1：单行文字中设置水平间距" class="headerlink" title="案例1：单行文字中设置水平间距"></a>案例 1：单行文字中设置水平间距</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum} <span class="comment">%中文假文宏包</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1]</span><br><span class="line">	<span class="keyword">\vspace</span>{60pt} <span class="comment">%增加垂直间距</span></span><br><span class="line">	<span class="keyword">\noindent</span> 本人签名：<span class="keyword">\underline</span>{<span class="keyword">\hspace</span>{3.5cm}} <span class="comment">%填充3.5cm的下划线</span></span><br><span class="line">	<span class="keyword">\hspace</span>{2cm}日期：<span class="keyword">\underline</span>{<span class="keyword">\hspace</span>{3.5cm}} <span class="comment">%与“本人签名”之间水平间距2cm</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img data-src="https://s2.loli.net/2022/06/07/NzWDuXltC1xZL7E.png" alt="02-xcolor宏包预定义的颜色命令.png"></p>
-<h4 id="案例2-设置颜色透明度"><a href="#案例2-设置颜色透明度" class="headerlink" title="案例2 设置颜色透明度"></a>案例 2 设置颜色透明度</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50}{透明度为50的红色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="https://s2.loli.net/2022/06/30/8szcNnwRuUYHrE1.png" alt="01-hspace命令增加水平间隔.png"></p>
+<p>关于以上代码中的 zhlipsum 中文假文宏包的使用：可参考 <a href="https://coffeelize.top/posts/942e3f13.html">Latex 之 zhlipsum 中文假文宏包使用说明</a></p>
+<h3 id="stretch命令"><a href="#stretch命令" class="headerlink" title="stretch命令"></a>stretch 命令</h3><p>stretch 将产生一个可变长的长度（弹性长度），产生一个能把<strong>行内</strong>剩余所有空隙填满的空白，如果多个 <code>\hspace{\stretch{n}}</code> 命令位于同一行，那么它们将根据伸缩参数分配空间，非常类似于 HTML 当中的 flex 布局（分蛋糕）</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\stretch</span>{n} <span class="comment">%这是一个长度，可嵌在\hspace命令中使用</span></span><br><span class="line"><span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{n}}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例 2</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\noindent</span> 居庙堂之高则忧其民 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} }处江湖之远则忧其君<span class="comment">%只分一块蛋糕，行内所有的空余空间全部都分给了\stretch{1} </span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\noindent</span> 而或长烟一空 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 皓月千里 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 浮光跃金 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 静影沉璧 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 渔歌互答 <span class="keyword">\hspace</span>{<span class="keyword">\stretch</span>{1} } 此乐何极！ </span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img data-src="https://s2.loli.net/2022/06/07/NgwpToGD45a63eS.png" alt="03-调节颜色透明度.png"></p>
-<ul>
-<li>红色文字字体颜色 RGB (255,0,0)</li>
-<li> 透明度为 50% 的红色字体颜色 RGB (255,128,128)</li>
+<p><img data-src="https://s2.loli.net/2022/06/30/eqFrafvpOnwVCDg.png" alt="02-stretch弹性长度.png"></p>
+<p>同样，对于垂直间距，也存在水平间距对应的命令：hspace ⇒ vspace</p>
+<h2 id="垂直间距"><a href="#垂直间距" class="headerlink" title="垂直间距"></a>垂直间距</h2><p>在页面中，段落、章节标题、行间公式、列表、浮动体等元素之间的间距是 latex 预设的。比如 <code>\parskip</code>，默认设置为 0pt plus 1pt（弹性长度）。</p>
+<blockquote>
+<p>什么是 “弹性长度”：如 12pt plus 2pt minus 3pt 表示基础长度为 12pt，可以伸展到 14pt，也可以收缩到 9pt。也可只定义 plus 或者 minus 的部分，如 0pt plus 5pt</p>
+</blockquote>
+<p>如果我们想要人为地增加段落之间的垂直间距，可以在两个段落之间的位置使用 <code>\vspace</code> 命令：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line">A paragraph.</span><br><span class="line"><span class="keyword">\vspace</span>{2ex}</span><br><span class="line">Another paragraph.</span><br></pre></td></tr></tbody></table></figure>
+<p><code>\vspace</code> 命令生成的垂直间距在一页的顶端或底端可能被 “吞掉”，对应地，<code>\vspace*</code> 命令产生不会因断页而消失的垂直间距。</p>
+<h2 id="更有趣的长度"><a href="#更有趣的长度" class="headerlink" title="更有趣的长度"></a>更有趣的长度</h2><h3 id="setlength：给参数一个固定的值"><a href="#setlength：给参数一个固定的值" class="headerlink" title="setlength：给参数一个固定的值"></a>setlength：给参数一个固定的值</h3><p>语法</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>{parameter}{length} </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="addtolength：给参数增加一个长度"><a href="#addtolength：给参数增加一个长度" class="headerlink" title="addtolength：给参数增加一个长度"></a>addtolength：给参数增加一个长度</h3><p>语法</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\addtolength</span>{parameter}{length}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>第二个命令实际上比 <code>\setlength</code> 更为实用，因为可以相对于现有的设置来获得所需的结果。比如，为了将文本的宽度增加 1cm，我将如下的命令放置在文档导言区</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\addtolength</span>{<span class="keyword">\hoffset</span>}{-0.5cm} <span class="comment">%页面左右两侧均有hoffset，两边减小的空隙等于版心增加的间隙，页面总宽度不变</span></span><br><span class="line"><span class="keyword">\addtolength</span>{<span class="keyword">\textwidth</span>}{1cm}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如使用默认的 ctexart 文档类，其默认的布局参数如下所示：<br>PS：按住 Ctrl 键或 Command 键 + 滚动鼠标中键可进行放大，亦可全屏观看</p>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="920" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FDPHqCfO5AosR8AmT9eg9TJ%2F%25E5%258D%259A%25E5%25AE%25A2%25E6%258F%2592%25E5%259B%25BE%3Fnode-id%3D15%253A113" allowfullscreen=""></iframe>
+
+<h2 id="如何查看文档的页面布局参数"><a href="#如何查看文档的页面布局参数" class="headerlink" title="如何查看文档的页面布局参数"></a>如何查看文档的页面布局参数</h2><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{layout} <span class="comment">%在导言区使用Layout宏包</span></span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\layout</span> <span class="comment">%在正文区使用layout命令</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{layout}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\layout</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+<p>输出文档布局参数如下</p>
+<p><img data-src="https://s2.loli.net/2022/06/30/xNjubEhvnzUDOAc.png" alt="03-页面相关的所有距离参数.png"></p>
+<p>只要可能，就应该避免在 Latex 文档中使用绝对长度。比如说通过 <code>\textwidth</code> 可作为图片的宽度，使其恰好充满整个页面<br>下面的三个命令允许你获得一个文本串的宽度、高度以及深度</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\settoheight</span>{variable}{text} <span class="comment">%获取text的宽度，将其值传给variable变量</span></span><br><span class="line"><span class="keyword">\settodepth</span>{variable}{text} </span><br><span class="line"><span class="keyword">\settowidth</span>{variable}{text}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">		<span class="keyword">\settowidth</span>{<span class="keyword">\parindent</span>}{666666} <span class="comment">%修改段落缩进值，将缩进值设为6个数字字符长度（3个汉字宽度）传给\parindent</span></span><br><span class="line">		</span><br><span class="line">		壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。</span><br><span class="line">		</span><br><span class="line">		于是饮酒乐甚，扣舷而歌之。歌曰：“桂棹兮兰桨，击空明兮溯流光。渺渺兮予怀，望美人兮天一方。”客有吹洞箫者，倚歌而和之。其声呜呜然，如怨如慕，如泣如诉；余音袅袅，不绝如缕。舞幽壑之潜蛟，泣孤舟之嫠妇。</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/30/de3Cpwntj8yrFIM.png" alt="05-通过settowidth获取文本的宽度.png"></p>
+<p><img data-src="https://s2.loli.net/2022/06/30/WVEiY19y2tZN4Sn.png" alt="06-settowidth的实际应用.png"></p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>Latex&nbsp;官方文档：一份不太简短的 LaTeX2e 介绍（版本 5.01）</li>
+<li>ctex.org：<a href="http://www.ctex.org/documents/packages/">CTEX - 在线文档 - TeX/LaTeX 常用宏包</a></li>
 </ul>
-<h4 id="案例3-混合色"><a href="#案例3-混合色" class="headerlink" title="案例3 混合色"></a>案例 3 混合色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!black}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的黑色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!white}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的白色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/10/hRTiszBuwZPa6kc.png" alt="091-混合色语法.png"></p>
-<ul>
-<li>red!50!black：即 50% 的红色（255,0,0）混合 50% 的黑色（0,0,0），最终得到（128,0,0）</li>
-<li>同理，red!50!white 最终得到（255,128,128）</li>
-</ul>
-<h3 id="定义新的颜色命令"><a href="#定义新的颜色命令" class="headerlink" title="定义新的颜色命令"></a>定义新的颜色命令</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="comment">%语法：\definecolor{颜色}{颜色模式}{参数序列}</span></span><br><span class="line"><span class="comment">%RGB实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{keywordcolor}{RGB}{34,34,250} <span class="comment">%定义新的颜色命令</span></span><br><span class="line"><span class="comment">%HTML实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{main}{HTML}{ff8080} <span class="comment">%注意HTML是大写，后面的参数序列不跟“#”</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>语法中的 model-list 可以是我们常使用的 RGB、CMYK、HSV 等（整合了 12 种色彩模式 rgb, cmy, cmyk, hsb, Hsb, tHsb, gray, RGB, HTML, HSB, Gray, wave）。比如说 OFFICE 系列的软件在调节颜色时，通常会提供 RGB 和 HSV 两种颜色模式</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/BoCfgJpOTbcRSZL.png" alt="05-PPT当中的颜色模式.png"></p>
-<h4 id="案例4：定义新的颜色命令"><a href="#案例4：定义新的颜色命令" class="headerlink" title="案例4：定义新的颜色命令"></a>案例 4：定义新的颜色命令</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=5in]{figs/Google-logo}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	<span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line">	<span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243}</span><br><span class="line">	<span class="keyword">\definecolor</span>{Lcolor}{RGB}{52, 170, 82}</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\textcolor</span>{Gcolor}{这是Google logo中G的颜色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{Lcolor}{这是Google logo中L的颜色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/MCAjx6dcvziGynU.png" alt="04-自定义颜色命令.png"></p>
-<h3 id="拓展应用-彩色表格"><a href="#拓展应用-彩色表格" class="headerlink" title="拓展应用 彩色表格"></a>拓展应用 彩色表格</h3><p>xcolor 宏包的 <code>\rowcolors</code> 命令 (需要 colortbl 宏包的支持)，可以分别设置表格奇偶行的背景颜色</p>
-<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：{起始行}{奇数行颜色}{偶数行颜色}，如一下示例</span></span><br><span class="line"><span class="keyword">\rowcolors</span>{1}{White}{Lavender}</span><br></pre></td></tr></tbody></table></figure>
-<p><code>\hiderowcolors</code> 命令是用来暂停显示前面设置的奇偶行颜色，否则后面的其他表格会继续显示颜色。另一个命令 <code>\showrowcolors</code> 可以用来重新激活奇偶行颜色设置。</p>
-<h4 id="案例5：彩色表格"><a href="#案例5：彩色表格" class="headerlink" title="案例5：彩色表格"></a>案例 5：彩色表格</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>[table]{xcolor} <span class="comment">%提供rowcolor命令</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\definecolor</span>{mygray}{RGB}{245, 245, 245} <span class="comment">%自定义的一种灰色颜色命令</span></span><br><span class="line"><span class="keyword">\begin</span>{table}[!ht]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\rowcolors</span>{1}{white}{mygray} <span class="comment">%彩色表格，从第一行开始，奇偶行背景色分别为白色和自定义的灰色（注意颜色名称的大小写不要写错）</span></span><br><span class="line">	<span class="keyword">\begin</span>{tabular}{cc}</span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		文献类型标识 <span class="built_in">&amp;</span> 载体类型标识 <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/OL]</span>| <span class="built_in">&amp;</span> 联机网上数据库 (database online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/MT]</span>| <span class="built_in">&amp;</span> 磁带数据库 (database on magnetic tape) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[M/CD]</span>|  <span class="built_in">&amp;</span> 光盘图书 (monograph on CD-ROM) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[CP/DK]</span>| <span class="built_in">&amp;</span> 磁盘软件 (computer program on disk) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[J/OL]</span>| <span class="built_in">&amp;</span> 网上期刊 (serial online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[EB/OL]</span>| <span class="built_in">&amp;</span> 网上电子公告 (electronic bulletin board online)<span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\hiderowcolors</span> <span class="comment">%暂停使用奇偶行颜色设定，防止对后续表格的背景色产生影响，后续如果想要开启，可以使用\showrowcolors来重新激活奇偶行颜色设置</span></span><br><span class="line">	<span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/RhMes5uTINztD4w.png" alt="09-正常表格以及彩色表格.png"></p>
-<p>需要注意的地方</p>
-<ol>
-<li><code>\usepackage[table]{xcolor} 如果仅使用</code> \usepackage{xcolor}<code>，无法识别</code> \rowcolors<code>、</code>\hiderowcolors` 等命令</li>
-<li><code>\hiderowcolors</code> 写在 tabular 环境内，否则报 <code>Misplaced \noalign</code> 错</li>
-</ol>
-<p>关于第 2 点的报错，可参考：</p>
-<ul>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@<a href="https://xovee.blog.csdn.net/" title="Xovee">Xovee</a></li>
-</ul>
-<p><img data-src="https://s2.loli.net/2022/06/07/xmkwTfgHhidRZVB.png" alt="08-彩色表格报错.png"></p>
-<h3 id="主要参考资料"><a href="#主要参考资料" class="headerlink" title="主要参考资料"></a>主要参考资料</h3><ul>
-<li><input disabled="" type="checkbox"> 雷太赫排版系统简介（第二版）：<a href="https://github.com/huangxg/lnotes">Github 仓库</a></li>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@Xovee</li>
-<li><input disabled="" type="checkbox"> 个人博客：<a href="https://liam.page/2016/07/22/using-the-tcolorbox-package-to-create-a-new-theorem-environment/">LaTeX 黑魔法（一）：tcolorbox 宏包简明教程</a> @始终</li>
-</ul>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
+]]></content>
       <tags>
         <tag>Latex</tag>
-        <tag>Font</tag>
-        <tag>Color</tag>
-        <tag>Table</tag>
       </tags>
   </entry>
   <entry>
@@ -973,6 +909,156 @@
       </tags>
   </entry>
   <entry>
+    <title>Latex 之字体颜色篇</title>
+    <url>/posts/c07914ac.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>使用 xcolor 宏包可用来方便地调用颜色：<br>该宏包为我们提供了 <code>\textcolor</code> , <code>\definecolor</code> 两关键命令</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%修改颜色</span></span><br><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243} <span class="comment">%定义自定义颜色</span></span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+
+<h3 id="宏包预定义的颜色命令"><a href="#宏包预定义的颜色命令" class="headerlink" title="宏包预定义的颜色命令"></a>宏包预定义的颜色命令</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\textcolor</span>{colorname}{text} <span class="comment">%修改text的颜色</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>宏包预定义的颜色及命令如下</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/i7Zn6glNyVoUTAf.png" alt="01-xcolor宏包预定义颜色.png"></p>
+<h4 id="案例1-宏包预定的颜色修改字体颜色"><a href="#案例1-宏包预定的颜色修改字体颜色" class="headerlink" title="案例1 宏包预定的颜色修改字体颜色"></a>案例 1 宏包预定的颜色修改字体颜色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{Red为xcolor宏包预定义的命令} <span class="comment">%将字体颜色修改为红色</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{pink}{Pink也为xcolor宏包预定义的命令}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/NzWDuXltC1xZL7E.png" alt="02-xcolor宏包预定义的颜色命令.png"></p>
+<h4 id="案例2-设置颜色透明度"><a href="#案例2-设置颜色透明度" class="headerlink" title="案例2 设置颜色透明度"></a>案例 2 设置颜色透明度</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50}{透明度为50的红色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/NgwpToGD45a63eS.png" alt="03-调节颜色透明度.png"></p>
+<ul>
+<li>红色文字字体颜色 RGB (255,0,0)</li>
+<li> 透明度为 50% 的红色字体颜色 RGB (255,128,128)</li>
+</ul>
+<h4 id="案例3-混合色"><a href="#案例3-混合色" class="headerlink" title="案例3 混合色"></a>案例 3 混合色</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\textcolor</span>{red}{红色文字} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!black}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的黑色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{red!50!white}{50<span class="keyword">\%</span>的红色 + 50<span class="keyword">\%</span>的白色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/10/hRTiszBuwZPa6kc.png" alt="091-混合色语法.png"></p>
+<ul>
+<li>red!50!black：即 50% 的红色（255,0,0）混合 50% 的黑色（0,0,0），最终得到（128,0,0）</li>
+<li>同理，red!50!white 最终得到（255,128,128）</li>
+</ul>
+<h3 id="定义新的颜色命令"><a href="#定义新的颜色命令" class="headerlink" title="定义新的颜色命令"></a>定义新的颜色命令</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line"><span class="comment">%语法：\definecolor{颜色}{颜色模式}{参数序列}</span></span><br><span class="line"><span class="comment">%RGB实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{keywordcolor}{RGB}{34,34,250} <span class="comment">%定义新的颜色命令</span></span><br><span class="line"><span class="comment">%HTML实例如下</span></span><br><span class="line"><span class="keyword">\definecolor</span>{main}{HTML}{ff8080} <span class="comment">%注意HTML是大写，后面的参数序列不跟“#”</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>语法中的 model-list 可以是我们常使用的 RGB、CMYK、HSV 等（整合了 12 种色彩模式 rgb, cmy, cmyk, hsb, Hsb, tHsb, gray, RGB, HTML, HSB, Gray, wave）。比如说 OFFICE 系列的软件在调节颜色时，通常会提供 RGB 和 HSV 两种颜色模式</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/BoCfgJpOTbcRSZL.png" alt="05-PPT当中的颜色模式.png"></p>
+<h4 id="案例4：定义新的颜色命令"><a href="#案例4：定义新的颜色命令" class="headerlink" title="案例4：定义新的颜色命令"></a>案例 4：定义新的颜色命令</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=5in]{figs/Google-logo}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line">	<span class="comment">%语法：\definecolor{name}{model-list}{spec-list}</span></span><br><span class="line">	<span class="keyword">\definecolor</span>{Gcolor}{RGB}{66, 134, 243}</span><br><span class="line">	<span class="keyword">\definecolor</span>{Lcolor}{RGB}{52, 170, 82}</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\textcolor</span>{Gcolor}{这是Google logo中G的颜色}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textcolor</span>{Lcolor}{这是Google logo中L的颜色}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/MCAjx6dcvziGynU.png" alt="04-自定义颜色命令.png"></p>
+<h3 id="拓展应用-彩色表格"><a href="#拓展应用-彩色表格" class="headerlink" title="拓展应用 彩色表格"></a>拓展应用 彩色表格</h3><p>xcolor 宏包的 <code>\rowcolors</code> 命令 (需要 colortbl 宏包的支持)，可以分别设置表格奇偶行的背景颜色</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：{起始行}{奇数行颜色}{偶数行颜色}，如一下示例</span></span><br><span class="line"><span class="keyword">\rowcolors</span>{1}{White}{Lavender}</span><br></pre></td></tr></tbody></table></figure>
+<p><code>\hiderowcolors</code> 命令是用来暂停显示前面设置的奇偶行颜色，否则后面的其他表格会继续显示颜色。另一个命令 <code>\showrowcolors</code> 可以用来重新激活奇偶行颜色设置。</p>
+<h4 id="案例5：彩色表格"><a href="#案例5：彩色表格" class="headerlink" title="案例5：彩色表格"></a>案例 5：彩色表格</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>[table]{xcolor} <span class="comment">%提供rowcolor命令</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\definecolor</span>{mygray}{RGB}{245, 245, 245} <span class="comment">%自定义的一种灰色颜色命令</span></span><br><span class="line"><span class="keyword">\begin</span>{table}[!ht]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\rowcolors</span>{1}{white}{mygray} <span class="comment">%彩色表格，从第一行开始，奇偶行背景色分别为白色和自定义的灰色（注意颜色名称的大小写不要写错）</span></span><br><span class="line">	<span class="keyword">\begin</span>{tabular}{cc}</span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		文献类型标识 <span class="built_in">&amp;</span> 载体类型标识 <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/OL]</span>| <span class="built_in">&amp;</span> 联机网上数据库 (database online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[DB/MT]</span>| <span class="built_in">&amp;</span> 磁带数据库 (database on magnetic tape) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[M/CD]</span>|  <span class="built_in">&amp;</span> 光盘图书 (monograph on CD-ROM) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[CP/DK]</span>| <span class="built_in">&amp;</span> 磁盘软件 (computer program on disk) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[J/OL]</span>| <span class="built_in">&amp;</span> 网上期刊 (serial online) <span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\verb</span>|<span class="string">[EB/OL]</span>| <span class="built_in">&amp;</span> 网上电子公告 (electronic bulletin board online)<span class="keyword">\\</span></span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		<span class="keyword">\hiderowcolors</span> <span class="comment">%暂停使用奇偶行颜色设定，防止对后续表格的背景色产生影响，后续如果想要开启，可以使用\showrowcolors来重新激活奇偶行颜色设置</span></span><br><span class="line">	<span class="keyword">\end</span>{tabular}</span><br><span class="line"><span class="keyword">\end</span>{table}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/RhMes5uTINztD4w.png" alt="09-正常表格以及彩色表格.png"></p>
+<p>需要注意的地方</p>
+<ol>
+<li><code>\usepackage[table]{xcolor} 如果仅使用</code> \usepackage{xcolor}<code>，无法识别</code> \rowcolors<code>、</code>\hiderowcolors` 等命令</li>
+<li><code>\hiderowcolors</code> 写在 tabular 环境内，否则报 <code>Misplaced \noalign</code> 错</li>
+</ol>
+<p>关于第 2 点的报错，可参考：</p>
+<ul>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@<a href="https://xovee.blog.csdn.net/" title="Xovee">Xovee</a></li>
+</ul>
+<p><img data-src="https://s2.loli.net/2022/06/07/xmkwTfgHhidRZVB.png" alt="08-彩色表格报错.png"></p>
+<h3 id="主要参考资料"><a href="#主要参考资料" class="headerlink" title="主要参考资料"></a>主要参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> 雷太赫排版系统简介（第二版）：<a href="https://github.com/huangxg/lnotes">Github 仓库</a></li>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/xovee/article/details/106743469">翻译 Misplaced noalign</a>@Xovee</li>
+<li><input disabled="" type="checkbox"> 个人博客：<a href="https://liam.page/2016/07/22/using-the-tcolorbox-package-to-create-a-new-theorem-environment/">LaTeX 黑魔法（一）：tcolorbox 宏包简明教程</a> @始终</li>
+</ul>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Font</tag>
+        <tag>Color</tag>
+        <tag>Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex 之特殊数学字体</title>
+    <url>/posts/e804a7a.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="黑板粗体"><a href="#黑板粗体" class="headerlink" title="黑板粗体"></a>黑板粗体</h3><p>在 LaTeX 中，我们可以用&nbsp;<code>\mathbb{R}</code>&nbsp;输出表示实数集合的字母 R，这一命令来自&nbsp;<code>amsfonts</code>&nbsp;宏包。</p>
+<span id="more"></span>
+
+<p>注：<code>\mathbb</code> 只能在数学环境中使用</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\[</span> 	</span><br><span class="line">	<span class="keyword">\mathbb</span>{C}</span><br><span class="line">	<span class="keyword">\mathbb</span>{R}</span><br><span class="line">	 <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/24/ahKcPVzHQCOREA2.png" alt="01-数学特殊符号之mathbb.png"></p>
+<p>以下用法会报错</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\mathbb</span>{C}</span><br><span class="line">	<span class="keyword">\mathbb</span>{R}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="书法体与花体"><a href="#书法体与花体" class="headerlink" title="书法体与花体"></a>书法体与花体</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\usepackage</span>{mathrsfs}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\[</span> 	</span><br><span class="line">	<span class="keyword">\mathcal</span>{ABCDEFG} <span class="comment">%需加载amsfonts宏包</span></span><br><span class="line">	<span class="keyword">\mathscr</span>{ABCDEFG} <span class="comment">%需加载mathrsfs宏包</span></span><br><span class="line">	 <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/24/qApZ9RLsNnBPOoG.png" alt="04-书写字体及花体.png"></p>
+<h3 id="更多数学字体"><a href="#更多数学字体" class="headerlink" title="更多数学字体"></a>更多数学字体</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\[</span> 	</span><br><span class="line">	<span class="keyword">\mathbb</span>{C} <span class="comment">%黑板粗体</span></span><br><span class="line">	<span class="keyword">\mathbb</span>{R} <span class="comment">%黑板粗体</span></span><br><span class="line">	<span class="keyword">\mathcal</span>{A} <span class="comment">%指math calligraphy，书法（美术）字</span></span><br><span class="line">	<span class="keyword">\mathrm</span>{i} <span class="comment">%math roman</span></span><br><span class="line">	<span class="keyword">\mathbf</span>{A} <span class="comment">%math boldface</span></span><br><span class="line">	 <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/24/AR4IaJ72HZPjVf5.png" alt="02-数学特殊符号.png"></p>
+<p>对于某些字母的花体、黑板粗体形式代表的意义请参见：</p>
+<ul>
+<li>CSDN：<a href="https://blog.csdn.net/lanchunhui/article/details/54633576">LaTeX —— 特殊符号与数学字体</a></li>
+</ul>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{equation}</span><br><span class="line">		<span class="keyword">\mathsf</span>{f(x,y) = 3(x+y)y / (2xy-7)}</span><br><span class="line">	<span class="keyword">\end</span>{equation}</span><br><span class="line">	<span class="keyword">\begin</span>{equation}</span><br><span class="line">		 <span class="keyword">\mathtt</span>{f(x,y) = 3(x+y)y / (2xy-7)} <span class="comment">%打字机字体（等宽字体）</span></span><br><span class="line">	<span class="keyword">\end</span>{equation}</span><br><span class="line">	<span class="keyword">\begin</span>{equation}</span><br><span class="line">		 <span class="keyword">\mathit</span>{f(x,y) = 3(x+y)y / (2xy-7)}</span><br><span class="line">	<span class="keyword">\end</span>{equation}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/24/HpSz2D9eOuAYRVn.png" alt="03-数学公式字体（衬线非衬线斜体）.png"></p>
+<h3 id="数学特殊字体一览表"><a href="#数学特殊字体一览表" class="headerlink" title="数学特殊字体一览表"></a>数学特殊字体一览表</h3><table>
+<thead>
+<tr>
+<th>字体</th>
+<th align="center">命令</th>
+<th align="center">说明（需要使用宏包）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>罗马字体</td>
+<td align="center"> mathrm</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td> 斜体</td>
+<td align="center"> mathit</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td> 粗体</td>
+<td align="center"> mathbf</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td> 无衬线</td>
+<td align="center"> mathsf</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td> 打字机字体</td>
+<td align="center"> mathtt</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td> 书法字体</td>
+<td align="center"> mathcal</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td> 黑板粗体</td>
+<td align="center"> mathbb</td>
+<td align="center">usepackage{amsfonts}</td>
+</tr>
+<tr>
+<td> 花体</td>
+<td align="center"> mathscr</td>
+<td align="center">usepackage{mathrsfs}</td>
+</tr>
+</tbody></table>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>CSDN：<a href="https://blog.csdn.net/lanchunhui/article/details/54633576">LaTeX —— 特殊符号与数学字体</a></li>
+<li>博客园：<a href="https://www.cnblogs.com/MTandHJ/p/10527926.html">Latex (数学）</a>@馒头 and 花卷</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Font</tag>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX 图片双语标题指南</title>
     <url>/posts/b3daf09.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本案例可能需要使用到的宏包</p>
@@ -1021,6 +1107,128 @@
 ]]></content>
       <tags>
         <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex 字体之字族篇</title>
+    <url>/posts/4baf1388.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="字族、字系与字形"><a href="#字族、字系与字形" class="headerlink" title="字族、字系与字形"></a>字族、字系与字形</h3><p>字体 (typeface) 的概念非常令人恼火，在电子化时代，基本上也都以字体 (font) 作为替代的称呼。字族、字系与字形这三者大概可以并称字体</p>
+<ul>
+<li>宋体、黑体、楷体，这属于字族</li>
+<li>加粗、加斜属于字系和字形</li>
+<li>五号、小四属于字号</li>
+</ul>
+<h3 id="fontspec-宏包"><a href="#fontspec-宏包" class="headerlink" title="fontspec 宏包"></a>fontspec 宏包</h3><p>fontspec 是一个基于 XeLaTeX 和 LuaLaTeX 的宏包（此处划重点），所以在编译时要注意不能使用 PdfLaTeX，否则会出现编译错误（建议使用 <strong>XeLaTex</strong>）。</p>
+<h3 id="使用-fontspec-宏包更改字体"><a href="#使用-fontspec-宏包更改字体" class="headerlink" title="使用 fontspec 宏包更改字体"></a>使用 fontspec 宏包更改字体</h3><p>xelatex 编译命令能够支持直接调用系统安装的 .ttf 或 .otf 格式字体，xelatex 命令下支持用户调用字体的宏包是 fontspec</p>
+<blockquote>
+<p>如何使用 xelatex 进行编译</p>
+<ul>
+<li>可以将 xelatex 作为编辑器的默认编译器，编译即自动使用 xelatex（推荐该方式）</li>
+<li>或者找到 xelatex 命令</li>
+</ul>
+</blockquote>
+<h4 id="使用xelatex进行编译"><a href="#使用xelatex进行编译" class="headerlink" title="使用xelatex进行编译"></a>使用 xelatex 进行编译</h4><p>方式 1：以 TexStudio 为例</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png" alt="09-TexStduio默认编译器设置为xelatex.png"></p>
+<p>方式 2：以 TexStudio 为例</p>
+<p><img data-src="https://s2.loli.net/2022/06/07/QDPigSsTOUCvRtG.png" alt="08-使用xelatex进行编译.png"></p>
+<h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置衬线字体</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置无衬线字体</span></span><br><span class="line"><span class="keyword">\setmonofont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置等宽字体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 举个例子</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>font features：用来手动配置对应的粗体或斜体</li>
+<li> font name：字体名称</li>
+</ul>
+<blockquote>
+<p>什么是衬线字体、非衬线字体以及等宽字体？<br>参考资料：博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></p>
+</blockquote>
+<p>由于中文字体少有对应的粗体或斜体，⟨font features⟩ 里多用其他字体来配置，比如习惯上将宋体的 BoldFont 配置为黑体，而 ItalicFont 配置为楷体。</p>
+<p>（可先跳过此段）需要注意的是：fontspec 宏包会覆盖数学字体设置。需要调用一些数学字体宏包时，应当在调用 fontspec 宏包时指定 no-math 选项。<br>（可先跳过此段）fontspec 宏包可能被其它宏包或文档类如 xeCJK、ctex 文档类）自动调用时，则在文档开头的 <code>\documentclass</code> 命令里指定 no-math 选项。</p>
+<h4 id="需求1：全文更换字体"><a href="#需求1：全文更换字体" class="headerlink" title="需求1：全文更换字体"></a>需求 1：全文更换字体</h4><p>在前言部分对字体进行设置</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\setmainfont{FONT_NAME}</span></span><br><span class="line"><span class="comment">% 比如</span></span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman} <span class="comment">%设置全文英文衬线字体为Times New Roman，注意Latex区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="需求2：中文为宋体，英文为Times-New-Roman"><a href="#需求2：中文为宋体，英文为Times-New-Roman" class="headerlink" title="需求2：中文为宋体，英文为Times New Roman"></a>需求 2：中文为宋体，英文为 Times New Roman</h4><p>在 ctex 中文文档类下，默认中文字体为宋体（衬线字体），只要将英文字体的衬线字体设置为 Times New Roman 即可满足需求</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">%设置</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/ZOpf8qynwchmGUb.png" alt="01-中文设置为宋体，英文设置为Times，英文加粗斜体也为Times.png"></p>
+<p>对于非正文字体是不是也设置成功了呢？可以测试一下标题字体与图片标题字体</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman加粗字</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman斜体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\section</span>{This is a section}</span><br><span class="line">	<span class="keyword">\subsection</span>{This is a subsection}</span><br><span class="line">	<span class="keyword">\subsubsection</span>{This is a subsubsection}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>{figure}[hbp]</span><br><span class="line">		<span class="keyword">\caption</span>{This is a caption}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png" alt="02-中宋英Times.png"></p>
+<p>可以看到 ctexart 对应的 section 标题都是加粗的，那么对于中文呢，还会是加粗的宋体吗？我们刚才只设定了英文衬线字体，普通文字、加粗、斜体文字均匀 Times New Roman 字体，</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>首先需要明确一点：<strong>汉字没有斜体</strong>．平常我们看到的加斜汉字，通常是几何变换得到的结果，非常的粗糙，并不严格满足排版要求；而真正的字形上需要精细的设计的。同时，汉字字体里面也很少加粗体的设计。<br>西文一般设有加斜，但是这与 “斜体” 并不是同一回事．加斜是指某种字族的 Italy 字系；而斜体，是指 Slant 字族．在行文中表强调时使用的是前者；在 Microsoft Word 等软件中看到的倾斜的字母 I，也代表前者．</p>
+<p>加粗和斜体通常不是加粗的宋体和宋体的斜体，而是由其他字体替代，对应的加粗体为黑体字体，斜体为楷体字体。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\section</span>{这是一个一级标题}</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{你好，欢迎来到Latex的世界} <span class="comment">%粗体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{你好，欢迎来到Latex的世界} <span class="comment">%斜体</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png" alt="03-中文字体加粗加斜的一些设置.png"></p>
+<h4 id="需求3：自定义中文字体"><a href="#需求3：自定义中文字体" class="headerlink" title="需求3：自定义中文字体"></a>需求 3：自定义中文字体</h4><p>中文方面， ctex 宏包直接定义了新的中文文档类 ctexart, ctexrep 与 ctexbook，以及 ctexbeamer 幻灯片文档类<br>ctex 宏包已经为我们提供了以下的字体命令<br>参考资料：中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a>（可以该网站可下载到最新版本的 CTeX 宏基手册）</p>
+<table>
+<thead>
+<tr>
+<th align="center">字体</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">宋体</td>
+<td align="center"> songti</td>
+</tr>
+<tr>
+<td align="center"> 黑体</td>
+<td align="center"> heiti</td>
+</tr>
+<tr>
+<td align="center"> 仿宋</td>
+<td align="center"> fangsong</td>
+</tr>
+<tr>
+<td align="center"> 楷书</td>
+<td align="center"> kaishu</td>
+</tr>
+</tbody></table>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
+<p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
+<p>如何查询中文字体对应的英文名称参考资料</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<ol>
+<li>打开 CMD</li>
+<li> 将以上命令复制到 CMD，回车</li>
+<li>去 C 盘根目录查看 <code>list.txt</code> 文件</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif" alt="（Latex）如何查看本地中文字体的英文名称.gif"></p>
+<p>参考资料：</p>
+<ul>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
+</ul>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最小案例如下：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png" alt="06-我是自定义字体华文行楷.png"></p>
+<p>注意：只需要给某些文字设定字体时，请将命令和需要修改字体的文字用大括号包起来</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line">{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 以下命令会修改该命令之后的所有的文字字体，修改局部字体时不推荐这样使用，推荐使用花括号进行分组，如以上命令</span></span><br><span class="line"><span class="keyword">\huawenxingkai</span>{} 我是自定义的字体，我使用的华文行楷</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如如下案例，会导致第二行文字也变为黑体</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\heiti</span>{} 你好，欢迎来到Latex的世界</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png" alt="07-设置全局字体的方式.png"></p>
+<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><input disabled="" type="checkbox"> 简单粗暴&nbsp;Latex：&nbsp;<a href="https://wklchris.github.io/">Kanglong Wu</a>&nbsp;&amp;&nbsp;<a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴&nbsp;LaTeX》开源仓库</a></li>
+<li><input disabled="" type="checkbox"> CSDN： <a href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
+<li><input disabled="" type="checkbox"> 博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
+<li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
+<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
+<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Font</tag>
       </tags>
   </entry>
   <entry>
@@ -1232,214 +1440,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Latex 字体之字族篇</title>
-    <url>/posts/4baf1388.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="字族、字系与字形"><a href="#字族、字系与字形" class="headerlink" title="字族、字系与字形"></a>字族、字系与字形</h3><p>字体 (typeface) 的概念非常令人恼火，在电子化时代，基本上也都以字体 (font) 作为替代的称呼。字族、字系与字形这三者大概可以并称字体</p>
-<ul>
-<li>宋体、黑体、楷体，这属于字族</li>
-<li>加粗、加斜属于字系和字形</li>
-<li>五号、小四属于字号</li>
-</ul>
-<h3 id="fontspec-宏包"><a href="#fontspec-宏包" class="headerlink" title="fontspec 宏包"></a>fontspec 宏包</h3><p>fontspec 是一个基于 XeLaTeX 和 LuaLaTeX 的宏包（此处划重点），所以在编译时要注意不能使用 PdfLaTeX，否则会出现编译错误（建议使用 <strong>XeLaTex</strong>）。</p>
-<h3 id="使用-fontspec-宏包更改字体"><a href="#使用-fontspec-宏包更改字体" class="headerlink" title="使用 fontspec 宏包更改字体"></a>使用 fontspec 宏包更改字体</h3><p>xelatex 编译命令能够支持直接调用系统安装的 .ttf 或 .otf 格式字体，xelatex 命令下支持用户调用字体的宏包是 fontspec</p>
-<blockquote>
-<p>如何使用 xelatex 进行编译</p>
-<ul>
-<li>可以将 xelatex 作为编辑器的默认编译器，编译即自动使用 xelatex（推荐该方式）</li>
-<li>或者找到 xelatex 命令</li>
-</ul>
-</blockquote>
-<h4 id="使用xelatex进行编译"><a href="#使用xelatex进行编译" class="headerlink" title="使用xelatex进行编译"></a>使用 xelatex 进行编译</h4><p>方式 1：以 TexStudio 为例</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/pZyeYk9N4wc7dHm.png" alt="09-TexStduio默认编译器设置为xelatex.png"></p>
-<p>方式 2：以 TexStudio 为例</p>
-<p><img data-src="https://s2.loli.net/2022/06/07/QDPigSsTOUCvRtG.png" alt="08-使用xelatex进行编译.png"></p>
-<h4 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置衬线字体</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置无衬线字体</span></span><br><span class="line"><span class="keyword">\setmonofont</span>[⟨font features⟩]{⟨font name⟩} <span class="comment">%设置等宽字体</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 举个例子</span></span><br><span class="line"><span class="keyword">\setsansfont</span>[BoldFont={Arial Bold}, ItalicFont={Arial Italic}]{Arial}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>font features：用来手动配置对应的粗体或斜体</li>
-<li> font name：字体名称</li>
-</ul>
-<blockquote>
-<p>什么是衬线字体、非衬线字体以及等宽字体？<br>参考资料：博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></p>
-</blockquote>
-<p>由于中文字体少有对应的粗体或斜体，⟨font features⟩ 里多用其他字体来配置，比如习惯上将宋体的 BoldFont 配置为黑体，而 ItalicFont 配置为楷体。</p>
-<p>（可先跳过此段）需要注意的是：fontspec 宏包会覆盖数学字体设置。需要调用一些数学字体宏包时，应当在调用 fontspec 宏包时指定 no-math 选项。<br>（可先跳过此段）fontspec 宏包可能被其它宏包或文档类如 xeCJK、ctex 文档类）自动调用时，则在文档开头的 <code>\documentclass</code> 命令里指定 no-math 选项。</p>
-<h4 id="需求1：全文更换字体"><a href="#需求1：全文更换字体" class="headerlink" title="需求1：全文更换字体"></a>需求 1：全文更换字体</h4><p>在前言部分对字体进行设置</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">%语法：\setmainfont{FONT_NAME}</span></span><br><span class="line"><span class="comment">% 比如</span></span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman} <span class="comment">%设置全文英文衬线字体为Times New Roman，注意Latex区分大小写</span></span><br></pre></td></tr></tbody></table></figure>
-
-
-<h4 id="需求2：中文为宋体，英文为Times-New-Roman"><a href="#需求2：中文为宋体，英文为Times-New-Roman" class="headerlink" title="需求2：中文为宋体，英文为Times New Roman"></a>需求 2：中文为宋体，英文为 Times New Roman</h4><p>在 ctex 中文文档类下，默认中文字体为宋体（衬线字体），只要将英文字体的衬线字体设置为 Times New Roman 即可满足需求</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">%设置</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/ZOpf8qynwchmGUb.png" alt="01-中文设置为宋体，英文设置为Times，英文加粗斜体也为Times.png"></p>
-<p>对于非正文字体是不是也设置成功了呢？可以测试一下标题字体与图片标题字体</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	Hello, Welcome to Latex <span class="comment">%普通英文字体为Times New Roman</span></span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman加粗字</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{Hello, Welcome to Latex} <span class="comment">%加粗则设置为Times New Roman斜体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\section</span>{This is a section}</span><br><span class="line">	<span class="keyword">\subsection</span>{This is a subsection}</span><br><span class="line">	<span class="keyword">\subsubsection</span>{This is a subsubsection}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>{figure}[hbp]</span><br><span class="line">		<span class="keyword">\caption</span>{This is a caption}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/UuoIHOkXJdTLGlv.png" alt="02-中宋英Times.png"></p>
-<p>可以看到 ctexart 对应的 section 标题都是加粗的，那么对于中文呢，还会是加粗的宋体吗？我们刚才只设定了英文衬线字体，普通文字、加粗、斜体文字均匀 Times New Roman 字体，</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>首先需要明确一点：<strong>汉字没有斜体</strong>．平常我们看到的加斜汉字，通常是几何变换得到的结果，非常的粗糙，并不严格满足排版要求；而真正的字形上需要精细的设计的。同时，汉字字体里面也很少加粗体的设计。<br>西文一般设有加斜，但是这与 “斜体” 并不是同一回事．加斜是指某种字族的 Italy 字系；而斜体，是指 Slant 字族．在行文中表强调时使用的是前者；在 Microsoft Word 等软件中看到的倾斜的字母 I，也代表前者．</p>
-<p>加粗和斜体通常不是加粗的宋体和宋体的斜体，而是由其他字体替代，对应的加粗体为黑体字体，斜体为楷体字体。</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}[BoldFont={Times New Roman Bold}, ItalicFont={Times New Roman Italic}] <span class="comment">% 设置衬线字体为Times New Roman，加粗和斜体也为Times New Roman加粗体和斜体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\section</span>{这是一个一级标题}</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界 <span class="comment">% 普通文字中文字体为宋体，英文为Times New Roman字体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textbf</span>{你好，欢迎来到Latex的世界} <span class="comment">%粗体</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\textit</span>{你好，欢迎来到Latex的世界} <span class="comment">%斜体</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/MGb9ZR5EIhWH8nr.png" alt="03-中文字体加粗加斜的一些设置.png"></p>
-<h4 id="需求3：自定义中文字体"><a href="#需求3：自定义中文字体" class="headerlink" title="需求3：自定义中文字体"></a>需求 3：自定义中文字体</h4><p>中文方面， ctex 宏包直接定义了新的中文文档类 ctexart, ctexrep 与 ctexbook，以及 ctexbeamer 幻灯片文档类<br>ctex 宏包已经为我们提供了以下的字体命令<br>参考资料：中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a>（可以该网站可下载到最新版本的 CTeX 宏基手册）</p>
-<table>
-<thead>
-<tr>
-<th align="center">字体</th>
-<th align="center">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">宋体</td>
-<td align="center"> songti</td>
-</tr>
-<tr>
-<td align="center"> 黑体</td>
-<td align="center"> heiti</td>
-</tr>
-<tr>
-<td align="center"> 仿宋</td>
-<td align="center"> fangsong</td>
-</tr>
-<tr>
-<td align="center"> 楷书</td>
-<td align="center"> kaishu</td>
-</tr>
-</tbody></table>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	我是全局字体，我使用的是宋体<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\kaishu</span> 我是ctex已定义好的字体，我使用的楷体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\heiti</span> 我是ctex已定义好的字体，我使用的黑体}<span class="keyword">\\</span></span><br><span class="line">	{<span class="keyword">\fangsong</span> 我是ctex已定义好的字体，我使用的仿宋}<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/6MGH4ZJSLFxvEno.png" alt="05-CTeX提供的中文字体命令.png"></p>
-<p>除了以上字体，我还想使用其他的中文字体呢？<br>查询电脑上字体对应的英文名称，具体如何查询可以查看一下两个连接<br>比如说查询到华文行楷对应的英文名称为 STXingkai，那么可以通过如下方式自定义命令，在正文中，只要使用 <code>\huawenxingkai</code> 即可将字体设置为华文行楷</p>
-<p>如何查询中文字体对应的英文名称参考资料</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">fc-list -f "%{family}\n" :lang=zh-cn &gt;c:\list.txt</span><br></pre></td></tr></tbody></table></figure>
-
-<ol>
-<li>打开 CMD</li>
-<li> 将以上命令复制到 CMD，回车</li>
-<li>去 C 盘根目录查看 <code>list.txt</code> 文件</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/06/07/V7YsbATcnSO6Utv.gif" alt="（Latex）如何查看本地中文字体的英文名称.gif"></p>
-<p>参考资料：</p>
-<ul>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
-<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
-</ul>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>最小案例如下：</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\setCJKfamilyfont</span>{hwxk}{STXingkai}             <span class="comment">%使用STXingkai华文行楷字体</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\huawenxingkai</span>}{<span class="keyword">\CJKfamily</span>{hwxk}}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/qKPQ5LORcn9ygSm.png" alt="06-我是自定义字体华文行楷.png"></p>
-<p>注意：只需要给某些文字设定字体时，请将命令和需要修改字体的文字用大括号包起来</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line">{<span class="keyword">\huawenxingkai</span> 我是自定义的字体，我使用的华文行楷}</span><br><span class="line"></span><br><span class="line"><span class="comment">% 以下命令会修改该命令之后的所有的文字字体，修改局部字体时不推荐这样使用，推荐使用花括号进行分组，如以上命令</span></span><br><span class="line"><span class="keyword">\huawenxingkai</span>{} 我是自定义的字体，我使用的华文行楷</span><br></pre></td></tr></tbody></table></figure>
-
-<p>比如如下案例，会导致第二行文字也变为黑体</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\heiti</span>{} 你好，欢迎来到Latex的世界</span><br><span class="line">	</span><br><span class="line">	你好，欢迎来到Latex的世界</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/07/uvqA3GlPZdg1XBN.png" alt="07-设置全局字体的方式.png"></p>
-<h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><input disabled="" type="checkbox"> 简单粗暴&nbsp;Latex：&nbsp;<a href="https://wklchris.github.io/">Kanglong Wu</a>&nbsp;&amp;&nbsp;<a href="https://github.com/wklchris/Note-by-LaTeX">《简单粗暴&nbsp;LaTeX》开源仓库</a></li>
-<li><input disabled="" type="checkbox"> CSDN： <a href="https://blog.csdn.net/qq_20260069/article/details/88380579">假装认真的 LaTeX 学习笔记（2）—— LaTeX 中如何修改字体（fontspec 宏包使用方法）</a></li>
-<li><input disabled="" type="checkbox"> 博客园：<a href="https://kb.cnblogs.com/page/192018/">Serif 和 Sans-serif 字体的区别</a></li>
-<li><input disabled="" type="checkbox"> 中国 TeX 用户组. <a href="https://ctan.org/tex-archive/language/chinese/ctex">CTeX 宏集手册</a></li>
-<li><input disabled="" type="checkbox"> CSDN：<a href="https://blog.csdn.net/ProgramChangesWorld/article/details/51429138">LaTeX 技巧 001：ctex 下使用其他中文字体</a></li>
-<li><input disabled="" type="checkbox"> 个人博客： <a href="https://aoenian.github.io/2019/07/14/english-name-of-chinese-font/">常见字体的中英文对照表（转载备忘）</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Font</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex 之特殊数学字体</title>
-    <url>/posts/e804a7a.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="黑板粗体"><a href="#黑板粗体" class="headerlink" title="黑板粗体"></a>黑板粗体</h3><p>在 LaTeX 中，我们可以用&nbsp;<code>\mathbb{R}</code>&nbsp;输出表示实数集合的字母 R，这一命令来自&nbsp;<code>amsfonts</code>&nbsp;宏包。</p>
-<span id="more"></span>
-
-<p>注：<code>\mathbb</code> 只能在数学环境中使用</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\[</span> 	</span><br><span class="line">	<span class="keyword">\mathbb</span>{C}</span><br><span class="line">	<span class="keyword">\mathbb</span>{R}</span><br><span class="line">	 <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/24/ahKcPVzHQCOREA2.png" alt="01-数学特殊符号之mathbb.png"></p>
-<p>以下用法会报错</p>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\mathbb</span>{C}</span><br><span class="line">	<span class="keyword">\mathbb</span>{R}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="书法体与花体"><a href="#书法体与花体" class="headerlink" title="书法体与花体"></a>书法体与花体</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\usepackage</span>{mathrsfs}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\[</span> 	</span><br><span class="line">	<span class="keyword">\mathcal</span>{ABCDEFG} <span class="comment">%需加载amsfonts宏包</span></span><br><span class="line">	<span class="keyword">\mathscr</span>{ABCDEFG} <span class="comment">%需加载mathrsfs宏包</span></span><br><span class="line">	 <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/24/qApZ9RLsNnBPOoG.png" alt="04-书写字体及花体.png"></p>
-<h3 id="更多数学字体"><a href="#更多数学字体" class="headerlink" title="更多数学字体"></a>更多数学字体</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\[</span> 	</span><br><span class="line">	<span class="keyword">\mathbb</span>{C} <span class="comment">%黑板粗体</span></span><br><span class="line">	<span class="keyword">\mathbb</span>{R} <span class="comment">%黑板粗体</span></span><br><span class="line">	<span class="keyword">\mathcal</span>{A} <span class="comment">%指math calligraphy，书法（美术）字</span></span><br><span class="line">	<span class="keyword">\mathrm</span>{i} <span class="comment">%math roman</span></span><br><span class="line">	<span class="keyword">\mathbf</span>{A} <span class="comment">%math boldface</span></span><br><span class="line">	 <span class="keyword">\]</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/24/AR4IaJ72HZPjVf5.png" alt="02-数学特殊符号.png"></p>
-<p>对于某些字母的花体、黑板粗体形式代表的意义请参见：</p>
-<ul>
-<li>CSDN：<a href="https://blog.csdn.net/lanchunhui/article/details/54633576">LaTeX —— 特殊符号与数学字体</a></li>
-</ul>
-<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{amsfonts}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\begin</span>{equation}</span><br><span class="line">		<span class="keyword">\mathsf</span>{f(x,y) = 3(x+y)y / (2xy-7)}</span><br><span class="line">	<span class="keyword">\end</span>{equation}</span><br><span class="line">	<span class="keyword">\begin</span>{equation}</span><br><span class="line">		 <span class="keyword">\mathtt</span>{f(x,y) = 3(x+y)y / (2xy-7)} <span class="comment">%打字机字体（等宽字体）</span></span><br><span class="line">	<span class="keyword">\end</span>{equation}</span><br><span class="line">	<span class="keyword">\begin</span>{equation}</span><br><span class="line">		 <span class="keyword">\mathit</span>{f(x,y) = 3(x+y)y / (2xy-7)}</span><br><span class="line">	<span class="keyword">\end</span>{equation}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/24/HpSz2D9eOuAYRVn.png" alt="03-数学公式字体（衬线非衬线斜体）.png"></p>
-<h3 id="数学特殊字体一览表"><a href="#数学特殊字体一览表" class="headerlink" title="数学特殊字体一览表"></a>数学特殊字体一览表</h3><table>
-<thead>
-<tr>
-<th>字体</th>
-<th align="center">命令</th>
-<th align="center">说明（需要使用宏包）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>罗马字体</td>
-<td align="center"> mathrm</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td> 斜体</td>
-<td align="center"> mathit</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td> 粗体</td>
-<td align="center"> mathbf</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td> 无衬线</td>
-<td align="center"> mathsf</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td> 打字机字体</td>
-<td align="center"> mathtt</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td> 书法字体</td>
-<td align="center"> mathcal</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td> 黑板粗体</td>
-<td align="center"> mathbb</td>
-<td align="center">usepackage{amsfonts}</td>
-</tr>
-<tr>
-<td> 花体</td>
-<td align="center"> mathscr</td>
-<td align="center">usepackage{mathrsfs}</td>
-</tr>
-</tbody></table>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>CSDN：<a href="https://blog.csdn.net/lanchunhui/article/details/54633576">LaTeX —— 特殊符号与数学字体</a></li>
-<li>博客园：<a href="https://www.cnblogs.com/MTandHJ/p/10527926.html">Latex (数学）</a>@馒头 and 花卷</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Font</tag>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Latex 浮动体位置设定</title>
     <url>/posts/ad84a2aa.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文参考资料如下：</p>
@@ -1513,6 +1513,100 @@
       </tags>
   </entry>
   <entry>
+    <title>Word 操作指南之图像篇</title>
+    <url>/posts/4a6b571e.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
+<p><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
+<h2 id="刷新题注"><a href="#刷新题注" class="headerlink" title="刷新题注"></a>刷新题注</h2><p>选择图注域代码（或者全选文档），快捷键 F9 刷新</p>
+<p><img data-src="https://s2.loli.net/2022/03/03/QDzKE3mXZW76NGL.gif" alt="F9刷新题注"></p>
+<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>文字说明：如果图片为嵌入型（默认的），在段落中只显示一部分，很有可能是因为段落行间距的问题，此时需要将图片的行间距设置为单倍行距。<br><img data-src="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif" alt="插入图片显示不全，对图片进行单倍行距设置"></p>
+<p>为什么会这样：整段文字的行间距都是固定的 20 磅，插入图片后，上一行与下一行的行间距仍然只是 20 磅，因此只能看到 20 磅高度的图片</p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+      <tags>
+        <tag>Word</tag>
+        <tag>Office</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My New Post</title>
+    <url>/posts/177574ba.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>说到做到，今天就要把博客搭建起来！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Markdown 之脚注语法</title>
+    <url>/posts/8ee025b2.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>脚注使您可以添加注释和参考，而不会使文档正文混乱。当您创建脚注时，带有脚注的上标数字会出现在您添加脚注参考的位置。读者可以单击链接以跳至页面底部的脚注内容。参考资料 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Markdown 脚注](https://markdown.com.cn/extended-syntax/footnotes.html)
+">[1]</span></a></sup>。</p>
+<p>要创建脚注参考，请在方括号（<code>[]</code>）内添加插入符号 (<code>^</code>) 和标识符 (类似于标签 label)。标识符可以是数字或单词，但不能包含空格或制表符。标识符仅将脚注参考与脚注本身相关联 - 在输出中，脚注按顺序编号。</p>
+<p>在括号内使用另一个插入符号和标识符 (数字) 添加脚注，并用冒号和文本。<strong>注意可以不必在文档末尾添加脚注</strong>，可以将这些引用放在除列表，块引号和表之类的其他元素之外的任何位置。 </p>
+<span id="more"></span>
+
+<p>语法如下：</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">This is my blog<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Markdown 脚注](https://markdown.com.cn/extended-syntax/footnotes.html)
+">[1]</span></a></sup></span><br><span class="line"></span><br><span class="line">[<span class="string">^1</span>]: [<span class="string">智朋的个人博客</span>](<span class="link">https://coffeelize.top</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如其他编辑器中渲染出来的脚注是这样的</p>
+<p><img data-src="https://s2.loli.net/2022/06/28/tzdSv4WAHwxoUhT.jpg" alt="04-其他编辑器中渲染markdown脚注.jpeg"></p>
+<p>但是 Hexo 默认的 Markdown 渲染器是不支持渲染脚注的 <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="个人博客：[Hexo-NexT 主题个性优化](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E6%8F%92%E5%85%A5%E8%84%9A%E6%B3%A8)
+">[2]</span></a></sup>，为了实现上述的功能，可以通过安装如下插件 hexo-reference<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Github: [hexo-reference](https://github.com/kchen0x/hexo-reference)">[3]</span></a></sup>：</p>
+<p><img data-src="https://s2.loli.net/2022/06/28/slVMKg2vrT4Ghwb.jpg" alt="01-hexo默认的渲染器无法渲染markdown的脚注语法.jpeg"></p>
+<p>具体安装过程详见该仓库的 Readme（很简单的操作，一句安装代码即可搞定），如下是安装插件后的效果</p>
+<p><img data-src="https://s2.loli.net/2022/06/28/Q9b1kDEe2atsoXu.jpg" alt="03-安装脚注渲染插件之后.jpeg"></p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://markdown.com.cn/extended-syntax/footnotes.html">Markdown 脚注</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"> 个人博客：<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E6%8F%92%E5%85%A5%E8%84%9A%E6%B3%A8">Hexo-NexT 主题个性优化</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Github: <a href="https://github.com/kchen0x/hexo-reference">hexo-reference</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Minipage 环境参数讲解</title>
+    <url>/posts/934564b8.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>minipage 环境在 LaTeX 官方入门手册（一份（不太）简短的 LaTeX2ε 介绍 V6.03）中的介绍的较少，和 <code>\parbox</code> 命令一个案例就过去了，其实这样安排是挺好的，毕竟这本书的定位和一些宏包的使用手册是不一样的。对于读者来说，可能看起来很模糊，一个环境带有三个可选参数和一个必选参数，且可选参数中还有两个是涉及到和盒子位置相关的参数，不仔细看难理解。我自己也是看了好久才明白过来，如果能有对比更加鲜明的案例和可视化的图片讲解啥的最好不过了，因此，写下了本文，希望对读者们有用。</p>
+<span id="more"></span>
+
+<p>需要注意的是先了解 minipage 环境的定位：该环境在入门手册中位于<code>垂直盒子</code>这一小节。在以下的案例中，希望读者们将它作为一个盒子看待</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{minipage}[位置][高度][内容位置]{宽度}</span><br><span class="line">	盒子内容</span><br><span class="line"><span class="keyword">\end</span>{minipage}</span><br></pre></td></tr></tbody></table></figure>
+<p>minipage 环境带有一个必要参数：宽度，内容超过盒子宽度就会自动换行</p>
+<p>以下内容摘自刘海洋编著的《LaTeX 入门》。这里我们只讨论 minipage，而不讨论 <code>\parbox</code> 命令，这两者都是垂直盒子，故经常放在一起进行讲解，请自动忽略有关 <code>\parbox</code> 的内容。</p>
+<blockquote>
+<p><code>\parbox</code> 和 minipage 环境还可以带三个可选参数，分别表示盒子的基线位置、盒子的高度以及（指定高度后）盒子内容在盒子内的位置。位置参数可以使用 c（居中）、t（顶部）、b（底部），默认为居中。内容位置参数可以使用 c、t、b、s（垂直分散对齐）。其中 s 参数只有有弹性间距时生效。而 t 选项指按第一行的基线对齐，而不是盒子顶端。</p>
+</blockquote>
+<p>是不是看晕了…</p>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容</span><br><span class="line"></span><br><span class="line"><span class="keyword">\vspace</span>{2ex}</span><br><span class="line">这里也是正文</span><br><span class="line"><span class="keyword">\begin</span>{minipage}[c][4cm][t]{2em} </span><br><span class="line">	上下天光</span><br><span class="line"><span class="keyword">\end</span>{minipage}</span><br><span class="line"><span class="keyword">\qquad</span></span><br><span class="line"><span class="keyword">\begin</span>{minipage}[c][4cm][c]{2em} </span><br><span class="line">	一碧万顷</span><br><span class="line"><span class="keyword">\end</span>{minipage}</span><br><span class="line"><span class="keyword">\qquad</span></span><br><span class="line"><span class="keyword">\begin</span>{minipage}[c][4cm][b]{2em} </span><br><span class="line">	沙鸥翔集</span><br><span class="line"><span class="keyword">\end</span>{minipage}</span><br><span class="line">这里也是正文</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>输出如下<br><img data-src="https://s2.loli.net/2022/07/04/cnrlAoYDgZeSiCQ.png" alt="03-minipage参数讲解.png"></p>
+<p>标注如下<br><img data-src="https://s2.loli.net/2022/07/04/7ZJbjY3uTmvPUfe.png" alt="05-做好标注的minipage.png"></p>
+<h3 id="案例讲解"><a href="#案例讲解" class="headerlink" title="案例讲解"></a>案例讲解</h3><p>配合如上的标注图片，以第一个盒子说明</p>
+<figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{minipage}[t][4cm][t]{2em} </span><br></pre></td></tr></tbody></table></figure>
+<p>前两个参数 <code>[t][4cm]</code>：表示盒子的基线（顶线）与盒子当前所处环境的基线（也就是 “这里也是正文” 的基线）之间的距离为 4cm<br>第三个参数 <code>[t]</code>：表示盒子内容在盒子中垂直方向的对齐方式，此处为顶部对齐（2 盒子则为垂直居中对齐，3 盒子为底部对齐）<br>第四个参数 <code>{2em}</code>：表示盒子宽度就 2 个字符宽度，超出则自动换行（“上下天光” 共 4 个字符宽度，故超盒子宽度自动换行）<br>第二、三两个盒子可以对照着盒一的标注进行分析，这里就不在赘述了。</p>
+<p>PS：标注图当中是 <code>\qquad</code> 表示水平间距，常见的命令如 <code>\quad</code>，<code>\qquad</code> 相当于两个 <code>\quad</code> 长度</p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>如果在 minipage 里使用 <code>\footnote</code> 命令，生成的脚注会出现在盒子底部，编号是独立的，并且使用小写字母编号。这也是 minipage 环境之被称为 “迷你页”（Mini-page）的原因。</p>
+<p><img data-src="https://s2.loli.net/2022/07/04/aqsdZyKLP7ToEDN.png" alt="01-minipage中插入脚注png.png"></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>刘海洋：LaTeX 入门</li>
+<li>&nbsp;Latex 的官方入门手册：一份（不太）简短的 LaTeX2ε 介绍</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Box</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word 操作指南之符号篇</title>
+    <url>/posts/4fcbca1a.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="输入乘号alt0215"></p>
+<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="插入带圈的数字编号"></p>
+<h3 id="插入商标注册符号"><a href="#插入商标注册符号" class="headerlink" title="插入商标注册符号"></a>插入商标注册符号</h3><p>插入 ⇒ 符号 ⇒ 其他符号 ⇒ 特殊字符</p>
+<p><img data-src="https://s2.loli.net/2022/06/03/w8D7jSdLQYBTxmk.gif" alt="（Word）插入注册商标特殊符号.gif"></p>
+<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+      <tags>
+        <tag>Word</tag>
+        <tag>Office</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Latex 行间距设定</title>
     <url>/posts/a0663e6a.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="查看文中某段的行间距"><a href="#查看文中某段的行间距" class="headerlink" title="查看文中某段的行间距"></a>查看文中某段的行间距</h4><figure class="highlight tex"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">\the</span><span class="keyword">\baselineskip</span> <span class="comment">%查看当前的行间距</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1580,44 +1674,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown 之脚注语法</title>
-    <url>/posts/8ee025b2.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>脚注使您可以添加注释和参考，而不会使文档正文混乱。当您创建脚注时，带有脚注的上标数字会出现在您添加脚注参考的位置。读者可以单击链接以跳至页面底部的脚注内容。参考资料 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Markdown 脚注](https://markdown.com.cn/extended-syntax/footnotes.html)
-">[1]</span></a></sup>。</p>
-<p>要创建脚注参考，请在方括号（<code>[]</code>）内添加插入符号 (<code>^</code>) 和标识符 (类似于标签 label)。标识符可以是数字或单词，但不能包含空格或制表符。标识符仅将脚注参考与脚注本身相关联 - 在输出中，脚注按顺序编号。</p>
-<p>在括号内使用另一个插入符号和标识符 (数字) 添加脚注，并用冒号和文本。<strong>注意可以不必在文档末尾添加脚注</strong>，可以将这些引用放在除列表，块引号和表之类的其他元素之外的任何位置。 </p>
-<span id="more"></span>
-
-<p>语法如下：</p>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">This is my blog<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Markdown 脚注](https://markdown.com.cn/extended-syntax/footnotes.html)
-">[1]</span></a></sup></span><br><span class="line"></span><br><span class="line">[<span class="string">^1</span>]: [<span class="string">智朋的个人博客</span>](<span class="link">https://coffeelize.top</span>)</span><br></pre></td></tr></tbody></table></figure>
-
-<p>比如其他编辑器中渲染出来的脚注是这样的</p>
-<p><img data-src="https://s2.loli.net/2022/06/28/tzdSv4WAHwxoUhT.jpg" alt="04-其他编辑器中渲染markdown脚注.jpeg"></p>
-<p>但是 Hexo 默认的 Markdown 渲染器是不支持渲染脚注的 <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="个人博客：[Hexo-NexT 主题个性优化](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E6%8F%92%E5%85%A5%E8%84%9A%E6%B3%A8)
-">[2]</span></a></sup>，为了实现上述的功能，可以通过安装如下插件 hexo-reference<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Github: [hexo-reference](https://github.com/kchen0x/hexo-reference)">[3]</span></a></sup>：</p>
-<p><img data-src="https://s2.loli.net/2022/06/28/slVMKg2vrT4Ghwb.jpg" alt="01-hexo默认的渲染器无法渲染markdown的脚注语法.jpeg"></p>
-<p>具体安装过程详见该仓库的 Readme（很简单的操作，一句安装代码即可搞定），如下是安装插件后的效果</p>
-<p><img data-src="https://s2.loli.net/2022/06/28/Q9b1kDEe2atsoXu.jpg" alt="03-安装脚注渲染插件之后.jpeg"></p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://markdown.com.cn/extended-syntax/footnotes.html">Markdown 脚注</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"> 个人博客：<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E6%8F%92%E5%85%A5%E8%84%9A%E6%B3%A8">Hexo-NexT 主题个性优化</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Github: <a href="https://github.com/kchen0x/hexo-reference">hexo-reference</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My New Post</title>
-    <url>/posts/177574ba.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>说到做到，今天就要把博客搭建起来！！！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Word 操作指南之符号篇</title>
-    <url>/posts/4fcbca1a.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="乘号"><a href="#乘号" class="headerlink" title="乘号"></a>乘号</h2><p>长按 ALT 键不松，接着按数字键 0215 即可输入乘号<br><img data-src="https://s2.loli.net/2022/03/07/1Kt7DBgP8vriXC9.gif" alt="输入乘号alt0215"></p>
-<h2 id="带圈数字"><a href="#带圈数字" class="headerlink" title="带圈数字"></a>带圈数字</h2><p>输入需要带圈的数字，选中这个数字；插入菜单栏⇒编号⇒找到带圈的样式<br><img data-src="https://s2.loli.net/2022/03/07/UaLqfNysHxjkw6R.gif" alt="插入带圈的数字编号"></p>
-<h3 id="插入商标注册符号"><a href="#插入商标注册符号" class="headerlink" title="插入商标注册符号"></a>插入商标注册符号</h3><p>插入 ⇒ 符号 ⇒ 其他符号 ⇒ 特殊字符</p>
-<p><img data-src="https://s2.loli.net/2022/06/03/w8D7jSdLQYBTxmk.gif" alt="（Word）插入注册商标特殊符号.gif"></p>
+    <title>Word 操作指南之表格篇</title>
+    <url>/posts/494c263d.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
+<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
+<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
+<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
       <tags>
         <tag>Word</tag>
@@ -1625,14 +1687,11 @@
       </tags>
   </entry>
   <entry>
-    <title>Word 操作指南之图像篇</title>
-    <url>/posts/4a6b571e.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="文档设置不压缩图片"><a href="#文档设置不压缩图片" class="headerlink" title="文档设置不压缩图片"></a>文档设置不压缩图片</h2><p>文字说明：对于 office 2010，新创建的文档默认设置是会压缩图像的</p>
-<p><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
-<h2 id="刷新题注"><a href="#刷新题注" class="headerlink" title="刷新题注"></a>刷新题注</h2><p>选择图注域代码（或者全选文档），快捷键 F9 刷新</p>
-<p><img data-src="https://s2.loli.net/2022/03/03/QDzKE3mXZW76NGL.gif" alt="F9刷新题注"></p>
-<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><p>文字说明：如果图片为嵌入型（默认的），在段落中只显示一部分，很有可能是因为段落行间距的问题，此时需要将图片的行间距设置为单倍行距。<br><img data-src="https://s2.loli.net/2022/03/07/PelG5DjYyo6hvCb.gif" alt="插入图片显示不全，对图片进行单倍行距设置"></p>
-<p>为什么会这样：整段文字的行间距都是固定的 20 磅，插入图片后，上一行与下一行的行间距仍然只是 20 磅，因此只能看到 20 磅高度的图片</p>
+    <title>Word 操作指南之配置篇</title>
+    <url>/posts/17b2576b.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
+<p>2、长按 Alt 键配合数字键🔢调用快速访问工具栏功能按钮<br><img data-src="https://s2.loli.net/2022/03/03/WbwhFVMLZTBNH3A.gif" alt="长按ALT键+数字按键可以实现快速访问工具栏工具的使用"></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>1、文档设置不压缩图片<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
 <h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
       <tags>
         <tag>Word</tag>
@@ -1658,28 +1717,26 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Word 操作指南之配置篇</title>
-    <url>/posts/17b2576b.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="快速访问工具栏"><a href="#快速访问工具栏" class="headerlink" title="快速访问工具栏"></a>快速访问工具栏</h2><p>1、将指定功能按钮添加到快速访问工具栏<br><img data-src="https://s2.loli.net/2022/03/03/kL9TfIx5jEeJnQt.gif" alt="将指定功能按钮添加到快速访问工具栏"></p>
-<p>2、长按 Alt 键配合数字键🔢调用快速访问工具栏功能按钮<br><img data-src="https://s2.loli.net/2022/03/03/WbwhFVMLZTBNH3A.gif" alt="长按ALT键+数字按键可以实现快速访问工具栏工具的使用"></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>1、文档设置不压缩图片<br><img data-src="https://s2.loli.net/2022/03/03/jBepqcXOsRuHT1V.gif" alt="文档设置不压缩图片"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
+    <title>Homepage 实现只预览摘要而不显示全文功能</title>
+    <url>/posts/8af01528.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://s2.loli.net/2022/05/12/N2YFkGTucMP7UCW.png" alt="excerpt_description属性默认为true"></p>
+<p><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
+<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
+<ol>
+<li>显示自定义的内容</li>
+<li>显示文档某行之前的内容</li>
+</ol>
+<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
+<ul>
+<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+完成之后如下方图片所示：<br><img data-src="https://s2.loli.net/2022/05/12/Ov9yJB4LuXdD3MK.png" alt="在主页显示想要显示的内容"></li>
+</ul>
+<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
+<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
       <tags>
-        <tag>Word</tag>
-        <tag>Office</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Word 操作指南之表格篇</title>
-    <url>/posts/494c263d.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="中断表格"><a href="#中断表格" class="headerlink" title="中断表格"></a>中断表格</h2><p>将鼠标定位至某行表格结束位置，快捷键 Ctrl+Shift+Enter 中断表格<br><img data-src="https://s2.loli.net/2022/03/07/cwAO6qxuZ3bUn5j.gif" alt="Ctrl_Shift_Enter中断表格"></p>
-<h2 id="表格内容无法居中显示"><a href="#表格内容无法居中显示" class="headerlink" title="表格内容无法居中显示"></a>表格内容无法居中显示</h2><p>原因：表格段落样式中，没有清除缩进（将左右缩进设置为 0，特殊格式设置为无）</p>
-<h2 id="制作三线表"><a href="#制作三线表" class="headerlink" title="制作三线表"></a>制作三线表</h2><p>文字总结：将表格的所有边框去除；给表格首行添加上边框和下边框，给表格尾行添加下边框；注意三线表格横线的粗细是否要特殊要求（如最上边和最下边的横线要粗一些，第二条横线要细一些）</p>
-<p><img data-src="https://s2.loli.net/2022/03/07/QyesALp6R2XWVBN.gif" alt="制作三线表格"></p>
-<h2 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h2>]]></content>
-      <tags>
-        <tag>Word</tag>
-        <tag>Office</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1745,30 +1802,6 @@
 <h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
       <tags>
         <tag>Sketch</tag>
-        <tag>APP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么放弃使用 remnote</title>
-    <url>/posts/b0b73b25.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol>
-<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
-<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
-<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
-<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
-<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
-<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
-<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
-<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
-<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
-<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
-<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
-<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
-<li>待续…</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统超级大BUG之无法彻底删除文件"></p>
-]]></content>
-      <tags>
         <tag>APP</tag>
       </tags>
   </entry>
@@ -2044,14 +2077,42 @@
       </tags>
   </entry>
   <entry>
-    <title>此处心安是吾乡</title>
-    <url>/posts/d784b47d.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
-<h3 id="冬"><a href="#冬" class="headerlink" title="冬"></a>冬</h3><p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬.jpeg"></p>
-<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚.jpeg"></p>
+    <title>新建文档指南</title>
+    <url>/posts/295a526.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol>
+<li>首先创建一个专门的文件夹</li>
+<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
+<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
+<li>截图的图片命名好名字，不要按照默认的时间命名</li>
+<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
+<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
+<li>保存一份带有标题样式的 Word 模板</li>
+<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>为什么放弃使用 remnote</title>
+    <url>/posts/b0b73b25.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol>
+<li> 在线库依赖网络，网络不好的情况基本上用不了</li>
+<li> 笔记格式不通用，复制笔记到其他软件调格式麻烦</li>
+<li> 笔记一多，文档内容一多就明显感到不流畅了</li>
+<li> 搜索，中文搜索太拉胯了，通常是搜索框中输入了四个中文，结果匹配结果里面匹配到 1 个字，2 个字的也被搜出来了</li>
+<li> 对图片的支持不友好，且本身服务器加载图片很慢</li>
+<li> 在 Mac 端，中文输入法的情况下，敲了一串英文，enter 回车会出现问题</li>
+<li> 插件系统基本上等于没有，社区也还没有什么插件</li>
+<li> 同步机制做的还不行，remnote 客户端和 PWA 应用两者不同步，有点像两个账户了；遇到客户端更新同步就更慢了</li>
+<li> remnote 不支持表格，或者通过 HTML 实现该功能过于难用</li>
+<li> PDF 功能也不好用，一个是较大一点的 PDF 都不敢放 remnote 当中，加载慢；第二个是自带的 pin 和链接功能，选择 PDF 文字的时候，没有格式处理，导致选择的文字字与字之间存在多余的空格</li>
+<li>复习机制比较拉胯，卡片操作还是远远不如 anki</li>
+<li> 删除文档之后，笔记库中出现一大堆的 untitled，这些文档有些甚至都删不去</li>
+<li>待续…</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/04/03/nVrOaYMsvLcQgCP.jpg" alt="系统超级大BUG之无法彻底删除文件"></p>
 ]]></content>
       <tags>
-        <tag>hexo</tag>
+        <tag>APP</tag>
       </tags>
   </entry>
   <entry>
@@ -2064,6 +2125,17 @@
 <p>当然，除了单打独斗，我们其中也总会有消息情报员，负责统计历年考题，从师兄师姐那里打听资料；资料整理员，负责整理这门课程的考试重点；小抄出版员，负责制作简短精良的小纸条；每个人可能承担着多种不同的角色，目标非常明确：通过考试。</p>
 <p>再回到考试周这个问题上：试题也都有标准答案，大家也都做着相同的一套题，奔着一个共同的目标，过或不能过，其实自己心里非常清楚。这种 “可以预见” 的结果，与生活中其他事情相比，怎么会不觉得轻松呢？</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>此处心安是吾乡</title>
+    <url>/posts/d784b47d.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="夏"><a href="#夏" class="headerlink" title="夏"></a>夏</h3><p><img data-src="https://s2.loli.net/2022/03/31/LMDRruNVvoq6S82.jpg" alt="此处心安是吾乡_夏.jpg"></p>
+<h3 id="冬"><a href="#冬" class="headerlink" title="冬"></a>冬</h3><p><img data-src="https://s2.loli.net/2022/03/31/J7AxQVlhnzPbwdo.jpg" alt="此处心安是吾乡_冬.jpeg"></p>
+<p><img data-src="https://s2.loli.net/2022/03/31/myAvrP5V1IJxZ6l.jpg" alt="此处心安是吾乡_冬-傍晚.jpeg"></p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>谷歌拼音输入法</title>
@@ -2099,44 +2171,6 @@
 ]]></content>
       <tags>
         <tag>APP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新建文档指南</title>
-    <url>/posts/295a526.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol>
-<li>首先创建一个专门的文件夹</li>
-<li>创建 imgs，PDFs 等子文件夹用于存储资源文件</li>
-<li>注意所截取的图片一定要保存下来，在到 word 中插入图片【过程虽然比直接复制截图繁琐，但是这个图片以后如果用得到呢？难道还要在打开 PDF 进行截图吗】</li>
-<li>截图的图片命名好名字，不要按照默认的时间命名</li>
-<li>给图片添加题注，顺手的事情，因为图片的名字可以作为图片的图注</li>
-<li>将图片和图注复制到其他文档中后，选择图注的域代码，按下 F9 即可更新图注，所以说前面给图片添加题注是一个好习惯，后期省的给图片添加图注</li>
-<li>保存一份带有标题样式的 Word 模板</li>
-<li>保存好使用到的 pdf 文件和图片，方便后期直接压缩包打包<br>最后，一定要注意，文章中插入的信息要标注来源！！！</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>Homepage 实现只预览摘要而不显示全文功能</title>
-    <url>/posts/8af01528.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="第一步-修改主题配置文件"><a href="#第一步-修改主题配置文件" class="headerlink" title="第一步 修改主题配置文件"></a>第一步 修改主题配置文件</h2><p>比如我使用的是 NexT 主题，则修改 NexT 文件夹下的_config.yml 文件，搜索‘excerpt’，找到‘excerpt_description’，并将值设置成 true，效果如下图所示：<br><img data-src="https://s2.loli.net/2022/05/12/N2YFkGTucMP7UCW.png" alt="excerpt_description属性默认为true"></p>
-<p><strong>注意：如果之前并没有对该属性进行更改，NexT 主题默认的值是 true 而无需我们再修改</strong><br>打开这个开关之后，功能是开启了，可是网页它怎么知道我们想要显示的是哪些内容呢？</p>
-<h2 id="第二步-设置要显示的内容"><a href="#第二步-设置要显示的内容" class="headerlink" title="第二步 设置要显示的内容"></a>第二步 设置要显示的内容</h2><p>这里有两种方式：</p>
-<ol>
-<li>显示自定义的内容</li>
-<li>显示文档某行之前的内容</li>
-</ol>
-<h3 id="实现方式之一：显示自定义的内容"><a href="#实现方式之一：显示自定义的内容" class="headerlink" title="实现方式之一：显示自定义的内容"></a>实现方式之一：显示自定义的内容</h3><p>homepage 中显示的内容自定义而不必出现在下方的正文当中</p>
-<ul>
-<li>在表头「front matter」中添加 description 属性，属性值即为想要显示的自定义内容，比如下方的设置：<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 为什么我要写博客</span><br><span class="line">date: 2021-12-24 17:52:54</span><br><span class="line">tags:</span><br><span class="line">description: 为什么要写博客以及如何去写好博客</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-完成之后如下方图片所示：<br><img data-src="https://s2.loli.net/2022/05/12/Ov9yJB4LuXdD3MK.png" alt="在主页显示想要显示的内容"></li>
-</ul>
-<h3 id="实现方法之二：显示文档某行之前的内容"><a href="#实现方法之二：显示文档某行之前的内容" class="headerlink" title="实现方法之二：显示文档某行之前的内容"></a>实现方法之二：显示文档某行之前的内容</h3><ul>
-<li>在文档合适的位置插入 “截断” 标签，homepage 当中只显示标签之前的内容，自动隐藏标签之后的内容。“截断” 标签如下所示 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
