@@ -405,6 +405,13 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/Beamer/</loc>
+    <lastmod>2022-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/%E5%AE%8F%E5%8C%85/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -427,13 +434,6 @@
   
   <url>
     <loc>https://coffeelize.top/tags/App/</loc>
-    <lastmod>2022-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Beamer/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -510,6 +510,13 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/hexo/</loc>
+    <lastmod>2022-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/Sketch/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -518,13 +525,6 @@
   
   <url>
     <loc>https://coffeelize.top/tags/APP/</loc>
-    <lastmod>2022-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/hexo/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -545,14 +545,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Search/</loc>
+    <loc>https://coffeelize.top/tags/Image/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Image/</loc>
+    <loc>https://coffeelize.top/tags/Search/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
