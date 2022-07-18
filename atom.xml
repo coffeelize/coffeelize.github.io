@@ -6,7 +6,7 @@
   <link href="https://coffeelize.top/atom.xml" rel="self"/>
   
   <link href="https://coffeelize.top/"/>
-  <updated>2022-07-14T07:24:48.605Z</updated>
+  <updated>2022-07-18T05:02:44.498Z</updated>
   <id>https://coffeelize.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将 PDF 中的文字转换为曲线</title>
+    <link href="https://coffeelize.top/posts/d750efe1.html"/>
+    <id>https://coffeelize.top/posts/d750efe1.html</id>
+    <published>2022-07-18T05:00:05.000Z</published>
+    <updated>2022-07-18T05:02:44.498Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>针对 PDF 中带有特殊字体导致文字乱码 / 文字错位的问题（其他计算机中缺少相应的字体）</p><p>首先需要明确一点是 Adobe PDF 中没有专门的一个命令用来将文字转曲，具体操作如下</p><span id="more"></span><h3 id="转曲前的检查"><a href="#转曲前的检查" class="headerlink" title="转曲前的检查"></a>转曲前的检查</h3><ol><li>文档属性 ⇒ 字体 ⇒ 查看文档中内嵌的字体</li></ol><p><img data-src="https://s2.loli.net/2022/07/18/lEhtAVUDN9MpjdQ.png" alt="01-查看文档中内嵌的字体.png"></p><h3 id="进行转曲"><a href="#进行转曲" class="headerlink" title="进行转曲"></a>进行转曲</h3><p>编辑 PDF ⇒ 添加水印 ⇒ 水印设置如下</p><p><img data-src="https://s2.loli.net/2022/07/18/dTcPkUGWlaLbRtq.png" alt="02-添加水印来实现文字转曲效果.png"></p><p>添加水印之后，退出 PDF 编辑界面，进入 “印刷制作”</p><p><img data-src="https://s2.loli.net/2022/07/18/lMXd21LYRt8casD.png" alt="04-印刷制作-拼合器预览中进行相应的设置.png"></p><h3 id="转曲后的检查"><a href="#转曲后的检查" class="headerlink" title="转曲后的检查"></a>转曲后的检查</h3><p>拼合之后，检查文档中的字体信息，结果是没有包含任何字体</p><p><img data-src="https://s2.loli.net/2022/07/18/HpV7KN6wJitmzBe.png" alt="05-通过拼合之后的文档中不包含任何字体.png"></p><p>注意：拼合之后，鼠标无法在选中 PDF 中原有的文字，是对内容的一个极大的破坏，且操作不可逆，在拼合前注意是否需要<strong>备份一份文档</strong>，只能通过 OCR 等进行识别了</p><p>转曲前后文件大小比较（仅供参考）：7 页 368kb⇒ 1250kb</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;针对 PDF 中带有特殊字体导致文字乱码 / 文字错位的问题（其他计算机中缺少相应的字体）&lt;/p&gt;
+&lt;p&gt;首先需要明确一点是 Adobe PDF 中没有专门的一个命令用来将文字转曲，具体操作如下&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="PDF" scheme="https://coffeelize.top/tags/PDF/"/>
+    
+  </entry>
   
   <entry>
     <title>通过 thebibliography 环境处理参考文献</title>
@@ -439,30 +459,6 @@
     
     
     <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Latex 排版连字现象</title>
-    <link href="https://coffeelize.top/posts/794c3cfd.html"/>
-    <id>https://coffeelize.top/posts/794c3cfd.html</id>
-    <published>2022-06-08T03:46:35.000Z</published>
-    <updated>2022-06-10T03:06:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>西文排版中经常会出现连字（Ligatures），常见的有 <code>ff</code> 、 <code>fi</code> 、 <code>fl</code> 、 <code>ffi</code> 、 <code>ffl</code>。</p><blockquote><p>在使用知云翻译英文文献的时候，有时候就是碰到这些连字导致无法正常识别连字所对应的英文 (⊙﹏⊙)，导致翻译出现问题</p></blockquote><span id="more"></span><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">It's difficule to find <span class="keyword">\ldots</span> .</span><br><span class="line"></span><br><span class="line">It's dif{}f{}icult to f{}ind <span class="keyword">\ldots</span> .</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2022/06/08/6OkowS7Zhfc1gTn.png" alt="01-连字与非连字.png"></p><p>几乎所有的 OpenType 字体都包含标准的连字（fl fi ffi）←比如你仔细看左边这几个词有连字效果，也有一些罕见的或历史的连字，例如 st、ct 和 tz。连字功能默认是关闭的，可以通过如下命令来激活这些连字</p><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%语法\setmainfont[Ligatures=Rare]{(font)}</span></span><br><span class="line"><span class="keyword">\setmainfont</span>[Ligatures=Rare]{Times New Roman} <span class="comment">%激活连字功能</span></span><br></pre></td></tr></tbody></table></figure><h3 id="案例1-激活英文连字"><a href="#案例1-激活英文连字" class="headerlink" title="案例1 激活英文连字"></a>案例 1 激活英文连字</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{fontspec}</span><br><span class="line"><span class="keyword">\setmainfont</span>[Ligatures=Rare]{Times New Roman}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="comment">%语法\setmainfont[Ligatures=Rare]{(font)}</span></span><br><span class="line">It's difficult to find <span class="keyword">\ldots</span> .</span><br><span class="line"></span><br><span class="line">It's dif{}f{}icult to f{}ind <span class="keyword">\ldots</span> .</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2022/06/08/x4Ejoaluqz6Y7Df.png" alt="04-正常非连字与激活连字.png"></p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li><input disabled="" type="checkbox"> Latex 官方文档：一份不太简短的 LaTeX2e 介绍（版本 5.01）</li></ul><h3 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h3>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;西文排版中经常会出现连字（Ligatures），常见的有 &lt;code&gt;ff&lt;/code&gt; 、 &lt;code&gt;fi&lt;/code&gt; 、 &lt;code&gt;fl&lt;/code&gt; 、 &lt;code&gt;ffi&lt;/code&gt; 、 &lt;code&gt;ffl&lt;/code&gt;。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在使用知云翻译英文文献的时候，有时候就是碰到这些连字导致无法正常识别连字所对应的英文 (⊙﹏⊙)，导致翻译出现问题&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="Latex" scheme="https://coffeelize.top/tags/Latex/"/>
-    
-    <category term="Font" scheme="https://coffeelize.top/tags/Font/"/>
     
   </entry>
   

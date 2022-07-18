@@ -9,7 +9,7 @@ botui.message
     .then(() => {
         return botui.message.bot({ // second one
             delay: 1500, // wait 1 sec.
-            content: '我是Cheeph'
+            content: '我是智朋'
         })
     }).then(() => {
         return botui.action.button({ // let user do something
