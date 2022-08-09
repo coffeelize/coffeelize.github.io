@@ -204,6 +204,9 @@
         <li class="links-of-blogroll-item">
           <a href="https://ghgxj.xyz/" title="https:&#x2F;&#x2F;ghgxj.xyz&#x2F;" rel="noopener" target="_blank">ZXC's Blog</a>
         </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sdhlw.top/" title="https:&#x2F;&#x2F;www.sdhlw.top&#x2F;" rel="noopener" target="_blank">向阳</a>
+        </li>
     </ul>
   </div>
 
@@ -261,10 +264,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-25 11:08:17 / 修改时间：11:11:42" itemprop="dateCreated datePublished" datetime="2022-07-25T11:08:17+08:00">2022-07-25</time>
+      <time title="创建时间：2022-07-25 11:08:17" itemprop="dateCreated datePublished" datetime="2022-07-25T11:08:17+08:00">2022-07-25</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-08-09 10:02:06" itemprop="dateModified" datetime="2022-08-09T10:02:06+08:00">2022-08-09</time>
+      </span>
 
   
   
@@ -369,7 +378,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-07-25 11:11:57" itemprop="dateModified" datetime="2022-07-25T11:11:57+08:00">2022-07-25</time>
+        <time title="修改时间：2022-07-25 11:12:14" itemprop="dateModified" datetime="2022-07-25T11:12:14+08:00">2022-07-25</time>
       </span>
 
   
@@ -683,7 +692,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-07-14 14:21:49" itemprop="dateModified" datetime="2022-07-14T14:21:49+08:00">2022-07-14</time>
+        <time title="修改时间：2022-08-09 10:02:19" itemprop="dateModified" datetime="2022-08-09T10:02:19+08:00">2022-08-09</time>
       </span>
 
   
@@ -725,20 +734,18 @@
     
     <div class="post-body" itemprop="articleBody">
           <h3 id="使用-BIBTeX-排版参考文献"><a href="#使用-BIBTeX-排版参考文献" class="headerlink" title="使用 BIBTeX 排版参考文献"></a>使用 BIBTeX 排版参考文献</h3><ol>
-<li> 准备一份 BIBTeX 数据库，假设数据库文件名为 books.bib，和 LaTeX 源代码一般位于同一个目录下。</li>
+<li>准备一份 BIBTeX 数据库，假设数据库文件名为 books.bib，和 LaTeX 源代码一般位于同一个目录下。</li>
 <li>在源代码中添加必要的命令。假设源代码名为 demo.tex<ol>
 <li> 首先需要使用命令 <code>\bibliographystyle</code> 设定参考文献的格式。</li>
-<li> 其次，在正文中引用参考文献。BIBTeX 程序在生成参考文献列表的时候，通常只列出用了 <code>\cite</code> 命令引用的那些。如果需要列出未被引用的文献，则需要 <code>\nocite{ ⟨ citation ⟩ }</code> 命令；而 <code>\nocite{*}</code> 则让所有未被引用的文献都列出。</li>
-<li> 再次，在需要列出参考文献的位置，使用 <code>\bibliography</code> 命令代替 thebibliography 环境：<code>\bibliography{ ⟨ bib-name ⟩ }</code>，其中 ⟨ bib-name ⟩ 是 BIBTeX 数据库的文件名，不要带 <code>.bib</code> 扩展名。</li>
-<li> 注意：<code>\bibliographystyle</code> 和 <code>\bibliography</code> 这两个命令缺一不可，否则使用 BIBTeX 生成参考文献列表的时候会报错</li>
+<li>其次，在正文中引用参考文献。BIBTeX 程序在生成参考文献列表的时候，通常只列出用了 <code>\cite</code> 命令引用的那些。如果需要列出未被引用的文献，则需要 <code>\nocite{ ⟨ citation ⟩ }</code> 命令；而 <code>\nocite{*}</code> 则让所有未被引用的文献都列出。</li>
+<li>再次，在需要列出参考文献的位置，使用 <code>\bibliography</code> 命令代替 thebibliography 环境：<code>\bibliography{ ⟨ bib-name ⟩ }</code>，其中 ⟨ bib-name ⟩ 是 BIBTeX 数据库的文件名，不要带 <code>.bib</code> 扩展名。</li>
+<li>注意：<code>\bibliographystyle</code> 和 <code>\bibliography</code> 这两个命令缺一不可，否则使用 BIBTeX 生成参考文献列表的时候会报错</li>
 </ol>
 </li>
-<li>开始编译<ol>
+<li>开始编译</li>
 <li>使用 xelatex 或 pdflatex 编译源代码 demo.tex</li>
 <li> 使用 bibtex 命令（处理一些 aux、bbl 文件，不需要我们管）</li>
 <li>在使用 xelatex 或 pdflatex 编译两遍（读入参考文献并正确，生成引用。）</li>
-</ol>
-</li>
 </ol>
           <!--noindex-->
             <div class="post-button">
@@ -796,10 +803,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-11 13:14:37 / 修改时间：13:27:50" itemprop="dateCreated datePublished" datetime="2022-07-11T13:14:37+08:00">2022-07-11</time>
+      <time title="创建时间：2022-07-11 13:14:37" itemprop="dateCreated datePublished" datetime="2022-07-11T13:14:37+08:00">2022-07-11</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-08-09 10:02:34" itemprop="dateModified" datetime="2022-08-09T10:02:34+08:00">2022-08-09</time>
+      </span>
 
   
   
@@ -896,10 +909,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-08 09:13:55 / 修改时间：09:24:11" itemprop="dateCreated datePublished" datetime="2022-07-08T09:13:55+08:00">2022-07-08</time>
+      <time title="创建时间：2022-07-08 09:13:55" itemprop="dateCreated datePublished" datetime="2022-07-08T09:13:55+08:00">2022-07-08</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-08-09 10:01:58" itemprop="dateModified" datetime="2022-08-09T10:01:58+08:00">2022-08-09</time>
+      </span>
 
   
   
@@ -996,10 +1015,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-08 08:18:35 / 修改时间：08:58:16" itemprop="dateCreated datePublished" datetime="2022-07-08T08:18:35+08:00">2022-07-08</time>
+      <time title="创建时间：2022-07-08 08:18:35" itemprop="dateCreated datePublished" datetime="2022-07-08T08:18:35+08:00">2022-07-08</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-08-09 10:02:24" itemprop="dateModified" datetime="2022-08-09T10:02:24+08:00">2022-08-09</time>
+      </span>
 
   
   
@@ -1096,10 +1121,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-04 16:40:14 / 修改时间：17:04:03" itemprop="dateCreated datePublished" datetime="2022-07-04T16:40:14+08:00">2022-07-04</time>
+      <time title="创建时间：2022-07-04 16:40:14" itemprop="dateCreated datePublished" datetime="2022-07-04T16:40:14+08:00">2022-07-04</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-08-09 10:02:34" itemprop="dateModified" datetime="2022-08-09T10:02:34+08:00">2022-08-09</time>
+      </span>
 
   
   
@@ -1204,7 +1235,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-07-14 14:23:22" itemprop="dateModified" datetime="2022-07-14T14:23:22+08:00">2022-07-14</time>
+        <time title="修改时间：2022-08-09 10:01:42" itemprop="dateModified" datetime="2022-08-09T10:01:42+08:00">2022-08-09</time>
       </span>
 
   

@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/06/01/9KyJXnBD7PshS1u.png">
 <meta property="og:image" content="https://s2.loli.net/2022/06/01/GfCSc28aprV5Dyi.png">
 <meta property="article:published_time" content="2022-06-01T05:52:56.000Z">
-<meta property="article:modified_time" content="2022-06-02T13:58:25.624Z">
+<meta property="article:modified_time" content="2022-08-09T02:02:17.041Z">
 <meta property="article:author" content="原装咖啡">
 <meta property="article:tag" content="Latex">
 <meta name="twitter:card" content="summary">
@@ -216,6 +216,9 @@
         <li class="links-of-blogroll-item">
           <a href="https://ghgxj.xyz/" title="https:&#x2F;&#x2F;ghgxj.xyz&#x2F;" rel="noopener" target="_blank">ZXC's Blog</a>
         </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sdhlw.top/" title="https:&#x2F;&#x2F;www.sdhlw.top&#x2F;" rel="noopener" target="_blank">向阳</a>
+        </li>
     </ul>
   </div>
 
@@ -282,7 +285,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-02 21:58:25" itemprop="dateModified" datetime="2022-06-02T21:58:25+08:00">2022-06-02</time>
+        <time title="修改时间：2022-08-09 10:02:17" itemprop="dateModified" datetime="2022-08-09T10:02:17+08:00">2022-08-09</time>
       </span>
 
   
@@ -332,6 +335,7 @@
 <li><input disabled="" type="checkbox"> 案例中使用到的图片： <a target="_blank" rel="noopener" href="https://sm.ms/image/W9pfLrXMi6uCFtT">下载地址</a><span id="more"></span></li>
 </ul>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{subfigure}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure} </span><br><span class="line">        <span class="keyword">\centering</span> </span><br><span class="line">        <span class="keyword">\subfigure</span>[Small Box with a Long Caption]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:subfig:a} <span class="comment">%% 为第一张图片添加标签</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=1.0in]{figs/cat2}} </span><br><span class="line">        <span class="keyword">\hspace</span>{1in} </span><br><span class="line">        <span class="keyword">\subfigure</span>[Big Box]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:subfig:b} <span class="comment">%% 为第二张图片添加标签</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=1.5in]{figs/cat2}} </span><br><span class="line">        <span class="keyword">\caption</span>{Two Subfigures} </span><br><span class="line">        <span class="keyword">\label</span>{fig:subfig} <span class="comment">%% 为整个大图添加标签</span></span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
 <p><img data-src="https://s2.loli.net/2022/06/01/JZDjiIUWz3pTGQy.png" alt="01-不使用minipage并排插图.png"></p>
 <p>像其它的并列图形一样，子图也可以在小页环境中使用。而且在一些情况下， 这样做还能更方便的得到理想的图形间距。例如：</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{subfigure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure} </span><br><span class="line">        <span class="keyword">\subfigure</span>[Small Box with a Long Caption]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:mini:subfig:a} <span class="comment">%% 为第一张图片添加标签</span></span><br><span class="line">            <span class="keyword">\begin</span>{minipage}[b]{0.5<span class="keyword">\textwidth</span>} </span><br><span class="line">                <span class="keyword">\centering</span> </span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=1in]{figs/cat2} </span><br><span class="line">        <span class="keyword">\end</span>{minipage}}<span class="comment">% </span></span><br><span class="line">        <span class="keyword">\subfigure</span>[Big Box]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:mini:subfig:b} <span class="comment">%% 为第二张图片添加标签</span></span><br><span class="line">            <span class="keyword">\begin</span>{minipage}[b]{0.5<span class="keyword">\textwidth</span>} </span><br><span class="line">                <span class="keyword">\centering</span> </span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=1.5in]{figs/cat2} </span><br><span class="line">        <span class="keyword">\end</span>{minipage}} </span><br><span class="line">        <span class="keyword">\caption</span>{Minipages Inside Subfigures} </span><br><span class="line">        <span class="keyword">\label</span>{fig:mini:subfig} <span class="comment">%% 为整个大图添加标签</span></span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
@@ -342,14 +346,15 @@
 <h3 id="需求-2：那么如何引用大图当中的子图呢"><a href="#需求-2：那么如何引用大图当中的子图呢" class="headerlink" title="需求 2：那么如何引用大图当中的子图呢"></a>需求 2：那么如何引用大图当中的子图呢</h3><p>这就发挥到 label 的作用了，label 标签相当于给子图片打上了一个标记，在引用的地方通过 ref 引用标签名即可</p>
 <p>在图片环境的代码后面添加如下文字</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"></span><br><span class="line">这里有一段文字需要引用图1中子图b。<span class="keyword">\ref</span>{fig:mini:subfig:b} is a big cat!</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
 <p><img data-src="https://s2.loli.net/2022/06/01/qPUCz3rnFODdaMp.png" alt="04-交叉引用子图.png"></p>
 <h3 id="需求-3：修改标签分隔符"><a href="#需求-3：修改标签分隔符" class="headerlink" title="需求 3：修改标签分隔符"></a>需求 3：修改标签分隔符</h3><p>包含子图的大图标题，图编号与图表题文字之间的分隔符为冒号，如何设置为英文句点，参考 caption 宏包使用文档（但是目前该文档似乎还没有中文翻译）</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line">使用如下captionsetup命令需要使用到caption宏包</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{labelformat=simple, labelsep=period}<span class="comment">% 参数见以下分析</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>如何查看宏包的帮助文档</p>
 <ol>
-<li> 按住 shift，鼠标右键</li>
-<li> 使用 Powershell 打开</li>
+<li>按住 shift，鼠标右键</li>
+<li>使用 Powershell 打开</li>
 <li> texdoc 宏包名（比如 <code>texdoc tabular</code>）</li>
 </ol>
 <p><img data-src="https://s2.loli.net/2022/06/01/vsQkJwraMo1V2Hf.gif" alt="07-（Latex）查看宏包帮助文档.gif"></p>
@@ -426,12 +431,13 @@
 <p>同理，对于子图当中标签分隔符的设置，只要将中括号中的 figure 改为 subfigure 即可</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\captionsetup</span>[subfigure]{...}</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="需求-4：如何修改交叉引用的图例"><a href="#需求-4：如何修改交叉引用的图例" class="headerlink" title="需求 4：如何修改交叉引用的图例"></a>需求 4：如何修改交叉引用的图例</h3><p>比如上图中，引用图 1 的子图 b，但是如何让 <code>1(b)</code> 显示为 <code> 图 1(b)</code> 呢<br>搜了一圈，似乎只能通过文字打上去 (lll￢ω￢)</p>
+<h3 id="需求-4：如何修改交叉引用的图例"><a href="#需求-4：如何修改交叉引用的图例" class="headerlink" title="需求 4：如何修改交叉引用的图例"></a>需求 4：如何修改交叉引用的图例</h3><p>比如上图中，引用图 1 的子图 b，但是如何让 <code>1(b)</code> 显示为 <code>图 1(b)</code> 呢<br>搜了一圈，似乎只能通过文字打上去 (lll￢ω￢)</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"></span><br><span class="line">这里有一段文字需要引用图1中子图b。图<span class="keyword">\ref</span>{fig:mini:subfig:b} is a big cat!</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
 <p><img data-src="https://s2.loli.net/2022/06/01/9KyJXnBD7PshS1u.png" alt="05-交叉引用图片格式.png"></p>
 <h3 id="需求-5：多个子图，但是共享一个大标题，无需为子图添加标题"><a href="#需求-5：多个子图，但是共享一个大标题，无需为子图添加标题" class="headerlink" title="需求 5：多个子图，但是共享一个大标题，无需为子图添加标题"></a>需求 5：多个子图，但是共享一个大标题，无需为子图添加标题</h3><p>实际上就是在 figure 环境当中插入多张图片，但是只添加一个 caption</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure} </span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=90pt]{figs/cat2} <span class="keyword">\qquad</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=90pt]{figs/cat2} </span><br><span class="line">        <span class="keyword">\caption</span>{There are two figure share one caption}</span><br><span class="line">        <span class="keyword">\label</span>{share-one-caption}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line">    </span><br><span class="line">    这里有一段文字需要引用图1。图<span class="keyword">\ref</span>{share-one-caption}有两张子图组成</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
 <p><img data-src="https://s2.loli.net/2022/06/01/GfCSc28aprV5Dyi.png" alt="06-子图共享大标题.png"></p>
 <h3 id="更高阶的应用"><a href="#更高阶的应用" class="headerlink" title="更高阶的应用"></a>更高阶的应用</h3><p>修改子图编号格式</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thesubfigure</span>}{<span class="keyword">\arabic</span>{subfigure}}<span class="comment">%使子图编号为a的格式</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thesubfigure</span>}{(<span class="keyword">\alph</span>{subfigure})}<span class="comment">%使子图编号为(a)的格式</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thesubtable</span>}{(<span class="keyword">\alph</span>{subtable})} <span class="comment">%使子表编号为(a)的格式</span></span><br></pre></td></tr></tbody></table></figure>
