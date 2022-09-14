@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://coffeelize.top/talks/2022-09-15/404.html</loc>
-    
-    <lastmod>2022-09-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/talks/2022-09-15/index.html</loc>
-    
-    <lastmod>2022-09-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/posts/64614275.html</loc>
     
     <lastmod>2022-08-09</lastmod>
@@ -74,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/942e3f13.html</loc>
+    <loc>https://coffeelize.top/posts/9d732561.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -83,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/9d732561.html</loc>
+    <loc>https://coffeelize.top/posts/942e3f13.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -110,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/4baf1388.html</loc>
+    <loc>https://coffeelize.top/posts/8ee025b2.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -119,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/8ee025b2.html</loc>
+    <loc>https://coffeelize.top/posts/4baf1388.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -137,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/4fcbca1a.html</loc>
+    <loc>https://coffeelize.top/posts/177574ba.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -146,7 +128,16 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/posts/177574ba.html</loc>
+    <loc>https://coffeelize.top/posts/494c263d.html</loc>
+    
+    <lastmod>2022-08-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/posts/4fcbca1a.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -165,15 +156,6 @@
   
   <url>
     <loc>https://coffeelize.top/posts/82ded38b.html</loc>
-    
-    <lastmod>2022-08-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/posts/494c263d.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -486,6 +468,13 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/%E5%AE%8F%E5%8C%85/</loc>
+    <lastmod>2022-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/Beamer/</loc>
     <lastmod>2022-09-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -515,13 +504,6 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Life/</loc>
-    <lastmod>2022-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/%E5%AE%8F%E5%8C%85/</loc>
     <lastmod>2022-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -626,14 +608,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Image/</loc>
+    <loc>https://coffeelize.top/tags/Spaced-repetition/</loc>
     <lastmod>2022-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Spaced-repetition/</loc>
+    <loc>https://coffeelize.top/tags/Image/</loc>
     <lastmod>2022-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
