@@ -3098,17 +3098,12 @@ mark.search-keyword {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 5px;
-  background-color: rgba(255,255,255,0.75);
-  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
 }
 .menu .menu-item a {
   font-size: 14px;
 }
 .menu .menu-item {
   margin: 5px 15px;
-}
-.menu .menu-item a:hover {
-  border-bottom-color: rgba(161,102,171,0);
 }
 .btn {
   background: #fff;
@@ -3137,12 +3132,6 @@ mark.search-keyword {
 }
 p.image-caption {
   display: none;
-}
-.headband {
-  height: 1.5px;
-}
-.header {
-  line-height: 1.5;
 }
 .post-body p a {
   text-decoration: none;
@@ -3209,34 +3198,6 @@ blockquote {
   color: #fff;
   background: #ff7600;
 }
-.posts-expand {
-  padding-top: 10px;
-}
-.posts-expand .post-meta {
-  margin: 10px 0px 20px 0px;
-}
-.posts-expand .post-meta time {
-  border-bottom: none;
-}
-.post-category a {
-  color: #49b1f5;
-}
-.post-category a:hover {
-  color: #fc6423;
-}
-.post-category a,
-.post-comments-count a {
-  border-bottom: none;
-}
-.posts-expand .post.post-type-normal,
-.post-block {
-  border-radius: 10px !important;
-}
-文章标题动态效果,
-.posts-expand .post-title-link::before {
-  background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
-}
-*
 .posts-expand .post-title {
   font-size: 26px;
   font-weight: 700;
@@ -3247,7 +3208,6 @@ blockquote {
 .post-body h5,
 .post-body h6 {
   border-left: 4px solid #f27c8d;
-/* background-color: rgb(227, 242, 253); */
   margin-left: -40px;
   padding-left: 32px;
   border-bottom: none;
@@ -3293,31 +3253,6 @@ blockquote {
   background: #ccc;
   border-top-color: #fff;
 }
-.posts-collapse::after {
-  margin-left: -2px;
-  background-image: linear-gradient(180deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
-}
-.posts-collapse .post-header::before {
-  background-color: #fff;
-  border: 1px solid #bbb8b8;
-}
-.posts-collapse .post-header:hover::before {
-  background-color: #49b1f5;
-}
-.page-archive .posts-collapse .archive-move-on {
-  top: 10px;
-  opacity: 1;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-}
-.posts-collapse .post-header {
-  border-bottom: none;
-}
-.posts-collapse .collection-title::before {
-  opacity: 1;
-  background-color: #fff;
-  box-shadow: 0px 0px 1px 1px #bdbdbd;
-}
 .tag-cloud-tags a {
   border-bottom: 2px solid;
 }
@@ -3342,15 +3277,6 @@ blockquote {
   margin-left: -10px;
   padding-left: 15px;
   padding-right: 5px;
-}
-span#inline-toc {
-  display: inline-block;
-  border-radius: 80% 100% 90% 20%;
-  background-color: #e3f2fd;
-  color: #555;
-  padding: 0.05em 0.4em;
-  margin: 2px 5px 2px 0px;
-  line-height: 1.5;
 }
 .post-body {
   cursor: url("/images/designcursor.svg") 6 2, default;
