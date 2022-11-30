@@ -475,10 +475,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-11-29 11:49:47 / 修改时间：12:10:28" itemprop="dateCreated datePublished" datetime="2022-11-29T11:49:47+08:00">2022-11-29</time>
+      <time title="创建时间：2022-11-29 11:49:47" itemprop="dateCreated datePublished" datetime="2022-11-29T11:49:47+08:00">2022-11-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-11-30 11:10:47" itemprop="dateModified" datetime="2022-11-30T11:10:47+08:00">2022-11-30</time>
+      </span>
 
   
   
@@ -518,33 +524,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>注：本文内容的主体结构转载自博客园 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ahhylau/p/4586167.html">LaTeXmath：LaTeX 中列表环境的使用</a>，本人仅对案例中的一些代码、图片及一些宏包的使用做了一些补充。</p>
+          <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>注：本文内容的主体结构转载自博客园 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ahhylau/p/4586167.html">LaTeXmath：LaTeX 中列表环境的使用</a>，本人仅对案例中的一些代码、图片及一些宏包的使用做了一些补充。</p>
 <p>列表就是将所要表达的内容分为若干个条目并按一定的顺序排列，达到简明、直观的效果。LaTeX 中常见的列表环境有&nbsp;enumerate、itemize 和 description。这三种列表环境的主要区别是列表项标签的不同：</p>
-<p>有序列表和无序列表无需在进行介绍，对于 description 列表来说，可指定其标签</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{pifont} </span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{description}</span><br><span class="line">  <span class="keyword">\item</span>[<span class="keyword">\ding</span>{47}] This is the first item</span><br><span class="line">  <span class="keyword">\item</span>[<span class="keyword">\ding</span>{47}] This is the second item</span><br><span class="line">  <span class="keyword">\item</span>[<span class="keyword">\ding</span>{47}] This is the third item</span><br><span class="line"> <span class="keyword">\end</span>{description}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/07/01/riNZI4RMPheTu9o.png" alt="01-指定description标签.png"></p>
-<p>了解关于 pifont 宏包的更多信息，请参考：<a target="_blank" rel="noopener" href="https://ctan.org/pkg/pifont">pifont – Access to PostScript standard Symbol and Dingbats fonts</a>，如下为 pifont 的一些字符</p>
-<p><img data-src="https://s2.loli.net/2022/07/01/2PuBr5ezGCqi1cT.png" alt="02-pifont的一些字符.png"></p>
-<p>或者参阅以下的简要信息快速了解 pifont 宏包</p>
-<blockquote>
-<p>The package provides commands for Pi fonts (Dingbats, Symbol, etc.); all commands assume you know the character number within the font of the symbol within the font.</p>
-</blockquote>
-<p>列表环境也可以互相嵌套，默认情况下不同层级的标签不同，以体现分级层次。</p>
-<h3 id="进阶用法"><a href="#进阶用法" class="headerlink" title="进阶用法"></a>进阶用法</h3><p>可参考个人博客：<a target="_blank" rel="noopener" href="https://syvshc.github.io/2021-12-05-length-in-enumitem/">enumitem 宏包中的长度设置</a> @无锤乙醇</p>
-<p>以如下代码对自定义列表环境进行案例分析:</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{enumerate}</span><br><span class="line"><span class="keyword">\usepackage</span>{enumitem}</span><br><span class="line"><span class="keyword">\setlist</span>[enumerate,1]{label=(<span class="keyword">\arabic</span>*).,font=<span class="keyword">\textup</span>,</span><br><span class="line"> leftmargin=7mm,labelsep=1.5mm,topsep=0mm,itemsep=-0.8mm}</span><br><span class="line"><span class="keyword">\setlist</span>[enumerate,2]{label=(<span class="keyword">\alph</span>*).,font=<span class="keyword">\textup</span>,</span><br><span class="line"> leftmargin=7mm,labelsep=1.5mm,topsep=-0.8mm,itemsep=-0.8mm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{enumerate}</span><br><span class="line">  <span class="keyword">\item</span> 这是一个一级列表</span><br><span class="line">  <span class="keyword">\item</span> 看我在嵌套一个二级列表</span><br><span class="line">    <span class="keyword">\begin</span>{enumerate}</span><br><span class="line">     <span class="keyword">\item</span> 这是一个二级列表</span><br><span class="line">    <span class="keyword">\end</span>{enumerate}</span><br><span class="line"> <span class="keyword">\end</span>{enumerate}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&nbsp;<code>\setlist[enumerate,1]</code>&nbsp;表示对一级列表进行设置，<code>\setlist[enumerate,2]</code>&nbsp;表示对二级列表进行设置。这样一级列表的标签就是括号加阿拉伯数字加点，二级标签是括号加小写英文字母加点。输出效果为：</p>
-<p><img data-src="https://s2.loli.net/2022/07/01/loZxCdTE8hAVD74.png" alt="04-自定义修改列表样式.png"></p>
-<p><code>font=\textup</code> 表示使用直立体（可参考官方入门手册）</p>
-<p><img data-src="https://s2.loli.net/2022/07/01/xiAoPaI8DqOQ7mU.png" alt="05-字体命令.png"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>个人博客：<a target="_blank" rel="noopener" href="https://syvshc.github.io/2021-12-05-length-in-enumitem/">enumitem 宏包中的长度设置</a> @无锤乙醇</li>
-<li>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ahhylau/p/4586167.html">LaTeX 中列表环境的使用</a> @LaTeXmath</li>
-<li>Latex 官方入门手册：一份（不太）简短的 LaTeX2ε 介绍</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/18fc56c9.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -593,10 +582,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-11-29 11:19:57 / 修改时间：11:41:30" itemprop="dateCreated datePublished" datetime="2022-11-29T11:19:57+08:00">2022-11-29</time>
+      <time title="创建时间：2022-11-29 11:19:57" itemprop="dateCreated datePublished" datetime="2022-11-29T11:19:57+08:00">2022-11-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-11-30 11:12:18" itemprop="dateModified" datetime="2022-11-30T11:12:18+08:00">2022-11-30</time>
+      </span>
 
   
   
@@ -636,39 +631,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
 <li>个人博客： <a target="_blank" rel="noopener" href="https://liam.page/2020/03/30/writing-manuscript-in-Markdown-and-typesetting-with-LaTeX/">以 Markdown 撰写文稿，以 LaTeX 排版</a> </li>
 </ul>
 <h3 id="简介以及基本用法"><a href="#简介以及基本用法" class="headerlink" title="简介以及基本用法"></a>简介以及基本用法</h3><p>请参考<a target="_blank" rel="noopener" href="https://liam.page/2020/03/30/writing-manuscript-in-Markdown-and-typesetting-with-LaTeX/">以 Markdown 撰写文稿，以 LaTeX 排版</a></p>
 <h3 id="最小实例"><a href="#最小实例" class="headerlink" title="最小实例"></a>最小实例</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{markdown}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{markdown}</span><br><span class="line"></span><br><span class="line">1.markdown内容顶格写</span><br><span class="line">2.空行检查是否有多余的Tab缩进</span><br><span class="line">3.请使用PowerShell进行编译，无法在TexStudio中的运行进行编译</span><br><span class="line"></span><br><span class="line"> <span class="keyword">\end</span>{markdown}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/11/29/kylrxgY8iqMuvAn.gif" alt="markdown2latex.gif"></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
-<li>在含有 tex 源文件的目录下使用 Powershell 对如下命令进行编译 </li>
-</ol>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex --shell-escape texname.tex</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>使用 markdown 宏包之后，需要在 markdown 环境中书写 markdown 内容</li>
-<li> markdown 内容做到左侧无缩进（靠左侧顶格写）</li>
-<li>同其他普通的 tex 文档一样，可以使用定制样式的文档类或宏包</li>
-</ol>
-<p>比如可以使用我们喜欢的文档类，只要将相应的 cls 文件复制到同一目录下，在导言区引用即可</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[cn,normal,11pt,blue]{elegantnote}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="可能会出现的问题"><a href="#可能会出现的问题" class="headerlink" title="可能会出现的问题"></a>可能会出现的问题</h3><ol>
-<li>二级列表也顶格写的话就会变成一级列表</li>
-</ol>
-<p>解决办法：在二级列表的前面添加四个空格，而不是增加一个 tab 键</p>
-<ol start="2">
-<li>Markdown 中含有繁体中文时，输出的 PDF 中繁体中文显示会有问题</li>
-<li>网页中带有中文字符等特殊符号时，会自动转义导致网页链接出错</li>
-</ol>
-<p>解决办法：使用短链接，比如 Github：<a target="_blank" rel="noopener" href="https://github.com/icowan/shorter">shorter</a>，或者 Github：<a target="_blank" rel="noopener" href="https://github.com/imfycc/short_url">short_url</a></p>
-<ol start="4">
-<li> 图片大小渲染问题，请参考：<a target="_blank" rel="noopener" href="https://liam.page/2020/03/30/writing-manuscript-in-Markdown-and-typesetting-with-LaTeX/">以 Markdown 撰写文稿，以 LaTeX 排版</a> </li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/23aacf40.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -717,10 +692,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-11-29 10:59:47 / 修改时间：11:06:56" itemprop="dateCreated datePublished" datetime="2022-11-29T10:59:47+08:00">2022-11-29</time>
+      <time title="创建时间：2022-11-29 10:59:47" itemprop="dateCreated datePublished" datetime="2022-11-29T10:59:47+08:00">2022-11-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-11-30 11:18:55" itemprop="dateModified" datetime="2022-11-30T11:18:55+08:00">2022-11-30</time>
+      </span>
 
   
   
@@ -760,13 +741,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>操作的具体细节请参考：<a target="_blank" rel="noopener" href="https://ssnhd.com/2022/01/01/mac-inputdel/">Mac 删除原生 ABC 英文输入法</a>。需要补充的是：可以使用 PlistEdit 替代 Xcode 的功能，因为 Xcode 实在是太大了</p>
-<p>从此远离切换窗口之后自动切换到系统 ABC 输入法的苦恼了</p>
-<p><img data-src="https://s2.loli.net/2022/11/29/Mn2D3SqUBVmuEHb.png" alt="删除Mac系统自带的ABC输入法.png"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>个人博客：<a target="_blank" rel="noopener" href="https://ssnhd.com/2022/01/01/mac-inputdel/">Mac 删除原生 ABC 英文输入法</a></li>
-</ul>
-
+          <h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>操作的具体细节请参考：<a target="_blank" rel="noopener" href="https://ssnhd.com/2022/01/01/mac-inputdel/">Mac 删除原生 ABC 英文输入法</a>。需要补充的是：可以使用 PlistEdit 替代 Xcode 的功能，因为 Xcode 实在是太大了</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/ebcbef66.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -815,10 +798,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-11-29 09:26:26 / 修改时间：10:47:54" itemprop="dateCreated datePublished" datetime="2022-11-29T09:26:26+08:00">2022-11-29</time>
+      <time title="创建时间：2022-11-29 09:26:26" itemprop="dateCreated datePublished" datetime="2022-11-29T09:26:26+08:00">2022-11-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-11-30 11:17:21" itemprop="dateModified" datetime="2022-11-30T11:17:21+08:00">2022-11-30</time>
+      </span>
 
   
   
@@ -858,15 +847,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
 <li>Github：<a target="_blank" rel="noopener" href="https://github.com/ElegantLaTeX/ElegantBook">Elegantbook</a></li>
 <li>Latex 工作室：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/51713.html">浮动体环境内部内容居中的设置方法</a></li>
 <li> Latex 工作室：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/index/details/index/mid/2314">Elegentbook 魔改版</a></li>
 </ol>
-<h3 id="Tex"><a href="#Tex" class="headerlink" title="Tex"></a>Tex</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="comment">%  ====目录章节设置 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>[center,pagestyles]{titlesec}</span><br><span class="line"><span class="keyword">\usepackage</span>{apptools}</span><br><span class="line"><span class="keyword">\usepackage</span>[toc,page,title,titletoc]{appendix}</span><br><span class="line"><span class="keyword">\setcounter</span>{secnumdepth}{5}</span><br><span class="line"><span class="comment">%  ++++ 章节标题格式设置 ++++</span></span><br><span class="line"><span class="keyword">\titleformat</span>{<span class="keyword">\section</span>}[hang]{<span class="keyword">\bfseries</span>}{</span><br><span class="line">	<span class="keyword">\Large</span><span class="keyword">\bfseries</span>{<span class="keyword">\color</span>{structurecolor}<span class="keyword">\thesection</span>}<span class="keyword">\enspace</span>}{1pt}{<span class="comment">%</span></span><br><span class="line">	<span class="keyword">\color</span>{structurecolor}<span class="keyword">\Large</span><span class="keyword">\bfseries</span><span class="keyword">\filright</span>}</span><br><span class="line"><span class="keyword">\titleformat</span>{<span class="keyword">\subsection</span>}[hang]{<span class="keyword">\bfseries</span>}{</span><br><span class="line">	<span class="keyword">\large</span><span class="keyword">\bfseries</span><span class="keyword">\color</span>{structurecolor}<span class="keyword">\thesubsection</span><span class="keyword">\enspace</span>}{1pt}{<span class="comment">%</span></span><br><span class="line">	<span class="keyword">\color</span>{structurecolor}<span class="keyword">\large</span><span class="keyword">\bfseries</span><span class="keyword">\filright</span>}</span><br><span class="line"><span class="keyword">\titleformat</span>{<span class="keyword">\subsubsection</span>}[hang]{<span class="keyword">\bfseries</span>}{</span><br><span class="line">	<span class="keyword">\large</span><span class="keyword">\bfseries</span><span class="keyword">\color</span>{structurecolor}<span class="keyword">\thesubsubsection</span><span class="keyword">\enspace</span>}{1pt}{<span class="comment">%</span></span><br><span class="line">	<span class="keyword">\color</span>{structurecolor}<span class="keyword">\large</span><span class="keyword">\bfseries</span><span class="keyword">\filright</span>}</span><br><span class="line"><span class="comment">% ====常用宏包====</span></span><br><span class="line"><span class="keyword">\RequirePackage</span>{makecell,lipsum,hologo,setspace}</span><br><span class="line"><span class="keyword">\RequirePackage</span>{booktabs}</span><br><span class="line"><span class="keyword">\RequirePackage</span>{multicol,multirow}</span><br><span class="line"><span class="comment">% ++++插入图片设置++++</span></span><br><span class="line"><span class="keyword">\usepackage</span>{graphics}</span><br><span class="line"><span class="keyword">\graphicspath</span>{{./figure/}{./figures/}{./image/}{./images/}{./graphics/}{./graphic/}{./pictures/}{./picture/}}</span><br><span class="line"><span class="comment">% ++++数学字体宏包++++</span></span><br><span class="line"><span class="keyword">\usepackage</span>{amsmath,mathrsfs,amsfonts,amssymb}</span><br><span class="line"><span class="comment">% ====行间距设置====</span></span><br><span class="line"><span class="keyword">\linespread</span>{1.3}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\baselinestretch</span>}{1.35} </span><br><span class="line"><span class="comment">% ====脚注环境设置====</span></span><br><span class="line"><span class="keyword">\AtBeginDocument</span>{</span><br><span class="line">	<span class="keyword">\setlength</span>{<span class="keyword">\abovedisplayskip</span>}{3pt}</span><br><span class="line">	<span class="keyword">\setlength</span>{<span class="keyword">\belowdisplayskip</span>}{3pt}</span><br><span class="line">	<span class="keyword">\RequirePackage</span>[flushmargin,stable]{footmisc}</span><br><span class="line">	<span class="keyword">\setlength</span>{<span class="keyword">\footnotesep</span>}{12pt}</span><br><span class="line">}</span><br><span class="line"><span class="comment">% ====设置列表环境====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{enumerate}</span><br><span class="line"><span class="keyword">\usepackage</span>[shortlabels,inline]{enumitem}</span><br><span class="line"><span class="keyword">\setlist</span>{nolistsep}</span><br><span class="line"><span class="comment">% ====颜色设置====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xcolor}</span><br><span class="line"><span class="keyword">\definecolor</span>{structurecolor}{RGB}{0,120,2}</span><br><span class="line"><span class="keyword">\definecolor</span>{main}{RGB}{0,120,2}<span class="comment">%</span></span><br><span class="line"><span class="keyword">\definecolor</span>{second}{RGB}{230,90,7}<span class="comment">%</span></span><br><span class="line"><span class="keyword">\definecolor</span>{third}{RGB}{0,160,152}<span class="comment">%</span></span><br><span class="line"><span class="comment">% ++++设置超链接的颜色++++</span></span><br><span class="line"><span class="keyword">\definecolor</span>{winered}{rgb}{0.5,0,0}</span><br><span class="line"><span class="comment">% ++++设置浮动体的某些主题色++++</span></span><br><span class="line"><span class="keyword">\usepackage</span>[font=small,labelfont={bf,color=structurecolor}]{caption} </span><br><span class="line"><span class="keyword">\captionsetup</span>[table]{skip=3pt}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt}</span><br><span class="line"><span class="comment">% ====假文宏包====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{lipsum}</span><br><span class="line"><span class="comment">% ====字体设置====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xeCJK}</span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}</span><br><span class="line"><span class="comment">%  ====设置页边距 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{geometry}</span><br><span class="line"><span class="keyword">\geometry</span>{</span><br><span class="line">	a4paper,</span><br><span class="line">	top=25.4mm, bottom=25.4mm,</span><br><span class="line">	headheight=2.17cm,</span><br><span class="line">	headsep=4mm,</span><br><span class="line">	footskip=12mm</span><br><span class="line">}</span><br><span class="line"><span class="comment">%  ====设置参考文献格式 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress]{natbib}</span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\bibsep</span>}{0.0pt}</span><br><span class="line"><span class="keyword">\def</span><span class="keyword">\bibfont</span>{<span class="keyword">\footnotesize</span>}</span><br><span class="line"><span class="comment">%  ====设置页眉页脚 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{fancyhdr}</span><br><span class="line"><span class="keyword">\fancyhf</span>{}</span><br><span class="line"><span class="keyword">\fancyfoot</span>[c]{<span class="keyword">\color</span>{structurecolor}<span class="keyword">\scriptsize</span><span class="keyword">\thepage</span>}</span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\citshape</span>}{<span class="keyword">\kaishu</span>}</span><br><span class="line"><span class="keyword">\fancyhead</span>[R]{<span class="keyword">\color</span>{structurecolor}--<span class="keyword">\;</span><span class="keyword">\thepage</span><span class="keyword">\;</span>--}</span><br><span class="line"><span class="keyword">\fancyhead</span>[L]{<span class="keyword">\color</span>{structurecolor}<span class="keyword">\citshape</span><span class="keyword">\rightmark</span>}</span><br><span class="line"><span class="comment">%  ++++ 设置页眉页脚 ++++</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\headrule</span>}{<span class="keyword">\color</span>{structurecolor}<span class="keyword">\hrule</span> width<span class="keyword">\textwidth</span>}</span><br><span class="line"><span class="keyword">\pagestyle</span>{fancy}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\headrulewidth</span>}{1pt}</span><br><span class="line"><span class="comment">% \renewcommand{\headrule}{}</span></span><br><span class="line"><span class="keyword">\fancypagestyle</span>{plain}{<span class="keyword">\renewcommand</span>{<span class="keyword">\headrulewidth</span>}{0pt}<span class="keyword">\fancyhf</span>{}<span class="keyword">\renewcommand</span>{<span class="keyword">\headrule</span>}{}}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\sectionmark</span>}[1]{<span class="keyword">\markright</span>{<span class="keyword">\thesection</span><span class="keyword">\,</span> <span class="params">#1</span>}{} }</span><br><span class="line"><span class="comment">%\renewcommand{\chaptermark}[1]{\markboth{\chaptername \, #1\,}{}}</span></span><br><span class="line"><span class="comment">%  ====设置公式环境 ====</span></span><br><span class="line"><span class="keyword">\numberwithin</span>{equation}{section}</span><br><span class="line"><span class="comment">%  ====自定义环境 ====</span></span><br><span class="line"><span class="comment">%  +++++ note环境 +++++</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\notename</span>}{笔记}</span><br><span class="line"><span class="keyword">\usepackage</span>{bbding,manfnt} <span class="comment">% 一些图标，如 \dbend</span></span><br><span class="line"><span class="keyword">\newenvironment</span>{note}{</span><br><span class="line">	<span class="keyword">\par</span><span class="keyword">\noindent</span><span class="keyword">\makebox</span>[-3pt][r]{</span><br><span class="line">		<span class="keyword">\scriptsize</span><span class="keyword">\color</span>{red!90}<span class="keyword">\textdbend</span><span class="keyword">\quad</span>}</span><br><span class="line">	<span class="keyword">\textbf</span>{<span class="keyword">\color</span>{second}<span class="keyword">\notename</span>} <span class="keyword">\citshape</span>}{<span class="keyword">\par</span>}</span><br><span class="line"><span class="comment">%  +++++ introduction环境 +++++</span></span><br><span class="line"><span class="keyword">\newcommand</span>{<span class="keyword">\introductionname</span>}{内容提要}</span><br><span class="line"><span class="keyword">\usepackage</span>{multicol}</span><br><span class="line"><span class="keyword">\usepackage</span>[most]{tcolorbox}</span><br><span class="line"><span class="keyword">\tcbset</span>{</span><br><span class="line">	introductionsty/.style={</span><br><span class="line">		enhanced,</span><br><span class="line">		breakable,</span><br><span class="line">		colback=structurecolor!10,</span><br><span class="line">		colframe=structurecolor,</span><br><span class="line">		fonttitle=<span class="keyword">\bfseries</span>,</span><br><span class="line">		colbacktitle=structurecolor,</span><br><span class="line">		fontupper=<span class="keyword">\citshape</span>,</span><br><span class="line">		attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},</span><br><span class="line">		boxrule=0pt,</span><br><span class="line">		toprule=0.5pt,</span><br><span class="line">		bottomrule=0.5pt,</span><br><span class="line">		top=8pt,</span><br><span class="line">		before skip=8pt,</span><br><span class="line">		sharp corners</span><br><span class="line">	},</span><br><span class="line">}</span><br><span class="line"><span class="keyword">\newenvironment</span>{introduction}[1][<span class="keyword">\introductionname</span>]{</span><br><span class="line"><span class="keyword">\begin</span>{tcolorbox}[introductionsty,title={<span class="params">#1</span>}]</span><br><span class="line">	<span class="keyword">\begin</span>{multicols}{2}</span><br><span class="line">		<span class="keyword">\begin</span>{itemize}[label=<span class="keyword">\textcolor</span>{structurecolor}{<span class="keyword">\upshape</span><span class="keyword">\scriptsize</span><span class="keyword">\SquareShadowBottomRight</span>}]}{</span><br><span class="line">		<span class="keyword">\end</span>{itemize}</span><br><span class="line">	<span class="keyword">\end</span>{multicols}</span><br><span class="line"><span class="keyword">\end</span>{tcolorbox}}</span><br><span class="line"><span class="comment">%  ====浮动体环境设置：自动居中小一号字 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{xpatch}</span><br><span class="line"><span class="keyword">\makeatletter</span></span><br><span class="line"><span class="keyword">\xpatchcmd</span><span class="keyword">\@floatboxreset</span>{<span class="keyword">\normalsize</span>}{<span class="keyword">\centering</span><span class="keyword">\small</span>}{}{}</span><br><span class="line"><span class="keyword">\makeatother</span></span><br><span class="line"><span class="comment">%  ====文档超链接设置 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{hyperref}</span><br><span class="line"><span class="keyword">\hypersetup</span>{</span><br><span class="line">	breaklinks,</span><br><span class="line">	unicode,</span><br><span class="line">	linktoc=all,</span><br><span class="line">	bookmarksnumbered=true,</span><br><span class="line">	bookmarksopen=true,</span><br><span class="line">	pdfkeywords={Coffeelize},</span><br><span class="line">	colorlinks,</span><br><span class="line">	linkcolor=winered,</span><br><span class="line">	citecolor=winered,</span><br><span class="line">	urlcolor=winered,</span><br><span class="line">	plainpages=false,</span><br><span class="line">	pdfstartview=FitH,</span><br><span class="line">	pdfborder={0 0 0},</span><br><span class="line">	linktocpage</span><br><span class="line">}</span><br><span class="line"><span class="comment">%  ==== 代码块样式设置 ====</span></span><br><span class="line"><span class="keyword">\usepackage</span>{listings}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\ttdefault</span>}{cmtt}</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>{mystyle}{</span><br><span class="line">	basicstyle=<span class="comment">%</span></span><br><span class="line">	<span class="keyword">\ttfamily</span></span><br><span class="line">	<span class="keyword">\lst@ifdisplaystyle</span><span class="keyword">\small</span><span class="keyword">\fi</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>{basicstyle=<span class="keyword">\ttfamily</span>,style=mystyle,breaklines=true}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\definecolor</span>{lightgrey}{rgb}{0.9,0.9,0.9}</span><br><span class="line"><span class="keyword">\definecolor</span>{frenchplum}{RGB}{190,20,83}</span><br><span class="line"><span class="keyword">\lstset</span>{language=[LaTeX]TeX,</span><br><span class="line">	texcsstyle=*<span class="keyword">\color</span>{winered},</span><br><span class="line">	numbers=none,</span><br><span class="line">	mathescape,</span><br><span class="line">	breaklines=true,</span><br><span class="line">	keywordstyle=<span class="keyword">\color</span>{winered},</span><br><span class="line">	commentstyle=<span class="keyword">\color</span>{gray},</span><br><span class="line">	emph={elegantpaper,fontenc,fontspec,xeCJK,FiraMono,xunicode,newtxmath,figure,fig,image,img,table,itemize,enumerate,newtxtext,newtxtt,ctex,microtype,description,times,booktabs,tabular,PDFLaTeX,XeLaTeX,type1cm,BibTeX,device,color,mode,lang,amsthm,tcolorbox,titlestyle,cite,ctex,listings,base,math,scheme,toc,esint,chinesefont,amsmath,bibstyle,gbt7714,natbib},</span><br><span class="line">	emphstyle={<span class="keyword">\color</span>{frenchplum}},</span><br><span class="line">	morekeywords={DeclareSymbolFont,SetSymbolFont,toprule,midrule,bottomrule,institute,version,includegraphics,setmainfont,setsansfont,setmonofont ,setCJKmainfont,setCJKsansfont,setCJKmonofont,RequirePackage,figref,tabref,email,maketitle,keywords,definecolor,extrainfo,logo,cover,subtitle,appendix,chapter,hypersetup,mainmatter,frontmatter,tableofcontents,elegantpar,heiti,kaishu,lstset,pagecolor,zhnumber,marginpar,part,equote,marginnote,bioinfo,datechange,listofchange,lvert,lastpage,songti,heiti,fangsong,setCJKfamilyfont,textbf},</span><br><span class="line">	frame=single,</span><br><span class="line">	tabsize=2,</span><br><span class="line">	rulecolor=<span class="keyword">\color</span>{structurecolor},</span><br><span class="line">	framerule=0.2pt,</span><br><span class="line">	columns=flexible,</span><br><span class="line">	<span class="comment">% backgroundcolor=\color{lightgrey}</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="comment">%  ==== frontmatter ====</span></span><br><span class="line"><span class="keyword">\title</span>{这是智朋的自定义模板}</span><br><span class="line"><span class="keyword">\author</span>{Coffeelize}</span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\clearpage</span></span><br><span class="line"><span class="comment">%  ====正文开始 ====</span></span><br><span class="line"><span class="comment">%  ++++ mainmatter ++++</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">\textcolor</span>{main}{<span class="keyword">\lipsum</span>[1]}</span><br><span class="line">	<span class="keyword">\textcolor</span>{second}{<span class="keyword">\zhlipsum</span>[1]}</span><br><span class="line">	<span class="keyword">\textcolor</span>{third}{<span class="keyword">\zhlipsum</span>[1]}</span><br><span class="line">	</span><br><span class="line"><span class="keyword">\section</span>{列表环境示例}</span><br><span class="line">	<span class="keyword">\begin</span>{enumerate}</span><br><span class="line">		<span class="keyword">\item</span> first</span><br><span class="line">		<span class="keyword">\item</span> second<span class="keyword">\footnote</span>{这是一个脚注测试}</span><br><span class="line">		<span class="keyword">\item</span> third</span><br><span class="line">	<span class="keyword">\end</span>{enumerate}</span><br><span class="line">	有序列表，参数说明如下：</span><br><span class="line">	<span class="keyword">\begin</span>{enumerate}</span><br><span class="line">		<span class="keyword">\item</span> 最大序号：用于测定文献列表中文献序号的最大宽度，如果你是10以内的参考文献，那就用9，超过10小于100那就填99.</span><br><span class="line">		<span class="keyword">\item</span> 文献序号：可选参数，用于设定该条文献在参考文献列表中的序号。</span><br><span class="line">		<span class="keyword">\item</span> 检索名：为该文献信息起的简短名称，</span><br><span class="line">		<span class="keyword">\item</span> 文献信息：就是参考文献内容了。</span><br><span class="line">	<span class="keyword">\end</span>{enumerate}</span><br><span class="line"><span class="keyword">\section</span>{图片环境示例}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}</span><br><span class="line">		<span class="keyword">\includegraphics</span>{example-image-A}</span><br><span class="line">		<span class="keyword">\caption</span>{这是一张实例图片}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\subsection</span>{这是一个二级标题}</span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1-2]</span><br><span class="line">	<span class="keyword">\begin</span>{note}</span><br><span class="line">		这里其实容易出问题的是图片大学不一样怎么版，通常我的解决办法是，从一开始就把两图片的大小设置成一样的，或者通过改参数实现。关于参数如何改，多改改就用经验了！O(∩<span class="keyword">\_</span>∩)O</span><br><span class="line">	<span class="keyword">\end</span>{note}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsubsection</span>{这是一个三级标题}</span><br><span class="line"></span><br><span class="line">一下是一个章节的内容摘要</span><br><span class="line"><span class="keyword">\begin</span>{introduction}</span><br><span class="line">	<span class="keyword">\item</span> 参考文献</span><br><span class="line">	<span class="keyword">\item</span> 交叉引用</span><br><span class="line">	<span class="keyword">\item</span> 代码框设计</span><br><span class="line">	<span class="keyword">\item</span> 网址链接</span><br><span class="line"><span class="keyword">\end</span>{introduction}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{lstlisting}</span><br><span class="line">	<span class="keyword">\begin</span>{figure}[H]</span><br><span class="line">		<span class="keyword">\centering</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=0.45<span class="keyword">\linewidth</span>]{welt1.jpg}</span><br><span class="line">		<span class="comment">%插入的第一个图片</span></span><br><span class="line">		<span class="keyword">\includegraphics</span>[width=0.45<span class="keyword">\linewidth</span>]{welt.jpg}</span><br><span class="line">		<span class="comment">%插入的第二张图片</span></span><br><span class="line">		<span class="keyword">\caption</span>{紫罗兰永恒花园}</span><br><span class="line">	<span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{lstlisting}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="输出PDF"><a href="#输出PDF" class="headerlink" title="输出PDF"></a>输出 PDF</h3><p><img data-src="https://s2.loli.net/2022/11/29/Qe8fl5rUktZPgsA.jpg" alt="智朋的Latex模板_页面_1.jpg"><br><img data-src="https://s2.loli.net/2022/11/29/TO1CaSDsVUujPWw.jpg" alt="智朋的Latex模板_页面_2.jpg"><br><img data-src="https://s2.loli.net/2022/11/29/hN89YOEx2byU57R.jpg" alt="智朋的Latex模板_页面_3.jpg"><br><img data-src="https://s2.loli.net/2022/11/29/iLmZTFwzoeRjvhA.jpg" alt="智朋的Latex模板_页面_4.jpg"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/9165505d.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1136,7 +1129,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-11-29 22:16:04" itemprop="dateModified" datetime="2022-11-29T22:16:04+08:00">2022-11-29</time>
+        <time title="修改时间：2022-11-30 11:10:50" itemprop="dateModified" datetime="2022-11-30T11:10:50+08:00">2022-11-30</time>
       </span>
 
   
@@ -1177,7 +1170,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="需求一：常用快捷键"><a href="#需求一：常用快捷键" class="headerlink" title="需求一：常用快捷键"></a>需求一：常用快捷键</h3><table>
+          <h3 id="需求一：常用快捷键"><a href="#需求一：常用快捷键" class="headerlink" title="需求一：常用快捷键"></a>需求一：常用快捷键</h3><table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -1209,9 +1202,14 @@
 <td> 关闭视频信息</td>
 </tr>
 </tbody></table>
-<h3 id="需求二：固定窗口尺寸"><a href="#需求二：固定窗口尺寸" class="headerlink" title="需求二：固定窗口尺寸"></a>需求二：固定窗口尺寸</h3><p>连续播放视频的时候，窗口大小每次都需要调整一次，如何固定窗口尺寸：</p>
-<p><img data-src="https://s2.loli.net/2022/11/29/f36OXUcK2FePNZG.png" alt="固定Potplayer窗口尺寸.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/aa9a1017.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1268,7 +1266,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-11-29 22:16:04" itemprop="dateModified" datetime="2022-11-29T22:16:04+08:00">2022-11-29</time>
+        <time title="修改时间：2022-11-30 11:17:32" itemprop="dateModified" datetime="2022-11-30T11:17:32+08:00">2022-11-30</time>
       </span>
 
   
@@ -1309,7 +1307,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>framed – Framed or shaded regions that can break across pages</p>
+          <h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>framed – Framed or shaded regions that can break across pages</p>
 <p>该宏包提供可三个环境：</p>
 <ul>
 <li>frame：which puts an ordinary frame box around the region</li>
@@ -1317,50 +1315,14 @@
 <li>leftbar：which places a line at the left side.</li>
 </ul>
 <p>还提供了一个命令来自定义设置 framed-style 的环境</p>
-<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{geometry} </span><br><span class="line"><span class="keyword">\usepackage</span>{framed}</span><br><span class="line"><span class="keyword">\geometry</span>{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{framed}</span><br><span class="line">        <span class="keyword">\zhlipsum</span>[1-5]</span><br><span class="line">    <span class="keyword">\end</span>{framed}</span><br><span class="line"><span class="keyword">\clearpage</span></span><br><span class="line"><span class="keyword">\fbox</span>{<span class="keyword">\zhlipsum</span>[1-3]}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><p>设置页边距，ctexart 文档类默认的页边距有些宽，习惯使用如下的页边距</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage{geometry} </span><br><span class="line">\geometry{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>使用中文假文</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage{zhlipsum} %中文假文宏包</span><br><span class="line">\zhlipsum[1-5] %从假文文章中抽取第一段到第五段内容</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="frame-环境和-fbox-命令"><a href="#frame-环境和-fbox-命令" class="headerlink" title="frame 环境和 fbox 命令"></a>frame 环境和 fbox 命令</h3><p>两者均可以为文本内容添加外边框，但是当文本内容超过一行之后，使用 fbox 就会出现问题了，无法正确的换行和分页，导致超出该行的部分无法在 PDF 中显示。如下图所示<br>因此，针对此问题，宏包作者开发了 framed 宏包，两者的关系不言而喻，framed 宏包是基于 fbox 进行开发的。</p>
-<h4 id="framed-环境输出"><a href="#framed-环境输出" class="headerlink" title="framed 环境输出"></a>framed 环境输出</h4><ol>
-<li>正常换行</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/08/26/HSyITu96NoXO8vx.png" alt="01-frame宏包正常换行.png"></p>
-<ol start="2">
-<li>正常分页</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/08/26/3okDxFs7OwXzY1p.png" alt="02-frame宏包正常分页.png"></p>
-<h4 id="fbox-命令输出"><a href="#fbox-命令输出" class="headerlink" title="fbox 命令输出"></a>fbox 命令输出</h4><ol>
-<li>无法正确换行</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/08/26/gQ98HBMDPNuxUjz.png" alt="03-fbox命令无法处理长文本-无法正常换行和分页.png"></p>
-<p>实际上，framebox 命令输出也是这种效果，这里暂且认为 framebox 命令和 fbox 命令完全相同</p>
-<p>对应的，fbox 可以设置边框边线的宽度和内容距边框的间距，framed 环境同样是可以设置的</p>
-<h3 id="设置边框宽度和间距"><a href="#设置边框宽度和间距" class="headerlink" title="设置边框宽度和间距"></a>设置边框宽度和间距</h3><h4 id="对-fbox-盒子进行设置"><a href="#对-fbox-盒子进行设置" class="headerlink" title="对 fbox 盒子进行设置"></a>对 fbox 盒子进行设置</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\fbox</span>{Test box}</span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\fboxrule</span>}{1.6pt}</span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\fboxsep</span>}{1em}</span><br><span class="line"><span class="keyword">\fbox</span>{Test box}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/08/26/6bkqhwMB2xpPLHz.png" alt="06-设置fbox边框和间距.png"></p>
-<h4 id="对-frame-盒子进行设置"><a href="#对-frame-盒子进行设置" class="headerlink" title="对 frame 盒子进行设置"></a>对 frame 盒子进行设置</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{geometry}</span><br><span class="line"><span class="keyword">\usepackage</span>{framed}</span><br><span class="line"><span class="keyword">\geometry</span>{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{framed}</span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1]</span><br><span class="line"><span class="keyword">\end</span>{framed}</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\FrameRule</span>{1.6pt}</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\FrameSep</span>{2em}</span><br><span class="line"><span class="keyword">\begin</span>{framed}</span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1]</span><br><span class="line"><span class="keyword">\end</span>{framed}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/08/26/6ZjnEfo8CuKpY3c.png" alt="07-默认frame盒子和自定义frame盒子.png"></p>
-<h3 id="拓展应用"><a href="#拓展应用" class="headerlink" title="拓展应用"></a>拓展应用</h3><h4 id="换页是否封闭外边框"><a href="#换页是否封闭外边框" class="headerlink" title="换页是否封闭外边框"></a>换页是否封闭外边框</h4><ul>
-<li>framed 环境默认是封闭的</li>
-<li> oframed 环境则提供了开口的外边框：oframed 其实是 “Open Framed” 的组合吧</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2022/08/26/tdETgbaPuC4NRn7.png" alt="04-oframed环境.png"></p>
-<h4 id="左边线样式"><a href="#左边线样式" class="headerlink" title="左边线样式"></a>左边线样式</h4><p>我想许多人使用这个宏包就是为了实现网页中的 <strong>引用</strong> 效果吧 o (^▽^) o，左边线的长度会自动随着环境中的文本长度进行变化</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{geometry}</span><br><span class="line"><span class="keyword">\usepackage</span>{framed}</span><br><span class="line"><span class="keyword">\geometry</span>{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\begin</span>{leftbar}</span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1]</span><br><span class="line"><span class="keyword">\end</span>{leftbar}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/08/26/UwWyTVJesIrpzOb.png" alt="05-leftbar环境.png"></p>
-<h3 id="其他参数"><a href="#其他参数" class="headerlink" title="其他参数"></a>其他参数</h3><p>除了上面所说的 <code>FrameSep</code> 和 <code>FrameRule</code> 命令，宏包手册中还列举了大量其他命令，这里就不仔细研究了，感觉用不到这里面太多的东西，但是还是感谢开发者啦 o (^▽^) o</p>
-<p><img data-src="https://s2.loli.net/2022/08/26/JarGK9Oh1ulQiBC.png" alt="08-framed宏包命令.png"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>CTAN： <a target="_blank" rel="noopener" href="https://ctan.org/pkg/framed">framed – Framed or shaded regions that can break across pages</a></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/3dd4471c.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
