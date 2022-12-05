@@ -33,9 +33,9 @@
     
     <category term="Intellij" scheme="https://coffeelize.top/tags/Intellij/"/>
     
-    <category term="Java" scheme="https://coffeelize.top/tags/Java/"/>
-    
     <category term="Servlet" scheme="https://coffeelize.top/tags/Servlet/"/>
+    
+    <category term="Java" scheme="https://coffeelize.top/tags/Java/"/>
     
   </entry>
   
@@ -78,9 +78,9 @@
     
     
     
-    <category term="Maven" scheme="https://coffeelize.top/tags/Maven/"/>
-    
     <category term="Intellij" scheme="https://coffeelize.top/tags/Intellij/"/>
+    
+    <category term="Maven" scheme="https://coffeelize.top/tags/Maven/"/>
     
   </entry>
   
@@ -252,11 +252,11 @@
     
     
     
-    <category term="Maven" scheme="https://coffeelize.top/tags/Maven/"/>
-    
     <category term="Intellij" scheme="https://coffeelize.top/tags/Intellij/"/>
     
     <category term="Java" scheme="https://coffeelize.top/tags/Java/"/>
+    
+    <category term="Maven" scheme="https://coffeelize.top/tags/Maven/"/>
     
   </entry>
   
