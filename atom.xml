@@ -133,11 +133,11 @@
     
     
     
-    <category term="Interllij" scheme="https://coffeelize.top/tags/Interllij/"/>
-    
     <category term="JavaWeb" scheme="https://coffeelize.top/tags/JavaWeb/"/>
     
     <category term="Navigation" scheme="https://coffeelize.top/tags/Navigation/"/>
+    
+    <category term="Interllij" scheme="https://coffeelize.top/tags/Interllij/"/>
     
   </entry>
   
@@ -213,9 +213,9 @@
     
     
     
-    <category term="Tomcat" scheme="https://coffeelize.top/tags/Tomcat/"/>
-    
     <category term="Servlet" scheme="https://coffeelize.top/tags/Servlet/"/>
+    
+    <category term="Tomcat" scheme="https://coffeelize.top/tags/Tomcat/"/>
     
     <category term="intelliJ" scheme="https://coffeelize.top/tags/intelliJ/"/>
     

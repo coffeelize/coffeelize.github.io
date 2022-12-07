@@ -731,6 +731,13 @@
 
   
   <url>
+    <loc>https://coffeelize.top/tags/Anki/</loc>
+    <lastmod>2022-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/AJAX/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -759,20 +766,6 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Beamer/</loc>
-    <lastmod>2022-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Anki/</loc>
-    <lastmod>2022-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/tags/%E5%AE%8F%E5%8C%85/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -780,7 +773,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Life/</loc>
+    <loc>https://coffeelize.top/tags/Beamer/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -808,6 +801,13 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/Life/</loc>
+    <lastmod>2022-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/Maven/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -822,7 +822,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Tomcat/</loc>
+    <loc>https://coffeelize.top/tags/MySQL/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -836,14 +836,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Interllij/</loc>
-    <lastmod>2022-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/MySQL/</loc>
+    <loc>https://coffeelize.top/tags/Tomcat/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -865,6 +858,13 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Navigation/</loc>
+    <lastmod>2022-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Interllij/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -899,13 +899,6 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/java/</loc>
-    <lastmod>2022-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/tags/Markdown/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -934,6 +927,13 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/java/</loc>
+    <lastmod>2022-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/Box/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -941,7 +941,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Chrome/</loc>
+    <loc>https://coffeelize.top/tags/intelliJ/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -962,7 +962,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/intelliJ/</loc>
+    <loc>https://coffeelize.top/tags/Chrome/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1025,14 +1025,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Spaced-repetition/</loc>
+    <loc>https://coffeelize.top/tags/Image/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Image/</loc>
+    <loc>https://coffeelize.top/tags/Spaced-repetition/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
