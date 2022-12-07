@@ -176,13 +176,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -206,7 +206,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://ghgxj.xyz/" title="https:&#x2F;&#x2F;ghgxj.xyz&#x2F;" rel="noopener" target="_blank">ZXC's Blog</a>
+          <a href="https://ghobam.com/" title="https:&#x2F;&#x2F;ghobam.com&#x2F;" rel="noopener" target="_blank">Sherwood</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="https://www.sdhlw.top/" title="https:&#x2F;&#x2F;www.sdhlw.top&#x2F;" rel="noopener" target="_blank">向阳</a>
@@ -236,6 +236,351 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/2fb0fb99.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/2fb0fb99.html" class="post-title-link" itemprop="url">Axios 异步框架简明笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-07 16:35:44" itemprop="dateCreated datePublished" datetime="2022-12-07T16:35:44+08:00">2022-12-07</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/2fb0fb99.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/2fb0fb99.html" data-xid="/posts/2fb0fb99.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="Axios-异步框架简介"><a href="#Axios-异步框架简介" class="headerlink" title="Axios 异步框架简介"></a>Axios 异步框架简介</h3><p>Axios 对原生的 AJAX 进行封装，简化书写</p>
+<h3 id="Axios-快速入门"><a href="#Axios-快速入门" class="headerlink" title="Axios 快速入门"></a>Axios 快速入门</h3><ol>
+<li>引入 axios 的 js 文件</li>
+<li>使用 axios 发送请求，并获取相应结果</li>
+</ol>
+<p>详细步骤如下</p>
+<p>一、在 webapp 下新建 js 文件夹，拷贝 axios 的 js 文件<br>二、新建 html 文件，引入 js 文件</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/axios-0.18.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>三、创建 AxiosServlet</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AxiosServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{  </span><br><span class="line">        System.out.println(<span class="string">"get..."</span>);  </span><br><span class="line">        <span class="comment">//1.接收请求参数  </span></span><br><span class="line">        String username = request.getParameter(<span class="string">"username"</span>);  </span><br><span class="line">        System.out.println(username);  </span><br><span class="line">        <span class="comment">//2.响应数据  </span></span><br><span class="line">        response.getWriter().write(<span class="string">"hello Axios"</span>);  </span><br><span class="line">    }  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{  </span><br><span class="line">        System.out.println(<span class="string">"post..."</span>);  </span><br><span class="line">        <span class="keyword">this</span>.doGet(request, response);  </span><br><span class="line">    }  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>四、在 html 中编写 js 代码</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/axios-0.18.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//1.get</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">/* axios({</span></span></span><br><span class="line"><span class="comment"><span class="javascript">       method:"get",</span></span></span><br><span class="line"><span class="comment"><span class="javascript">       url:"http://localhost:8080/ajax-dmeo/axiosServlet?username=zhangsan"</span></span></span><br><span class="line"><span class="comment"><span class="javascript">     }).then(function (resp){</span></span></span><br><span class="line"><span class="comment"><span class="javascript">         alert(resp.data);</span></span></span><br><span class="line"><span class="comment"><span class="javascript">     })*/</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//2.post</span></span></span><br><span class="line"><span class="javascript">    axios({</span></span><br><span class="line"><span class="javascript">        <span class="attr">method</span>: <span class="string">"get"</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">url</span>: <span class="string">"http://localhost:8080/ajax-dmeo/axiosServlet"</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">//data是请求参数</span></span></span><br><span class="line"><span class="javascript">        <span class="attr">data</span>: <span class="string">"username=zhangsan"</span></span></span><br><span class="line"><span class="javascript">    }).then(<span class="function"><span class="keyword">function</span> (<span class="params">resp</span>) </span>{</span></span><br><span class="line"><span class="javascript">        alert(resp.data);</span></span><br><span class="line"><span class="javascript">    })</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>代码说明及注意事项</p>
+<ol>
+<li>axios 大括号中的为 Java 中的对象</li>
+<li><code>.then()</code> 方法是一个回调函数，如果响应接收到了的话就自动执行</li>
+<li><code>data: "username=zhangsan"</code>，data 是请求参数。这里可以传 JSON 格式的数据。除此之外，还可以传 JS 对象类型的数据（JSON 数据格式可以和 Java 中的对象数据格式通过某些方式进行转换），因为 Axios 框架会自动将这个 JS 对象转为 JSON 的数据格式</li>
+<li> Get 和 Post 两种方式传递参数的方式不一样，所以在 axios 方法中传入的对象（大括号包裹的内容）的方式不一样，一个写在 URL 中，一个写在 Data 属性中</li>
+<li><code>.then()</code> 回调函数中，function 函数中的参数名可以不为 resp，随便一个都行，保持下面对象（resp.data）和这个参数名（resp）一致即可</li>
+<li><code>resp.data</code> 即服务器端的 Servlet 响应过来的数据 </li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">flowchart&nbsp;RL</span><br><span class="line">    b1--&gt;|"username = &amp;quot;zhangsan&amp;quot;"|servlet1</span><br><span class="line">    servlet1--&gt;|data|b1</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;subgraph&nbsp;Browsers  </span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;b1</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;b2</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;end  </span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;subgraph&nbsp;servers  </span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;servlet1</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;servlet2</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;end</span><br></pre></td></tr></tbody></table></figure>
+
+<p>简单来说，Axios 实现的功能就是：通过 get 或 post 给 Servlet 传递一个参数（username=“zhangsan”），然后 Servlet 接收到这个参数，就可以进行判断的操作，根据判断的结果在给浏览器发送一个响应。浏览器收到响应数据（date）之后，就可以做出一些操作，比如弹出窗口操作。</p>
+<h3 id="Axios-请求方式别名"><a href="#Axios-请求方式别名" class="headerlink" title="Axios 请求方式别名"></a>Axios 请求方式别名</h3><p>为了方便起见，Axios 已经为所有支持的请求方法提供了别名</p>
+<p>发送 Get 请求</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. Get方式  </span></span><br><span class="line">axios.get(<span class="string">"http://localhost:8080/ajax-dmeo/axiosServlet?username=zhangsan"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">resp</span>)</span>{  </span><br><span class="line">    alert(resp.data);  </span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+
+<p>发送 Post 请求</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">"http://localhost:8080/ajax-dmeo/axiosServlet?username=zhangsan"</span>,<span class="string">"username=zhangsan"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">resp</span>)</span>{  </span><br><span class="line">    alert(resp.data);  </span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+
+<p>原生的 Axios 书写方式 VS 别名的简化书写方式</p>
+<ul>
+<li>原生的书写格式：阅读性较好</li>
+<li>别名的方式：代码量少，基本上只需要填写必要的参数信息</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/89543310.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/89543310.html" class="post-title-link" itemprop="url">Mermaid 简明教程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-12-07 08:40:20 / 修改时间：15:54:33" itemprop="dateCreated datePublished" datetime="2022-12-07T08:40:20+08:00">2022-12-07</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/89543310.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/89543310.html" data-xid="/posts/89543310.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li>Mermaid 官方文档：<a target="_blank" rel="noopener" href="https://mermaid-js.github.io/mermaid/#/">mermaid - Markdownish syntax for generating flowcharts, sequence diagrams, class diagrams, gantt charts and git graphs.</a></li>
+<li>Github：<a target="_blank" rel="noopener" href="https://github.com/mermaid-js/mermaid/blob/develop/README.zh-CN.md">Mermaid 中文说明文档</a></li>
+<li> Mermaid 在线编辑 Github：<a target="_blank" rel="noopener" href="https://github.com/mermaidjs/mermaid-live-editor">mermaid-live-editor</a></li>
+<li>VScode 插件：<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid">Markdown Preview Mermaid Support</a></li>
+<li>VScode 插件：<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting">Mermaid Markdown Syntax Highlighting</a></li>
+</ol>
+<h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><ol>
+<li>个人博客：<a target="_blank" rel="noopener" href="https://ghobam.com/2022/05/06/Mermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/">Mermaid 流程图 - Sherwood 的博客</a></li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/89543310.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/d92ca625.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/d92ca625.html" class="post-title-link" itemprop="url">Java-AJAX 快速入门</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-06 14:17:16" itemprop="dateCreated datePublished" datetime="2022-12-06T14:17:16+08:00">2022-12-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-12-07 16:14:16" itemprop="dateModified" datetime="2022-12-07T16:14:16+08:00">2022-12-07</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/d92ca625.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/d92ca625.html" data-xid="/posts/d92ca625.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="AJAX-简介"><a href="#AJAX-简介" class="headerlink" title="AJAX 简介"></a>AJAX 简介</h3><p>AJAX(Asynchronous JavaScirpt And XML)：<strong>异步</strong> 的 JavaScript 和 XML</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/d92ca625.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -569,10 +914,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-12-04 20:25:30 / 修改时间：22:31:29" itemprop="dateCreated datePublished" datetime="2022-12-04T20:25:30+08:00">2022-12-04</time>
+      <time title="创建时间：2022-12-04 20:25:30" itemprop="dateCreated datePublished" datetime="2022-12-04T20:25:30+08:00">2022-12-04</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-12-07 16:15:23" itemprop="dateModified" datetime="2022-12-07T16:15:23+08:00">2022-12-07</time>
+      </span>
 
   
   
@@ -594,14 +945,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.8k</span>
+      <span>6.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -967,329 +1318,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/1d1f95b6.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/1d1f95b6.html" class="post-title-link" itemprop="url">IDEA 中使用 Tomcat</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-12-02 11:47:30" itemprop="dateCreated datePublished" datetime="2022-12-02T11:47:30+08:00">2022-12-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-12-05 17:47:38" itemprop="dateModified" datetime="2022-12-05T17:47:38+08:00">2022-12-05</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/posts/1d1f95b6.html#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/posts/1d1f95b6.html" data-xid="/posts/1d1f95b6.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>978</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这里主要介绍通过插件的方式运行 Tomcat</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/1d1f95b6.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/195cf5d1.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/195cf5d1.html" class="post-title-link" itemprop="url">Maven 基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-12-01 20:59:30" itemprop="dateCreated datePublished" datetime="2022-12-01T20:59:30+08:00">2022-12-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-12-03 23:32:49" itemprop="dateModified" datetime="2022-12-03T23:32:49+08:00">2022-12-03</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/posts/195cf5d1.html#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/posts/195cf5d1.html" data-xid="/posts/195cf5d1.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="Maven主要功能"><a href="#Maven主要功能" class="headerlink" title="Maven主要功能"></a>Maven 主要功能</h3><p>Maven 是专门用于管理和构建 Java 项目的工具，它的主要功能有：</p>
-<ul>
-<li>提供了一套标准化的项目结构</li>
-<li>提供了一套标准化的构建流程（编译，测试，打包，发布…）</li>
-<li>提供了一套依赖管理机制</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/195cf5d1.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/7e53c240.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/7e53c240.html" class="post-title-link" itemprop="url">IDEA 中创建 Maven Web 项目</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-12-01 11:28:30" itemprop="dateCreated datePublished" datetime="2022-12-01T11:28:30+08:00">2022-12-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-12-05 17:47:38" itemprop="dateModified" datetime="2022-12-05T17:47:38+08:00">2022-12-05</time>
-      </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/posts/7e53c240.html#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/posts/7e53c240.html" data-xid="/posts/7e53c240.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>448</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="了解-Web-项目结构"><a href="#了解-Web-项目结构" class="headerlink" title="了解 Web 项目结构"></a>了解 Web 项目结构</h3><p>Maven Web 开发中的项目，项目结构如下图所示<br><img data-src="https://s2.loli.net/2022/12/05/vUzchCrRsbK3YFm.png" alt="01.Web项目结构及说明.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/7e53c240.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1314,13 +1342,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">118k</span>
+    <span title="站点总字数">126k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
