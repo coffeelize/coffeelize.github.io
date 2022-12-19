@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="G2H8dHq6QIE9GJ3RiIGetZP_i7GIHeB7HsJunnlSPiw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="什么是 GitGit 是一个分布式版本控制工具，主要用于管理开发过程中的源代码文件（Java 类、xml 文件、html 页面等），在软件开发过程中被广泛使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 简明教程">
+<meta property="og:url" content="https://coffeelize.top/posts/6326f1e4.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="什么是 GitGit 是一个分布式版本控制工具，主要用于管理开发过程中的源代码文件（Java 类、xml 文件、html 页面等），在软件开发过程中被广泛使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/CiSLe2VtpFR7zvK.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/Z7mXMf8ovShOWUF.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/aw3mrhOHW9vg1Zb.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/jMc9uwJOTRiW17E.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/aAXWUjsLFzoqeDQ.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/gKTMRtdwW6nSsvL.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/OQIXkWoCeEtbRj9.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/eM9OwU4TtP2hbFa.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/MpQ8A1bmc2wCYov.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/Dmi5soLJWx81thl.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/7getKomVWPIN3DL.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/9PgOCTkJ3qyxnr6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/cIbPGwn2ksgdyqh.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/U3C4zvuSK1iTYxr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/6dlXaVzxyr7GL9O.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/Ejv9nRudHbUyrFo.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/19/dyaphUSAH3scDTP.png">
+<meta property="article:published_time" content="2022-12-18T06:42:20.000Z">
+<meta property="article:modified_time" content="2022-12-19T12:44:50.000Z">
+<meta property="article:author" content="coffeelize">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/19/CiSLe2VtpFR7zvK.png">
+
+
+<link rel="canonical" href="https://coffeelize.top/posts/6326f1e4.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/6326f1e4.html","path":"posts/6326f1e4.html","title":"Git 简明教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git 简明教程 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="智朋的个人博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长，行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-札记&留言板"><a href="/notes/" rel="section"><i class="fa fa-fw fa-sticky-note fa-fw"></i>札记&留言板</a></li>
+        <li class="menu-item menu-item-画廊"><a href="/gallery/" rel="section"><i class="fa fa-fw fa-image fa-fw"></i>画廊</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Git"><span class="nav-number">1.</span> <span class="nav-text">什么是 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">Git 能做什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">Git 全局设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-Git-%E4%BB%93%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">获取 Git 仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%88%9D%E5%A7%8B%E5%8C%96-Git-%E4%BB%93%E5%BA%93"><span class="nav-number">4.1.</span> <span class="nav-text">在本地初始化 Git 仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86"><span class="nav-number">4.2.</span> <span class="nav-text">从远程仓库克隆</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">工作区、暂存区、版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E7%8A%B6%E6%80%81"><span class="nav-number">6.</span> <span class="nav-text">Git 工作区中文件的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">本地仓库常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-status"><span class="nav-number">7.1.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-add"><span class="nav-number">7.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-reset"><span class="nav-number">7.3.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-commit"><span class="nav-number">7.4.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-log"><span class="nav-number">7.5.</span> <span class="nav-text">git log</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">远程仓库常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-remote"><span class="nav-number">8.1.</span> <span class="nav-text">git remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-remote-add"><span class="nav-number">8.2.</span> <span class="nav-text">git remote add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone"><span class="nav-number">8.3.</span> <span class="nav-text">git clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push"><span class="nav-number">8.4.</span> <span class="nav-text">git push</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">8.5.</span> <span class="nav-text">切换远程仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">9.</span> <span class="nav-text">分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF"><span class="nav-number">9.1.</span> <span class="nav-text">查看分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-number">9.2.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-number">9.3.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%88%86%E6%94%AF"><span class="nav-number">9.4.</span> <span class="nav-text">推送至远程仓库分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="nav-number">9.5.</span> <span class="nav-text">合并分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E6%93%8D%E4%BD%9C"><span class="nav-number">10.</span> <span class="nav-text">标签操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%A0%87%E7%AD%BE"><span class="nav-number">10.1.</span> <span class="nav-text">查看标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE"><span class="nav-number">10.2.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE"><span class="nav-number">10.3.</span> <span class="nav-text">删除本地标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="nav-number">10.4.</span> <span class="nav-text">删除远程标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E6%A0%87%E7%AD%BE%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">10.5.</span> <span class="nav-text">将标签推送至远程仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E5%87%BA%E6%A0%87%E7%AD%BE"><span class="nav-number">10.6.</span> <span class="nav-text">检出标签</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="coffeelize"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">coffeelize</p>
+  <div class="site-description" itemprop="description">一个研究生的存档点</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coffeelize" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coffeelize" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/319437741" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;319437741" rel="noopener" target="_blank"><i class="fa fa-video fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ghobam.com/" title="https:&#x2F;&#x2F;ghobam.com&#x2F;" rel="noopener" target="_blank">Sherwood</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sdhlw.top/" title="https:&#x2F;&#x2F;www.sdhlw.top&#x2F;" rel="noopener" target="_blank">向阳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cyborg2077.github.io/" title="https:&#x2F;&#x2F;cyborg2077.github.io&#x2F;" rel="noopener" target="_blank">Kyle</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kezhi.tech/" title="https:&#x2F;&#x2F;www.kezhi.tech" rel="noopener" target="_blank">Kezhi's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sulvblog.cn/" title="https:&#x2F;&#x2F;www.sulvblog.cn" rel="noopener" target="_blank">Sulv's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/6326f1e4.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git 简明教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-18 14:42:20" itemprop="dateCreated datePublished" datetime="2022-12-18T14:42:20+08:00">2022-12-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-12-19 20:44:50" itemprop="dateModified" datetime="2022-12-19T20:44:50+08:00">2022-12-19</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/6326f1e4.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/posts/6326f1e4.html" data-xid="/posts/6326f1e4.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="什么是-Git"><a href="#什么是-Git" class="headerlink" title="什么是 Git"></a>什么是 Git</h3><p>Git 是一个分布式版本控制工具，主要用于管理开发过程中的源代码文件（Java 类、xml 文件、html 页面等），在软件开发过程中被广泛使用</p>
+<span id="more"></span>
+
+<h3 id="Git-能做什么"><a href="#Git-能做什么" class="headerlink" title="Git 能做什么"></a>Git 能做什么</h3><ul>
+<li>代码回溯：Git 在管理文件过程中会记录日志，方便回退到历史版本</li>
+<li>版本切换：Git 存在分支的概念，一个项目可以有多个分支（版本），可以任意切换</li>
+<li>多人协作：Git 支持多人协作，即一个团队共同开发一个项目，每个团队成员负责一部分代码，通过 Git 就可以管理和协调</li>
+<li>远程备份：Git 通过仓库管理文件，在 Git 中存在远程仓库，如果本地文件丢失还可以从远程仓库获取</li>
+</ul>
+<p>我们可以借助互联网上提供的一些代码托管服务来实现，其中比较常用的有 GitHub、码云、GitLab 等，这里以码云为例进行讲解</p>
+<h3 id="Git-全局设置"><a href="#Git-全局设置" class="headerlink" title="Git 全局设置"></a>Git 全局设置</h3><p>当安装 Git 后首先要做的事情是设置用户名称和 email 地址。这是非常重要的，因为每次 Git 提交都会使用该用户信息。在 Git 命令行中执行下面命令：</p>
+<ul>
+<li>设置用户信息 </li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"coffeelize"</span></span><br><span class="line">git config --global user.email <span class="string">"coffeelize@qq.com"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意：<strong>上面设置的 user.name 和 user.email 并不是我们在注册码云账号时使用的用户名和邮箱</strong>，此处可以任意设置</p>
+<ul>
+<li>查看配置信息 </li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/CiSLe2VtpFR7zvK.png" alt="01-配置用户名和邮箱.png"></p>
+<h3 id="获取-Git-仓库"><a href="#获取-Git-仓库" class="headerlink" title="获取 Git 仓库"></a>获取 Git 仓库</h3><p>要使用 Git 对我们的代码进行管理，首先需要获得 Git 仓库，获取 Git 仓库通常有两种方式</p>
+<ul>
+<li>在本地初始化 Git 仓库（不常用）</li>
+<li>从远程仓库克隆（常用）</li>
+</ul>
+<h4 id="在本地初始化-Git-仓库"><a href="#在本地初始化-Git-仓库" class="headerlink" title="在本地初始化 Git 仓库"></a>在本地初始化 Git 仓库</h4><ol>
+<li>在任意目录下创建一个空目录（例如 repo1）作为我们的本地 Git 仓库</li>
+<li>进入这个目录中，点击右键打开 Git bash 窗口</li>
+<li>执行命令 <code>git init</code></li>
+</ol>
+<p>初始化之后，目录中会多一个 <code>.git</code> 隐藏文件夹，命令行后会多出一个 master 分支<br><img data-src="https://s2.loli.net/2022/12/19/Z7mXMf8ovShOWUF.png" alt="02-master主分支.png"></p>
+<p>注意：本地仓库不是从远程仓库克隆下来的，且本地仓库中若已经存放了一些文件，此时再从远程仓库拉去文件的时候可能会报如下所示的错误：fatal: refusing to merge unrelated histories（原因是本地仓库中含有本地仓库中文件的历史记录，远程仓库中包含远程仓库中文件的记录信息，这两者间完全没有联系，此时就需要将两者建立起联系）</p>
+<p><img data-src="https://s2.loli.net/2022/12/19/aw3mrhOHW9vg1Zb.png" alt="016-本地仓库首次连接远程仓库报错.png"></p>
+<p>此时，可以通过如下命令解决</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>可以通过 Git 提供的命令从远程仓库进行克隆，将远程仓库克隆到本地</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注：第一次克隆远程仓库时，可能需要登录 Git Credential Manage，即登录 Gitee 的账号，登录之后即可正常操作。同时登录之后，也会将一些验证信息保存到电脑当中，之后再次使用就不用再手动登录了</p>
+<p><img data-src="https://s2.loli.net/2022/12/19/jMc9uwJOTRiW17E.png" alt="03-登录Gitee验证.png"></p>
+<h3 id="工作区、暂存区、版本库"><a href="#工作区、暂存区、版本库" class="headerlink" title="工作区、暂存区、版本库"></a>工作区、暂存区、版本库</h3><ul>
+<li><strong>版本库</strong>：前面看到的 <code>.git 隐藏文件夹</code> 就是版本库，版本库中存储了很多配置信息、日志信息和文件版本信息等</li>
+<li><strong>工作区</strong>：包含.git 文件夹的目录就是工作区，也称为工作目录，主要用于存放开发的代码</li>
+<li><strong>暂存区</strong>：.git 文件夹中有很多文件，其中有一个 <code>index 文件</code> 就是暂存区。暂存区是一个临时保存修改文件的地方</li>
+</ul>
+<h3 id="Git-工作区中文件的状态"><a href="#Git-工作区中文件的状态" class="headerlink" title="Git 工作区中文件的状态"></a>Git 工作区中文件的状态</h3><p>Git 工作区中的文件存在两种状态：</p>
+<ul>
+<li>untracked：未跟踪（未被纳入版本控制）</li>
+<li>tracked：已跟踪（被纳入版本控制）<ul>
+<li>Unmodified 未修改状态</li>
+<li> Modified 已修改状态</li>
+<li> Staged 已暂存状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="本地仓库常用操作"><a href="#本地仓库常用操作" class="headerlink" title="本地仓库常用操作"></a>本地仓库常用操作</h3><ul>
+<li>git status：查看文件状态</li>
+<li> git add：将文件的修改加入暂存区</li>
+<li> git reset：将暂存区的文件取消暂存或者是切换到指定版本</li>
+<li> git commit：将暂存区的文件修改提交到版本库</li>
+<li> git log：查看日志</li>
+</ul>
+<h4 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h4><p>可以通过 <code>git status</code> 来查看当前状态<br><img data-src="https://s2.loli.net/2022/12/19/aAXWUjsLFzoqeDQ.png" alt="04-status查看状态.png"></p>
+<h4 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add fileName</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h4><p>每次 Git 提交都会产生新的版本号，通过版本号就可以回到历史版本</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 版本号</span><br><span class="line">git reset --hard 76b00c3fd44c92359d70e02cb4ff35c3acf90b40</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m msg 文件名</span><br><span class="line">git commit -m <span class="string">"提交一个文件"</span> User.java</span><br></pre></td></tr></tbody></table></figure>
+
+<p>红色字体：未跟踪，也就是还没有纳入 git 的版本管理<br>绿色字体：文件已经放到了缓存区</p>
+<h4 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h4><p>git log 命令的作用是查看提交日志；通过 git log 命令查看日志，可以发现每次提交都会产生一个版本号，提交时设置的 message、提交人、邮箱、提交时间等信息都会记录到日志中</p>
+<p><img data-src="https://s2.loli.net/2022/12/19/gKTMRtdwW6nSsvL.png" alt="05-log查看日志.png"></p>
+<h3 id="远程仓库常用命令"><a href="#远程仓库常用命令" class="headerlink" title="远程仓库常用命令"></a>远程仓库常用命令</h3><ul>
+<li>git remote：查看远程仓库</li>
+<li> git remote add：添加远程仓库</li>
+<li> git clone：从远程仓库克隆</li>
+<li> git pull：从远程仓库拉取</li>
+<li> git push：推送到远程仓库</li>
+</ul>
+<h4 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h4><p>origin 表示远程仓库的简称</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/OQIXkWoCeEtbRj9.png" alt="06-查看远程仓库简称.png"></p>
+<p>说明当前本地的仓库已经和远程的仓库之间建立好了连接了。如果输入以上两个命令没有返回值的话，说明这仅仅只是一个本地仓库</p>
+<h4 id="git-remote-add"><a href="#git-remote-add" class="headerlink" title="git remote add"></a>git remote add</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add 简称 远程仓库地址</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意</p>
+<ul>
+<li>一个本地仓库可以关联多个远程仓库</li>
+<li>这个简称我们习惯命名为 origin</li>
+</ul>
+<p>比如我这边初始化了一个本地仓库，然后还有一个远程仓库，想要将这个本地仓库和远程仓库联系起来</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://gitee.com/coffeelize/repo1.git</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时再输入命令 <code>git remote -v</code>，即可查看是否已经关联成功</p>
+<h4 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h4><p>Git 克隆的是该 Git 仓库服务器上的几乎所有数据（包括日志信息、历史记录等）</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h4><p>将本地仓库内容推送到远程仓库</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push 远程仓库简称 分支名称</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>先需要将文件提交到本地仓库 (add &amp; commit)，再推送到远程仓库</p>
+<h4 id="切换远程仓库"><a href="#切换远程仓库" class="headerlink" title="切换远程仓库"></a>切换远程仓库</h4><p>如果当前本地仓库需要链接到另一个远程仓库呢，怎么处理？<br>比如说本地仓库当前绑定的是 repo1 仓库，想要将本地仓库绑定到另外一个远程仓库 hellogit。当前如果已经连接到了一个远程仓库，是无法直接通过添加远程仓库 URL 来覆盖掉原来的 URL，如下图所示：</p>
+<p><img data-src="https://s2.loli.net/2022/12/19/eM9OwU4TtP2hbFa.png" alt="017-无法直接覆盖远程连接的URL.png"></p>
+<p>方式一：直接修改远程仓库地址，更换远程仓库地址</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin URL</span><br><span class="line">git remote set-url orgin https://gitee.com/coffeelize/hellogit.git</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>方式二：先先删除当前连接的远程仓库地址，然后在添加</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin url</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><p>分支是 Git 使用过程中非常重要的概念。使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。</p>
+<p>本地仓库和远程仓库中都有分支，同一个仓库可以有多个分支，各个分支相互独立，互不干扰。通过 git init 命令创建本地仓库时默认会创建一个 master 分支。</p>
+<h4 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h4><ul>
+<li>git branch：列出所有本地分支</li>
+<li> git branch -r：列出所有远程分支</li>
+<li> git branch -a：列出所有本地分支和远程分支</li>
+</ul>
+<h4 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名称</span><br><span class="line">git branch <span class="built_in">test</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/MpQ8A1bmc2wCYov.png" alt="07-创建分支.png"></p>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名称</span><br><span class="line">git checkout <span class="built_in">test</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/Dmi5soLJWx81thl.png" alt="08-切换分支.png"></p>
+<h4 id="推送至远程仓库分支"><a href="#推送至远程仓库分支" class="headerlink" title="推送至远程仓库分支"></a>推送至远程仓库分支</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push 远程仓库简称 分支名称</span><br><span class="line">//将<span class="built_in">test</span>分支推送到远程仓库</span><br><span class="line">git push origin <span class="built_in">test</span> </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名称</span><br><span class="line">git merge <span class="built_in">test</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>分支合并时需注意合并的方向，是将命令中的分支合并到当前所在的分支</p>
+<p><img data-src="https://s2.loli.net/2022/12/19/7getKomVWPIN3DL.png" alt="09-合并分支.png"></p>
+<p>在合并分支这种大操作下，会进入 vim 模式要求我们写日志，按照 vim 的操作即可</p>
+<p>如果在合并当中遇到文件冲突，比如说主分支对 A 文件进行了修改，测试分支也对 A 文件进行了修改，然后在主分支中合并分支时，报如下错误：Automatic merge failed; fix conflicts and then commit the result.</p>
+<p><img data-src="https://s2.loli.net/2022/12/19/9PgOCTkJ3qyxnr6.png" alt="10-合并分支报错.png"></p>
+<p>此时冲突的文件会自动加入如下内容。<br><img data-src="https://s2.loli.net/2022/12/19/cIbPGwn2ksgdyqh.png" alt="011-合并后的冲突文件.png"></p>
+<p>假如我们是想要保留这两行，那么可以把这些自动生成的符号删除，然后还需要将这个有冲突的文件再 add 和 commit 一下，此时，仍然会有报错：<br>fatal: cannot do a partial commit during a merge.（不能在合并的时候只提交一部分）<br><img data-src="https://s2.loli.net/2022/12/19/U3C4zvuSK1iTYxr.png" alt="012-合并解决冲突文件后再次报错.png"></p>
+<p>这个时候我们需要在 commit 后面添加一个 <code>-i</code> 参数，此时这个冲突被我们手动解决了，然后就可以正常 push 了</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"modify by me"</span> testBranch.txt -i</span><br><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h3><p>Git 中的标签，指的是某个分支某个特定时间点的状态。通过标签，可以很方便的切换到标记时的状态。比较有代表性的是人们会使用这个功能来标记发布结点（v1.0 、v1.2 等）。</p>
+<h4 id="查看标签"><a href="#查看标签" class="headerlink" title="查看标签"></a>查看标签</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag 标签名</span><br><span class="line">git tag v0.1</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="删除本地标签"><a href="#删除本地标签" class="headerlink" title="删除本地标签"></a>删除本地标签</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -d 标签名</span><br><span class="line">git tag -d v0.1</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="删除远程标签"><a href="#删除远程标签" class="headerlink" title="删除远程标签"></a>删除远程标签</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/标签名</span><br><span class="line">git push origin :refs/tags/v0.1</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/6dlXaVzxyr7GL9O.png" alt="013-删除远程标签.png"></p>
+<h4 id="将标签推送至远程仓库"><a href="#将标签推送至远程仓库" class="headerlink" title="将标签推送至远程仓库"></a>将标签推送至远程仓库</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push 远程仓库简称 标签名</span><br><span class="line">git push origin v0.1</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/Ejv9nRudHbUyrFo.png" alt="014-将标签推送至远程仓库.png"></p>
+<h4 id="检出标签"><a href="#检出标签" class="headerlink" title="检出标签"></a>检出标签</h4><p>检出标签时需要新建一个分支来指向某个标签。会自动将某个 tag 中的内容检出到一个新的分支下面</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 新建的一个分支名 标签名</span><br><span class="line">git checkout -b aNewBranch v0.2</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/19/dyaphUSAH3scDTP.png" alt="015-检出标签.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="reward-container">
+  <div>Buy me a coffee(*^▽^*) Coffeelize!</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/Wechartpay.webp" alt="coffeelize 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/Alipay.webp" alt="coffeelize 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>coffeelize
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://coffeelize.top/posts/6326f1e4.html" title="Git 简明教程">https://coffeelize.top/posts/6326f1e4.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/cf194633.html" rel="prev" title="写在博客创建的一周年">
+                  <i class="fa fa-chevron-left"></i> 写在博客创建的一周年
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/c8073837.html" rel="next" title="Linux 防火墙设置">
+                  Linux 防火墙设置 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">coffeelize</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">164k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:29</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/posts/6326f1e4.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "default";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Reddit,Evernote,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>
