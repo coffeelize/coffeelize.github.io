@@ -3123,7 +3123,6 @@ mark.search-keyword {
   margin-top: 1em;
   margin-bottom: 1em;
 /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
-/*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   border-radius: 3px;
 }
@@ -3150,16 +3149,25 @@ p.image-caption {
   background-color: #cbf8df;
 }
 code {
-  margin: 1px;
+  margin: 0px;
+  padding: 0px 0px;
   font-family: 'Roboto Mono', "consolas", "PingFang", "Microsoft YaHei";
   font-size: 1em;
-  border: 1px solid #d6d6d6;
+  border-radius: 0px;
 }
 .highlight,
 pre {
   margin: 5px 0;
   padding: 0px;
   line-height: 1.6;
+  padding-left: 5px;
+}
+figure.highlight,
+pre {
+  margin: 0 auto 10px;
+}
+p {
+  margin: 0 0 10px;
 }
 .highlight {
   border-radius: 5px;
@@ -3176,6 +3184,18 @@ blockquote {
     border-bottom-right-radius: 3px; */
   margin-bottom: 20px;
   border-radius: 3px;
+}
+blockquote.question {
+  border-left: 4px solid #1098ad;
+  margin-bottom: 20px;
+}
+blockquote {
+  border-left: 4px solid #1098ad;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  margin-left: -10px;
+  padding-left: 15px;
+  padding-right: 5px;
 }
 .copy-btn {
   border: 1px solid #ff7600;
@@ -3237,18 +3257,6 @@ blockquote {
   border-top: none;
   border-bottom: none;
   text-align: center;
-}
-blockquote.question {
-  border-left: 4px solid #1098ad;
-  margin-bottom: 20px;
-}
-blockquote {
-  border-left: 4px solid #1098ad;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  margin-left: -10px;
-  padding-left: 15px;
-  padding-right: 5px;
 }
 .post-body {
   cursor: url("/images/designcursor.svg") 6 2, default;
