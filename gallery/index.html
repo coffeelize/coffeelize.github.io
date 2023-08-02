@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>画廊</title>
+    <title>gallery</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
@@ -9,6 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        /* 自定义鼠标样式 */
         cursor: url(/images/designcursor.svg) 6 2, default;
       }
       header {
@@ -29,9 +30,9 @@
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
       }
-      .gallery img:hover {
+      /* .gallery img:hover {
         transform: scale(1.1);
-      }
+      } */
       .album {
         display: none;
         position: fixed;
@@ -41,7 +42,7 @@
         height: 100%;
         overflow: auto;
         z-index: 1;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.9);
       }
       .album-content {
         display: flex;
@@ -52,27 +53,29 @@
         padding: 1em;
       }
       .album-info {
-        color: #fff;
+        color: #333; /* 修改为浅色文字 */
         margin: 0 0 1em 0;
         text-align: center;
       }
       .album-info h2 {
         margin: 0;
         padding: 1em;
-        background-color: #333;
+        background-color: #fff; /* 修改为浅色背景 */
+        color: #333; /* 修改为浅色文字 */
       }
       .album-info p {
         margin: 0;
         padding: 1em;
+        color: #333; /* 修改为浅色文字 */
       }
       .album img {
         max-width: 100%;
-        max-height: 45vh; /* 设置最大高度为视口高度的 45% */
+        max-height: 60vh; /* 设置最大高度为视口高度的 60% */
         margin: 1em;
-        /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 添加阴影效果 */
         transition: transform 0.2s ease-in-out;
         flex-basis: calc(100% / 2 - 2em); /* 一行两列 */
-        /* cursor: pointer; */
+        cursor: pointer; /* 为相册中的图片添加鼠标指针 */
       }
 
       @media screen and (min-width: 768px) {
@@ -80,20 +83,17 @@
           flex-basis: calc(100% / 3 - 2em); /* 一行三列 */
         }
       }
-      .album img:hover {
-        /* transform: scale(1.1); */
-      }
 
-      /* .album img:focus {
-        transform: scale(1.5);
-      } */
+      .album img:hover {
+        transform: scale(1.1); /* 添加鼠标悬停放大效果 */
+      }
 
       .close {
         position: absolute;
         top: 1em;
         right: 1em;
         font-size: 2em;
-        color: #fff;
+        color: #333; /* 修改为浅色文字 */
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
       }
@@ -106,106 +106,89 @@
         padding: 1em;
         text-align: center;
       }
-
     </style>
   </head>
   <body>
-    <script>
-      var album = document.querySelector(".album");
-      var albumContent = document.querySelector(".album-content");
-      var albumImage = document.querySelector(".album img");
-      var albumClose = document.querySelector(".close");
 
-      function openAlbum(event) {
-        event.preventDefault();
-        album.style.display = "flex";
-        albumImage.src = this.src;
-        albumImage.alt = this.alt;
-        albumContent.scrollTop = 0;
-        albumImage.focus();
-      }
-
-      function closeAlbum() {
-        album.style.display = "none";
-      }
-
-      albumClose.addEventListener("click", closeAlbum);
-      albumImage.addEventListener("click", closeAlbum);
-      albumImage.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeAlbum();
-        }
-      });
-
-      var images = document.querySelectorAll(".gallery img");
-      for (var i = 0; i < images.length; i++) {
-        images[i].addEventListener("click", openAlbum);
-      }
-    </script>
-
-    <header>
-      <h1>画廊</h1>
-    </header>
-    <div class="gallery">
-      <div>
-        <img
-          src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg"
-          alt="图片1"
-          onclick="showAlbum('album1')"
-        />
-        <p>这是图片1</p>
-      </div>
-      <div>
-        <img
-          src="https://s2.loli.net/2022/11/30/ZR6uLjCk8tFGg74.jpg"
-          alt="图片2"
-          onclick="showAlbum('album2')"
-        />
-        <p>这是图片2</p>
-      </div>
-    </div>
-    <div class="album" id="album1">
-      <div class="album-info">
-        <h2>专辑1</h2>
-        <p>这是专辑1的简介。</p>
-      </div>
-      <div class="album-content">
-        <img src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" />
-        <img src="https://s2.loli.net/2022/11/30/ZR6uLjCk8tFGg74.jpg" />
-        <img src="https://s2.loli.net/2022/11/30/yD2egupZVPS9KIL.jpg" />
-        <img src="https://s2.loli.net/2022/11/30/5ewyIhrngSXBJju.jpg" />
-      </div>
-      <span class="close" onclick="closeAlbum()">&times;</span>
-    </div>
-    <div class="album" id="album2">
-      <div class="album-info">
-        <h2>专辑2</h2>
-        <p>这是专辑2的简介。</p>
-      </div>
-      <div class="album-content">
-        <img src="image2_1.jpg" alt="专辑2图片1" />
-        <img src="image2_2.jpg" alt="专辑2图片2" />
-        <img src="image2_3.jpg" alt="专辑2图片3" />
-        <img src="image2_4.jpg" alt="专辑2图片4" />
-        <img src="image2_5.jpg" alt="专辑2图片5" />
-        <img src="image2_6.jpg" alt="专辑2图片6" />
-      </div>
-      <span class="close" onclick="closeAlbum()">&times;</span>
-    </div>
     <script>
       function showAlbum(albumId) {
+        var albums = document.getElementsByClassName("album");
+        for (var i = 0; i < albums.length; i++) {
+          albums[i].style.display = "none";
+        }
+
         var album = document.getElementById(albumId);
-        album.style.display = "block";
+        if (album) {
+          album.style.display = "block";
+        }
       }
-      function closeAlbum() {
+
+      var albumClose = document.querySelectorAll(".close");
+      for (var i = 0; i < albumClose.length; i++) {
+        albumClose[i].addEventListener("click", function(event) {
+          closeAlbum(event);
+        });
+      }
+
+      function closeAlbum(event) {
+        event.stopPropagation();
         var albums = document.getElementsByClassName("album");
         for (var i = 0; i < albums.length; i++) {
           albums[i].style.display = "none";
         }
       }
     </script>
+
+    <header>
+      <h1>gallery</h1>
+    </header>
+
+    <div class="gallery">
+      
+      <div>
+        <!-- 青大相册 -->
+        <img src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" alt="青大相册" onclick="showAlbum('album1')" />
+        <p>A photo album about Qinghai University</p>
+      </div>
+
+      <div>
+        <img src="https://s2.loli.net/2023/08/02/zODxpCT1sq5jKHc.png" alt="Coffeelize 和 Coffity" onclick="showAlbum('album2')" />
+        <p>Coffeelize and Coffity</p>
+      </div>
+
+    </div>
+
+    <div class="album" id="album1">
+      <div class="album-info">
+        <h2>专辑1</h2>
+        <p>这是专辑1的简介</p>
+      </div>
+      <div class="album-content">
+        <img src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" />
+        <img src="https://s2.loli.net/2022/11/30/yD2egupZVPS9KIL.jpg" />
+        <img src="https://s2.loli.net/2022/11/30/5ewyIhrngSXBJju.jpg" />
+      </div>
+      <span class="close" onclick="closeAlbum(event)">&times;</span>
+    </div>
+
+    <div class="album" id="album2">
+      <div class="album-info">
+        <h2>专辑2</h2>
+        <p>这是专辑2的简介</p>
+      </div>
+      <div class="album-content">
+        <img src="https://s2.loli.net/2023/08/02/z9RmTK7VlFZ2bg5.jpg" alt="专辑2图片1" />
+        <img src="https://s2.loli.net/2023/08/02/dRFNf9tHy8sEivl.jpg" alt="专辑2图片2" />
+        <img src="https://s2.loli.net/2023/08/02/s1IBZEvbWJlOpfo.jpg" alt="专辑2图片3" />
+        <img src="https://s2.loli.net/2023/08/02/1PxfNdATOkyc259.jpg" alt="专辑2图片4" />
+        <img src="https://s2.loli.net/2023/08/02/K2PXBIwE5iR4TOD.jpg" alt="专辑2图片5" />
+      </div>
+      <span class="close" onclick="closeAlbum(event)">&times;</span>
+    </div>
+
     <footer>
-      <p>&copy; 2023 - coffeelize</p>
+      <p>&copy; 2023 - coffeelize & coffity</p>
     </footer>
+
   </body>
 </html>
