@@ -3169,6 +3169,9 @@ pre {
 p {
   margin: 0 0 10px;
 }
+body {
+  line-height: 1.8;
+}
 .highlight {
   border-radius: 5px;
 }
