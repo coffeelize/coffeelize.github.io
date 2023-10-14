@@ -6,7 +6,7 @@
   <link href="https://coffeelize.top/atom.xml" rel="self"/>
   
   <link href="https://coffeelize.top/"/>
-  <updated>2023-08-09T08:39:38.732Z</updated>
+  <updated>2023-10-14T09:44:30.000Z</updated>
   <id>https://coffeelize.top/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaTeX 修订</title>
+    <link href="https://coffeelize.top/posts/20231014163230.html"/>
+    <id>https://coffeelize.top/posts/20231014163230.html</id>
+    <published>2023-10-14T08:32:30.000Z</published>
+    <updated>2023-10-14T09:44:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li><a href="https://www.zhihu.com/question/460475233/answer/2120555503">投了一篇 sci，返回意见是大修，没有经验，请问如何操作？ - 知乎</a></li></ul><span id="more"></span><h3 id="在线编译"><a href="#在线编译" class="headerlink" title="在线编译"></a>在线编译</h3><p>使用 <a href="https://www.overleaf.com/">Overleaf, Online LaTeX Editor</a> 平台</p><ul><li>假设原版本是 <code>Manuscript.tex</code></li><li>新建一个文件 <code>Manuscript-Revised-Cleancopy.tex</code>，并拷贝 <code>Manuscript.tex</code> 中的所有内容，在这个新建的文件上进行修改，编写修订后的终稿</li><li>新建一个文件叫做 <code>Manuscript-Diff-Withtrack.tex</code>, 内容如下：</li></ul><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\RequirePackage{shellesc}</span><br><span class="line">\ShellEscape{latexdiff Manuscript.tex Manuscript-Revised-Cleancopy.tex &gt; Manuscript-Diff-Withtrack.tex}</span><br><span class="line">\input{Manuscript-Diff-Withtrack}</span><br><span class="line">\documentclass{dummy}</span><br></pre></td></tr></tbody></table></figure><ul><li>如需生成旧版本，打开 Manuscript.tex 后点击 Recompile</li><li> 如需生成新版本，打开 Manuscript-Revised-Cleancopy.tex 后点击 Recompile</li><li> 如需生成变化追踪的版本，打开 Manuscript-Diff-Withtrack.tex 后点击 Recompile</li></ul><p>参考资料：<a href="https://www.zhihu.com/question/460475233/answer/2120555503">投了一篇 sci，返回意见是大修，没有经验，请问如何操作？ - 知乎</a></p><h3 id="本地编译"><a href="#本地编译" class="headerlink" title="本地编译"></a>本地编译</h3><p>初稿 LaTeX，并且已经写好 LaTeX 的终稿 —&gt; 导入 <a href="https://3142.nl/latex-diff/">Online LaTeX diff tool</a> 中生成<strong>带有修订的 LaTeX 稿件</strong> —&gt; 使用本地 LaTeX 编译器进行编译生成 PDF</p><h4 id="Online-LaTeX-diff-tool"><a href="#Online-LaTeX-diff-tool" class="headerlink" title="Online LaTeX diff tool"></a>Online LaTeX diff tool</h4><p>在线工具： <a href="https://3142.nl/latex-diff/">Online LaTeX diff tool</a></p><ul><li> 输入：两个版本的 LaTeX 原稿文件</li><li>输出：带有修订标记的单个 LaTeX 源文件</li><li>参考示例：</li></ul><p><img data-src="https://s2.loli.net/2023/10/14/iLGXrd25cBpVosN.png" alt="image.png"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/460475233/answer/2120555503&quot;&gt;投了一篇 sci，返回意见是大修，没有经验，请问如何操作？ - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LaTeX" scheme="https://coffeelize.top/categories/LaTeX/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>经验分享</title>
+    <link href="https://coffeelize.top/posts/20231014150502.html"/>
+    <id>https://coffeelize.top/posts/20231014150502.html</id>
+    <published>2023-10-14T07:05:02.000Z</published>
+    <updated>2023-10-14T09:39:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="谷歌学术"><a href="#谷歌学术" class="headerlink" title="谷歌学术"></a>谷歌学术</h3><ul><li>站在巨人的肩膀上 &amp; 纯粹的学术网站</li><li>摘要甚至全文检索 —&gt; No.1</li><li> 邮件订阅领域作者 —&gt; 获取作者 / 文献引用最新进展</li><li> BibTeX 引用文献导出 —&gt; LaTeX 参考文献数据库</li></ul><span id="more"></span><p>检索词对比：<a href="https://www.cnki.net/#/">知网</a> | <a href="https://scholar.google.com.hk/?hl=zh-CN">Google 学术搜索</a></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Photovoltaic module recycling</span><br><span class="line">End-of-life</span><br><span class="line">Silicon PV modules</span><br><span class="line">Physical Recovery</span><br><span class="line">Low temperatures</span><br><span class="line">Aluminum back field</span><br></pre></td></tr></tbody></table></figure><h3 id="谷歌专利"><a href="#谷歌专利" class="headerlink" title="谷歌专利"></a>谷歌专利</h3><ul><li>Search and read the full text of patents from around the world</li><li> 专利免费下载，PDF 格式</li><li>数据统计功能 </li></ul><p><img data-src="https://s2.loli.net/2023/10/14/5jBZ9fhWi4XyYkR.png" alt="image.png"></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">泡沫玻璃 制备</span><br><span class="line">光伏组件回收</span><br></pre></td></tr></tbody></table></figure><h3 id="文献管理"><a href="#文献管理" class="headerlink" title="文献管理"></a>文献管理</h3><p>Zotero：<a href="https://www.zotero.org/">Zotero | Your personal research assistant</a></p><ul><li> 开源 —&gt; 免费</li><li>流畅 —&gt; 不卡顿</li><li>可通过 Webdev 多端同步 —&gt; 可配置第三方云同步</li><li> Word 插件 —&gt; 插入文献</li><li>浏览器插件 —&gt; 导入文献</li><li>软件插件 —&gt; 丰富功能</li><li>参考资料：<a href="https://coffeelize.top/posts/a6f9f7b7.html">Zotero 学习笔记 | 智朋的个人博客</a></li></ul><h3 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h3><h4 id="Figma-Sketch"><a href="#Figma-Sketch" class="headerlink" title="Figma / Sketch"></a>Figma / Sketch</h4><ul><li>定位：专业的前端美工绘图工具</li><li>矢量绘图 —&gt; 高清晰度示意图</li><li>图层管理 —&gt; 复杂绘图</li><li>插件丰富 —&gt; 丰富功能</li><li>参考资料：<a href="https://coffeelize.top/posts/82ded38b.html">sketch 绘图指南 | 智朋的个人博客</a></li></ul><h4 id="Visio"><a href="#Visio" class="headerlink" title="Visio"></a>Visio</h4><ul><li>排版布局组图方便</li><li>修改方便</li><li>微软套件，嵌入方便</li><li>参考资料：<a href="https://coffeelize.top/posts/659137c6.html">Visio 学习笔记 | 智朋的个人博客</a></li></ul><h3 id="LaTeX"><a href="#LaTeX" class="headerlink" title="LaTeX"></a>LaTeX</h3><ul><li>参考资料：<a href="https://coffeelize.top/posts/a9e583b4.html">LaTeX 相关资源汇总 | 智朋的个人博客</a></li></ul><h3 id="拓展资料"><a href="#拓展资料" class="headerlink" title="拓展资料"></a>拓展资料</h3><ul><li>Github：<a href="https://github.com/pengsida/learning_research">GitHub - pengsida/learning_research: 本人的科研经验</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;谷歌学术&quot;&gt;&lt;a href=&quot;#谷歌学术&quot; class=&quot;headerlink&quot; title=&quot;谷歌学术&quot;&gt;&lt;/a&gt;谷歌学术&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;站在巨人的肩膀上 &amp;amp; 纯粹的学术网站&lt;/li&gt;
+&lt;li&gt;摘要甚至全文检索 —&amp;gt; No.1&lt;/li&gt;
+&lt;li&gt; 邮件订阅领域作者 —&amp;gt; 获取作者 / 文献引用最新进展&lt;/li&gt;
+&lt;li&gt; BibTeX 引用文献导出 —&amp;gt; LaTeX 参考文献数据库&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Research" scheme="https://coffeelize.top/categories/Research/"/>
+    
+    
+    <category term="Research" scheme="https://coffeelize.top/tags/Research/"/>
+    
+  </entry>
   
   <entry>
     <title>Obsidian2Anki</title>
@@ -398,52 +445,6 @@
     
     
     <category term="URL" scheme="https://coffeelize.top/tags/URL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Intellij 控制台中文乱码</title>
-    <link href="https://coffeelize.top/posts/612c5fb7.html"/>
-    <id>https://coffeelize.top/posts/612c5fb7.html</id>
-    <published>2022-12-13T05:52:20.000Z</published>
-    <updated>2023-01-16T02:21:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p><img data-src="https://s2.loli.net/2023/01/12/WBR2owHQaG6x1rS.png" alt="01-控制台中文乱码.png"></p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>设置项目编码为 UTF-8</p><p><img data-src="https://s2.loli.net/2023/01/12/G19F2ybD73gSqdo.png" alt="03-项目编码设置.png"></p><p><img data-src="https://s2.loli.net/2023/01/12/ly1ZW3qjShBt5Qs.png" alt="04-控制台乱码问题解决.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html"></summary>
-      
-    
-    
-    
-    
-    <category term="Intellij" scheme="https://coffeelize.top/tags/Intellij/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TexStudio 配置及使用笔记</title>
-    <link href="https://coffeelize.top/posts/afb103e0.html"/>
-    <id>https://coffeelize.top/posts/afb103e0.html</id>
-    <published>2022-12-12T12:44:20.000Z</published>
-    <updated>2023-08-02T06:09:58.199Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li>博客园：<a href="https://www.cnblogs.com/zyg123/p/10499675.html">06LaTeX 学习系列之 —TeXstudio 的使用</a></li><li>博客园：<a href="https://www.cnblogs.com/tsingke/p/15874512.html">Texstudio 常用快捷键（非常实用）</a></li><li>个人博客：<a href="http://haccanri.github.io/tools/2015/04/22/tex_editor.html">Texstudio 使用经验</a>（高阶操作）</li><li>连享会：<a href="https://lianxh.cn/news/1175c7e5d0ee0.html">LaTeX：TeXStudio 编辑器快捷键大全</a></li></ul><span id="more"></span><h3 id="1、常用快捷键"><a href="#1、常用快捷键" class="headerlink" title="1、常用快捷键"></a>1、常用快捷键</h3><table><thead><tr><th align="center"><strong>操作</strong></th><th align="center"><strong>快捷键</strong></th></tr></thead><tbody><tr><td align="center">插入环境</td><td align="center"> Ctrl+E</td></tr><tr><td align="center"> 插入行内公式</td><td align="center"> Ctrl+Shift+M</td></tr><tr><td align="center"> 注释 / 取消注释</td><td align="center"> Ctrl+T</td></tr><tr><td align="center"> 查看 PDF</td><td align="center">F7</td></tr><tr><td align="center"> 预览行内数学公式</td><td align="center"> Alt +P</td></tr><tr><td align="center"> 从 PDF 跳转至对应的 Tex</td><td align="center"> 在 PDF 中按 Ctrl 单击</td></tr></tbody></table><iframe src="https://quizlet.com/756156284/match/embed?i=24q5fr&amp;x=1jj1" height="500" width="100%" style="border:0"></iframe><h3 id="2、设置中文界面"><a href="#2、设置中文界面" class="headerlink" title="2、设置中文界面"></a>2、设置中文界面</h3><p><img data-src="https://s2.loli.net/2022/12/12/2Z6GLWJimAVSR9E.png" alt="01-Texstudio设置中文界面.png"></p><h3 id="3、设置编译器与编码"><a href="#3、设置编译器与编码" class="headerlink" title="3、设置编译器与编码"></a>3、设置编译器与编码</h3><p>为了正常的输出中文，我们需要把编译器改成 XeLaTeX ，utf-8 编码（默认）</p><h3 id="4、显示代码行号"><a href="#4、显示代码行号" class="headerlink" title="4、显示代码行号"></a>4、显示代码行号</h3><p><img data-src="https://s2.loli.net/2022/12/12/8nySts4QxHBTfje.png" alt="02-Texstudio显示行号.png"></p><h3 id="5、括号匹配高亮"><a href="#5、括号匹配高亮" class="headerlink" title="5、括号匹配高亮"></a>5、括号匹配高亮</h3><p>TexStudio 默认的括号匹配背景色好像是黄色的，有些看不清，不如设置个更亮一点的颜色吧</p><p><img data-src="https://s2.loli.net/2022/12/12/VkrzEOAZC9scXLQ.png" alt="03-括号匹配高亮1.png"></p><p><img data-src="https://s2.loli.net/2022/12/12/7vxtaQ1zIYOZFno.png" alt="04-括号匹配高亮2.png"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;博客园：&lt;a href=&quot;https://www.cnblogs.com/zyg123/p/10499675.html&quot;&gt;06LaTeX 学习系列之 —TeXstudio 的使用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;博客园：&lt;a href=&quot;https://www.cnblogs.com/tsingke/p/15874512.html&quot;&gt;Texstudio 常用快捷键（非常实用）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;个人博客：&lt;a href=&quot;http://haccanri.github.io/tools/2015/04/22/tex_editor.html&quot;&gt;Texstudio 使用经验&lt;/a&gt;（高阶操作）&lt;/li&gt;
-&lt;li&gt;连享会：&lt;a href=&quot;https://lianxh.cn/news/1175c7e5d0ee0.html&quot;&gt;LaTeX：TeXStudio 编辑器快捷键大全&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LaTeX" scheme="https://coffeelize.top/categories/LaTeX/"/>
-    
     
   </entry>
   
