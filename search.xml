@@ -4075,7 +4075,12 @@
   <entry>
     <title>Obsidian2Hexo</title>
     <url>/posts/20230802213829.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Why-Obsidian"><a href="#Why-Obsidian" class="headerlink" title="Why Obsidian"></a>Why Obsidian</h2><p>博客文章都是使用 Markdown 格式完成的，在 Markdown 编辑体验上，Obsidian 的体验要远远好于 VS Code。毕竟术业有专攻，Obsidian 主打 Markdown 这种垂直领域的文件编辑，而 VS Code 作为通用代码编辑器，不奢求太多体验，大抵能用就行</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="最终流程图"><a href="#最终流程图" class="headerlink" title="最终流程图"></a>最终流程图</h2><ul>
+<li>简明流程：Win (obsidian) &lt;— 坚果云 —&gt; Mac (obsidian) &lt;— 软链接 —&gt; Hexo</li>
+<li> 实现功能：Win 的 Obsidian 做笔记，或者 Mac 的 Obsidian 做笔记 —&gt; md 格式的文件 —&gt; 通过 hexo 的 3 条命令上传至博客</li>
+</ul>
+<p><img data-src="https://s2.loli.net/2023/10/15/utePdQFq2JiV9o1.png" alt="image.png"></p>
+<h2 id="Why-Obsidian"><a href="#Why-Obsidian" class="headerlink" title="Why Obsidian"></a>Why Obsidian</h2><p>博客文章都是使用 Markdown 格式完成的，在 Markdown 编辑体验上，Obsidian 的体验要远远好于 VS Code。毕竟术业有专攻，Obsidian 主打 Markdown 这种垂直领域的文件编辑，而 VS Code 作为通用代码编辑器，不奢求太多体验，大抵能用就行</p>
 <p>Obsidian 丰富的插件、轻量和自定义程度高的快捷键这几点已经足以秒杀大多数具有 Markdown 编辑功能的编辑器了</p>
 <span id="more"></span>
 
@@ -4710,7 +4715,7 @@
 </ol>
 <p>非常认同 <a href="https://www.cnblogs.com/vamei/">Vamei</a> 博主的这段话：</p>
 <blockquote>
-<p>从小学到大学，我的学习方式都是” 听课 + 做笔记 + 读书”，这个过程类似于 web1.0：我是一个客户端，老师或者书籍是服务器，我们从服务器上获取各种信息，而基本上从来不产出什么，这整个学习过程如蜗牛一样慢。至于学习的情况如何，则要等到期末考试，才能根据答题情况粗糙的认识到自己对知识的掌握程度。而此时考试已经结束，再懒得去翻看半年前开始学习的内容了，所以知识体系上的瑕疵也就永远的留在那里。</p>
+<p>从小学到大学，我的学习方式都是 “ 听课 + 做笔记 + 读书 “，这个过程类似于 web1.0：我是一个客户端，老师或者书籍是服务器，我们从服务器上获取各种信息，而基本上从来不产出什么，这整个学习过程如蜗牛一样慢。至于学习的情况如何，则要等到期末考试，才能根据答题情况粗糙的认识到自己对知识的掌握程度。而此时考试已经结束，再懒得去翻看半年前开始学习的内容了，所以知识体系上的瑕疵也就永远的留在那里。</p>
 </blockquote>
 <p>写博客可以对自己学习情况迅速给出反馈，通过博客这种产出方式，可以快速清楚自己对于某个知识点是否真正理解。如果碰到自己不清楚的地方，自己也不能偷懒，必须得去查阅资料，否则就没发完成这篇文章。而这个时候有目的的去查阅资料，效率自然较高。</p>
 <h3 id="写博客的好处"><a href="#写博客的好处" class="headerlink" title="写博客的好处"></a>写博客的好处</h3><ul>
@@ -6089,6 +6094,7 @@
 <li>浏览器插件 —&gt; 导入文献</li>
 <li>软件插件 —&gt; 丰富功能</li>
 <li>参考资料：<a href="https://coffeelize.top/posts/a6f9f7b7.html">Zotero 学习笔记 | 智朋的个人博客</a></li>
+<li>拓展资料：<a href="https://zotero-chinese.com/">Zotero 中文小组 | Zotero 中文小组</a></li>
 </ul>
 <h3 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h3><h4 id="Figma-Sketch"><a href="#Figma-Sketch" class="headerlink" title="Figma / Sketch"></a>Figma / Sketch</h4><ul>
 <li>定位：专业的前端美工绘图工具</li>
@@ -6281,5 +6287,24 @@
       <tags>
         <tag>LaTeX</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>期刊审稿催稿信</title>
+    <url>/posts/20231015093958.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/88821975">审稿时间过长，怎么催？ - 知乎</a></li>
+</ul>
+<span id="more"></span>
+
+<h3 id="催稿信"><a href="#催稿信" class="headerlink" title="催稿信"></a>催稿信</h3><p>Dear Editor,</p>
+<p>I write concerning the progress of our paper. It was initially submitted on May 13, 2023 and was assigned the manuscript number: xxxx. Now I am worrying about whether it still works normally because the submission has been kept “Under Review” for about two months, as showed on editorial manager. Would you mind checking on the progress of it for me? Your reply would be highly appreciated.</p>
+<p>Thanks very much for your attention to our paper.</p>
+<p>Best Regards.</p>
+<p>Yours sincerely,<br>xxxx</p>
+<h3 id="修订稿催稿信"><a href="#修订稿催稿信" class="headerlink" title="修订稿催稿信"></a>修订稿催稿信</h3><p>Dear Editor,</p>
+<p>I apologize for the inconvenience. I am a graduating master’s student with the intention of pursuing a Ph.D. However, I am concerned about this, as I require another accepted or published paper to strengthen my Ph.D. application. Regarding my revised manuscript with the manuscript number xx-xxxx, which was submitted on xxxx-xx-xx, it is still under review. Could you kindly expedite the review process for my manuscript? I sincerely appreciate your assistance in this matter.</p>
+<p>I look forward to hearing from you soon.</p>
+<p>Best Regards,<br>xxxx</p>
+]]></content>
   </entry>
 </search>
