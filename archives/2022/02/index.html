@@ -46,7 +46,7 @@
 
 
 
-<link rel="dns-prefetch" href="https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-postbottom {
   cursor: pointer;
   height: 26px;
@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">65</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -260,7 +260,7 @@
     <div class="post-content">
       <div class="collection-title">
         
-        <span class="collection-header">很好! 目前共计 111 篇日志。 继续努力。</span>
+        <span class="collection-header">很好! 目前共计 112 篇日志。 继续努力。</span>
       </div>
 
       
@@ -412,16 +412,7 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://commants-system-e7pv7jqg1-yuanzhuangkafei.vercel.app/","placeholder":"若希望及时收到反馈，建议登录评论或在上方的邮箱输入框中留下邮箱地址哟(≧∇≦)ﾉ","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"requiredMeta":[],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/archives/2022/02/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>
       pbOptions = {};
@@ -430,6 +421,10 @@ document.addEventListener('page:loaded', () => {
         pbOptions.position = "bottomCenter";
         pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Reddit,Evernote,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
-  </script>
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"coffeelize","repo":"coffeelize.github.io","client_id":"5849fa5bf577578dd8cb","client_secret":"5686aae8211779a9506e975e151a355d11f4fa1e","admin_user":"coffeelize","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ef4e9feeac8fdbc1044ac7236cc4e002"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
 </body>
 </html>
