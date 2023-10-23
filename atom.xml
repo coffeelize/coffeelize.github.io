@@ -6,7 +6,7 @@
   <link href="https://coffeelize.top/atom.xml" rel="self"/>
   
   <link href="https://coffeelize.top/"/>
-  <updated>2023-10-21T13:54:01.077Z</updated>
+  <updated>2023-10-23T06:44:37.000Z</updated>
   <id>https://coffeelize.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>六级经验分享</title>
+    <link href="https://coffeelize.top/posts/20231023144324.html"/>
+    <id>https://coffeelize.top/posts/20231023144324.html</id>
+    <published>2023-10-23T06:43:24.000Z</published>
+    <updated>2023-10-23T06:44:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li><a href="https://cet.neea.edu.cn/html1/folder/19081/5124-1.htm#:~:text=%E5%9B%9B%E3%80%81%E5%85%AD%E7%BA%A7%E8%80%83%E8%AF%95%E5%8D%95%E9%A1%B9,%E7%BF%BB%E8%AF%91%E5%92%8C%E5%86%99%E4%BD%9C212%E5%88%86%E3%80%82">分数解释 - 中国教育考试网</a></li><li><a href="https://www.dxsbb.com/news/3222.html">大学英语六级分值分布明细情况</a></li></ul><h3 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h3><p>分数占比：听力占 35%（249 分），阅读占 35%（249 分），翻译和写作占 30%（212 分）</p><p>一、作文 + 翻译</p><ul><li>写作部分占 15% = 106.5 分，63.9 分为及格， 时间 30 分钟  </li><li>翻译 15% = 106.5 分，30 分钟</li><li>作文和翻译：总体印象分，分 5 个档 —&gt; 『印象分』</li></ul><p>二、听力部分  </p><ul><li>听力部分占整套试题的 35%</li><li> 长对话 8%，8 个题目 每小题 7.1 分</li><li>听力篇章 7%，分为 2 段，每段 3-4 个题，共 7 小题，每小题 7.1 分</li><li>讲话 / 报道 / 讲座 20%，共 10 个小题，每小题 14.2 分</li></ul><p>三、阅读部分</p><ul><li>选词填空 5%，10 个题，每小题 3.55 分  </li><li>长篇阅读 (匹配题) 10% &nbsp;10 个题，每小题 7.1 分 </li><li>仔细阅读 20% 共 2 篇，一篇 5 个题，每小题 14.2 分 </li></ul><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">阅读：(8+8+7)*7.1=163，选词填空4*3.5=14，共计177分</span><br><span class="line">作文+翻译：64+64 —&gt; 120分</span><br><span class="line">听力：425-177-120=128分</span><br><span class="line"></span><br><span class="line">如果听力实在没把握：</span><br><span class="line"></span><br><span class="line">阅读：阅读 + 2*14.2 = 205分</span><br><span class="line">作文+阅读：120分</span><br><span class="line">听力：425-205-120=100分</span><br></pre></td></tr></tbody></table></figure><p><img data-src="https://s2.loli.net/2023/10/23/vcLwEnZu1l2z9Kk.png" alt="image.png"></p><h3 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h3><ul><li><a href="https://github.com/xunlutzp/xunlutzp.github.io/">GitHub - xunlutzp/xunlutzp.github.io: 《寻路桐梓坡》全文及 GitBook 网页</a></li><li><a href="https://xunlutzp.github.io/Ch3_yu-yan-xue-xi-jie-shao/3_ying-yu-liu-ji-kao-shi-jing-yan/">英语六级考试经验帖 - 寻路桐梓坡</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>xlsx4Anki</title>
@@ -439,25 +459,6 @@
     
     
     <category term="Java" scheme="https://coffeelize.top/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>写在博客创建的一周年</title>
-    <link href="https://coffeelize.top/posts/cf194633.html"/>
-    <id>https://coffeelize.top/posts/cf194633.html</id>
-    <published>2022-12-19T13:13:10.000Z</published>
-    <updated>2022-12-19T14:31:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="coffeelize"><a href="#coffeelize" class="headerlink" title="coffeelize"></a>coffeelize</h3><p>这两天收到阿里云域名续费消息，同时也收到了网站 SSL 证书到期的邮件，是的，域名买了一年，到今天刚好一年。</p><span id="more"></span><p>博客在中途更换过一次域名，也就是现在的域名：<code>coffeelize.top</code>。之所以叫 coffeelize，不仅仅是因为 #咖啡日常 #，更多的其实是想强调 <code>lize</code>。<code>lize</code> 在英语单词中通常为动词的后缀，很多情况下 <code>名词 + lize</code> 后就变成了动词，一是想表达：就像喝了一杯咖啡一样，满满的驱动力；二是期望：自己能够像 “coffeee” 那样，能够带给周围人更多的积极向上的 “动力”。</p><p><img data-src="https://s2.loli.net/2022/12/19/x8gyqlSMFsrhIRk.png" alt="01-博客运行时间.png"></p><p><img data-src="https://s2.loli.net/2022/12/19/JUlu2bNvLd6M8Oo.png" alt="02-域名续费消息.png"></p><p><img data-src="https://s2.loli.net/2022/12/19/Zs513UwFVmuAnaf.png" alt="03-证书到期.png"></p><p>去年的这个时候，还在复习着数值分析的期末考试呢😂，搭建这个博客花了我很长时间，记得那个 SSL 总是无法正常连接，导致无法往仓库中推送文件，也算是苦中作乐吧，哈哈</p><p>有了自己的个人博客之后，开始关注更多相关领域的个人博客，学着有模有样的发布笔记、装扮博客、交换友链，开始更加注重消息的来源和质量。自己也喜欢看别人的博客和笔记，有种窥探别人日记本闯入他人领地的感觉，遇到和自己 “技术栈” 差不多的站长，会主动联系，加个好友、交换一下友链或者相互鼓励一下，这种感觉很棒，可能也是我不断更新下去的主要原因吧。</p><p>博客在这一年里也有一点点的收获，下图为必应搜索引擎的数据报告（因为之前更换了一次域名的原因，这里只显示从 6 月份开始到现在的数据）</p><p><img data-src="https://s2.loli.net/2022/12/19/pXoBg9TFJK8xmaC.png" alt="05-必应控制台.png"></p><p>其实我也不在乎这个数据报告，更在乎的是我的🤝朋友们及笔记呀<br><img data-src="https://s2.loli.net/2022/12/19/HyleRzDBEp4ISbc.png" alt="06-朋友们以及笔记.png"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;coffeelize&quot;&gt;&lt;a href=&quot;#coffeelize&quot; class=&quot;headerlink&quot; title=&quot;coffeelize&quot;&gt;&lt;/a&gt;coffeelize&lt;/h3&gt;&lt;p&gt;这两天收到阿里云域名续费消息，同时也收到了网站 SSL 证书到期的邮件，是的，域名买了一年，到今天刚好一年。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Life" scheme="https://coffeelize.top/tags/Life/"/>
     
   </entry>
   
