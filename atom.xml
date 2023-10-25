@@ -63,18 +63,17 @@
     <link href="https://coffeelize.top/posts/20231020230813.html"/>
     <id>https://coffeelize.top/posts/20231020230813.html</id>
     <published>2023-10-20T15:08:13.000Z</published>
-    <updated>2023-10-20T15:08:13.903Z</updated>
+    <updated>2023-10-24T13:41:17.225Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，密码输入错误" data-whm="抱歉，当前文章不能被校验">  <script id="hbeData" type="hbeData" data-hmacdigest="8ffab8e346c0574ae60125da6b25dfc849f8307998a1603c034a277628a60b8e">49f5d397cca217f02652b83d3a829717bc8084ad49a11604c9d054863110b6901c6ce12a7e52e99859285f45e3576fde1137dfa06cacb224e727396655765e622ca15b44b58f496861057bba4d8f73381cbd9c65da88c4509d92e7074a2e67c4e97c88512d49913ff5e551244ba159e3b51a24f485c2040e8ddf629b6087cc28</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，见谅！</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
-      
-      
-    <summary type="html"></summary>
-      
+    <summary type="html">这是一篇加密文章，暂不对外可见</summary>
     
     
     
+    
+    <category term="coffeelize" scheme="https://coffeelize.top/tags/coffeelize/"/>
     
   </entry>
   
@@ -102,15 +101,14 @@
     <link href="https://coffeelize.top/posts/20231019163820.html"/>
     <id>https://coffeelize.top/posts/20231019163820.html</id>
     <published>2023-10-19T08:38:20.000Z</published>
-    <updated>2023-10-19T08:50:14.000Z</updated>
+    <updated>2023-10-25T13:47:18.364Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li><a href="https://coffeelize.top/posts/d750efe1.html?highlight=pdf">将 PDF 中的文字转换为曲线 | 智朋的个人博客</a></li></ul><h3 id="口令密码"><a href="#口令密码" class="headerlink" title="口令密码"></a>口令密码</h3><p>文件 —&gt; 属性 (Ctrl+D) —&gt; 安全性 —&gt; 口令安全性</p><p><img data-src="https://s2.loli.net/2023/10/19/rYoWnds7eb6hgUj.gif" alt="01-为PDF设置口令密码.gif"></p><h3 id="PDF-乱码"><a href="#PDF-乱码" class="headerlink" title="PDF 乱码"></a>PDF 乱码</h3><p>对于无需搜索的 PDF 文件，使用浏览器阅读（特殊需求）可能会出现中文乱码的情况（尤其是知网下载的中文文献），可以先将 PDF 导出为 JPG，再合并成 PDF</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul><li><a href="https://coffeelize.top/posts/d750efe1.html?highlight=pdf">将 PDF 中的文字转换为曲线 | 智朋的个人博客</a></li></ul><span id="more"></span><h3 id="口令密码"><a href="#口令密码" class="headerlink" title="口令密码"></a>口令密码</h3><p>文件 —&gt; 属性 (Ctrl+D) —&gt; 安全性 —&gt; 口令安全性</p><p><img data-src="https://s2.loli.net/2023/10/19/rYoWnds7eb6hgUj.gif" alt="01-为PDF设置口令密码.gif"></p><h3 id="PDF-乱码"><a href="#PDF-乱码" class="headerlink" title="PDF 乱码"></a>PDF 乱码</h3><p>对于无需搜索的 PDF 文件，使用浏览器阅读（特殊需求）可能会出现中文乱码的情况（尤其是知网下载的中文文献），可以先将 PDF 导出为 JPG，再合并成 PDF</p>]]></content>
     
     
-      
-      
-    <summary type="html"></summary>
-      
+    <summary type="html">&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://coffeelize.top/posts/d750efe1.html?highlight=pdf&quot;&gt;将 PDF 中的文字转换为曲线 | 智朋的个人博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
