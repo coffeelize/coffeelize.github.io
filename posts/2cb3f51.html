@@ -23,13 +23,24 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="分模块开发与设计将原始模块按照功能拆分为若干个子模块，方便模块间的相互调用，接口共享">
+<meta name="description" content="Maven 主要功能Maven 是专门用于管理和构建 Java 项目的工具，它的主要功能有：  提供了一套标准化的项目结构 提供了一套标准化的构建流程（编译，测试，打包，发布…） 提供了一套依赖管理机制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven 高级简明笔记">
+<meta property="og:title" content="Maven 简明笔记">
 <meta property="og:url" content="https://coffeelize.top/posts/2cb3f51.html">
 <meta property="og:site_name" content="智朋的个人博客">
-<meta property="og:description" content="分模块开发与设计将原始模块按照功能拆分为若干个子模块，方便模块间的相互调用，接口共享">
+<meta property="og:description" content="Maven 主要功能Maven 是专门用于管理和构建 Java 项目的工具，它的主要功能有：  提供了一套标准化的项目结构 提供了一套标准化的构建流程（编译，测试，打包，发布…） 提供了一套依赖管理机制">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/2UqzrDVtQE4JFci.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/2yNB1P6z37dorsf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/l4dLFEwaQbsVCgB.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/PiCMQwYabNHjqLF.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/2Lig39VGsfNqd7Q.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/XxrK3vGfNjqcA1T.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/LjZ7q38RftUCYig.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/XWRcT5hMvpO7Aur.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/EQ7SK6XnLpfkJhw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/GWJwatOcH9zZRyj.png">
+<meta property="og:image" content="https://s2.loli.net/2022/12/03/sifvKxMy7mGwtXg.png">
 <meta property="og:image" content="https://s2.loli.net/2022/12/20/2KG3AFHn9IkrQ7s.png">
 <meta property="og:image" content="https://s2.loli.net/2022/12/20/hYWKdaNVUjRFDug.png">
 <meta property="og:image" content="https://s2.loli.net/2022/12/20/ZKzeAFyfxuqWJD1.png">
@@ -45,21 +56,21 @@
 <meta property="og:image" content="https://s2.loli.net/2022/12/20/fISheL961B4DZxt.png">
 <meta property="og:image" content="https://s2.loli.net/2022/12/20/RS4pDOViCos8awT.png">
 <meta property="article:published_time" content="2022-12-17T06:08:30.000Z">
-<meta property="article:modified_time" content="2022-12-23T04:01:02.000Z">
+<meta property="article:modified_time" content="2023-10-31T03:56:55.000Z">
 <meta property="article:author" content="coffeelize">
 <meta property="article:tag" content="Maven">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/12/20/2KG3AFHn9IkrQ7s.png">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/03/2UqzrDVtQE4JFci.png">
 
 
 <link rel="canonical" href="https://coffeelize.top/posts/2cb3f51.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/2cb3f51.html","path":"posts/2cb3f51.html","title":"Maven 高级简明笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/2cb3f51.html","path":"posts/2cb3f51.html","title":"Maven 简明笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Maven 高级简明笔记 | 智朋的个人博客</title>
+<title>Maven 简明笔记 | 智朋的个人博客</title>
   
 
 
@@ -181,7 +192,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">分模块开发与设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">依赖管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81"><span class="nav-number">2.1.</span> <span class="nav-text">依赖冲突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E4%BE%9D%E8%B5%96"><span class="nav-number">2.2.</span> <span class="nav-text">可选依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96"><span class="nav-number">2.3.</span> <span class="nav-text">排除依赖</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">4.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">版本管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">多环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BF%87%E6%B5%8B%E8%AF%95"><span class="nav-number">7.1.</span> <span class="nav-text">跳过测试</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-number">1.</span> <span class="nav-text">Maven 主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%8C%96%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">标准化的项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%8C%96%E7%9A%84%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">标准化的构建流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E5%A5%97%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">提供了一套依赖管理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-%E7%AE%80%E4%BB%8B"><span class="nav-number">5.</span> <span class="nav-text">Maven 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">Maven 的安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">7.</span> <span class="nav-text">Maven 的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">7.1.</span> <span class="nav-text">Maven 的常用命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">8.</span> <span class="nav-text">Maven 的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="nav-number">9.</span> <span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%AF%BC%E5%85%A5%E5%9D%90%E6%A0%87%E4%BF%A1%E6%81%AF%E5%88%B0-pom-xml"><span class="nav-number">10.</span> <span class="nav-text">快速导入坐标信息到 pom.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4"><span class="nav-number">11.</span> <span class="nav-text">依赖范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">12.</span> <span class="nav-text">分模块开发与设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86-1"><span class="nav-number">13.</span> <span class="nav-text">依赖管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81"><span class="nav-number">13.1.</span> <span class="nav-text">依赖冲突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E4%BE%9D%E8%B5%96"><span class="nav-number">13.2.</span> <span class="nav-text">可选依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96"><span class="nav-number">13.3.</span> <span class="nav-text">排除依赖</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88"><span class="nav-number">14.</span> <span class="nav-text">聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">15.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">16.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">17.</span> <span class="nav-text">版本管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">18.</span> <span class="nav-text">多环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BF%87%E6%B5%8B%E8%AF%95"><span class="nav-number">18.1.</span> <span class="nav-text">跳过测试</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,18 +207,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">116</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -293,7 +304,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Maven 高级简明笔记
+          Maven 简明笔记
         </h1>
 
         <div class="post-meta-container">
@@ -311,7 +322,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-12-23 12:01:02" itemprop="dateModified" datetime="2022-12-23T12:01:02+08:00">2022-12-23</time>
+        <time title="修改时间：2023-10-31 11:56:55" itemprop="dateModified" datetime="2023-10-31T11:56:55+08:00">2023-10-31</time>
       </span>
 
   
@@ -320,14 +331,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6.7k</span>
+      <span>8.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -338,9 +349,93 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="分模块开发与设计"><a href="#分模块开发与设计" class="headerlink" title="分模块开发与设计"></a>分模块开发与设计</h3><p>将原始模块按照功能拆分为若干个子模块，方便模块间的相互调用，接口共享</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="Maven-主要功能"><a href="#Maven-主要功能" class="headerlink" title="Maven 主要功能"></a>Maven 主要功能</h3><p>Maven 是专门用于管理和构建 Java 项目的工具，它的主要功能有：</p>
+<ul>
+<li>提供了一套标准化的项目结构</li>
+<li>提供了一套标准化的构建流程（编译，测试，打包，发布…）</li>
+<li>提供了一套依赖管理机制</li>
+</ul>
 <span id="more"></span>
 
+<h3 id="标准化的项目结构"><a href="#标准化的项目结构" class="headerlink" title="标准化的项目结构"></a>标准化的项目结构</h3><p>不同 IDE 之间，项目结构不一样，不通用<br><img data-src="https://s2.loli.net/2022/12/03/2UqzrDVtQE4JFci.png" alt="01-不同IDE之间项目结构不一致.png"></p>
+<p>所有 IDE 使用 Maven 构建的项目结构完全一样，所有 IDE 创建的 Maven 项目都可以通用</p>
+<p>Maven 的项目结构<br><img data-src="https://s2.loli.net/2022/12/03/2yNB1P6z37dorsf.png" alt="02-Maven项目结构.png"></p>
+<h3 id="标准化的构建流程"><a href="#标准化的构建流程" class="headerlink" title="标准化的构建流程"></a>标准化的构建流程</h3><p>源代码⇒编译⇒测试⇒打包⇒发布，Maven 提供了一套简单的命令来完成项目构建</p>
+<h3 id="提供了一套依赖管理机制"><a href="#提供了一套依赖管理机制" class="headerlink" title="提供了一套依赖管理机制"></a>提供了一套依赖管理机制</h3><p>比如 JDBC，需要使用的 MySQL 的驱动包，依赖管理其实就是管理你项目所依赖的第三方资源（Jar 包、依赖），原先我们是如何操作的呢：</p>
+<ol>
+<li>下载 jar 包</li>
+<li>将 jar 包复制到 lib 文件夹里</li>
+<li>右键 jar 包，作为库</li>
+</ol>
+<p>那 Maven 是如何管理依赖的呢</p>
+<ol>
+<li>Maven 使用标准的 <strong>坐标</strong> 配置来管理各种依赖</li>
+<li>只需要简单的配置就可以完成依赖管理<br><img data-src="https://s2.loli.net/2022/12/03/l4dLFEwaQbsVCgB.png" alt="03-通过坐标管理依赖.png"></li>
+</ol>
+<h3 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h3><p>Apache Maven 是一个项目管理和构建工具，它基于项目对象模型（POM）的概念，通过一小段描述信息来管理项目的构建、报告和文档</p>
+<p>仓库分类</p>
+<ul>
+<li>本地仓库</li>
+<li>中央仓库：有 Maven 团队维护的全球唯一的仓库（免费的开源的 jar 包）</li>
+<li>远程仓库（私服）：一般有公司团队搭建的私有仓库（可以存放一下自己的公司的和一些可能具有版权的 jar 包）</li>
+</ul>
+<p>查找流程：首先会查找本地仓库，如果本地仓库没有，则去中央仓库查找是否有，有的话就会 <strong>自动下载</strong> 到本地仓库</p>
+<h3 id="Maven-的安装和配置"><a href="#Maven-的安装和配置" class="headerlink" title="Maven 的安装和配置"></a>Maven 的安装和配置</h3><ol>
+<li>解压即可安装</li>
+<li>配置环境变量</li>
+</ol>
+<p>下图中的 Maven 文件夹呢就是包含 bin 文件夹的文件夹<br><img data-src="https://s2.loli.net/2022/12/03/PiCMQwYabNHjqLF.png" alt="04-配置Maven环境路径1.png"></p>
+<p>将 bin 目录添加到 Path 目录中<br><img data-src="https://s2.loli.net/2022/12/03/2Lig39VGsfNqd7Q.png" alt="05-配置Maven环境路径2.png"></p>
+<ol start="3">
+<li>配置本地仓库：修改 conf/setting.xml 中的 <code>&lt;localRepository&gt;</code> 为其指定一个目录</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/12/03/XxrK3vGfNjqcA1T.png" alt="06-指定本地仓库路径.png"></p>
+<p>注意：为了保守起见，在 Intellij 中也对 Maven 的本地路径配置一下：)<br><img data-src="https://s2.loli.net/2022/12/03/LjZ7q38RftUCYig.png" alt="12-指定本地仓库路径2.png"></p>
+<ol start="4">
+<li>配置阿里云私服：修改 conf/setting.xml 中的 <code>&lt;mirrors&gt;</code> 标签，为其添加如下子标签 </li>
+</ol>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/12/03/XWRcT5hMvpO7Aur.png" alt="07-配置阿里云远程仓库.png"></p>
+<h3 id="Maven-的基本使用"><a href="#Maven-的基本使用" class="headerlink" title="Maven 的基本使用"></a>Maven 的基本使用</h3><h4 id="Maven-的常用命令"><a href="#Maven-的常用命令" class="headerlink" title="Maven 的常用命令"></a>Maven 的常用命令</h4><ul>
+<li>compile：编译</li>
+<li> clean：清理，删除前面编译产生的 target 目录</li>
+<li> test：测试，执行 test 文件夹下的代码</li>
+<li> package：打包</li>
+<li> install：安装</li>
+</ul>
+<p>在含有 pom.xml 文件的目录下，进入 PowerShell</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br><span class="line">mvn clean</span><br><span class="line">mvn package</span><br><span class="line">mvn tast</span><br><span class="line">mvn install</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Maven-的生命周期"><a href="#Maven-的生命周期" class="headerlink" title="Maven 的生命周期"></a>Maven 的生命周期</h3><p>Maven 对项目构建的生命周期划分为三套</p>
+<ul>
+<li>clean：清理工作</li>
+<li> default：核心工作，例如编译，测试，打包，安装等</li>
+<li> site：产生报告，发布站点等</li>
+</ul>
+<p><img data-src="https://s2.loli.net/2022/12/03/EQ7SK6XnLpfkJhw.png" alt="08-Maven的生命周期.png"></p>
+<p>比如说执行 install，就会自动执行 compile，但是不会自动执行 clean（因为这是两套不同的生命周期）</p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>使用坐标导入 jar 包</p>
+<ol>
+<li>在 pom.xml 中编写 <code>&lt;dependencies&gt;</code> 标签</li>
+<li>在 <code>&lt;dependencies&gt;</code> 标签中使用 <code>&lt;dependency&gt;</code> 来引入坐标</li>
+<li>定义坐标的 groupId，artifactId，version</li>
+<li> 点击刷新按钮，是坐标生效（或者对 IDE 进行配置，每次变更自动生效）</li>
+</ol>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 导入 mysql 驱动jar包--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.32<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如去找 MySQL 的 Maven 配置信息（浏览器搜索 <code>mysql maven</code>），比如从以下网页中找到了：<a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.6">MySQL Connector Java</a></p>
+<p>还为我们提供了 maven 需要使用的信息<br><img data-src="https://s2.loli.net/2022/12/03/GWJwatOcH9zZRyj.png" alt="09-从官网获得Maven的配置信息.png"></p>
+<h3 id="快速导入坐标信息到-pom-xml"><a href="#快速导入坐标信息到-pom-xml" class="headerlink" title="快速导入坐标信息到 pom.xml"></a>快速导入坐标信息到 pom.xml</h3><p>如果本地仓库就有相应的 jar 包，那么直接可以通过搜索 jar 包的名字来导入（即可自动导入模板）</p>
+<ol>
+<li>在 pom.xml 文件中，Alt+Insert</li>
+<li> 选择依赖项模板，自动为我们添加模板</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/12/03/sifvKxMy7mGwtXg.png" alt="10-快速插入依赖项模板.png"></p>
+<h3 id="依赖范围"><a href="#依赖范围" class="headerlink" title="依赖范围"></a>依赖范围</h3><p>通过设置坐标依赖范围（scope），可以设置对应 jar 包的作用范围：编译环境、测试环境、运行环境</p>
+<p>编译环境：在主工程 java 文件夹中可以使用<br>测试环境：在测试文件夹 test 中可以使用<br>运行环境：</p>
+<p>依赖范围的取值有以下六种，默认值是 compile（其实范围也是最大的）</p>
+<h3 id="分模块开发与设计"><a href="#分模块开发与设计" class="headerlink" title="分模块开发与设计"></a>分模块开发与设计</h3><p>将原始模块按照功能拆分为若干个子模块，方便模块间的相互调用，接口共享</p>
 <p><img data-src="https://s2.loli.net/2022/12/20/2KG3AFHn9IkrQ7s.png" alt="01-分模块开发思想.png"></p>
 <p>Intellij 中同时导入多个模块方式如下：<br><img data-src="https://s2.loli.net/2022/12/20/hYWKdaNVUjRFDug.png" alt="02-Intellij同时导入多个模块.png"></p>
 <p>1、项目准备：之前做好的 SSM 整合的项目 maven_02_ssm 进行讲解<br>2、新建一个模块：maven_03_pojo</p>
@@ -356,7 +451,7 @@
 <p>但是此时 02 模块会有问题？为什么呢<br>因为通过坐标导入，会将相应的资源下载到本地仓库，02 模块引入了 03 模块，但是本地仓库里面却找不到 03 的资源。因此，我们还需要将 03 模块 install 到本地仓库中</p>
 <p><img data-src="https://s2.loli.net/2022/12/20/ZKzeAFyfxuqWJD1.png" alt="03-导入坐标之后需要安装到本地仓库.png"></p>
 <p>安装完之后，本地仓库中就可以找到模块 03 的资源了。此时我们在 compile 一下 02 模块，若能够编译成功，说明没有问题了</p>
-<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>如果一个模块 A 依赖了模块 B，而 B 模块依赖了其他的东西，那么这个 A 模块可以直接使用这些东西</p>
+<h3 id="依赖管理-1"><a href="#依赖管理-1" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>如果一个模块 A 依赖了模块 B，而 B 模块依赖了其他的东西，那么这个 A 模块可以直接使用这些东西</p>
 <p>直接依赖：在当前项目中通过依赖配置建立的依赖关系<br>简介依赖：被依赖的资源如果依赖其他资源，当前项目简介依赖其他资源</p>
 <h4 id="依赖冲突"><a href="#依赖冲突" class="headerlink" title="依赖冲突"></a>依赖冲突</h4><ul>
 <li>路径优先：当依赖中出现相同的资源时，层级越深，优先级越低，层级越浅，优先级越高</li>
@@ -507,7 +602,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://coffeelize.top/posts/2cb3f51.html" title="Maven 高级简明笔记">https://coffeelize.top/posts/2cb3f51.html</a>
+      <a href="https://coffeelize.top/posts/2cb3f51.html" title="Maven 简明笔记">https://coffeelize.top/posts/2cb3f51.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -522,13 +617,13 @@
         
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/44d474d.html" rel="prev" title="Lombok 简明笔记">
-                  <i class="fa fa-chevron-left"></i> Lombok 简明笔记
+                <a href="/posts/6326f1e4.html" rel="prev" title="Git 简明教程">
+                  <i class="fa fa-chevron-left"></i> Git 简明教程
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/c8073837.html" rel="next" title="Linux 防火墙设置">
-                  Linux 防火墙设置 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/69507465.html" rel="next" title="Rest 简明笔记">
+                  Rest 简明笔记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -562,13 +657,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">257k</span>
+    <span title="站点总字数">245k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:54</span>
+    <span title="站点阅读时长">3:43</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

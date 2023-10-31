@@ -23,32 +23,30 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="问题描述IntelliJ IDEA 自动载入 Maven 依赖的功能很好用，但有时候会碰到问题，导致 pom.xml 文件修改却没有触发自动重新载入的动作，此时需要手动强制更新依赖。">
+<meta name="description" content="bib 参考文献1、使用 % 可添加注释">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IDEA 更新 Maven 坐标">
-<meta property="og:url" content="https://coffeelize.top/posts/a2a6b1a5.html">
+<meta property="og:title" content="LaTeX 投稿注意事项">
+<meta property="og:url" content="https://coffeelize.top/posts/20231031112154.html">
 <meta property="og:site_name" content="智朋的个人博客">
-<meta property="og:description" content="问题描述IntelliJ IDEA 自动载入 Maven 依赖的功能很好用，但有时候会碰到问题，导致 pom.xml 文件修改却没有触发自动重新载入的动作，此时需要手动强制更新依赖。">
+<meta property="og:description" content="bib 参考文献1、使用 % 可添加注释">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/12/12/DKy3H9jbxutXm7v.png">
-<meta property="og:image" content="https://s2.loli.net/2022/12/12/b5nQwLC3S1DyAqN.png">
-<meta property="article:published_time" content="2022-12-05T06:48:20.000Z">
-<meta property="article:modified_time" content="2022-12-12T14:06:16.000Z">
+<meta property="og:image" content="https://s2.loli.net/2023/10/31/gYOblucKXS6nW4m.png">
+<meta property="og:image" content="https://s2.loli.net/2023/10/31/SIyq2B95DFk7X6W.png">
+<meta property="article:published_time" content="2023-10-31T03:21:54.000Z">
+<meta property="article:modified_time" content="2023-10-31T14:39:49.973Z">
 <meta property="article:author" content="coffeelize">
-<meta property="article:tag" content="Intellij">
-<meta property="article:tag" content="Maven">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/12/12/DKy3H9jbxutXm7v.png">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/31/gYOblucKXS6nW4m.png">
 
 
-<link rel="canonical" href="https://coffeelize.top/posts/a2a6b1a5.html">
+<link rel="canonical" href="https://coffeelize.top/posts/20231031112154.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/a2a6b1a5.html","path":"posts/a2a6b1a5.html","title":"IDEA 更新 Maven 坐标"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/20231031112154.html","path":"posts/20231031112154.html","title":"LaTeX 投稿注意事项"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>IDEA 更新 Maven 坐标 | 智朋的个人博客</title>
+<title>LaTeX 投稿注意事项 | 智朋的个人博客</title>
   
 
 
@@ -170,7 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-1"><span class="nav-number">2.</span> <span class="nav-text">解决方案 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-2"><span class="nav-number">3.</span> <span class="nav-text">解决方案 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#bib-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">1.</span> <span class="nav-text">bib 参考文献</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E5%9B%BE%E7%89%87"><span class="nav-number">2.</span> <span class="nav-text">引用图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="nav-number">3.</span> <span class="nav-text">特殊符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%93%E6%9C%89%E5%90%8D%E8%AF%8D%E5%AF%B9%E7%85%A7%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">专有名词对照表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Word2LaTeX"><span class="nav-number">5.</span> <span class="nav-text">Word2LaTeX</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -185,18 +183,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">116</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -269,7 +267,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/a2a6b1a5.html">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/20231031112154.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cat-avatar.jpg">
@@ -282,7 +280,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          IDEA 更新 Maven 坐标
+          LaTeX 投稿注意事项
         </h1>
 
         <div class="post-meta-container">
@@ -292,16 +290,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-12-05 14:48:20" itemprop="dateCreated datePublished" datetime="2022-12-05T14:48:20+08:00">2022-12-05</time>
+      <time title="创建时间：2023-10-31 11:21:54 / 修改时间：22:39:49" itemprop="dateCreated datePublished" datetime="2023-10-31T11:21:54+08:00">2023-10-31</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-12-12 22:06:16" itemprop="dateModified" datetime="2022-12-12T22:06:16+08:00">2022-12-12</time>
-      </span>
 
   
     <span class="post-meta-item" title="本文字数">
@@ -309,14 +301,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>200</span>
+      <span>2.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -327,19 +319,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>IntelliJ IDEA 自动载入 Maven 依赖的功能很好用，但有时候会碰到问题，导致 pom.xml 文件修改却没有触发自动重新载入的动作，此时需要手动强制更新依赖。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="bib-参考文献"><a href="#bib-参考文献" class="headerlink" title="bib 参考文献"></a>bib 参考文献</h3><p>1、使用 <code>%</code> 可添加注释</p>
 <span id="more"></span>
 
-<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案 1"></a>解决方案 1</h3><p>点击右侧的 Maven，在弹出的窗口中点击 <code>重新加载所有的Maven项目</code><br><img data-src="https://s2.loli.net/2022/12/12/DKy3H9jbxutXm7v.png" alt="01-Maven侧边栏刷新.png"></p>
-<p>或者：</p>
-<ol>
-<li>右键单击项目</li>
-<li>在弹出的菜单中选择 Maven ⇒ <code>重新加载项目</code><br><img data-src="https://s2.loli.net/2022/12/12/b5nQwLC3S1DyAqN.png" alt="02-Maven重新加载项目.png"></li>
-</ol>
-<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案 2"></a>解决方案 2</h3><p>设置 Maven 的刷新方法为自动</p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><a target="_blank" rel="noopener" href="http://www.bjpowernode.com/hot/2509.html">IDEA 更新 Maven 包的两种方法 - 动力节点</a></li>
-</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">% 旧文献</span><br><span class="line">@article{latunussa2016analysis,</span><br><span class="line">	title={Analysis of material recovery from silicon photovoltaic panels},</span><br><span class="line">	author={LATUNUSSA, Cynthia and MANCINI, Lucia and BLENGINI, Giovanni and ARDENTE, Fulvio and PENNINGTON, David and others},</span><br><span class="line">	year={2016}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">% 添加的新文献</span><br><span class="line">@article{latunussa2016analysis,</span><br><span class="line">	number = {LB-NA-27797-EN-N},</span><br><span class="line">	address = {Luxembourg (Luxembourg)},</span><br><span class="line">	issn = {1831-9424},</span><br><span class="line">	year = {2016},</span><br><span class="line">	author = {LATUNUSSA, Cynthia and MANCINI, Lucia and BLENGINI, Giovanni and ARDENTE, Fulvio and PENNINGTON, David and others},</span><br><span class="line">	isbn = {978-92-79-57277-7},</span><br><span class="line">	publisher = {Publications Office of the European Union},</span><br><span class="line">	title = {Analysis of material recovery from silicon photovoltaic panels}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>2、若使用本地 TeX Studio 进行编译，若参考文献信息不完整，编译时会有提示，可根据这些提示对参考文献信息进行手动补全</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">You're missing a field part---line 77 of file cas-refs.bib</span><br><span class="line"> : number = </span><br><span class="line"> :          ,</span><br><span class="line">I'm skipping whatever remains of this entry</span><br><span class="line">Repeated entry---line 153 of file cas-refs.bib</span><br><span class="line"> : @techreport{weckend2016end</span><br><span class="line"> :                           ,</span><br><span class="line">I'm skipping whatever remains of this entry</span><br><span class="line">Repeated entry---line 275 of file cas-refs.bib</span><br><span class="line"> : @article{li2022green</span><br><span class="line"> :                     ,</span><br><span class="line">I'm skipping whatever remains of this entry</span><br><span class="line">Warning--empty journal in latunussa2016analysis</span><br><span class="line">(There were 3 error messages)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h3><ul>
+<li>同一期刊，对这种格式还是比较宽松的，例如 <code>Fig.4 a) and b)</code> 以及 <code>Fig.4 (b)</code> 都是可以的</li>
+<li>大部分包含子图的图片在插入图片前已经提前组好（子图 a、b、c 这种序号也是手动添加的），而不是利用 LaTeX 命令将多张子图组成一张大图（虽然方便引用子图，但是实现子图的整齐排列过于困难）</li>
+</ul>
+<p><img data-src="https://s2.loli.net/2023/10/31/gYOblucKXS6nW4m.png" alt="image.png"></p>
+<p><img data-src="https://s2.loli.net/2023/10/31/SIyq2B95DFk7X6W.png" alt="image.png"></p>
+<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><p>参考：<a target="_blank" rel="noopener" href="http://gelisp.com/latex/LaTex_tradeMark.html">latex 排版服务，如何输入商标 R 符号，TM 符号，版权 c 符号</a></p>
+<h3 id="专有名词对照表"><a href="#专有名词对照表" class="headerlink" title="专有名词对照表"></a>专有名词对照表</h3><p>如果借助 GPT 这样的工具进行翻译，将这些专有名词塞给 GPT，GPT 会根据上下文进行翻译，可以很大程度上减少专有名词的翻译错误</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">下层EVA 请翻译为 back EVA；上层EVA 请翻译为 front EVA；背面金属化 请翻译为 back metallization；电池请翻译为 cell</span><br><span class="line">背板 请翻译为：backsheet；有价部分请翻译为：Valuable components；有机物部分请翻译为：Organic components</span><br><span class="line">上层封装材料 请翻译为：front encapsulation；下层封装材料请翻译为：back encapsulation</span><br><span class="line">铝背电极：Aluminum Back Electrode</span><br><span class="line">铝硅共晶层：Eutectic layer、Al-Si eutectic</span><br><span class="line">铝掺杂p+层: Al-p+-layer、BSF</span><br><span class="line">剩余的铝颗粒层：alumina paste layer</span><br><span class="line"></span><br><span class="line">统一将 rear metallization layer —&gt; back metallization</span><br><span class="line">统一将 silicon cells —&gt; solar cell；solar cell silicon wafer —&gt; solar cell</span><br><span class="line">统一将 upper —&gt; front</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Word2LaTeX"><a href="#Word2LaTeX" class="headerlink" title="Word2LaTeX"></a>Word2LaTeX</h3><p>例如 Word 中的 <code>℃</code> 符号，换成 LaTeX 之后，可以批量替换为 <code>$\tccentigrade$</code>，最好是对这些批量替换操作做一个记录</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">℃ —&gt; $\tccentigrade$ </span><br><span class="line">× —&gt; $\times$</span><br><span class="line">± —&gt; $\pm$</span><br><span class="line">-145 —&gt; $-$</span><br><span class="line">µ —&gt; \textmu</span><br><span class="line">KAl(OH)4 —&gt; $KAl(OH)_4$</span><br><span class="line">(Tedlar®/PET/Tedlar®) —&gt; $^\circledR$ 或者 $^{\textregistered}$ 或者 Tedlar/PET/Tedlar</span><br><span class="line">90° —&gt; 90^\circ</span><br><span class="line">Figure —&gt; 引用</span><br><span class="line">Fig —&gt; 引用</span><br><span class="line">Fig.\ref —&gt; Cref</span><br><span class="line">\Cref{fig:1}(a)</span><br></pre></td></tr></tbody></table></figure>
 
     </div>
 
@@ -381,7 +380,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://coffeelize.top/posts/a2a6b1a5.html" title="IDEA 更新 Maven 坐标">https://coffeelize.top/posts/a2a6b1a5.html</a>
+      <a href="https://coffeelize.top/posts/20231031112154.html" title="LaTeX 投稿注意事项">https://coffeelize.top/posts/20231031112154.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -389,21 +388,14 @@
 </ul>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/Intellij/" rel="tag"># Intellij</a>
-              <a href="/tags/Maven/" rel="tag"># Maven</a>
-          </div>
 
         
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/207efebe.html" rel="prev" title="JavaWeb 常见问题汇总">
-                  <i class="fa fa-chevron-left"></i> JavaWeb 常见问题汇总
-                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/11af4f01.html" rel="next" title="通过 Maven 骨架创建 Maven Web 项目时报错">
-                  通过 Maven 骨架创建 Maven Web 项目时报错 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/20231030100418.html" rel="next" title="Figma 学习笔记">
+                  Figma 学习笔记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -437,13 +429,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">257k</span>
+    <span title="站点总字数">245k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:54</span>
+    <span title="站点阅读时长">3:43</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -545,7 +537,7 @@
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"coffeelize","repo":"coffeelize.github.io","client_id":"5849fa5bf577578dd8cb","client_secret":"5686aae8211779a9506e975e151a355d11f4fa1e","admin_user":"coffeelize","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"30c7452455b5f74d84f0f23c0fcb57a4"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"coffeelize","repo":"coffeelize.github.io","client_id":"5849fa5bf577578dd8cb","client_secret":"5686aae8211779a9506e975e151a355d11f4fa1e","admin_user":"coffeelize","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e5a78d76e570939ef500439fe7f9d1c2"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
