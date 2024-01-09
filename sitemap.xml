@@ -893,20 +893,6 @@
 
   
   <url>
-    <loc>https://coffeelize.top/tags/Java/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Anki/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/tags/ahk/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -935,7 +921,21 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/JavaWeb/</loc>
+    <loc>https://coffeelize.top/tags/Anki/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Java/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Front/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -943,6 +943,13 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Docker/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/JavaWeb/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -957,13 +964,6 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Git/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Front/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1054,6 +1054,13 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/Chrome/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/markdown/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1069,13 +1076,6 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Visio/</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Chrome/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1140,14 +1140,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/categories/Anki/</loc>
+    <loc>https://coffeelize.top/categories/Hexo/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/categories/Hexo/</loc>
+    <loc>https://coffeelize.top/categories/Anki/</loc>
     <lastmod>2024-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
