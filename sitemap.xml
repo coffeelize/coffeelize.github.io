@@ -4,7 +4,7 @@
   <url>
     <loc>https://coffeelize.top/posts/24010921.html</loc>
     
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-01-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -907,14 +907,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Java/</loc>
+    <loc>https://coffeelize.top/tags/Anki/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Anki/</loc>
+    <loc>https://coffeelize.top/tags/Java/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -942,20 +942,6 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/JavaWeb/</loc>
-    <lastmod>2024-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Git/</loc>
-    <lastmod>2024-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/tags/Docker/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -963,7 +949,21 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/JavaWeb/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/MySQL/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Git/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1012,13 +1012,6 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Research/</loc>
-    <lastmod>2024-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coffeelize.top/tags/java/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -1026,14 +1019,7 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/3D/</loc>
-    <lastmod>2024-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/Drawing/</loc>
+    <loc>https://coffeelize.top/tags/Research/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1041,13 +1027,6 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Spring/</loc>
-    <lastmod>2024-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coffeelize.top/tags/research/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1068,6 +1047,20 @@
   </url>
   
   <url>
+    <loc>https://coffeelize.top/tags/3D/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/Drawing/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coffeelize.top/tags/Chrome/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -1076,6 +1069,13 @@
   
   <url>
     <loc>https://coffeelize.top/tags/Visio/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coffeelize.top/tags/research/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1117,14 +1117,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/Image/</loc>
+    <loc>https://coffeelize.top/tags/image/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/tags/image/</loc>
+    <loc>https://coffeelize.top/tags/Image/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1154,14 +1154,14 @@
   </url>
   
   <url>
-    <loc>https://coffeelize.top/categories/Mechanical/</loc>
+    <loc>https://coffeelize.top/categories/Java/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coffeelize.top/categories/Java/</loc>
+    <loc>https://coffeelize.top/categories/Mechanical/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
