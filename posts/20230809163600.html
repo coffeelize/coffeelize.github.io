@@ -30,10 +30,12 @@
 <meta property="og:site_name" content="智朋的个人博客">
 <meta property="og:description" content="参考资料 GitHub - Pseudonium&#x2F;Obsidian_to_Anki: Script to add flashcards from text&#x2F;markdown files to Anki 快速制作 anki 卡片 | 笔记神器 Obsidian 完全指南_哔哩哔哩_bilibili 用 Obisidian 制作 Anki 里面用的代码 - 哔哩哔哩 How To Sync Obsid">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/20240428091654.webp">
 <meta property="article:published_time" content="2023-08-09T08:36:00.000Z">
-<meta property="article:modified_time" content="2023-08-09T08:39:38.000Z">
+<meta property="article:modified_time" content="2024-04-28T01:21:02.068Z">
 <meta property="article:author" content="coffeelize">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/20240428091654.webp">
 
 
 <link rel="canonical" href="https://coffeelize.top/posts/20230809163600.html">
@@ -287,10 +289,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-08-09 16:36:00 / 修改时间：16:39:38" itemprop="dateCreated datePublished" datetime="2023-08-09T16:36:00+08:00">2023-08-09</time>
+      <time title="创建时间：2023-08-09 16:36:00" itemprop="dateCreated datePublished" datetime="2023-08-09T16:36:00+08:00">2023-08-09</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-04-28 09:21:02" itemprop="dateModified" datetime="2024-04-28T09:21:02+08:00">2024-04-28</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -307,7 +315,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
+      <span>2.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -335,12 +343,15 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PXyv6pnVGhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 
-<h3 id="Obsidian-to-Anki-插件教程"><a href="#Obsidian-to-Anki-插件教程" class="headerlink" title="Obsidian_to_Anki 插件教程"></a>Obsidian_to_Anki 插件教程</h3><h4 id="Anki-插件设置"><a href="#Anki-插件设置" class="headerlink" title="Anki 插件设置"></a>Anki 插件设置</h4><figure class="highlight diff"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "apiKey": null,</span><br><span class="line">    "apiLogPath": null,</span><br><span class="line">    "webBindAddress": "127.0.0.1",</span><br><span class="line">    "webBindPort": 8765,</span><br><span class="line">    "webCorsOrigin": "http://localhost",</span><br><span class="line">    "webCorsOriginList": [</span><br><span class="line">        "http://localhost",</span><br><span class="line"><span class="addition">+       "app://obsidian.md"</span></span><br><span class="line">    ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Obsidian-to-Anki-插件教程"><a href="#Obsidian-to-Anki-插件教程" class="headerlink" title="Obsidian_to_Anki 插件教程"></a>Obsidian_to_Anki 插件教程</h3><p>对 Anki 进行设置：工具 —&gt; 插件 —&gt; 设置 AnkiConnect 插件</p>
+<h4 id="Anki-插件设置"><a href="#Anki-插件设置" class="headerlink" title="Anki 插件设置"></a>Anki 插件设置</h4><figure class="highlight diff"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "apiKey": null,</span><br><span class="line">    "apiLogPath": null,</span><br><span class="line">    "webBindAddress": "127.0.0.1",</span><br><span class="line">    "webBindPort": 8765,</span><br><span class="line">    "webCorsOrigin": "http://localhost",</span><br><span class="line">    "webCorsOriginList": [</span><br><span class="line">        "http://localhost",</span><br><span class="line"><span class="addition">+       "app://obsidian.md"</span></span><br><span class="line">    ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>修改完之后如下：</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "apiKey": null,</span><br><span class="line">    "apiLogPath": null,</span><br><span class="line">    "webBindAddress": "127.0.0.1",</span><br><span class="line">    "webBindPort": 8765,</span><br><span class="line">    "webCorsOrigin": "http://localhost",</span><br><span class="line">    "webCorsOriginList": [</span><br><span class="line">        "http://localhost",</span><br><span class="line">        "app://obsidian.md"</span><br><span class="line">    ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="Ob-笔记设置"><a href="#Ob-笔记设置" class="headerlink" title="Ob 笔记设置"></a>Ob 笔记设置</h4><p>笔记开头声明牌组：<code>TARGET DECK: Test</code></p>
+<h4 id="Ob-笔记设置"><a href="#Ob-笔记设置" class="headerlink" title="Ob 笔记设置"></a>Ob 笔记设置</h4><p>安装 Obsidian 插件：Export to Anki</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/20240428091654.webp"></p>
+<p>笔记开头声明牌组：<code>TARGET DECK: Test</code></p>
 <ul>
 <li>Test 表示对应 Anki 中的目标牌组名</li>
 <li>卡片笔记的书写格式请参考：<a target="_blank" rel="noopener" href="https://github.com/Pseudonium/Obsidian_to_Anki/wiki/Neuracache-flashcard-style">Neuracache flashcard style · Pseudonium/Obsidian_to_Anki Wiki · GitHub</a>，或者继续阅读下文</li>
