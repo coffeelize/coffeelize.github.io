@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -251,6 +251,207 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/24062116.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/24062116.html" class="post-title-link" itemprop="url">LaTeX 图片背景 eso-pic 宏包</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-06-21 16:26:58 / 修改时间：16:31:42" itemprop="dateCreated datePublished" datetime="2024-06-21T16:26:58+08:00">2024-06-21</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>Ctan.org： <a target="_blank" rel="noopener" href="https://ctan.org/pkg/eso-pic">eso-pic – Add picture commands (or backgrounds) to every page</a></li>
+<li> 英文 PDF 手册： <a target="_blank" rel="noopener" href="https://mirror-hk.koddos.net/CTAN/macros/latex/contrib/eso-pic/eso-pic.pdf">eso-pic 宏包帮助文档</a></li>
+<li>宏包简要说明：This package makes it easy to add some picture commands to every page at absolute positions</li>
+</ul>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ul>
+<li><code>\AddToShipoutPictureBG</code>：为每一页添加背景</li>
+<li><code>\AddToShipoutPictureBG*</code>：仅为当前页面添加背景</li>
+<li><code>\AddToShipoutPictureFG</code>：类似于 BG，但只作用于文档内容部分</li>
+</ul>
+<p>一些预定于好的位置命令</p>
+<ul>
+<li>AtPageUpperLeft</li>
+<li>AtPageLowerLeft</li>
+<li>AtPageCenter</li>
+<li>AtTextUpperLeft</li>
+<li>AtTextLowerLeft</li>
+<li>AtTextCenter</li>
+<li>AtStockUpperLeft</li>
+<li>AtStockLowerLeft</li>
+<li>AtStockCenter</li>
+</ul>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{eso-pic}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1-3]</span><br><span class="line">	<span class="keyword">\clearpage</span></span><br><span class="line">	<span class="keyword">\AddToShipoutPictureBG</span>{</span><br><span class="line">			<span class="keyword">\includegraphics</span>[width=<span class="keyword">\paperwidth</span>,height=<span class="keyword">\paperheight</span>]{example-image-duck}</span><br><span class="line">}</span><br><span class="line">	<span class="keyword">\clearpage</span></span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1]</span><br><span class="line">	<span class="keyword">\clearpage</span></span><br><span class="line">	<span class="keyword">\zhlipsum</span>[1]</span><br><span class="line">	<span class="keyword">\section</span>{第一部分}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>插入长宽和当前页面长宽一致的鸭子的背景图片</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240621162756.png" alt="image.png"></p>
+<p>如果我们有比较好的背景图片，比如四角带有阴影的 png 图片或者设计好的图片，那么使用该宏包还是挺有效果的</p>
+<h3 id="部分说明"><a href="#部分说明" class="headerlink" title="部分说明"></a>部分说明</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width=<span class="keyword">\paperwidth</span>,height=<span class="keyword">\paperheight</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>表示图片的长宽和页面的长宽一致，将图片强制拉伸至页面长宽</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">example-image-duck</span><br><span class="line">example-image-a</span><br><span class="line">example-grid-100x100bp</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这几个图片名称经常用于插入示范图片，分别代表 <code>鸭子</code>、<code>字母A</code> 和 <code>长宽为10个单元格的网格表</code> </p>
+<p>注意使用 graphics 宏包（正常应为 graphicx 宏包）插入 includegraphics 命令时 texstudio 不会出现红色背景提示，但是编译出来老是报错 <code>\end{document}</code></p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240621163115.png" alt="image.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/24062115.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/24062115.html" class="post-title-link" itemprop="url">LaTeX 浮动体环境内容居中设置方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-06-21 15:25:38 / 修改时间：15:27:15" itemprop="dateCreated datePublished" datetime="2024-06-21T15:25:38+08:00">2024-06-21</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>538</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>Latex 工作室：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/51713.html">浮动体环境内部内容居中的设置方法</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/24062115.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -473,7 +674,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-18 18:16:37" itemprop="dateModified" datetime="2024-06-18T18:16:37+08:00">2024-06-18</time>
+        <time title="修改时间：2024-06-21 19:35:34" itemprop="dateModified" datetime="2024-06-21T19:35:34+08:00">2024-06-21</time>
       </span>
 
   
@@ -482,14 +683,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -983,183 +1184,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/20231031112154.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/20231031112154.html" class="post-title-link" itemprop="url">LaTeX 投稿注意事项</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-31 11:21:54 / 修改时间：22:39:49" itemprop="dateCreated datePublished" datetime="2023-10-31T11:21:54+08:00">2023-10-31</time>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="bib-参考文献"><a href="#bib-参考文献" class="headerlink" title="bib 参考文献"></a>bib 参考文献</h3><p>1、使用 <code>%</code> 可添加注释</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/20231031112154.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/20231030100418.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/20231030100418.html" class="post-title-link" itemprop="url">Figma 学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-30 10:04:18 / 修改时间：10:04:33" itemprop="dateCreated datePublished" datetime="2023-10-30T10:04:18+08:00">2023-10-30</time>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>277</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>Figma 汉化社区：<a target="_blank" rel="noopener" href="https://www.figma.cool/cn">Figma 软件汉化 - Figma 中文版下载 - Figma 中文社区</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.figmacn.com/">Designtools - Figma</a></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/20231030100418.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1182,13 +1208,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">256k</span>
+    <span title="站点总字数">259k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:53</span>
+    <span title="站点阅读时长">3:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
