@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="G2H8dHq6QIE9GJ3RiIGetZP_i7GIHeB7HsJunnlSPiw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="前言在用 LaTeX 排版文章、书籍时，缺省定义了四种页眉页脚的格式：    参数 说明     empty  没有页眉和页脚    plain  没有页眉，页脚中部放置页码。   headings  没有页脚，页眉包含章节的标题和页码。   myheadings  没有页脚，页眉页码和使用者所定义的信息。   article&amp;nbsp;缺省使用&amp;nbsp;plain&amp;nbsp;格式，而&amp;nbsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fancyhdr 宏包之使用指南">
+<meta property="og:url" content="https://coffeelize.top/posts/Fancyhdr-Macro-Package-User's-Guide.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="前言在用 LaTeX 排版文章、书籍时，缺省定义了四种页眉页脚的格式：    参数 说明     empty  没有页眉和页脚    plain  没有页眉，页脚中部放置页码。   headings  没有页脚，页眉包含章节的标题和页码。   myheadings  没有页脚，页眉页码和使用者所定义的信息。   article&amp;nbsp;缺省使用&amp;nbsp;plain&amp;nbsp;格式，而&amp;nbsp">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/06/29/wf3lDBcZY1tkWhA.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/29/wf3lDBcZY1tkWhA.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/29/r9ZHPmVs6hk3icD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/30/y7bXWoZuev2gNYw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/30/3On48tCzrqGcJhD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/30/HU4So7KO1NaG9ZF.png">
+<meta property="article:published_time" content="2022-06-29T14:58:38.000Z">
+<meta property="article:modified_time" content="2024-06-22T09:45:04.619Z">
+<meta property="article:author" content="coffeelize">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/29/wf3lDBcZY1tkWhA.png">
+
+
+<link rel="canonical" href="https://coffeelize.top/posts/Fancyhdr-Macro-Package-User's-Guide.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/Fancyhdr-Macro-Package-User's-Guide.html","path":"posts/Fancyhdr-Macro-Package-User's-Guide.html","title":"Fancyhdr 宏包之使用指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Fancyhdr 宏包之使用指南 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="智朋的个人博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长，行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-札记&留言板"><a href="/notes/" rel="section"><i class="fa fa-fw fa-sticky-note fa-fw"></i>札记&留言板</a></li>
+        <li class="menu-item menu-item-画廊"><a href="/gallery/" rel="section"><i class="fa fa-fw fa-image fa-fw"></i>画廊</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E9%9D%A2%E6%8E%92%E7%89%88"><span class="nav-number">2.1.</span> <span class="nav-text">单面排版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%9D%A2%E6%8E%92%E7%89%88"><span class="nav-number">2.2.</span> <span class="nav-text">双面排版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%A1%B5%E7%9C%89%E9%A1%B5%E8%84%9A%E6%A8%AA%E7%BA%BF%E7%9A%84%E5%AE%BD%E5%BA%A6"><span class="nav-number">2.3.</span> <span class="nav-text">设置页眉页脚横线的宽度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">拓展应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B5%E7%A0%81%E7%9A%84%E9%A2%9C%E8%89%B2"><span class="nav-number">3.1.</span> <span class="nav-text">修改页码的颜色</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="coffeelize"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">coffeelize</p>
+  <div class="site-description" itemprop="description">一个研究生的存档点</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coffeelize" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coffeelize" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/319437741" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;319437741" rel="noopener" target="_blank"><i class="fa fa-video fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ghobam.com/" title="https:&#x2F;&#x2F;ghobam.com&#x2F;" rel="noopener" target="_blank">Sherwood</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sdhlw.top/" title="https:&#x2F;&#x2F;www.sdhlw.top&#x2F;" rel="noopener" target="_blank">向阳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cyborg2077.github.io/" title="https:&#x2F;&#x2F;cyborg2077.github.io&#x2F;" rel="noopener" target="_blank">Kyle</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kezhi.tech/" title="https:&#x2F;&#x2F;www.kezhi.tech" rel="noopener" target="_blank">Kezhi's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sulvblog.cn/" title="https:&#x2F;&#x2F;www.sulvblog.cn" rel="noopener" target="_blank">Sulv's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Fancyhdr-Macro-Package-User's-Guide.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Fancyhdr 宏包之使用指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-06-29 22:58:38" itemprop="dateCreated datePublished" datetime="2022-06-29T22:58:38+08:00">2022-06-29</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:45:04" itemprop="dateModified" datetime="2024-06-22T17:45:04+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在用 LaTeX 排版文章、书籍时，缺省定义了四种页眉页脚的格式：</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td> empty</td>
+<td> 没有页眉和页脚</td>
+</tr>
+<tr>
+<td> plain</td>
+<td> 没有页眉，页脚中部放置页码。</td>
+</tr>
+<tr>
+<td>headings</td>
+<td> 没有页脚，页眉包含章节的标题和页码。</td>
+</tr>
+<tr>
+<td>myheadings</td>
+<td> 没有页脚，页眉页码和使用者所定义的信息。</td>
+</tr>
+</tbody></table>
+<p>article&nbsp;缺省使用&nbsp;plain&nbsp;格式，而&nbsp;book&nbsp;则使用 headings&nbsp;格式。 也可用&nbsp;<code>\pagestyle</code>&nbsp;命令在你的文档中设定所用的格式，例如在文档中使用&nbsp;<code>\pagestyle{empty}</code>&nbsp;则使得此后的页面没有页眉和页脚。 一般情况下，这四种格式基本可满足排版的要求。但在某些情况下，特别是使用者想定义自己的页眉和页脚格式时，就会遇到很多限制和麻烦。这时， 使用&nbsp;fancyhdr&nbsp;宏包可以很容易地达到目的。</p>
+<p>利用&nbsp;fancyhdr&nbsp;宏包提供的命令，可以方便的作到：</p>
+<ul>
+<li>自定义页眉和页脚。</li>
+<li>为页眉和页脚加上装饰性的横线。</li>
+<li>页眉和页脚的宽度可以超过正文文本的宽度。</li>
+<li>多行的页眉和页脚。</li>
+<li>奇偶页使用不同格式的页眉和页脚。</li>
+<li>每章的首页使用不同格式的页眉和页脚。</li>
+<li>浮动对象页使用不同格式的页眉和页脚。</li>
+<li>控制页眉和页脚的字体，包括字形，字族，大小写等。</li>
+</ul>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="单面排版"><a href="#单面排版" class="headerlink" title="单面排版"></a>单面排版</h4><p>由&nbsp;fancyhdr&nbsp;所定义的页眉和页脚的形式与位置如图所示：</p>
+<p><img data-src="https://s2.loli.net/2022/06/29/wf3lDBcZY1tkWhA.png" alt="06-奇数页样式.png"></p>
+<p>上述六个区域的内容和两条装饰线可由用户自己定义。</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lhead</span>{left head}</span><br><span class="line"><span class="keyword">\chead</span>{center head}</span><br><span class="line"><span class="keyword">\rhead</span>{right head}</span><br><span class="line"><span class="keyword">\lfoot</span>{left foot}</span><br><span class="line"><span class="keyword">\cfoot</span>{center foot}</span><br><span class="line"><span class="keyword">\rfoot</span>{right foot}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\headrulewidth</span>}{0pt} <span class="comment">%设置页眉横线宽度为0</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\footrulewidth</span>}{0pt} <span class="comment">%设置页脚横线宽度为0</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果想在文档中改用其它形式，比如在第一页不要页眉和页脚，则可在&nbsp;<code>\begin{document}</code>&nbsp;和&nbsp;<code>\maketitle</code>&nbsp;后使用命令</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\thispagestyle</span>{empty}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>缺省情况下，<code>\maketitle</code>&nbsp;命令会自动设置其所在页的格式为&nbsp;plain&nbsp;。因此，如果你想在该页使用&nbsp;fancy&nbsp;格式的话，应该在&nbsp;<code>\maketile</code> 后面使用命令&nbsp;<code>\thispagestyle{fancy}</code>。</p>
+<h4 id="双面排版"><a href="#双面排版" class="headerlink" title="双面排版"></a>双面排版</h4><p>下面是一个双面页版式下的例子（book、ctexbook 等文档类默认为双面排版）：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexbook}  </span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum} <span class="comment">%用于生成假文</span></span><br><span class="line"><span class="keyword">\usepackage</span>{fancyhdr}</span><br><span class="line"><span class="keyword">\fancyhead</span>{} <span class="comment">%清空所有页眉页脚设置 </span></span><br><span class="line"><span class="keyword">\fancyhead</span>[RO,LE]{<span class="keyword">\bfseries</span> 作者：原装咖啡}</span><br><span class="line"><span class="keyword">\fancyfoot</span>[LE,RO]{<span class="keyword">\thepage</span>}</span><br><span class="line"><span class="keyword">\fancyfoot</span>[LO,CE]{From: Coffeelize.top}</span><br><span class="line"><span class="keyword">\fancyfoot</span>[CO,RE]{To: Latex User}</span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\headrulewidth</span>}{0.4pt} <span class="keyword">\renewcommand</span>{<span class="keyword">\footrulewidth</span>}{0.4pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\pagestyle</span>{fancy} <span class="comment">%非常关键的一句命令</span></span><br><span class="line"> <span class="keyword">\section</span>{第一章} </span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1-3]</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对于奇数页<br><img data-src="https://s2.loli.net/2022/06/29/wf3lDBcZY1tkWhA.png" alt="06-奇数页样式.png"><br>对于偶数页<br><img data-src="https://s2.loli.net/2022/06/29/r9ZHPmVs6hk3icD.png" alt="07-偶数页样式.png"></p>
+<p>这里方括号中字母代表的意义为：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>符号</strong></th>
+<th align="center"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"> E</td>
+<td align="center"> 偶数页</td>
+</tr>
+<tr>
+<td align="center"> O</td>
+<td align="center"> 奇数页</td>
+</tr>
+<tr>
+<td align="center"> L</td>
+<td align="center"> 页眉或页脚的左边部分</td>
+</tr>
+<tr>
+<td align="center"> C</td>
+<td align="center"> 页眉或页脚的中间部分</td>
+</tr>
+<tr>
+<td align="center"> R</td>
+<td align="center"> 页眉或页脚的右边部分</td>
+</tr>
+<tr>
+<td align="center"> H</td>
+<td align="center"> 页眉</td>
+</tr>
+<tr>
+<td align="center"> F</td>
+<td align="center"> 页脚</td>
+</tr>
+</tbody></table>
+<h4 id="设置页眉页脚横线的宽度"><a href="#设置页眉页脚横线的宽度" class="headerlink" title="设置页眉页脚横线的宽度"></a>设置页眉页脚横线的宽度</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\headrulewidth</span>}{0.4pt} <span class="comment">% 设置页眉横线宽度为0.4</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\footrulewidth</span>}{0.4pt} <span class="comment">% 设置页脚横线宽度为0.4</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="拓展应用"><a href="#拓展应用" class="headerlink" title="拓展应用"></a>拓展应用</h3><h4 id="修改页码的颜色"><a href="#修改页码的颜色" class="headerlink" title="修改页码的颜色"></a>修改页码的颜色</h4><p>还记得以上案例中的这句代码吗</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\pagestyle</span>{fancy} <span class="comment">%非常关键的一句命令</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这句代码的意思是使用 fancy 这个样式（我们并没有对其进行定义，可能是文档类已经对其进行了预定义）<br>实际上我们也是可以自定义这个 pagestyle 的，如下代码中定义了一个新的 pagestyle：<code>fancy-note</code></p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%语法\fancypagestyle{style name}{definitions} </span></span><br><span class="line"><span class="keyword">\fancypagestyle</span>{fancy-note}{ </span><br><span class="line"><span class="keyword">\fancyhf</span>{} <span class="comment">%同时清空页眉页脚</span></span><br><span class="line"><span class="comment">%语法\fancyfoot[places]{footer} </span></span><br><span class="line"><span class="keyword">\fancyfoot</span>[c]{<span class="keyword">\footnotesize</span><span class="keyword">\textcolor</span>{mycolor}{<span class="keyword">\thepage</span>}}</span><br><span class="line">}</span><br><span class="line"><span class="comment">% 正文开始</span></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\pagestyle</span>{fancy-note} <span class="comment">%调用自定义的pagestyle</span></span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终输出为</p>
+<p><img data-src="https://s2.loli.net/2022/06/30/y7bXWoZuev2gNYw.png" alt="092-调整页脚字体颜色.png"></p>
+<p>以上代码中<br><code>\textcolor</code> 需要使用 xcolor 宏包（用于自定义颜色名称，可以参考博客之前的文章：<a href="https://coffeelize.top/posts/c07914ac.html?highlight=xcolor">Latex 之字体颜色篇</a>）<br><code>\footnotesize</code> 则是已经预定于好的页脚字体的字号</p>
+<p><img data-src="https://s2.loli.net/2022/06/30/3On48tCzrqGcJhD.png" alt="09-预定于的字号.png"></p>
+<p>标准文档类中的字号大小</p>
+<p><img data-src="https://s2.loli.net/2022/06/30/HU4So7KO1NaG9ZF.png" alt="091-标准文档类中的字号大小.png"></p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>字号</strong></th>
+<th align="center"><strong> 10pt 选项（默认)</strong></th>
+<th align="center"><strong>11pt 选项</strong></th>
+<th align="center"><strong> 12pt 选项</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>\tiny</code></td>
+<td align="center">5pt</td>
+<td align="center">6pt</td>
+<td align="center">6pt</td>
+</tr>
+<tr>
+<td align="center"><code>\scriptsize</code></td>
+<td align="center">7pt</td>
+<td align="center">8pt</td>
+<td align="center">8pt</td>
+</tr>
+<tr>
+<td align="center"><code>\footnotesize</code></td>
+<td align="center">8pt</td>
+<td align="center">9pt</td>
+<td align="center">10pt</td>
+</tr>
+<tr>
+<td align="center"><code>\small</code></td>
+<td align="center">9pt</td>
+<td align="center">10pt</td>
+<td align="center">10.95pt</td>
+</tr>
+<tr>
+<td align="center"><code>\normalsize</code></td>
+<td align="center">10pt</td>
+<td align="center">10.95pt</td>
+<td align="center">12pt</td>
+</tr>
+<tr>
+<td align="center"><code>\large</code></td>
+<td align="center">12pt</td>
+<td align="center">12pt</td>
+<td align="center">14.4pt</td>
+</tr>
+<tr>
+<td align="center"><code>\Large</code></td>
+<td align="center">14.4pt</td>
+<td align="center">14.4pt</td>
+<td align="center">17.28pt</td>
+</tr>
+<tr>
+<td align="center"><code>\LARGE</code></td>
+<td align="center">17.28pt</td>
+<td align="center">17.28pt</td>
+<td align="center">20.74pt</td>
+</tr>
+<tr>
+<td align="center"><code>\huge</code></td>
+<td align="center">20.74pt</td>
+<td align="center">20.74pt</td>
+<td align="center">24.88pt</td>
+</tr>
+<tr>
+<td align="center"><code>\Huge</code></td>
+<td align="center">24.88pt</td>
+<td align="center">24.88pt</td>
+<td align="center">24.88pt</td>
+</tr>
+</tbody></table>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>ctex.org：<a target="_blank" rel="noopener" href="http://www.ctex.org/documents/packages/layout/fancyhdr.htm">CTEX - 在线文档 - TeX/LaTeX 常用宏包</a></li>
+<li> Latex 官方入门手册：一份（不太）简短的 LaTeX2ε 介绍</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="reward-container">
+  <div>Buy me a coffee(*^▽^*) Coffeelize!</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/Wechartpay.webp" alt="coffeelize 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/Alipay.webp" alt="coffeelize 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>coffeelize
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://coffeelize.top/posts/Fancyhdr-Macro-Package-User's-Guide.html" title="Fancyhdr 宏包之使用指南">https://coffeelize.top/posts/Fancyhdr-Macro-Package-User's-Guide.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+          </div>
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/Horizontal-and-vertical-spacing-in-Latex.html" rel="prev" title="LaTeX 中的水平和垂直间距">
+                  <i class="fa fa-chevron-left"></i> LaTeX 中的水平和垂直间距
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/Hyperref-Chart-Cross-Reference.html" rel="next" title="Hyperref 之图表交叉引用">
+                  Hyperref 之图表交叉引用 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">coffeelize</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">257k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:54</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "default";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Reddit,Evernote,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"coffeelize","repo":"coffeelize.github.io","client_id":"5849fa5bf577578dd8cb","client_secret":"5686aae8211779a9506e975e151a355d11f4fa1e","admin_user":"coffeelize","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"464458b3e7fa1dc7dfc91bef3287b9ae"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
