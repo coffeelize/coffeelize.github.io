@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,6 +251,271 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/LaTeX-floating-body-title-style.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/LaTeX-floating-body-title-style.html" class="post-title-link" itemprop="url">LaTeX 之浮动体标题样式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-06-25 13:43:30" itemprop="dateCreated datePublished" datetime="2022-06-25T13:43:30+08:00">2022-06-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:50:15" itemprop="dateModified" datetime="2024-06-22T17:50:15+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Caption 宏包中的一些参数说明及案例分析，用于自定义设置浮动体中标题的样式 o (^▽^) o</p>
+<ol>
+<li>修改全篇浮动体标题格式（包括图片，表格等）</li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% 导言区</span><br><span class="line">\usepackage[font=small,labelfont=bf]{caption}</span><br><span class="line">% 下面命令与之等价</span><br><span class="line">\usepackage{caption}</span><br><span class="line">\captionsetup{font=small,labelfont=bf}</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>单独对浮动体的图片或表格环境中标题的设置 </li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% 导言区</span><br><span class="line">\usepackage{caption}</span><br><span class="line">\captionsetup[figure]{font=small,labelfont=bf}</span><br><span class="line">\captionsetup[table]{font=small,labelfont=bf}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="案例-1：加粗标题的图标签"><a href="#案例-1：加粗标题的图标签" class="headerlink" title="案例 1：加粗标题的图标签"></a>案例 1：加粗标题的图标签</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line"><span class="keyword">\captionsetup</span>{</span><br><span class="line"> labelfont=bf<span class="comment">%设置图片标题的编号为加粗</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{figure}</span><br><span class="line">  <span class="keyword">\includegraphics</span>[width=4in]{example-image}</span><br><span class="line">  <span class="keyword">\caption</span>{这个图片标题的图标会加粗}</span><br><span class="line"> <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/25/W7hIqF5ZDBK4Ygs.png" alt="01-将图片标题编号加粗.png"></p>
+<p>实际上，使用 caption 命令不一定真的需要加入图片或者表格，只需要将其应用在浮动体环境当中即可</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line"><span class="keyword">\captionsetup</span>{</span><br><span class="line"> labelfont=bf<span class="comment">%设置图片标题的编号为加粗</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{figure}</span><br><span class="line">  <span class="keyword">\caption</span>{这个图片标题的图标会加粗}</span><br><span class="line"> <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/25/AQvzFtPYkZuMESx.png" alt="01-只需将caption插入浮动环境中即可.png"></p>
+<h3 id="案例-2：设置标题与图片、表格之间的间距"><a href="#案例-2：设置标题与图片、表格之间的间距" class="headerlink" title="案例 2：设置标题与图片、表格之间的间距"></a>案例 2：设置标题与图片、表格之间的间距</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%语法</span></span><br><span class="line"><span class="keyword">\captionsetup</span>[float type]{options}</span><br><span class="line"><span class="comment">%举例</span></span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt} <span class="comment">%设置图片标题与图片之间的间距为3pt</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>对于 Latex 标准的 article、book、report 等文档，默认的 skip 值为 10pt</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=0pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">\begin</span>{figure} </span><br><span class="line">   <span class="keyword">\centering</span> </span><br><span class="line">   <span class="keyword">\includegraphics</span>[width=2in]{example-image-A} </span><br><span class="line">   <span class="keyword">\caption</span>{设置标题与图片间的间距为0}</span><br><span class="line"> <span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/25/MA2rTnuy9GEo8xa.png" alt="03-设置标题与图片之间的间距为0.png"></p>
+<h3 id="案例-3：更多的标题样式设置"><a href="#案例-3：更多的标题样式设置" class="headerlink" title="案例 3：更多的标题样式设置"></a>案例 3：更多的标题样式设置</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt]{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption} </span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{</span><br><span class="line"> name=Figure, </span><br><span class="line"> listformat=empty, <span class="comment">%和List of Figures/Table相关</span></span><br><span class="line"> justification=justified, <span class="comment">%即两端对齐（默认）</span></span><br><span class="line"> labelsep=quad, <span class="comment">%标题编号与标题之间的分隔符</span></span><br><span class="line"> position=above, <span class="comment">%不一定能够设定标题与图片相对之间的位置</span></span><br><span class="line"> skip=3pt, <span class="comment">%图片标题与图片之间的距离</span></span><br><span class="line"> width=4in,  <span class="comment">%图片标题的宽度（这里设置为了和图片一样宽）</span></span><br><span class="line"> labelfont={huge}, <span class="comment">%图片标题编号的字号</span></span><br><span class="line"> font={small} <span class="comment">%图片标题的字号</span></span><br><span class="line">} </span><br><span class="line"><span class="keyword">\begin</span>{document} </span><br><span class="line"> <span class="keyword">\begin</span>{figure} </span><br><span class="line">  <span class="keyword">\centering</span></span><br><span class="line">  <span class="keyword">\includegraphics</span>[width=4in]{example-image-duck}</span><br><span class="line">  <span class="keyword">\caption</span>{这是一个很长很长很长很很长很长很长长很长很长图片标题} </span><br><span class="line"> <span class="keyword">\end</span>{figure} </span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/25/8HbmBTlcJunaVfq.png" alt="02-标题样式设置大汇总.png"></p>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><h4 id="labelsep"><a href="#labelsep" class="headerlink" title="labelsep"></a>labelsep</h4><p>语法</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">labelsep=〈label separator name〉</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对应值有</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"> default</td>
+<td align="center"> 同 colon</td>
+</tr>
+<tr>
+<td align="center">none</td>
+<td align="center"> 无间隔</td>
+</tr>
+<tr>
+<td align="center"> colon</td>
+<td align="center"> 英文分号</td>
+</tr>
+<tr>
+<td align="center"> period</td>
+<td align="center"> 英文句点</td>
+</tr>
+<tr>
+<td align="center"> space</td>
+<td align="center"> 空格</td>
+</tr>
+<tr>
+<td align="center"> quad</td>
+<td align="center"> 一个 em 的间隔</td>
+</tr>
+<tr>
+<td align="center"> newline</td>
+<td align="center"> 标题另起一行</td>
+</tr>
+<tr>
+<td align="center"> endash</td>
+<td align="center"> 英文 dash 连接符</td>
+</tr>
+</tbody></table>
+<h4 id="Justiﬁcation"><a href="#Justiﬁcation" class="headerlink" title="Justiﬁcation"></a>Justiﬁcation</h4><p>语法</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justification=〈justiﬁcation name〉</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对应的值有</p>
+<table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"> justified</td>
+<td align="center"> 两端对齐，也就是正文默认对齐方式</td>
+</tr>
+<tr>
+<td align="center"> centering</td>
+<td align="center"> 居中对齐</td>
+</tr>
+<tr>
+<td align="center"> raggedright</td>
+<td align="center"> 左对齐</td>
+</tr>
+<tr>
+<td align="center"> raggedleft</td>
+<td align="center"> 右对齐</td>
+</tr>
+<tr>
+<td align="center"> Raggedright</td>
+<td align="center">……</td>
+</tr>
+</tbody></table>
+<h4 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h4><p>语法</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">font={font options}</span><br><span class="line">labelfont={font options}</span><br><span class="line">textfont={font options}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对应的 font options</p>
+<table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"> small</td>
+<td align="center">Small size</td>
+</tr>
+<tr>
+<td align="center">normalsize</td>
+<td align="center">normalsize size</td>
+</tr>
+<tr>
+<td align="center">large</td>
+<td align="center">Large size</td>
+</tr>
+<tr>
+<td align="center">it</td>
+<td align="center">Italic shape</td>
+</tr>
+<tr>
+<td align="center">up</td>
+<td align="center">Upright shape</td>
+</tr>
+<tr>
+<td align="center">bf</td>
+<td align="center">Bold series</td>
+</tr>
+<tr>
+<td align="center">rm</td>
+<td align="center">Roman family</td>
+</tr>
+<tr>
+<td align="center">sf</td>
+<td align="center">Sans Serif family</td>
+</tr>
+<tr>
+<td align="center">tt</td>
+<td align="center">Typewriter family</td>
+</tr>
+<tr>
+<td align="center">stretch=amount</td>
+<td align="center"><code>\setstretch{amount}</code></td>
+</tr>
+<tr>
+<td align="center">color=colour</td>
+<td align="center"><code>color{colour}</code></td>
+</tr>
+<tr>
+<td align="center">…</td>
+<td align="center">…</td>
+</tr>
+</tbody></table>
+<h4 id="标题宽度"><a href="#标题宽度" class="headerlink" title="标题宽度"></a>标题宽度</h4><p>语法</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">margin=amount <span class="comment">%同时设置左右外边距</span></span><br><span class="line">margin={left amount,right amount} <span class="comment">%分别设置左右外边距</span></span><br><span class="line">witdh=amount <span class="comment">%设置标题的宽度</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/06/25/FkBLqMuibvd5enZ.png" alt="03-图片标题宽度.png"></p>
+<h4 id="skip"><a href="#skip" class="headerlink" title="skip"></a>skip</h4><p>语法</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip=amount</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="position"><a href="#position" class="headerlink" title="position"></a>position</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position=top or position=above</span><br><span class="line">position=bottom or position=below</span><br><span class="line">position=auto(which is the default setting)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>请注意：Caption 官方文档中对于该参数的说明</p>
+<blockquote>
+<p>Please note that position=top does NOT mean that the caption is actually placed at the top of the ﬁgure or table.<br>the caption package tries its best to determine the actual position of the caption on its own. Please note that while this is successfully in most cases, it could give wrong results under rare circumstances.</p>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>简书：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0a1c45a02120">LaTeX 标题控制</a></li>
+<li> Latex 入门（刘海洋）</li>
+<li>Latex 工作室：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/8652.html">如何用 caption 宏包格式化图表标题和子标题</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1609,228 +1874,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Image-Side-by-Side-and-Sub-image-Title-Setting.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/Image-Side-by-Side-and-Sub-image-Title-Setting.html" class="post-title-link" itemprop="url">Latex 图片并排及子图标题设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-01 13:52:56" itemprop="dateCreated datePublished" datetime="2022-06-01T13:52:56+08:00">2022-06-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:37:26" itemprop="dateModified" datetime="2024-06-22T17:37:26+08:00">2024-06-22</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Latex-图片并排及子图标题设置"><a href="#Latex-图片并排及子图标题设置" class="headerlink" title="Latex 图片并排及子图标题设置"></a>Latex 图片并排及子图标题设置</h2><p>以下案例中可能使用到的宏包</p>
-<ul>
-<li>需要图片：graphics</li>
-<li> 需要子图表：subfigure</li>
-<li> 需要给每个图片定义小标题：subcaption</li>
-<li> 修改图片的标题样式：caption</li>
-<li> 案例中使用到的图片： <a target="_blank" rel="noopener" href="https://sm.ms/image/W9pfLrXMi6uCFtT">下载地址</a></li>
-</ul>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{subfigure}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure} </span><br><span class="line">        <span class="keyword">\centering</span> </span><br><span class="line">        <span class="keyword">\subfigure</span>[Small Box with a Long Caption]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:subfig:a} <span class="comment">%% 为第一张图片添加标签</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=1.0in]{figs/cat2}} </span><br><span class="line">        <span class="keyword">\hspace</span>{1in} </span><br><span class="line">        <span class="keyword">\subfigure</span>[Big Box]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:subfig:b} <span class="comment">%% 为第二张图片添加标签</span></span><br><span class="line">            <span class="keyword">\includegraphics</span>[width=1.5in]{figs/cat2}} </span><br><span class="line">        <span class="keyword">\caption</span>{Two Subfigures} </span><br><span class="line">        <span class="keyword">\label</span>{fig:subfig} <span class="comment">%% 为整个大图添加标签</span></span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/01/JZDjiIUWz3pTGQy.png" alt="01-不使用minipage并排插图.png"></p>
-<p>像其它的并列图形一样，子图也可以在小页环境中使用。而且在一些情况下， 这样做还能更方便的得到理想的图形间距。例如：</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{subfigure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure} </span><br><span class="line">        <span class="keyword">\subfigure</span>[Small Box with a Long Caption]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:mini:subfig:a} <span class="comment">%% 为第一张图片添加标签</span></span><br><span class="line">            <span class="keyword">\begin</span>{minipage}[b]{0.5<span class="keyword">\textwidth</span>} </span><br><span class="line">                <span class="keyword">\centering</span> </span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=1in]{figs/cat2} </span><br><span class="line">        <span class="keyword">\end</span>{minipage}}<span class="comment">% </span></span><br><span class="line">        <span class="keyword">\subfigure</span>[Big Box]{ </span><br><span class="line">            <span class="keyword">\label</span>{fig:mini:subfig:b} <span class="comment">%% 为第二张图片添加标签</span></span><br><span class="line">            <span class="keyword">\begin</span>{minipage}[b]{0.5<span class="keyword">\textwidth</span>} </span><br><span class="line">                <span class="keyword">\centering</span> </span><br><span class="line">                <span class="keyword">\includegraphics</span>[width=1.5in]{figs/cat2} </span><br><span class="line">        <span class="keyword">\end</span>{minipage}} </span><br><span class="line">        <span class="keyword">\caption</span>{Minipages Inside Subfigures} </span><br><span class="line">        <span class="keyword">\label</span>{fig:mini:subfig} <span class="comment">%% 为整个大图添加标签</span></span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/01/qRz1kKudlye69YO.png" alt="02-使用minipage并排插图.png"></p>
-<p>比较可发现<br>使用 minipage 环境：子标题的长度可以长于图片的长度</p>
-<p><img data-src="https://s2.loli.net/2022/06/01/9o5PjNn7IeFCRBi.png" alt="03-minipage with non-minipage.png"></p>
-<h3 id="需求-2：那么如何引用大图当中的子图呢"><a href="#需求-2：那么如何引用大图当中的子图呢" class="headerlink" title="需求 2：那么如何引用大图当中的子图呢"></a>需求 2：那么如何引用大图当中的子图呢</h3><p>这就发挥到 label 的作用了，label 标签相当于给子图片打上了一个标记，在引用的地方通过 ref 引用标签名即可</p>
-<p>在图片环境的代码后面添加如下文字</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"></span><br><span class="line">这里有一段文字需要引用图1中子图b。<span class="keyword">\ref</span>{fig:mini:subfig:b} is a big cat!</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/01/qPUCz3rnFODdaMp.png" alt="04-交叉引用子图.png"></p>
-<h3 id="需求-3：修改标签分隔符"><a href="#需求-3：修改标签分隔符" class="headerlink" title="需求 3：修改标签分隔符"></a>需求 3：修改标签分隔符</h3><p>包含子图的大图标题，图编号与图表题文字之间的分隔符为冒号，如何设置为英文句点，参考 caption 宏包使用文档（但是目前该文档似乎还没有中文翻译）</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line">使用如下captionsetup命令需要使用到caption宏包</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{labelformat=simple, labelsep=period}<span class="comment">% 参数见以下分析</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>如何查看宏包的帮助文档</p>
-<ol>
-<li>按住 shift，鼠标右键</li>
-<li>使用 Powershell 打开</li>
-<li> texdoc 宏包名（比如 <code>texdoc tabular</code>）</li>
-</ol>
-<p><img data-src="https://s2.loli.net/2022/06/01/vsQkJwraMo1V2Hf.gif" alt="07-（Latex）查看宏包帮助文档.gif"></p>
-<p>标签格式设置</p>
-<table>
-<thead>
-<tr>
-<th align="center">格式</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"> default</td>
-<td align="center"> 同 simple</td>
-</tr>
-<tr>
-<td align="center">empty</td>
-<td align="center"> 空格式，去除标签编号部分</td>
-</tr>
-<tr>
-<td align="center"> simple</td>
-<td align="center"> 简单数字格式</td>
-</tr>
-<tr>
-<td align="center"> brace</td>
-<td align="center"> 数字右括号格式</td>
-</tr>
-<tr>
-<td align="center"> parens</td>
-<td align="center"> 带括号数字格式</td>
-</tr>
-</tbody></table>
-<p>标签分隔符</p>
-<table>
-<thead>
-<tr>
-<th align="center">格式</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"> default</td>
-<td align="center"> 同 colon</td>
-</tr>
-<tr>
-<td align="center">none</td>
-<td align="center"> 无间隔</td>
-</tr>
-<tr>
-<td align="center"> colon</td>
-<td align="center"> 英文分号</td>
-</tr>
-<tr>
-<td align="center"> period</td>
-<td align="center"> 英文句点</td>
-</tr>
-<tr>
-<td align="center"> space</td>
-<td align="center"> 空格</td>
-</tr>
-<tr>
-<td align="center"> quad</td>
-<td align="center"> 一个 em 的间隔</td>
-</tr>
-<tr>
-<td align="center"> newline</td>
-<td align="center"> 标题另起一行</td>
-</tr>
-<tr>
-<td align="center"> endash</td>
-<td align="center"> 英文 dash 连接符</td>
-</tr>
-</tbody></table>
-<p>同理，对于子图当中标签分隔符的设置，只要将中括号中的 figure 改为 subfigure 即可</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\captionsetup</span>[subfigure]{...}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="需求-4：如何修改交叉引用的图例"><a href="#需求-4：如何修改交叉引用的图例" class="headerlink" title="需求 4：如何修改交叉引用的图例"></a>需求 4：如何修改交叉引用的图例</h3><p>比如上图中，引用图 1 的子图 b，但是如何让 <code>1(b)</code> 显示为 <code>图 1(b)</code> 呢<br>搜了一圈，似乎只能通过文字打上去 (lll￢ω￢)</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%...</span></span><br><span class="line"><span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="comment">%...</span></span><br><span class="line"></span><br><span class="line">这里有一段文字需要引用图1中子图b。图<span class="keyword">\ref</span>{fig:mini:subfig:b} is a big cat!</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/01/9KyJXnBD7PshS1u.png" alt="05-交叉引用图片格式.png"></p>
-<h3 id="需求-5：多个子图，但是共享一个大标题，无需为子图添加标题"><a href="#需求-5：多个子图，但是共享一个大标题，无需为子图添加标题" class="headerlink" title="需求 5：多个子图，但是共享一个大标题，无需为子图添加标题"></a>需求 5：多个子图，但是共享一个大标题，无需为子图添加标题</h3><p>实际上就是在 figure 环境当中插入多张图片，但是只添加一个 caption</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{figure} </span><br><span class="line">        <span class="keyword">\centering</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=90pt]{figs/cat2} <span class="keyword">\qquad</span></span><br><span class="line">        <span class="keyword">\includegraphics</span>[width=90pt]{figs/cat2} </span><br><span class="line">        <span class="keyword">\caption</span>{There are two figure share one caption}</span><br><span class="line">        <span class="keyword">\label</span>{share-one-caption}</span><br><span class="line">    <span class="keyword">\end</span>{figure}</span><br><span class="line">    </span><br><span class="line">    这里有一段文字需要引用图1。图<span class="keyword">\ref</span>{share-one-caption}有两张子图组成</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/01/GfCSc28aprV5Dyi.png" alt="06-子图共享大标题.png"></p>
-<h3 id="更高阶的应用"><a href="#更高阶的应用" class="headerlink" title="更高阶的应用"></a>更高阶的应用</h3><p>修改子图编号格式</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thesubfigure</span>}{<span class="keyword">\arabic</span>{subfigure}}<span class="comment">%使子图编号为a的格式</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thesubfigure</span>}{(<span class="keyword">\alph</span>{subfigure})}<span class="comment">%使子图编号为(a)的格式</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thesubtable</span>}{(<span class="keyword">\alph</span>{subtable})} <span class="comment">%使子表编号为(a)的格式</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>修改子图为 <code>图 7.1</code> 的形式</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thefigure</span>}{<span class="keyword">\arabic</span>{chapter}.<span class="keyword">\arabic</span>{figure}} <span class="comment">%使图编号为7.1的格式 %\protect{~}</span></span><br><span class="line"><span class="keyword">\renewcommand</span>{<span class="keyword">\thetable</span>}{<span class="keyword">\arabic</span>{chapter}.<span class="keyword">\arabic</span>{table}}<span class="comment">%使表编号为7.1的格式</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>修改子图标题字体格式（详见 Caption 宏包选项和设置）</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%子标题设置，编号为粗体，左对齐，文本正体</span></span><br><span class="line"><span class="keyword">\captionsetup</span>[subfigure]{labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}</span><br><span class="line"><span class="comment">%主标题设置</span></span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{labelformat=simple, labelsep=none}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>ctex 论坛： <a target="_blank" rel="noopener" href="http://www.ctex.org/documents/latex/graphics/node111.html">并排的子图形</a></li>
-<li> ctex 论坛： <a target="_blank" rel="noopener" href="http://www.ctex.org/documents/latex/graphics/graphics.html">LATEX2e&nbsp;插图指南</a></li>
-<li>简书： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0a1c45a02120">LaTeX 标题控制</a></li>
-<li> LaTeX 工作室： <a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/8652.html">LaTeX 技巧 884：如何用 caption 宏包格式化图表标题和子标题</a> </li>
-<li> CSDN： <a target="_blank" rel="noopener" href="https://blog.csdn.net/a6822342/article/details/80533135">Latex 中插入多张图片，实现并排排列或者多行多列排列</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1855,13 +1898,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">260k</span>
+    <span title="站点总字数">270k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:57</span>
+    <span title="站点阅读时长">4:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

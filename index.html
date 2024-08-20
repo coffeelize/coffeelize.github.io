@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,6 +251,157 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html" class="post-title-link" itemprop="url">使用 PyQt 制作简易软件简明笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-08-20 20:30:57 / 修改时间：21:42:38" itemprop="dateCreated datePublished" datetime="2024-08-20T20:30:57+08:00">2024-08-20</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>9.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>最近在统计多组数据的重复性，利用到了标准差相关的公式，自然而然想到是使用 Excel 来处理公式。总之，模板是实现了，将公式一步一步拆解，饶了一大圈，发现最后 Excel 本身就内置了求取标准差的函数，还不如不要让我知道这个结果呢，伤心: (</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204257.png" alt="image.png"></p>
+<p>不过，这也带来了一些思考。自认为自己用 Excel 还算用得多的了，根本没有听过用过这样的内置函数，能不能写个简单的程序，只要将数据往里面一扔，就可以自动出来计算结果呢 —&gt; 于是开始了折腾</p>
+<h3 id="Step-1-搭建环境"><a href="#Step-1-搭建环境" class="headerlink" title="Step 1 搭建环境"></a>Step 1 搭建环境</h3><ul>
+<li>这里选择社区版的 Pycharm，免费，集成开发环境用起来也方便</li>
+<li>程序开发使用的是 PyQt 框架</li>
+</ul>
+<p>刚安装完 Pycharm，会检测系统中是否已经安装好了 python，如果恰好没有安装过，那么根据软件的建议安装即可</p>
+<p>写好的代码中若检测有问题，Pycharm 会在对应的位置进行提示，如一下这段程序，刚安装的 python 肯定是没有 PyQT6 的程序包的，可以通过提示（小红灯泡处，Alt+Enter）进行安装</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204316.png" alt="image.png"></p>
+<p>新建项目，新建 python 文件，粘贴如下代码进行测试：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication, QWidget, QVBoxLayout, QPushButton  </span><br><span class="line">  </span><br><span class="line">app = QApplication([])  <span class="comment"># 创建应用程序对象  </span></span><br><span class="line">  </span><br><span class="line">window = QWidget()  <span class="comment"># 创建窗口部件  </span></span><br><span class="line">layout = QVBoxLayout()  <span class="comment"># 创建布局管理器  </span></span><br><span class="line">  </span><br><span class="line">button = QPushButton(<span class="string">"点击我"</span>)  <span class="comment"># 创建按钮  </span></span><br><span class="line">layout.addWidget(button)  <span class="comment"># 将按钮添加到布局管理器中  </span></span><br><span class="line">  </span><br><span class="line">window.setLayout(layout)  <span class="comment"># 设置窗口部件的布局  </span></span><br><span class="line">window.show()  <span class="comment"># 显示窗口  </span></span><br><span class="line">  </span><br><span class="line">app.<span class="built_in">exec</span>()  <span class="comment"># 进入应用程序的主循环</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205141.png" alt="image.png"></p>
+<p>很好，说明各种环境已经搭建好了！</p>
+<h3 id="Step-2-实现基础功能"><a href="#Step-2-实现基础功能" class="headerlink" title="Step 2 实现基础功能"></a>Step 2 实现基础功能</h3><p>接下来尽管提需求，从开发者的角度出发，一步步给 GPT 进行引导，从易到难，功能从简单到复杂</p>
+<p>例如我开始给 GPT 提需求：</p>
+<blockquote>
+<p>我提供一组数据，点击按钮之后，就可以在一个输出位置输出这组数据的标准差</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys  </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>(<span class="params">QMainWindow</span>):</span>  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="built_in">super</span>().__init__()  </span><br><span class="line">  </span><br><span class="line">        self.setWindowTitle(<span class="string">"标准差计算器"</span>)  </span><br><span class="line">        self.setGeometry(<span class="number">100</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">200</span>)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 主部件  </span></span><br><span class="line">        self.central_widget = QWidget()  </span><br><span class="line">        self.setCentralWidget(self.central_widget)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 布局  </span></span><br><span class="line">        self.layout = QVBoxLayout()  </span><br><span class="line">        self.central_widget.setLayout(self.layout)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 输入框  </span></span><br><span class="line">        self.data_input = QLineEdit()  </span><br><span class="line">        self.data_input.setPlaceholderText(<span class="string">"输入数据，用逗号分隔"</span>)  </span><br><span class="line">        self.layout.addWidget(self.data_input)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 计算按钮  </span></span><br><span class="line">        self.calculate_button = QPushButton(<span class="string">"计算标准差"</span>)  </span><br><span class="line">        self.calculate_button.clicked.connect(self.calculate_standard_deviation)  </span><br><span class="line">        self.layout.addWidget(self.calculate_button)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 输出标签  </span></span><br><span class="line">        self.result_label = QLabel(<span class="string">"标准差："</span>)  </span><br><span class="line">        self.layout.addWidget(self.result_label)  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_standard_deviation</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="comment"># 获取输入数据  </span></span><br><span class="line">        data_text = self.data_input.text()  </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> data_text:  </span><br><span class="line">            self.result_label.setText(<span class="string">"请先输入数据"</span>)  </span><br><span class="line">            <span class="keyword">return</span>  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 解析数据  </span></span><br><span class="line">        <span class="keyword">try</span>:  </span><br><span class="line">            data = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">float</span>, data_text.split(<span class="string">','</span>)))  </span><br><span class="line">        <span class="keyword">except</span> ValueError:  </span><br><span class="line">            self.result_label.setText(<span class="string">"数据格式错误，请输入有效的数字"</span>)  </span><br><span class="line">            <span class="keyword">return</span>  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 计算标准差  </span></span><br><span class="line">        std_dev = np.std(data)  </span><br><span class="line">        self.result_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.2</span>f}</span>"</span>)  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:  </span><br><span class="line">    app = QApplication(sys.argv)  </span><br><span class="line">    window = MainWindow()  </span><br><span class="line">    window.show()  </span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205448.png" alt="image.png"></p>
+<p>好了，手动输入几组数据，确实能够计算出来标准差了，不过我们的数据来自 Excel，而且用逗号分隔数据的方式也不方便。于是就有了如下需求：</p>
+<blockquote>
+<p>但是，你知道的，我的输入数据一般从 excel 中复制过来的，这种用逗号分隔数字的方式让我在输入的时候非常麻烦</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication, QWidget, QVBoxLayout, QPushButton, QPlainTextEdit, QLabel</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProcessingApp</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设置窗口标题和尺寸</span></span><br><span class="line">        self.setWindowTitle(<span class="string">"数据处理应用"</span>)</span><br><span class="line">        self.setGeometry(<span class="number">100</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">300</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建布局和组件</span></span><br><span class="line">        layout = QVBoxLayout()</span><br><span class="line"></span><br><span class="line">        self.text_edit = QPlainTextEdit(self)</span><br><span class="line">        self.text_edit.setPlaceholderText(<span class="string">"在这里粘贴数据..."</span>)</span><br><span class="line">        layout.addWidget(self.text_edit)</span><br><span class="line"></span><br><span class="line">        self.calculate_button = QPushButton(<span class="string">"计算标准差"</span>, self)</span><br><span class="line">        self.calculate_button.clicked.connect(self.calculate_std_dev)</span><br><span class="line">        layout.addWidget(self.calculate_button)</span><br><span class="line"></span><br><span class="line">        self.result_label = QLabel(<span class="string">"标准差："</span>, self)</span><br><span class="line">        layout.addWidget(self.result_label)</span><br><span class="line"></span><br><span class="line">        self.setLayout(layout)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_std_dev</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 获取文本内容</span></span><br><span class="line">        text = self.text_edit.toPlainText()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 处理文本数据</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 将文本数据按行分隔，然后按空格或制表符分隔</span></span><br><span class="line">            data = [<span class="built_in">float</span>(num) <span class="keyword">for</span> line <span class="keyword">in</span> text.splitlines() <span class="keyword">for</span> num <span class="keyword">in</span> line.split()]</span><br><span class="line">            <span class="keyword">if</span> data:</span><br><span class="line">                <span class="comment"># 计算标准差</span></span><br><span class="line">                std_dev = np.std(data)</span><br><span class="line">                self.result_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.2</span>f}</span>"</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.result_label.setText(<span class="string">"标准差：无效数据"</span>)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            self.result_label.setText(<span class="string">"标准差：数据格式错误"</span>)</span><br><span class="line"></span><br><span class="line">app = QApplication([])</span><br><span class="line">window = DataProcessingApp()</span><br><span class="line">window.show()</span><br><span class="line">app.<span class="built_in">exec</span>()</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205734.png" alt="image.png"></p>
+<p>以上这组数据就是直接从 Excel 粘贴进去的。看来功能 GPT 是帮我们实现了</p>
+<h3 id="Step-3-完善程序"><a href="#Step-3-完善程序" class="headerlink" title="Step 3 完善程序"></a>Step 3 完善程序</h3><p>接下来按照上面的步骤，进一步提需求，进一步完善程序代码<br>例如，可以增加一些数据清洗、数据输入验证、错处处理、历史记录、导出数据等功能<br>也可以对程序进行拆分，不同功能的代码写到不同的 py 文件中</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820210219.png" alt="image.png"></p>
+<p>当前的程序结构为</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data_processor/</span><br><span class="line">│</span><br><span class="line">├── main.py</span><br><span class="line">├── ui.py</span><br><span class="line">├── processor.py</span><br><span class="line">└── utils.py</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h4><figure class="highlight python"><figcaption><span>main.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication</span><br><span class="line"><span class="keyword">from</span> ui <span class="keyword">import</span> DataProcessorApp</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    processor = DataProcessorApp()</span><br><span class="line">    processor.show()</span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="UI-界面"><a href="#UI-界面" class="headerlink" title="UI 界面"></a>UI 界面</h4><figure class="highlight python"><figcaption><span>ui.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QWidget, QVBoxLayout, QPushButton, QTextEdit, QLabel  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtGui <span class="keyword">import</span> QFont, QColor  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtCore <span class="keyword">import</span> Qt  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtGui <span class="keyword">import</span> QPalette  </span><br><span class="line"><span class="keyword">from</span> processor <span class="keyword">import</span> DataProcessor  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProcessorApp</span>(<span class="params">QWidget</span>):</span>  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="built_in">super</span>().__init__()  </span><br><span class="line">        self.processor = DataProcessor()  </span><br><span class="line">        self.init_ui()  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init_ui</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="comment"># Set the overall layout and style  </span></span><br><span class="line">        layout = QVBoxLayout()  </span><br><span class="line">        self.setStyleSheet(<span class="string">"background-color: #f0f0f0;"</span>)  </span><br><span class="line">        self.setPalette(QPalette(QColor(<span class="string">'#f0f0f0'</span>)))  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># Create and style widgets  </span></span><br><span class="line">        self.input_text = QTextEdit(self)  </span><br><span class="line">        self.input_text.setPlaceholderText(<span class="string">"在这里粘贴数据，每行一个数字"</span>)  </span><br><span class="line">        self.input_text.setStyleSheet(<span class="string">"font-size: 14px; padding: 10px; border: 1px solid #ccc;"</span>)  </span><br><span class="line">        layout.addWidget(self.input_text)  </span><br><span class="line">  </span><br><span class="line">        self.mean_label = QLabel(<span class="string">"平均值："</span>, self)  </span><br><span class="line">        self.mean_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.mean_label)  </span><br><span class="line">  </span><br><span class="line">        self.variance_label = QLabel(<span class="string">"方差："</span>, self)  </span><br><span class="line">        self.variance_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.variance_label)  </span><br><span class="line">  </span><br><span class="line">        self.std_dev_label = QLabel(<span class="string">"标准差："</span>, self)  </span><br><span class="line">        self.std_dev_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.std_dev_label)  </span><br><span class="line">  </span><br><span class="line">        self.reliability_label = QLabel(<span class="string">"重复性："</span>, self)  </span><br><span class="line">        self.reliability_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.reliability_label)  </span><br><span class="line">  </span><br><span class="line">        process_button = QPushButton(<span class="string">"计算标准差"</span>, self)  </span><br><span class="line">        process_button.setStyleSheet(  </span><br><span class="line">            <span class="string">"background-color: #4CAF50; color: white; font-size: 14px; padding: 10px; border: none; border-radius: 5px;"</span>)  </span><br><span class="line">        process_button.clicked.connect(self.calculate_std_dev)  </span><br><span class="line">        layout.addWidget(process_button)  </span><br><span class="line">  </span><br><span class="line">        reliability_button = QPushButton(<span class="string">"计算重复性"</span>, self)  </span><br><span class="line">        reliability_button.setStyleSheet(  </span><br><span class="line">            <span class="string">"background-color: #2196F3; color: white; font-size: 14px; padding: 10px; border: none; border-radius: 5px;"</span>)  </span><br><span class="line">        reliability_button.clicked.connect(self.calculate_reliability)  </span><br><span class="line">        layout.addWidget(reliability_button)  </span><br><span class="line">  </span><br><span class="line">        self.history_text = QTextEdit(self)  </span><br><span class="line">        self.history_text.setPlaceholderText(<span class="string">"历史记录"</span>)  </span><br><span class="line">        self.history_text.setReadOnly(<span class="literal">True</span>)  </span><br><span class="line">        self.history_text.setStyleSheet(<span class="string">"font-size: 14px; padding: 10px; border: 1px solid #ccc;"</span>)  </span><br><span class="line">        layout.addWidget(self.history_text)  </span><br><span class="line">  </span><br><span class="line">        self.setLayout(layout)  </span><br><span class="line">        self.setWindowTitle(<span class="string">"数据处理程序"</span>)  </span><br><span class="line">        self.setGeometry(<span class="number">100</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">400</span>)  </span><br><span class="line">        self.setFont(QFont(<span class="string">'Arial'</span>, <span class="number">12</span>))  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_std_dev</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        data = self.input_text.toPlainText().strip()  </span><br><span class="line">        <span class="keyword">try</span>:  </span><br><span class="line">            numbers = [<span class="built_in">float</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> data.split() <span class="keyword">if</span> x.replace(<span class="string">'.'</span>, <span class="string">''</span>, <span class="number">1</span>).isdigit()]  </span><br><span class="line">            <span class="keyword">if</span> numbers:  </span><br><span class="line">                std_dev = self.processor.calculate_std_dev(numbers)  </span><br><span class="line">                mean, variance, std_dev, _ = self.processor.calculate_reliability(numbers)  </span><br><span class="line">                self.mean_label.setText(<span class="string">f"平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">f"方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">            <span class="keyword">else</span>:  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">"标准差：无效数据"</span>)  </span><br><span class="line">                self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">            history = self.history_text.toPlainText()  </span><br><span class="line">            new_entry = <span class="string">f"数据：<span class="subst">{<span class="string">', '</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, numbers))}</span> | 标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span> | 平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span> | 方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>\n"</span>  </span><br><span class="line">            self.history_text.setText(history + new_entry)  </span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:  </span><br><span class="line">            self.std_dev_label.setText(<span class="string">f"错误：<span class="subst">{e}</span>"</span>)  </span><br><span class="line">            self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">            self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_reliability</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        data = self.input_text.toPlainText().strip()  </span><br><span class="line">        <span class="keyword">try</span>:  </span><br><span class="line">            numbers = [<span class="built_in">float</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> data.split() <span class="keyword">if</span> x.replace(<span class="string">'.'</span>, <span class="string">''</span>, <span class="number">1</span>).isdigit()]  </span><br><span class="line">            <span class="keyword">if</span> numbers:  </span><br><span class="line">                mean, variance, std_dev, reliability = self.processor.calculate_reliability(numbers)  </span><br><span class="line">                self.mean_label.setText(<span class="string">f"平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">f"方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.reliability_label.setText(<span class="string">f"重复性：<span class="subst">{reliability:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">            <span class="keyword">else</span>:  </span><br><span class="line">                self.reliability_label.setText(<span class="string">"重复性：无效数据"</span>)  </span><br><span class="line">                self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">"标准差：无效数据"</span>)  </span><br><span class="line">            history = self.history_text.toPlainText()  </span><br><span class="line">            new_entry = <span class="string">f"数据：<span class="subst">{<span class="string">', '</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, numbers))}</span> | 标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span> | 重复性：<span class="subst">{reliability:<span class="number">.6</span>f}</span> | 平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span> | 方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>\n"</span>  </span><br><span class="line">            self.history_text.setText(history + new_entry)  </span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:  </span><br><span class="line">            self.reliability_label.setText(<span class="string">f"错误：<span class="subst">{e}</span>"</span>)  </span><br><span class="line">            self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">            self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">            self.std_dev_label.setText(<span class="string">"标准差：无效数据"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><figure class="highlight python"><figcaption><span>processor.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProcessor</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_std_dev</span>(<span class="params">self, numbers</span>):</span></span><br><span class="line">        <span class="keyword">return</span> np.std(numbers, ddof=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_reliability</span>(<span class="params">self, numbers</span>):</span></span><br><span class="line">        mean = np.mean(numbers)</span><br><span class="line">        variance = np.var(numbers, ddof=<span class="number">1</span>)</span><br><span class="line">        std_dev = np.sqrt(variance)</span><br><span class="line">        reliability = std_dev / mean</span><br><span class="line">        <span class="keyword">return</span> mean, variance, std_dev, reliability</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Step-4-打包程序"><a href="#Step-4-打包程序" class="headerlink" title="Step 4 打包程序"></a>Step 4 打包程序</h3><p>想要将整个程序打包成 exe 文件，这样方便在没有 python 环境时依然可以运行，步骤如下：</p>
+<ul>
+<li>安装 PyInstaller 包（可以直接在 powershell 中安装）</li>
+<li>使用 PyInstaller 打包脚本</li>
+</ul>
+<p>1、在 PowerShell 中，运行如下命令</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意：前面已经安装了 python 程序，应该是可以使用 pip 命令了的。可输入 <code>pip --version</code> 命令查看。若该命令无法使用，很可能是没有将 python 解释器添加到环境变量中，可进行如下操作：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\Programs\Python\Python312\</span><br><span class="line">C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Scripts\</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这里的路径请替换为实际安装 Python 的路径</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820211551.png" alt="image.png"></p>
+<p>2、运行 pyinstaller 命令打包程序</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --onefile --windowed your_script.py</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>--onefile</code>：将所有内容打包成一个单独的 <code>.exe </code> 文件。</li>
+<li><code>--windowed</code>：用于创建一个没有命令行窗口的图形界面应用。</li>
+</ul>
+<p>打包完成后，会生成几个文件夹：</p>
+<ul>
+<li><code>dist</code> 中包含生成的 exe 文件</li>
+<li><code>build</code> 中包含构建过程中的临时文件，可以删除。</li>
+<li><code>your_script.spec</code> 文件是 PyInstaller 的配置文件，可以根据需要进行修改。</li>
+</ul>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820211643.png" alt="image.png"></p>
+<p><img data-src="https://s2.loli.net/2024/08/20/FvgUAH9DrSljCQ7.gif" alt=".gif"></p>
+<p>恭喜你，得到了一款简易的小程序：）</p>
+<h3 id="续"><a href="#续" class="headerlink" title="续"></a>续</h3><p>明明程序实现的功能很简单，为什么生成的程序还那么大呢，例如生成上面的这个 exe 文件就有 50M。因为软件将一些必要的程序包（如 numpy 模块）都打包进去了，若之后再增加一些计算相关的各种功能进去，程序体积可能也只会大一丢丢吧</p>
+<p>另外，打包时如何优化资源，排除掉一些不必要的模块还值得学学。不过，尽管文件体积大点，功能总算是实现了，还是蛮有成就感的</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1322,129 +1473,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Axios-Asynchronous-Framework-Concise-Notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/Axios-Asynchronous-Framework-Concise-Notes.html" class="post-title-link" itemprop="url">Axios 异步框架简明笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-11-28 20:13:22" itemprop="dateCreated datePublished" datetime="2023-11-28T20:13:22+08:00">2023-11-28</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:43:27" itemprop="dateModified" datetime="2024-06-22T17:43:27+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="Axios-异步框架简介"><a href="#Axios-异步框架简介" class="headerlink" title="Axios 异步框架简介"></a>Axios 异步框架简介</h3><p>Axios 对原生的 AJAX 进行封装，简化书写</p>
-<h3 id="Axios-快速入门"><a href="#Axios-快速入门" class="headerlink" title="Axios 快速入门"></a>Axios 快速入门</h3><ol>
-<li>引入 axios 的 js 文件</li>
-<li>使用 axios 发送请求，并获取相应结果</li>
-</ol>
-<p>详细步骤如下</p>
-<p>一、在 webapp 下新建 js 文件夹，拷贝 axios 的 js 文件<br>二、新建 html 文件，引入 js 文件</p>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/axios-0.18.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>三、创建 AxiosServlet</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AxiosServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{  </span><br><span class="line">        System.out.println(<span class="string">"get..."</span>);  </span><br><span class="line">        <span class="comment">//1.接收请求参数  </span></span><br><span class="line">        String username = request.getParameter(<span class="string">"username"</span>);  </span><br><span class="line">        System.out.println(username);  </span><br><span class="line">        <span class="comment">//2.响应数据  </span></span><br><span class="line">        response.getWriter().write(<span class="string">"hello Axios"</span>);  </span><br><span class="line">    }  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{  </span><br><span class="line">        System.out.println(<span class="string">"post..."</span>);  </span><br><span class="line">        <span class="keyword">this</span>.doGet(request, response);  </span><br><span class="line">    }  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>四、在 html 中编写 js 代码</p>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/axios-0.18.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//1.get</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">/* axios({</span></span></span><br><span class="line"><span class="comment"><span class="javascript">       method:"get",</span></span></span><br><span class="line"><span class="comment"><span class="javascript">       url:"http://localhost:8080/ajax-dmeo/axiosServlet?username=zhangsan"</span></span></span><br><span class="line"><span class="comment"><span class="javascript">     }).then(function (resp){</span></span></span><br><span class="line"><span class="comment"><span class="javascript">         alert(resp.data);</span></span></span><br><span class="line"><span class="comment"><span class="javascript">     })*/</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//2.post</span></span></span><br><span class="line"><span class="javascript">    axios({</span></span><br><span class="line"><span class="javascript">        <span class="attr">method</span>: <span class="string">"get"</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">url</span>: <span class="string">"http://localhost:8080/ajax-dmeo/axiosServlet"</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">//data是请求参数</span></span></span><br><span class="line"><span class="javascript">        <span class="attr">data</span>: <span class="string">"username=zhangsan"</span></span></span><br><span class="line"><span class="javascript">    }).then(<span class="function"><span class="keyword">function</span> (<span class="params">resp</span>) </span>{</span></span><br><span class="line"><span class="javascript">        alert(resp.data);</span></span><br><span class="line"><span class="javascript">    })</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>代码说明及注意事项</p>
-<ol>
-<li>axios 大括号中的为 Java 中的对象</li>
-<li><code>.then()</code> 方法是一个回调函数，如果响应接收到了的话就自动执行</li>
-<li><code>data: "username=zhangsan"</code>，data 是请求参数。这里可以传 JSON 格式的数据。除此之外，还可以传 JS 对象类型的数据（JSON 数据格式可以和 Java 中的对象数据格式通过某些方式进行转换），因为 Axios 框架会自动将这个 JS 对象转为 JSON 的数据格式</li>
-<li> Get 和 Post 两种方式传递参数的方式不一样，所以在 axios 方法中传入的对象（大括号包裹的内容）的方式不一样，一个写在 URL 中，一个写在 Data 属性中</li>
-<li><code>.then()</code> 回调函数中，function 函数中的参数名可以不为 resp，随便一个都行，保持下面对象（resp.data）和这个参数名（resp）一致即可</li>
-<li><code>resp.data</code> 即服务器端的 Servlet 响应过来的数据 </li>
-</ol>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">flowchart&nbsp;RL</span><br><span class="line">    b1--&gt;|"username = &amp;quot;zhangsan&amp;quot;"|servlet1</span><br><span class="line">    servlet1--&gt;|data|b1</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;subgraph&nbsp;Browsers  </span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;b1</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;b2</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;end  </span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;subgraph&nbsp;servers  </span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;servlet1</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;servlet2</span><br><span class="line">&nbsp;&nbsp;&nbsp;&nbsp;end</span><br></pre></td></tr></tbody></table></figure>
-
-<p>简单来说，Axios 实现的功能就是：通过 get 或 post 给 Servlet 传递一个参数（username=“zhangsan”），然后 Servlet 接收到这个参数，就可以进行判断的操作，根据判断的结果在给浏览器发送一个响应。浏览器收到响应数据（date）之后，就可以做出一些操作，比如弹出窗口操作。</p>
-<h3 id="Axios-请求方式别名"><a href="#Axios-请求方式别名" class="headerlink" title="Axios 请求方式别名"></a>Axios 请求方式别名</h3><p>为了方便起见，Axios 已经为所有支持的请求方法提供了别名</p>
-<p>发送 Get 请求</p>
-<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. Get方式  </span></span><br><span class="line">axios.get(<span class="string">"http://localhost:8080/ajax-dmeo/axiosServlet?username=zhangsan"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">resp</span>)</span>{  </span><br><span class="line">    alert(resp.data);  </span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
-
-<p>发送 Post 请求</p>
-<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">"http://localhost:8080/ajax-dmeo/axiosServlet?username=zhangsan"</span>,<span class="string">"username=zhangsan"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">resp</span>)</span>{  </span><br><span class="line">    alert(resp.data);  </span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
-
-<p>原生的 Axios 书写方式 VS 别名的简化书写方式</p>
-<ul>
-<li>原生的书写格式：阅读性较好</li>
-<li>别名的方式：代码量少，基本上只需要填写必要的参数信息</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1469,13 +1497,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">260k</span>
+    <span title="站点总字数">270k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:57</span>
+    <span title="站点阅读时长">4:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

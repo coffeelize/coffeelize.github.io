@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="G2H8dHq6QIE9GJ3RiIGetZP_i7GIHeB7HsJunnlSPiw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"coffeelize.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="缘由最近在统计多组数据的重复性，利用到了标准差相关的公式，自然而然想到是使用 Excel 来处理公式。总之，模板是实现了，将公式一步一步拆解，饶了一大圈，发现最后 Excel 本身就内置了求取标准差的函数，还不如不要让我知道这个结果呢，伤心: (  不过，这也带来了一些思考。自认为自己用 Excel 还算用得多的了，根本没有听过用过这样的内置函数，能不能写个简单的程序，只要将数据往里面一扔，就可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 PyQt 制作简易软件简明笔记">
+<meta property="og:url" content="https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html">
+<meta property="og:site_name" content="智朋的个人博客">
+<meta property="og:description" content="缘由最近在统计多组数据的重复性，利用到了标准差相关的公式，自然而然想到是使用 Excel 来处理公式。总之，模板是实现了，将公式一步一步拆解，饶了一大圈，发现最后 Excel 本身就内置了求取标准差的函数，还不如不要让我知道这个结果呢，伤心: (  不过，这也带来了一些思考。自认为自己用 Excel 还算用得多的了，根本没有听过用过这样的内置函数，能不能写个简单的程序，只要将数据往里面一扔，就可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204257.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204316.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205141.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205448.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205734.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820210219.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820211551.png">
+<meta property="og:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820211643.png">
+<meta property="og:image" content="https://s2.loli.net/2024/08/20/FvgUAH9DrSljCQ7.gif">
+<meta property="article:published_time" content="2024-08-20T12:30:57.000Z">
+<meta property="article:modified_time" content="2024-08-20T13:42:38.560Z">
+<meta property="article:author" content="coffeelize">
+<meta property="article:tag" content="PyQt">
+<meta property="article:tag" content="excel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204257.png">
+
+
+<link rel="canonical" href="https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html","path":"posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html","title":"使用 PyQt 制作简易软件简明笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用 PyQt 制作简易软件简明笔记 | 智朋的个人博客</title>
+  
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="智朋的个人博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">智朋的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长，行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-札记&留言板"><a href="/notes/" rel="section"><i class="fa fa-fw fa-sticky-note fa-fw"></i>札记&留言板</a></li>
+        <li class="menu-item menu-item-画廊"><a href="/gallery/" rel="section"><i class="fa fa-fw fa-image fa-fw"></i>画廊</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%98%E7%94%B1"><span class="nav-number">1.</span> <span class="nav-text">缘由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">Step 1 搭建环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">Step 2 实现基础功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-%E5%AE%8C%E5%96%84%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">Step 3 完善程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.1.</span> <span class="nav-text">主程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI-%E7%95%8C%E9%9D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">UI 界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="nav-number">4.3.</span> <span class="nav-text">数据处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4-%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F"><span class="nav-number">5.</span> <span class="nav-text">Step 4 打包程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%AD"><span class="nav-number">6.</span> <span class="nav-text">续</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="coffeelize"
+      src="/images/cat-avatar.jpg">
+  <p class="site-author-name" itemprop="name">coffeelize</p>
+  <div class="site-description" itemprop="description">一个研究生的存档点</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/coffeelize" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;coffeelize" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/319437741" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;319437741" rel="noopener" target="_blank"><i class="fa fa-video fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ghobam.com/" title="https:&#x2F;&#x2F;ghobam.com&#x2F;" rel="noopener" target="_blank">Sherwood</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sdhlw.top/" title="https:&#x2F;&#x2F;www.sdhlw.top&#x2F;" rel="noopener" target="_blank">向阳</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cyborg2077.github.io/" title="https:&#x2F;&#x2F;cyborg2077.github.io&#x2F;" rel="noopener" target="_blank">Kyle</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.kezhi.tech/" title="https:&#x2F;&#x2F;www.kezhi.tech" rel="noopener" target="_blank">Kezhi's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sulvblog.cn/" title="https:&#x2F;&#x2F;www.sulvblog.cn" rel="noopener" target="_blank">Sulv's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 PyQt 制作简易软件简明笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-08-20 20:30:57 / 修改时间：21:42:38" itemprop="dateCreated datePublished" datetime="2024-08-20T20:30:57+08:00">2024-08-20</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>9.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>最近在统计多组数据的重复性，利用到了标准差相关的公式，自然而然想到是使用 Excel 来处理公式。总之，模板是实现了，将公式一步一步拆解，饶了一大圈，发现最后 Excel 本身就内置了求取标准差的函数，还不如不要让我知道这个结果呢，伤心: (</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204257.png" alt="image.png"></p>
+<p>不过，这也带来了一些思考。自认为自己用 Excel 还算用得多的了，根本没有听过用过这样的内置函数，能不能写个简单的程序，只要将数据往里面一扔，就可以自动出来计算结果呢 —&gt; 于是开始了折腾</p>
+<h3 id="Step-1-搭建环境"><a href="#Step-1-搭建环境" class="headerlink" title="Step 1 搭建环境"></a>Step 1 搭建环境</h3><ul>
+<li>这里选择社区版的 Pycharm，免费，集成开发环境用起来也方便</li>
+<li>程序开发使用的是 PyQt 框架</li>
+</ul>
+<p>刚安装完 Pycharm，会检测系统中是否已经安装好了 python，如果恰好没有安装过，那么根据软件的建议安装即可</p>
+<p>写好的代码中若检测有问题，Pycharm 会在对应的位置进行提示，如一下这段程序，刚安装的 python 肯定是没有 PyQT6 的程序包的，可以通过提示（小红灯泡处，Alt+Enter）进行安装</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820204316.png" alt="image.png"></p>
+<p>新建项目，新建 python 文件，粘贴如下代码进行测试：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication, QWidget, QVBoxLayout, QPushButton  </span><br><span class="line">  </span><br><span class="line">app = QApplication([])  <span class="comment"># 创建应用程序对象  </span></span><br><span class="line">  </span><br><span class="line">window = QWidget()  <span class="comment"># 创建窗口部件  </span></span><br><span class="line">layout = QVBoxLayout()  <span class="comment"># 创建布局管理器  </span></span><br><span class="line">  </span><br><span class="line">button = QPushButton(<span class="string">"点击我"</span>)  <span class="comment"># 创建按钮  </span></span><br><span class="line">layout.addWidget(button)  <span class="comment"># 将按钮添加到布局管理器中  </span></span><br><span class="line">  </span><br><span class="line">window.setLayout(layout)  <span class="comment"># 设置窗口部件的布局  </span></span><br><span class="line">window.show()  <span class="comment"># 显示窗口  </span></span><br><span class="line">  </span><br><span class="line">app.<span class="built_in">exec</span>()  <span class="comment"># 进入应用程序的主循环</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205141.png" alt="image.png"></p>
+<p>很好，说明各种环境已经搭建好了！</p>
+<h3 id="Step-2-实现基础功能"><a href="#Step-2-实现基础功能" class="headerlink" title="Step 2 实现基础功能"></a>Step 2 实现基础功能</h3><p>接下来尽管提需求，从开发者的角度出发，一步步给 GPT 进行引导，从易到难，功能从简单到复杂</p>
+<p>例如我开始给 GPT 提需求：</p>
+<blockquote>
+<p>我提供一组数据，点击按钮之后，就可以在一个输出位置输出这组数据的标准差</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys  </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainWindow</span>(<span class="params">QMainWindow</span>):</span>  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="built_in">super</span>().__init__()  </span><br><span class="line">  </span><br><span class="line">        self.setWindowTitle(<span class="string">"标准差计算器"</span>)  </span><br><span class="line">        self.setGeometry(<span class="number">100</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">200</span>)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 主部件  </span></span><br><span class="line">        self.central_widget = QWidget()  </span><br><span class="line">        self.setCentralWidget(self.central_widget)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 布局  </span></span><br><span class="line">        self.layout = QVBoxLayout()  </span><br><span class="line">        self.central_widget.setLayout(self.layout)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 输入框  </span></span><br><span class="line">        self.data_input = QLineEdit()  </span><br><span class="line">        self.data_input.setPlaceholderText(<span class="string">"输入数据，用逗号分隔"</span>)  </span><br><span class="line">        self.layout.addWidget(self.data_input)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 计算按钮  </span></span><br><span class="line">        self.calculate_button = QPushButton(<span class="string">"计算标准差"</span>)  </span><br><span class="line">        self.calculate_button.clicked.connect(self.calculate_standard_deviation)  </span><br><span class="line">        self.layout.addWidget(self.calculate_button)  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 输出标签  </span></span><br><span class="line">        self.result_label = QLabel(<span class="string">"标准差："</span>)  </span><br><span class="line">        self.layout.addWidget(self.result_label)  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_standard_deviation</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="comment"># 获取输入数据  </span></span><br><span class="line">        data_text = self.data_input.text()  </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> data_text:  </span><br><span class="line">            self.result_label.setText(<span class="string">"请先输入数据"</span>)  </span><br><span class="line">            <span class="keyword">return</span>  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 解析数据  </span></span><br><span class="line">        <span class="keyword">try</span>:  </span><br><span class="line">            data = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">float</span>, data_text.split(<span class="string">','</span>)))  </span><br><span class="line">        <span class="keyword">except</span> ValueError:  </span><br><span class="line">            self.result_label.setText(<span class="string">"数据格式错误，请输入有效的数字"</span>)  </span><br><span class="line">            <span class="keyword">return</span>  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 计算标准差  </span></span><br><span class="line">        std_dev = np.std(data)  </span><br><span class="line">        self.result_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.2</span>f}</span>"</span>)  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:  </span><br><span class="line">    app = QApplication(sys.argv)  </span><br><span class="line">    window = MainWindow()  </span><br><span class="line">    window.show()  </span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205448.png" alt="image.png"></p>
+<p>好了，手动输入几组数据，确实能够计算出来标准差了，不过我们的数据来自 Excel，而且用逗号分隔数据的方式也不方便。于是就有了如下需求：</p>
+<blockquote>
+<p>但是，你知道的，我的输入数据一般从 excel 中复制过来的，这种用逗号分隔数字的方式让我在输入的时候非常麻烦</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication, QWidget, QVBoxLayout, QPushButton, QPlainTextEdit, QLabel</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProcessingApp</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设置窗口标题和尺寸</span></span><br><span class="line">        self.setWindowTitle(<span class="string">"数据处理应用"</span>)</span><br><span class="line">        self.setGeometry(<span class="number">100</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">300</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建布局和组件</span></span><br><span class="line">        layout = QVBoxLayout()</span><br><span class="line"></span><br><span class="line">        self.text_edit = QPlainTextEdit(self)</span><br><span class="line">        self.text_edit.setPlaceholderText(<span class="string">"在这里粘贴数据..."</span>)</span><br><span class="line">        layout.addWidget(self.text_edit)</span><br><span class="line"></span><br><span class="line">        self.calculate_button = QPushButton(<span class="string">"计算标准差"</span>, self)</span><br><span class="line">        self.calculate_button.clicked.connect(self.calculate_std_dev)</span><br><span class="line">        layout.addWidget(self.calculate_button)</span><br><span class="line"></span><br><span class="line">        self.result_label = QLabel(<span class="string">"标准差："</span>, self)</span><br><span class="line">        layout.addWidget(self.result_label)</span><br><span class="line"></span><br><span class="line">        self.setLayout(layout)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_std_dev</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 获取文本内容</span></span><br><span class="line">        text = self.text_edit.toPlainText()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 处理文本数据</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 将文本数据按行分隔，然后按空格或制表符分隔</span></span><br><span class="line">            data = [<span class="built_in">float</span>(num) <span class="keyword">for</span> line <span class="keyword">in</span> text.splitlines() <span class="keyword">for</span> num <span class="keyword">in</span> line.split()]</span><br><span class="line">            <span class="keyword">if</span> data:</span><br><span class="line">                <span class="comment"># 计算标准差</span></span><br><span class="line">                std_dev = np.std(data)</span><br><span class="line">                self.result_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.2</span>f}</span>"</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.result_label.setText(<span class="string">"标准差：无效数据"</span>)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            self.result_label.setText(<span class="string">"标准差：数据格式错误"</span>)</span><br><span class="line"></span><br><span class="line">app = QApplication([])</span><br><span class="line">window = DataProcessingApp()</span><br><span class="line">window.show()</span><br><span class="line">app.<span class="built_in">exec</span>()</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820205734.png" alt="image.png"></p>
+<p>以上这组数据就是直接从 Excel 粘贴进去的。看来功能 GPT 是帮我们实现了</p>
+<h3 id="Step-3-完善程序"><a href="#Step-3-完善程序" class="headerlink" title="Step 3 完善程序"></a>Step 3 完善程序</h3><p>接下来按照上面的步骤，进一步提需求，进一步完善程序代码<br>例如，可以增加一些数据清洗、数据输入验证、错处处理、历史记录、导出数据等功能<br>也可以对程序进行拆分，不同功能的代码写到不同的 py 文件中</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820210219.png" alt="image.png"></p>
+<p>当前的程序结构为</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data_processor/</span><br><span class="line">│</span><br><span class="line">├── main.py</span><br><span class="line">├── ui.py</span><br><span class="line">├── processor.py</span><br><span class="line">└── utils.py</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h4><figure class="highlight python"><figcaption><span>main.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QApplication</span><br><span class="line"><span class="keyword">from</span> ui <span class="keyword">import</span> DataProcessorApp</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    processor = DataProcessorApp()</span><br><span class="line">    processor.show()</span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="UI-界面"><a href="#UI-界面" class="headerlink" title="UI 界面"></a>UI 界面</h4><figure class="highlight python"><figcaption><span>ui.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> QWidget, QVBoxLayout, QPushButton, QTextEdit, QLabel  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtGui <span class="keyword">import</span> QFont, QColor  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtCore <span class="keyword">import</span> Qt  </span><br><span class="line"><span class="keyword">from</span> PyQt6.QtGui <span class="keyword">import</span> QPalette  </span><br><span class="line"><span class="keyword">from</span> processor <span class="keyword">import</span> DataProcessor  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProcessorApp</span>(<span class="params">QWidget</span>):</span>  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="built_in">super</span>().__init__()  </span><br><span class="line">        self.processor = DataProcessor()  </span><br><span class="line">        self.init_ui()  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init_ui</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        <span class="comment"># Set the overall layout and style  </span></span><br><span class="line">        layout = QVBoxLayout()  </span><br><span class="line">        self.setStyleSheet(<span class="string">"background-color: #f0f0f0;"</span>)  </span><br><span class="line">        self.setPalette(QPalette(QColor(<span class="string">'#f0f0f0'</span>)))  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># Create and style widgets  </span></span><br><span class="line">        self.input_text = QTextEdit(self)  </span><br><span class="line">        self.input_text.setPlaceholderText(<span class="string">"在这里粘贴数据，每行一个数字"</span>)  </span><br><span class="line">        self.input_text.setStyleSheet(<span class="string">"font-size: 14px; padding: 10px; border: 1px solid #ccc;"</span>)  </span><br><span class="line">        layout.addWidget(self.input_text)  </span><br><span class="line">  </span><br><span class="line">        self.mean_label = QLabel(<span class="string">"平均值："</span>, self)  </span><br><span class="line">        self.mean_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.mean_label)  </span><br><span class="line">  </span><br><span class="line">        self.variance_label = QLabel(<span class="string">"方差："</span>, self)  </span><br><span class="line">        self.variance_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.variance_label)  </span><br><span class="line">  </span><br><span class="line">        self.std_dev_label = QLabel(<span class="string">"标准差："</span>, self)  </span><br><span class="line">        self.std_dev_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.std_dev_label)  </span><br><span class="line">  </span><br><span class="line">        self.reliability_label = QLabel(<span class="string">"重复性："</span>, self)  </span><br><span class="line">        self.reliability_label.setStyleSheet(<span class="string">"font-size: 16px; color: #333;"</span>)  </span><br><span class="line">        layout.addWidget(self.reliability_label)  </span><br><span class="line">  </span><br><span class="line">        process_button = QPushButton(<span class="string">"计算标准差"</span>, self)  </span><br><span class="line">        process_button.setStyleSheet(  </span><br><span class="line">            <span class="string">"background-color: #4CAF50; color: white; font-size: 14px; padding: 10px; border: none; border-radius: 5px;"</span>)  </span><br><span class="line">        process_button.clicked.connect(self.calculate_std_dev)  </span><br><span class="line">        layout.addWidget(process_button)  </span><br><span class="line">  </span><br><span class="line">        reliability_button = QPushButton(<span class="string">"计算重复性"</span>, self)  </span><br><span class="line">        reliability_button.setStyleSheet(  </span><br><span class="line">            <span class="string">"background-color: #2196F3; color: white; font-size: 14px; padding: 10px; border: none; border-radius: 5px;"</span>)  </span><br><span class="line">        reliability_button.clicked.connect(self.calculate_reliability)  </span><br><span class="line">        layout.addWidget(reliability_button)  </span><br><span class="line">  </span><br><span class="line">        self.history_text = QTextEdit(self)  </span><br><span class="line">        self.history_text.setPlaceholderText(<span class="string">"历史记录"</span>)  </span><br><span class="line">        self.history_text.setReadOnly(<span class="literal">True</span>)  </span><br><span class="line">        self.history_text.setStyleSheet(<span class="string">"font-size: 14px; padding: 10px; border: 1px solid #ccc;"</span>)  </span><br><span class="line">        layout.addWidget(self.history_text)  </span><br><span class="line">  </span><br><span class="line">        self.setLayout(layout)  </span><br><span class="line">        self.setWindowTitle(<span class="string">"数据处理程序"</span>)  </span><br><span class="line">        self.setGeometry(<span class="number">100</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">400</span>)  </span><br><span class="line">        self.setFont(QFont(<span class="string">'Arial'</span>, <span class="number">12</span>))  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_std_dev</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        data = self.input_text.toPlainText().strip()  </span><br><span class="line">        <span class="keyword">try</span>:  </span><br><span class="line">            numbers = [<span class="built_in">float</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> data.split() <span class="keyword">if</span> x.replace(<span class="string">'.'</span>, <span class="string">''</span>, <span class="number">1</span>).isdigit()]  </span><br><span class="line">            <span class="keyword">if</span> numbers:  </span><br><span class="line">                std_dev = self.processor.calculate_std_dev(numbers)  </span><br><span class="line">                mean, variance, std_dev, _ = self.processor.calculate_reliability(numbers)  </span><br><span class="line">                self.mean_label.setText(<span class="string">f"平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">f"方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">            <span class="keyword">else</span>:  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">"标准差：无效数据"</span>)  </span><br><span class="line">                self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">            history = self.history_text.toPlainText()  </span><br><span class="line">            new_entry = <span class="string">f"数据：<span class="subst">{<span class="string">', '</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, numbers))}</span> | 标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span> | 平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span> | 方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>\n"</span>  </span><br><span class="line">            self.history_text.setText(history + new_entry)  </span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:  </span><br><span class="line">            self.std_dev_label.setText(<span class="string">f"错误：<span class="subst">{e}</span>"</span>)  </span><br><span class="line">            self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">            self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_reliability</span>(<span class="params">self</span>):</span>  </span><br><span class="line">        data = self.input_text.toPlainText().strip()  </span><br><span class="line">        <span class="keyword">try</span>:  </span><br><span class="line">            numbers = [<span class="built_in">float</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> data.split() <span class="keyword">if</span> x.replace(<span class="string">'.'</span>, <span class="string">''</span>, <span class="number">1</span>).isdigit()]  </span><br><span class="line">            <span class="keyword">if</span> numbers:  </span><br><span class="line">                mean, variance, std_dev, reliability = self.processor.calculate_reliability(numbers)  </span><br><span class="line">                self.mean_label.setText(<span class="string">f"平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">f"方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">f"标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">                self.reliability_label.setText(<span class="string">f"重复性：<span class="subst">{reliability:<span class="number">.6</span>f}</span>"</span>)  </span><br><span class="line">            <span class="keyword">else</span>:  </span><br><span class="line">                self.reliability_label.setText(<span class="string">"重复性：无效数据"</span>)  </span><br><span class="line">                self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">                self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">                self.std_dev_label.setText(<span class="string">"标准差：无效数据"</span>)  </span><br><span class="line">            history = self.history_text.toPlainText()  </span><br><span class="line">            new_entry = <span class="string">f"数据：<span class="subst">{<span class="string">', '</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, numbers))}</span> | 标准差：<span class="subst">{std_dev:<span class="number">.6</span>f}</span> | 重复性：<span class="subst">{reliability:<span class="number">.6</span>f}</span> | 平均值：<span class="subst">{mean:<span class="number">.6</span>f}</span> | 方差：<span class="subst">{variance:<span class="number">.6</span>f}</span>\n"</span>  </span><br><span class="line">            self.history_text.setText(history + new_entry)  </span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:  </span><br><span class="line">            self.reliability_label.setText(<span class="string">f"错误：<span class="subst">{e}</span>"</span>)  </span><br><span class="line">            self.mean_label.setText(<span class="string">"平均值：无效数据"</span>)  </span><br><span class="line">            self.variance_label.setText(<span class="string">"方差：无效数据"</span>)  </span><br><span class="line">            self.std_dev_label.setText(<span class="string">"标准差：无效数据"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><figure class="highlight python"><figcaption><span>processor.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataProcessor</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_std_dev</span>(<span class="params">self, numbers</span>):</span></span><br><span class="line">        <span class="keyword">return</span> np.std(numbers, ddof=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_reliability</span>(<span class="params">self, numbers</span>):</span></span><br><span class="line">        mean = np.mean(numbers)</span><br><span class="line">        variance = np.var(numbers, ddof=<span class="number">1</span>)</span><br><span class="line">        std_dev = np.sqrt(variance)</span><br><span class="line">        reliability = std_dev / mean</span><br><span class="line">        <span class="keyword">return</span> mean, variance, std_dev, reliability</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Step-4-打包程序"><a href="#Step-4-打包程序" class="headerlink" title="Step 4 打包程序"></a>Step 4 打包程序</h3><p>想要将整个程序打包成 exe 文件，这样方便在没有 python 环境时依然可以运行，步骤如下：</p>
+<ul>
+<li>安装 PyInstaller 包（可以直接在 powershell 中安装）</li>
+<li>使用 PyInstaller 打包脚本</li>
+</ul>
+<p>1、在 PowerShell 中，运行如下命令</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意：前面已经安装了 python 程序，应该是可以使用 pip 命令了的。可输入 <code>pip --version</code> 命令查看。若该命令无法使用，很可能是没有将 python 解释器添加到环境变量中，可进行如下操作：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\Programs\Python\Python312\</span><br><span class="line">C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Scripts\</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这里的路径请替换为实际安装 Python 的路径</p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820211551.png" alt="image.png"></p>
+<p>2、运行 pyinstaller 命令打包程序</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --onefile --windowed your_script.py</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>--onefile</code>：将所有内容打包成一个单独的 <code>.exe </code> 文件。</li>
+<li><code>--windowed</code>：用于创建一个没有命令行窗口的图形界面应用。</li>
+</ul>
+<p>打包完成后，会生成几个文件夹：</p>
+<ul>
+<li><code>dist</code> 中包含生成的 exe 文件</li>
+<li><code>build</code> 中包含构建过程中的临时文件，可以删除。</li>
+<li><code>your_script.spec</code> 文件是 PyInstaller 的配置文件，可以根据需要进行修改。</li>
+</ul>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240820211643.png" alt="image.png"></p>
+<p><img data-src="https://s2.loli.net/2024/08/20/FvgUAH9DrSljCQ7.gif" alt=".gif"></p>
+<p>恭喜你，得到了一款简易的小程序：）</p>
+<h3 id="续"><a href="#续" class="headerlink" title="续"></a>续</h3><p>明明程序实现的功能很简单，为什么生成的程序还那么大呢，例如生成上面的这个 exe 文件就有 50M。因为软件将一些必要的程序包（如 numpy 模块）都打包进去了，若之后再增加一些计算相关的各种功能进去，程序体积可能也只会大一丢丢吧</p>
+<p>另外，打包时如何优化资源，排除掉一些不必要的模块还值得学学。不过，尽管文件体积大点，功能总算是实现了，还是蛮有成就感的</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="reward-container">
+  <div>Buy me a coffee(*^▽^*) Coffeelize!</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/Wechartpay.webp" alt="coffeelize 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/Alipay.webp" alt="coffeelize 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>coffeelize
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html" title="使用 PyQt 制作简易软件简明笔记">https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/PyQt/" rel="tag"># PyQt</a>
+              <a href="/tags/excel/" rel="tag"># excel</a>
+          </div>
+
+        
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/Short-Notes-on-Making-Anki-Plugins.html" rel="next" title="制作 Anki 插件简明笔记">
+                  制作 Anki 插件简明笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-mug-saucer"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">coffeelize</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">270k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:06</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-12-18 09:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "default";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Reddit,Evernote,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"coffeelize","repo":"coffeelize.github.io","client_id":"5849fa5bf577578dd8cb","client_secret":"5686aae8211779a9506e975e151a355d11f4fa1e","admin_user":"coffeelize","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"cfc6c8cb493d87066be83e1240ee4e1e"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

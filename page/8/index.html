@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,6 +251,175 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Processing-References-with-BIBTeX.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Processing-References-with-BIBTeX.html" class="post-title-link" itemprop="url">使用 BIBTeX 处理参考文献</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-11 17:13:10" itemprop="dateCreated datePublished" datetime="2022-07-11T17:13:10+08:00">2022-07-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:36:19" itemprop="dateModified" datetime="2024-06-22T17:36:19+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="使用-BIBTeX-排版参考文献"><a href="#使用-BIBTeX-排版参考文献" class="headerlink" title="使用 BIBTeX 排版参考文献"></a>使用 BIBTeX 排版参考文献</h3><ol>
+<li>准备一份 BIBTeX 数据库，假设数据库文件名为 books.bib，和 LaTeX 源代码一般位于同一个目录下。</li>
+<li>在源代码中添加必要的命令。假设源代码名为 demo.tex<ol>
+<li> 首先需要使用命令 <code>\bibliographystyle</code> 设定参考文献的格式。</li>
+<li>其次，在正文中引用参考文献。BIBTeX 程序在生成参考文献列表的时候，通常只列出用了 <code>\cite</code> 命令引用的那些。如果需要列出未被引用的文献，则需要 <code>\nocite{ ⟨ citation ⟩ }</code> 命令；而 <code>\nocite{*}</code> 则让所有未被引用的文献都列出。</li>
+<li>再次，在需要列出参考文献的位置，使用 <code>\bibliography</code> 命令代替 thebibliography 环境：<code>\bibliography{ ⟨ bib-name ⟩ }</code>，其中 ⟨ bib-name ⟩ 是 BIBTeX 数据库的文件名，不要带 <code>.bib</code> 扩展名。</li>
+<li>注意：<code>\bibliographystyle</code> 和 <code>\bibliography</code> 这两个命令缺一不可，否则使用 BIBTeX 生成参考文献列表的时候会报错</li>
+</ol>
+</li>
+<li>开始编译<ol>
+<li>使用 xelatex 或 pdflatex 编译源代码 demo.tex</li>
+<li> 使用 bibtex 命令（处理一些 aux、bbl 文件，不需要我们管）</li>
+<li>在使用 xelatex 或 pdflatex 编译两遍（读入参考文献并正确，生成引用。）</li>
+</ol>
+</li>
+</ol>
+<p>整个过程使用的命令如下（可以略去扩展名）：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xelatex demo</span><br><span class="line">bibtex demo</span><br><span class="line">xelatex demo</span><br><span class="line">xelatex demo</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="关于-bibliographystyle"><a href="#关于-bibliographystyle" class="headerlink" title="关于 bibliographystyle"></a>关于 bibliographystyle</h4><p>参考文献的写法在不同文献里千差万别，包括作者、标题、年份等各项的顺序和字体样式、文献在列表中的排序规则等。BIBTeX 用样式（style）来管理参考文献的写法。BIBTeX 提供了几个预定义的样式，如 plain, unsrt, alpha 等。如果使用期刊模板的话，可能会提供自用的样式。样式文件以 <code>.bst</code> 为扩展名。<br>使用样式文件的方法是在源代码内（一般在导言区）使用 <code>\bibliographystyle</code> 命令：</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\bibliographystyle</span>{⟨ bst-name ⟩}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这里 ⟨ bst-name ⟩ 为 <code>.bst</code> 样式文件的名称，不要带 <code>.bst</code> 扩展名。</p>
+<p>比如说如下的 plain 样式和 GB/T 7714—2015 样式</p>
+<ul>
+<li>plain</li>
+</ul>
+<blockquote>
+<p>[1] Alice Axford, Bob Birkin, Charlie Copper, and Danny Dannford. Demostration of bibliography items. <em>Journal of TeXperts</em>, 36(7):114–120, Mar 2013.</p>
+</blockquote>
+<ul>
+<li>gbt7714-numerical</li>
+</ul>
+<blockquote>
+<p>[1] 陈登原。国史旧闻：第 1 卷 [M]. 北京：中华书局，2000:29.</p>
+</blockquote>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="comment">% 指定参考文献的样式</span></span><br><span class="line"><span class="keyword">\bibliographystyle</span>{plain}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> 登斯楼也，则有去国怀乡，忧谗畏讥<span class="keyword">\cite</span>{rentoumis2016implementation}，满目萧然，感极而悲者矣<span class="keyword">\cite</span>{孟炎2021交变温度场对光伏组件性能的影响研究}。</span><br><span class="line"> </span><br><span class="line"><span class="comment">%使用\bibliography命令替代原先的thebibliography环境</span></span><br><span class="line"> <span class="keyword">\bibliography</span>{mybib} <span class="comment">%引入自己的bib库，不要带bib扩展名</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如使用 plain 样式的 bibliographystyle，然后随机插入两条文献，编译结果如下图所示：</p>
+<p><img data-src="https://s2.loli.net/2022/07/11/Mey8dYDfKqgsjT1.png" alt="02-使用plain样式生成的参考文献.png"></p>
+<p>从上图可看出，对于多个作者：“等”、“.et.al” 还需要进行相应的设置。其原因在于 bibliographystyle 使用的是 plain 样式。plain 的中文翻译点击此可查看：<a target="_blank" rel="noopener" href="https://dict.cn/plain">海词词典</a>，大致意思是 “朴素的，纯的”，也就是说参考文献样式按照 “正文文本” 一样处理，而不会对齐进行一些额外的操作。</p>
+<p>而如过我们使用的是 gbt7714-numerical 样式，注：<strong>使用 gbt7714-numerical 样式需要使用 gbt7714 宏包</strong></p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%...在导言区添加如下两行内容</span></span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress]{gbt7714}</span><br><span class="line"><span class="keyword">\bibliographystyle</span>{gbt7714-numerical}</span><br><span class="line"><span class="comment">%\begin{document}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>输出结果如下，已经对参考文献的样式进行了符合 gbt-7714 标准形式的输出</p>
+<p><img data-src="https://s2.loli.net/2022/07/11/ndhbxOtMZYA91Tg.png" alt="04-使用gb7714输出参考文献.png"></p>
+<p>完整案例如下</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="comment">% 指定参考文献的样式</span></span><br><span class="line"><span class="keyword">\usepackage</span>[sort<span class="built_in">&amp;</span>compress]{gbt7714}</span><br><span class="line"><span class="keyword">\bibliographystyle</span>{gbt7714-numerical}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> 登斯楼也，则有去国怀乡，忧谗畏讥<span class="keyword">\cite</span>{rentoumis2016implementation}，满目萧然，感极而悲者矣<span class="keyword">\cite</span>{孟炎2021交变温度场对光伏组件性能的影响研究}。</span><br><span class="line"> </span><br><span class="line"><span class="comment">%使用\bibliography命令替代原先的thebibliography环境</span></span><br><span class="line"> <span class="keyword">\bibliography</span>{mybib} <span class="comment">%引入自己的bib库，不要带bib扩展名</span></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><h4 id="更多添加参考文献的方案"><a href="#更多添加参考文献的方案" class="headerlink" title="更多添加参考文献的方案"></a>更多添加参考文献的方案</h4><p>除了使用 BIBTeX 添加参考文献之外，实际上 Latex 还有其他几种添加参考文献的方案，以下为三种插入参考文献方式比较：</p>
+<p><img data-src="https://s2.loli.net/2022/07/11/CbT5m6MkvIsB8Vx.png" alt="03-三种插入参考文献方式比较.png"></p>
+<h4 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择"></a>如何选择</h4><ul>
+<li>有现成的样式文件可以用就用</li>
+<li> BIBTeX 和 biber 都可以用，选自己熟悉的或者编译速度快的，我还是喜欢使用 BIBTeX</li>
+<li> 假设投稿中遇到以下情景</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">情景</th>
+<th align="center">选择</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">无样式文件提供</td>
+<td align="center">自己开发样式文件难度大，只能用 thebibliography 环境</td>
+</tr>
+<tr>
+<td align="center">提供 BIBTeX 或 biber 样式之一</td>
+<td align="center">有工具可以用就用</td>
+</tr>
+<tr>
+<td align="center"> BIBTeX 或 biber 两者均提供了</td>
+<td align="center">两者都行，我倾向于编译速度较快的 BIBTeX</td>
+</tr>
+</tbody></table>
+<h4 id="通过下载-BibTeX-样式文件输出符号-GBT7714-2005-标准的-BibTeX-Style"><a href="#通过下载-BibTeX-样式文件输出符号-GBT7714-2005-标准的-BibTeX-Style" class="headerlink" title="通过下载 BibTeX 样式文件输出符号 GBT7714-2005 标准的 BibTeX Style"></a>通过下载 BibTeX 样式文件输出符号 GBT7714-2005 标准的 BibTeX Style</h4><p>可参考如下两链接中的任意一种</p>
+<ul>
+<li>个人博客：<a target="_blank" rel="noopener" href="https://liam.page/2014/05/09/gbt7714-2005-bibtex-style/">【LaTeX Tips】符合 GBT7714-2005 标准的 BibTeX Style | 始终</a></li>
+<li> Github：<a target="_blank" rel="noopener" href="https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style">GitHub - Haixing-Hu/GBT7714-2005-BibTeX-Style: A GB/T 7714-2005 national standard compliant BibTeX style.</a></li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>LaTeX 官方入门手册：一份（不太）简短的 LaTeX2ε 介绍</li>
+<li> LaTeX 工作室：LaTeX 中参考文献的处理.pdf</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1501,271 +1670,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/LaTeX-floating-body-title-style.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/LaTeX-floating-body-title-style.html" class="post-title-link" itemprop="url">LaTeX 之浮动体标题样式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-25 13:43:30" itemprop="dateCreated datePublished" datetime="2022-06-25T13:43:30+08:00">2022-06-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:50:15" itemprop="dateModified" datetime="2024-06-22T17:50:15+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Caption 宏包中的一些参数说明及案例分析，用于自定义设置浮动体中标题的样式 o (^▽^) o</p>
-<ol>
-<li>修改全篇浮动体标题格式（包括图片，表格等）</li>
-</ol>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% 导言区</span><br><span class="line">\usepackage[font=small,labelfont=bf]{caption}</span><br><span class="line">% 下面命令与之等价</span><br><span class="line">\usepackage{caption}</span><br><span class="line">\captionsetup{font=small,labelfont=bf}</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>单独对浮动体的图片或表格环境中标题的设置 </li>
-</ol>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% 导言区</span><br><span class="line">\usepackage{caption}</span><br><span class="line">\captionsetup[figure]{font=small,labelfont=bf}</span><br><span class="line">\captionsetup[table]{font=small,labelfont=bf}</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="案例-1：加粗标题的图标签"><a href="#案例-1：加粗标题的图标签" class="headerlink" title="案例 1：加粗标题的图标签"></a>案例 1：加粗标题的图标签</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line"><span class="keyword">\captionsetup</span>{</span><br><span class="line"> labelfont=bf<span class="comment">%设置图片标题的编号为加粗</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{figure}</span><br><span class="line">  <span class="keyword">\includegraphics</span>[width=4in]{example-image}</span><br><span class="line">  <span class="keyword">\caption</span>{这个图片标题的图标会加粗}</span><br><span class="line"> <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/25/W7hIqF5ZDBK4Ygs.png" alt="01-将图片标题编号加粗.png"></p>
-<p>实际上，使用 caption 命令不一定真的需要加入图片或者表格，只需要将其应用在浮动体环境当中即可</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line"><span class="keyword">\captionsetup</span>{</span><br><span class="line"> labelfont=bf<span class="comment">%设置图片标题的编号为加粗</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{figure}</span><br><span class="line">  <span class="keyword">\caption</span>{这个图片标题的图标会加粗}</span><br><span class="line"> <span class="keyword">\end</span>{figure}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/25/AQvzFtPYkZuMESx.png" alt="01-只需将caption插入浮动环境中即可.png"></p>
-<h3 id="案例-2：设置标题与图片、表格之间的间距"><a href="#案例-2：设置标题与图片、表格之间的间距" class="headerlink" title="案例 2：设置标题与图片、表格之间的间距"></a>案例 2：设置标题与图片、表格之间的间距</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%语法</span></span><br><span class="line"><span class="keyword">\captionsetup</span>[float type]{options}</span><br><span class="line"><span class="comment">%举例</span></span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=3pt} <span class="comment">%设置图片标题与图片之间的间距为3pt</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>对于 Latex 标准的 article、book、report 等文档，默认的 skip 值为 10pt</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption}</span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{skip=0pt}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">\begin</span>{figure} </span><br><span class="line">   <span class="keyword">\centering</span> </span><br><span class="line">   <span class="keyword">\includegraphics</span>[width=2in]{example-image-A} </span><br><span class="line">   <span class="keyword">\caption</span>{设置标题与图片间的间距为0}</span><br><span class="line"> <span class="keyword">\end</span>{figure}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/25/MA2rTnuy9GEo8xa.png" alt="03-设置标题与图片之间的间距为0.png"></p>
-<h3 id="案例-3：更多的标题样式设置"><a href="#案例-3：更多的标题样式设置" class="headerlink" title="案例 3：更多的标题样式设置"></a>案例 3：更多的标题样式设置</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt]{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{graphicx}</span><br><span class="line"><span class="keyword">\usepackage</span>{caption} </span><br><span class="line"><span class="keyword">\captionsetup</span>[figure]{</span><br><span class="line"> name=Figure, </span><br><span class="line"> listformat=empty, <span class="comment">%和List of Figures/Table相关</span></span><br><span class="line"> justification=justified, <span class="comment">%即两端对齐（默认）</span></span><br><span class="line"> labelsep=quad, <span class="comment">%标题编号与标题之间的分隔符</span></span><br><span class="line"> position=above, <span class="comment">%不一定能够设定标题与图片相对之间的位置</span></span><br><span class="line"> skip=3pt, <span class="comment">%图片标题与图片之间的距离</span></span><br><span class="line"> width=4in,  <span class="comment">%图片标题的宽度（这里设置为了和图片一样宽）</span></span><br><span class="line"> labelfont={huge}, <span class="comment">%图片标题编号的字号</span></span><br><span class="line"> font={small} <span class="comment">%图片标题的字号</span></span><br><span class="line">} </span><br><span class="line"><span class="keyword">\begin</span>{document} </span><br><span class="line"> <span class="keyword">\begin</span>{figure} </span><br><span class="line">  <span class="keyword">\centering</span></span><br><span class="line">  <span class="keyword">\includegraphics</span>[width=4in]{example-image-duck}</span><br><span class="line">  <span class="keyword">\caption</span>{这是一个很长很长很长很很长很长很长长很长很长图片标题} </span><br><span class="line"> <span class="keyword">\end</span>{figure} </span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/25/8HbmBTlcJunaVfq.png" alt="02-标题样式设置大汇总.png"></p>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><h4 id="labelsep"><a href="#labelsep" class="headerlink" title="labelsep"></a>labelsep</h4><p>语法</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">labelsep=〈label separator name〉</span><br></pre></td></tr></tbody></table></figure>
-
-<p>对应值有</p>
-<table>
-<thead>
-<tr>
-<th align="center">格式</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"> default</td>
-<td align="center"> 同 colon</td>
-</tr>
-<tr>
-<td align="center">none</td>
-<td align="center"> 无间隔</td>
-</tr>
-<tr>
-<td align="center"> colon</td>
-<td align="center"> 英文分号</td>
-</tr>
-<tr>
-<td align="center"> period</td>
-<td align="center"> 英文句点</td>
-</tr>
-<tr>
-<td align="center"> space</td>
-<td align="center"> 空格</td>
-</tr>
-<tr>
-<td align="center"> quad</td>
-<td align="center"> 一个 em 的间隔</td>
-</tr>
-<tr>
-<td align="center"> newline</td>
-<td align="center"> 标题另起一行</td>
-</tr>
-<tr>
-<td align="center"> endash</td>
-<td align="center"> 英文 dash 连接符</td>
-</tr>
-</tbody></table>
-<h4 id="Justiﬁcation"><a href="#Justiﬁcation" class="headerlink" title="Justiﬁcation"></a>Justiﬁcation</h4><p>语法</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justification=〈justiﬁcation name〉</span><br></pre></td></tr></tbody></table></figure>
-
-<p>对应的值有</p>
-<table>
-<thead>
-<tr>
-<th align="center">值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"> justified</td>
-<td align="center"> 两端对齐，也就是正文默认对齐方式</td>
-</tr>
-<tr>
-<td align="center"> centering</td>
-<td align="center"> 居中对齐</td>
-</tr>
-<tr>
-<td align="center"> raggedright</td>
-<td align="center"> 左对齐</td>
-</tr>
-<tr>
-<td align="center"> raggedleft</td>
-<td align="center"> 右对齐</td>
-</tr>
-<tr>
-<td align="center"> Raggedright</td>
-<td align="center">……</td>
-</tr>
-</tbody></table>
-<h4 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h4><p>语法</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">font={font options}</span><br><span class="line">labelfont={font options}</span><br><span class="line">textfont={font options}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>对应的 font options</p>
-<table>
-<thead>
-<tr>
-<th align="center">值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"> small</td>
-<td align="center">Small size</td>
-</tr>
-<tr>
-<td align="center">normalsize</td>
-<td align="center">normalsize size</td>
-</tr>
-<tr>
-<td align="center">large</td>
-<td align="center">Large size</td>
-</tr>
-<tr>
-<td align="center">it</td>
-<td align="center">Italic shape</td>
-</tr>
-<tr>
-<td align="center">up</td>
-<td align="center">Upright shape</td>
-</tr>
-<tr>
-<td align="center">bf</td>
-<td align="center">Bold series</td>
-</tr>
-<tr>
-<td align="center">rm</td>
-<td align="center">Roman family</td>
-</tr>
-<tr>
-<td align="center">sf</td>
-<td align="center">Sans Serif family</td>
-</tr>
-<tr>
-<td align="center">tt</td>
-<td align="center">Typewriter family</td>
-</tr>
-<tr>
-<td align="center">stretch=amount</td>
-<td align="center"><code>\setstretch{amount}</code></td>
-</tr>
-<tr>
-<td align="center">color=colour</td>
-<td align="center"><code>color{colour}</code></td>
-</tr>
-<tr>
-<td align="center">…</td>
-<td align="center">…</td>
-</tr>
-</tbody></table>
-<h4 id="标题宽度"><a href="#标题宽度" class="headerlink" title="标题宽度"></a>标题宽度</h4><p>语法</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">margin=amount <span class="comment">%同时设置左右外边距</span></span><br><span class="line">margin={left amount,right amount} <span class="comment">%分别设置左右外边距</span></span><br><span class="line">witdh=amount <span class="comment">%设置标题的宽度</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/06/25/FkBLqMuibvd5enZ.png" alt="03-图片标题宽度.png"></p>
-<h4 id="skip"><a href="#skip" class="headerlink" title="skip"></a>skip</h4><p>语法</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip=amount</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="position"><a href="#position" class="headerlink" title="position"></a>position</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position=top or position=above</span><br><span class="line">position=bottom or position=below</span><br><span class="line">position=auto(which is the default setting)</span><br></pre></td></tr></tbody></table></figure>
-
-<p>请注意：Caption 官方文档中对于该参数的说明</p>
-<blockquote>
-<p>Please note that position=top does NOT mean that the caption is actually placed at the top of the ﬁgure or table.<br>the caption package tries its best to determine the actual position of the caption on its own. Please note that while this is successfully in most cases, it could give wrong results under rare circumstances.</p>
-</blockquote>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>简书：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0a1c45a02120">LaTeX 标题控制</a></li>
-<li> Latex 入门（刘海洋）</li>
-<li>Latex 工作室：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/8652.html">如何用 caption 宏包格式化图表标题和子标题</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1790,13 +1694,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">260k</span>
+    <span title="站点总字数">270k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:57</span>
+    <span title="站点阅读时长">4:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,6 +251,109 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/VScode-configuration-md-template.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/VScode-configuration-md-template.html" class="post-title-link" itemprop="url">VScode 配置 md 模板</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-11-30 16:38:38" itemprop="dateCreated datePublished" datetime="2022-11-30T16:38:38+08:00">2022-11-30</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 18:01:32" itemprop="dateModified" datetime="2024-06-22T18:01:32+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>需要使用 VScode 来编辑 md 文件，并且希望每次在创建 md 文档时，都能够自动补全 YAML 文件信息</p>
+<h3 id="配置-setting-json-文件"><a href="#配置-setting-json-文件" class="headerlink" title="配置 setting.json 文件"></a>配置 setting.json 文件</h3><ol>
+<li>Ctrl+Shift+P，搜索 setting，选择 <code>首选项：打开用户设置 (json)</code></li>
+<li>在这给文件中添加如下代码 </li>
+</ol>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"[markdown]"</span>:  {  </span><br><span class="line">    <span class="attr">"editor.quickSuggestions"</span>: <span class="literal">true</span>  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以下图片显示的是之前就对 setting.json 文件配置过，找到 markdown 的位置添加上述的那一行代码即可；如果之前没有配置过，只需要将上述的那一串代码全部复制到下图中最大的一对黄括号中即可<br><img data-src="https://s2.loli.net/2022/11/30/4GztnFY2WcTpmJa.png" alt="配置SettingJson.png"></p>
+<h3 id="配置-md-模板"><a href="#配置-md-模板" class="headerlink" title="配置 md 模板"></a>配置 md 模板</h3><p><img data-src="https://s2.loli.net/2022/11/30/vV6rAHzYCo8EZk3.png" alt="01-VScode配置用户代码片段.png"></p>
+<ol>
+<li>Ctrl+Shift+P，搜索 snippets，选则 <code>配置用户代码片段</code>，再选择 <code>markdown</code></li>
+<li>将一下代码复制进去保存</li>
+<li>新建 md 文档之后，输入 <code>log</code> 敲 tab 即可自动补全配置好的模板 </li>
+</ol>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line"> <span class="comment">// Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and</span></span><br><span class="line"> <span class="comment">// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</span></span><br><span class="line"> <span class="comment">// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the</span></span><br><span class="line"> <span class="comment">// same ids are connected.</span></span><br><span class="line"> <span class="comment">// Example:</span></span><br><span class="line"> <span class="comment">// 联想时显示的文字内容</span></span><br><span class="line"> <span class="attr">"create blog"</span>: {</span><br><span class="line">   <span class="attr">"prefix"</span>: <span class="string">"log"</span>, <span class="comment">// 输入log，即显示模板提示</span></span><br><span class="line">   <span class="attr">"body"</span>: [</span><br><span class="line">  <span class="comment">// body里是模板内容</span></span><br><span class="line">  <span class="string">"---"</span>,</span><br><span class="line">  <span class="string">"title: $1"</span>, <span class="comment">// $1表示生成模板后，光标最先在此位置</span></span><br><span class="line">  <span class="string">"date: $2"</span>, <span class="comment">// $2表示，在$1处输入完成后，按tab键，光标便跳转到这里，以此类推</span></span><br><span class="line">  <span class="string">"tags:"</span>,</span><br><span class="line">  <span class="string">"  - $3"</span>,</span><br><span class="line">  <span class="string">"---"</span>,</span><br><span class="line">  <span class="string">""</span>,</span><br><span class="line">   ],</span><br><span class="line">   <span class="attr">"description"</span>: <span class="string">"blog模板"</span></span><br><span class="line"> }</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>个人博客：<a target="_blank" rel="noopener" href="http://allanhao.com/2022/07/17/2022-07-17-vscode-markdown/">VSCode 配置 Markdown 模板 | AllanHao</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1208,109 +1311,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Sketchup-3D-Model-Download.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/Sketchup-3D-Model-Download.html" class="post-title-link" itemprop="url">Sketchup 之 3D 模型下载</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-09-22 14:35:47" itemprop="dateCreated datePublished" datetime="2022-09-22T14:35:47+08:00">2022-09-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:59:30" itemprop="dateModified" datetime="2024-06-22T17:59:30+08:00">2024-06-22</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Mechanical/" itemprop="url" rel="index"><span itemprop="name">Mechanical</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>181</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li>Youtube：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2MIFlGg5jJ0&amp;t=109s">Top 5 Websites for FREE 3D Models</a></li>
-</ol>
-<h3 id="3D-模型下载"><a href="#3D-模型下载" class="headerlink" title="3D 模型下载"></a>3D 模型下载</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://3dwarehouse.sketchup.com/">https://3dwarehouse.sketchup.com</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.bimobject.com/">http://www.bimobject.com</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cgtrader.com/">https://www.cgtrader.com</a></li>
-<li><a target="_blank" rel="noopener" href="https://box.pcon-solutions.com/">https://box.pcon-solutions.com</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.caddetails.com/">https://www.caddetails.com</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1335,13 +1335,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">260k</span>
+    <span title="站点总字数">270k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:57</span>
+    <span title="站点阅读时长">4:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
