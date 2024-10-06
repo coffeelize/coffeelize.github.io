@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -260,6 +260,128 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Anki-Note-Reader.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Anki-Note-Reader.html" class="post-title-link" itemprop="url">Anki 笔记读取器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-10-05 15:25:26 / 修改时间：16:29:04" itemprop="dateCreated datePublished" datetime="2024-10-05T15:25:26+08:00">2024-10-05</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>10 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Anki-笔记数据库"><a href="#Anki-笔记数据库" class="headerlink" title="Anki 笔记数据库"></a>Anki 笔记数据库</h2><p>Anki 的笔记数据都存储在&nbsp;<code>collection.anki2</code>&nbsp;文件中，包含了用户的所有笔记、卡片、标签等信息。</p>
+<figure class="highlight python"><figcaption><span>文件路径 </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Roaming\Anki2\账户<span class="number">1</span>\collection.anki2</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以使用 SQLite 或 Python 的&nbsp;<code>sqlite3</code>&nbsp;模块连接并查询该数据库，查看具体的表和字段。</p>
+<h2 id="本地笔记检索"><a href="#本地笔记检索" class="headerlink" title="本地笔记检索"></a>本地笔记检索</h2><h3 id="使用-sqlite3-链接数据库"><a href="#使用-sqlite3-链接数据库" class="headerlink" title="使用 sqlite3 链接数据库"></a>使用 sqlite3 链接数据库</h3><figure class="highlight python"><figcaption><span>打印 collection.anki2 数据库中的所有表格 </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 连接到 Anki 数据库（此处注意替换为自己的文件路径）  </span></span><br><span class="line">anki_db_path = <span class="string">r'C:\Users\Administrator\AppData\Roaming\Anki2\本地账户\collection.anki2'</span>  </span><br><span class="line">conn = sqlite3.connect(anki_db_path)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 查看 notes 表的结构  </span></span><br><span class="line">cursor = conn.cursor()  </span><br><span class="line">cursor.execute(<span class="string">"PRAGMA table_info(notes);"</span>)  </span><br><span class="line">columns = cursor.fetchall()  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 打印字段名  </span></span><br><span class="line"><span class="keyword">for</span> column <span class="keyword">in</span> columns:  </span><br><span class="line">    <span class="built_in">print</span>(column)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 关闭连接  </span></span><br><span class="line">conn.close()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>输出结果为</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">0</span>, <span class="string">'id'</span>, <span class="string">'INTEGER'</span>, <span class="number">0</span>, <span class="literal">None</span>, <span class="number">1</span>)  </span><br><span class="line">(<span class="number">1</span>, <span class="string">'guid'</span>, <span class="string">'TEXT'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">2</span>, <span class="string">'mid'</span>, <span class="string">'INTEGER'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">3</span>, <span class="string">'mod'</span>, <span class="string">'INTEGER'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">4</span>, <span class="string">'usn'</span>, <span class="string">'INTEGER'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">5</span>, <span class="string">'tags'</span>, <span class="string">'TEXT'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">6</span>, <span class="string">'flds'</span>, <span class="string">'TEXT'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">7</span>, <span class="string">'sfld'</span>, <span class="string">'INTEGER'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">8</span>, <span class="string">'csum'</span>, <span class="string">'INTEGER'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">9</span>, <span class="string">'flags'</span>, <span class="string">'INTEGER'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)  </span><br><span class="line">(<span class="number">10</span>, <span class="string">'data'</span>, <span class="string">'TEXT'</span>, <span class="number">1</span>, <span class="literal">None</span>, <span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>说明可以正常连接数据库，准备工作已做好</p>
+<h3 id="制作一个-Python-小程序读取数据库"><a href="#制作一个-Python-小程序读取数据库" class="headerlink" title="制作一个 Python 小程序读取数据库"></a>制作一个 Python 小程序读取数据库</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> PyQt6.QtWidgets <span class="keyword">import</span> (</span><br><span class="line">    QApplication, QWidget, QVBoxLayout, QPushButton,</span><br><span class="line">    QLineEdit, QTextEdit, QMessageBox</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AnkiNoteReader</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line">        self.notes_df = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.setWindowTitle(<span class="string">'Anki 笔记读取器'</span>)</span><br><span class="line"></span><br><span class="line">        layout = QVBoxLayout()</span><br><span class="line"></span><br><span class="line">        self.load_button = QPushButton(<span class="string">'加载笔记'</span>, self)</span><br><span class="line">        self.load_button.clicked.connect(self.load_notes)</span><br><span class="line">        layout.addWidget(self.load_button)</span><br><span class="line"></span><br><span class="line">        self.search_box = QLineEdit(self)</span><br><span class="line">        self.search_box.setPlaceholderText(<span class="string">'搜索关键词'</span>)</span><br><span class="line">        layout.addWidget(self.search_box)</span><br><span class="line"></span><br><span class="line">        self.search_button = QPushButton(<span class="string">'搜索'</span>, self)</span><br><span class="line">        self.search_button.clicked.connect(self.search_notes)</span><br><span class="line">        layout.addWidget(self.search_button)</span><br><span class="line"></span><br><span class="line">        self.text_area = QTextEdit(self)</span><br><span class="line">        layout.addWidget(self.text_area)</span><br><span class="line"></span><br><span class="line">        self.setLayout(layout)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">load_notes</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 连接到 Anki 数据库</span></span><br><span class="line">            anki_db_path = <span class="string">r'C:\Users\Administrator\AppData\Roaming\Anki2\本地账户\collection.anki2'</span></span><br><span class="line">            conn = sqlite3.connect(anki_db_path)</span><br><span class="line">            query = <span class="string">'SELECT id, flds FROM notes'</span></span><br><span class="line">            self.notes_df = pd.read_sql_query(query, conn)</span><br><span class="line">            conn.close()</span><br><span class="line"></span><br><span class="line">            self.display_notes(self.notes_df)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            QMessageBox.critical(self, <span class="string">"错误"</span>, <span class="built_in">str</span>(e))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display_notes</span>(<span class="params">self, notes</span>):</span></span><br><span class="line">        self.text_area.clear()</span><br><span class="line">        <span class="keyword">for</span> index, row <span class="keyword">in</span> notes.iterrows():</span><br><span class="line">            <span class="comment"># 清除不可见字符，保留中文和其他可见字符</span></span><br><span class="line">            fields = re.sub(<span class="string">r'[^\u4e00-\u9fa5\x20-\x7E]'</span>, <span class="string">' '</span>, row[<span class="string">'flds'</span>])  <span class="comment"># 保留中文和可见字符</span></span><br><span class="line">            self.text_area.append(<span class="string">f"Note ID: <span class="subst">{row[<span class="string">'id'</span>]}</span>\nFields: <span class="subst">{fields.strip()}</span>\n"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_notes</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.notes_df <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            search_term = self.search_box.text()</span><br><span class="line">            <span class="keyword">if</span> search_term:</span><br><span class="line">                filtered_notes = self.notes_df[self.notes_df[<span class="string">'flds'</span>].<span class="built_in">str</span>.contains(search_term, na=<span class="literal">False</span>)]</span><br><span class="line">                self.display_notes(filtered_notes)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.display_notes(self.notes_df)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            QMessageBox.warning(self, <span class="string">"警告"</span>, <span class="string">"请先加载笔记！"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = AnkiNoteReader()</span><br><span class="line">    ex.resize(<span class="number">600</span>, <span class="number">400</span>)</span><br><span class="line">    ex.show()</span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20241005153729.png" alt="image.png"></p>
+<p>加载笔记以及搜索笔记如下图<br><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20241005153806.png" alt="image.png"></p>
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20241005153811.png" alt="image.png"></p>
+<h2 id="远程笔记检索"><a href="#远程笔记检索" class="headerlink" title="远程笔记检索"></a>远程笔记检索</h2><h3 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, jsonify  </span><br><span class="line"><span class="keyword">import</span> sqlite3  </span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd  </span><br><span class="line">  </span><br><span class="line">app = Flask(__name__)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 数据库文件路径  </span></span><br><span class="line">DATABASE_PATH = <span class="string">r'C:\Users\Administrator\AppData\Roaming\Anki2\本地账户\collection.anki2'</span>  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_database</span>(<span class="params">query</span>):</span>  </span><br><span class="line">    <span class="string">"""执行 SQL 查询并返回结果为 DataFrame"""</span>    conn = sqlite3.connect(DATABASE_PATH)  </span><br><span class="line">    df = pd.read_sql_query(query, conn)  </span><br><span class="line">    conn.close()  </span><br><span class="line">    <span class="keyword">return</span> df  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/search'</span>, methods=[<span class="string">'GET'</span>]</span>)  </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_notes</span>():</span>  </span><br><span class="line">    <span class="string">"""根据查询词搜索笔记"""</span>  </span><br><span class="line">    search_term = request.args.get(<span class="string">'term'</span>, <span class="string">''</span>)  </span><br><span class="line">    query = <span class="string">f"SELECT id, flds FROM notes WHERE flds LIKE '%<span class="subst">{search_term}</span>%'"</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">try</span>:  </span><br><span class="line">        results = query_database(query)  </span><br><span class="line">        notes = results.to_dict(orient=<span class="string">'records'</span>)  </span><br><span class="line">        <span class="keyword">return</span> jsonify(notes)  </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:  </span><br><span class="line">        <span class="keyword">return</span> jsonify({<span class="string">'error'</span>: <span class="built_in">str</span>(e)})  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:  </span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">5000</span>)  <span class="comment"># 可访问所有 IP</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>运行后提示：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> * Serving Flask app <span class="string">'app'</span></span><br><span class="line"> * Debug mode: off</span><br><span class="line">WARNING: This <span class="keyword">is</span> a development server. Do <span class="keyword">not</span> use it <span class="keyword">in</span> a production deployment. Use a production WSGI server instead.</span><br><span class="line"> * Running on <span class="built_in">all</span> addresses (<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>)</span><br><span class="line"> * Running on http://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">5000</span></span><br><span class="line"> * Running on http://<span class="number">192.168</span><span class="number">.1</span><span class="number">.94</span>:<span class="number">5000</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这时，我们可以在浏览器输入</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">192.168</span><span class="number">.1</span><span class="number">.94</span>:<span class="number">5000</span>/search?term= 要搜索的内容</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20241005154109.png" alt="image.png"></p>
+<h3 id="完善输出"><a href="#完善输出" class="headerlink" title="完善输出"></a>完善输出</h3><ul>
+<li>增加搜索按钮</li>
+<li>优化输出前端效果</li>
+<li>表格形式输出</li>
+<li>添加图片显示（需添加图片数据库地址）</li>
+<li>添加导出 CSV 功能</li>
+</ul>
+<p>项目结构为：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/project</span><br><span class="line">    /static</span><br><span class="line">        styles.css</span><br><span class="line">        javascript.js</span><br><span class="line">    /templates</span><br><span class="line">        index.html</span><br><span class="line">    app.py</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20241005161807.png" alt="image.png"></p>
+<p><img data-src="https://s2.loli.net/2024/10/05/tYkZlIS1r2TyfoX.gif" alt="Anki.gif"></p>
+<h4 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h4><p>以下代码中，需要将 Anki 数据库路径及图片媒体路径替换为自己电脑对应的路径</p>
+<figure class="highlight python"><figcaption><span>app.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, send_from_directory, render_template, send_file</span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库文件路径（需要替换成自己Anki数据库及图片路径）</span></span><br><span class="line">DATABASE_PATH = <span class="string">r'C:\Users\Administrator\Desktop\collection.anki2'</span></span><br><span class="line">MEDIA_PATH = <span class="string">r'C:\Users\Administrator\AppData\Roaming\Anki2\账户1\collection.media'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许访问媒体文件</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/media/&lt;path:filename&gt;'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">media</span>(<span class="params">filename</span>):</span></span><br><span class="line">    full_path = os.path.join(MEDIA_PATH, filename)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Attempting to access: <span class="subst">{full_path}</span>"</span>)</span><br><span class="line">    <span class="keyword">return</span> send_from_directory(MEDIA_PATH, filename)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_database</span>(<span class="params">query, params</span>):</span></span><br><span class="line">    <span class="string">"""执行 SQL 查询并返回结果为 DataFrame"""</span></span><br><span class="line">    conn = sqlite3.connect(DATABASE_PATH)</span><br><span class="line">    df = pd.read_sql_query(query, conn, params=params)</span><br><span class="line">    conn.close()</span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/'</span>, methods=[<span class="string">'GET'</span>, <span class="string">'POST'</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    results = []</span><br><span class="line">    message = <span class="string">""</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        search_term = request.form.get(<span class="string">'term'</span>, <span class="string">''</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f"Searching for: <span class="subst">{search_term}</span>"</span>)</span><br><span class="line">        <span class="comment"># query = "SELECT id, flds FROM notes WHERE flds LIKE ?"</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新查询，获取 flags 字段</span></span><br><span class="line">        <span class="comment"># query = """</span></span><br><span class="line">        <span class="comment">#     SELECT id, flds, flags</span></span><br><span class="line">        <span class="comment">#     FROM notes</span></span><br><span class="line">        <span class="comment">#     WHERE flds LIKE ?</span></span><br><span class="line">        <span class="comment"># """</span></span><br><span class="line"></span><br><span class="line">        query = <span class="string">"""</span></span><br><span class="line"><span class="string">            SELECT id, flds</span></span><br><span class="line"><span class="string">            FROM notes </span></span><br><span class="line"><span class="string">            WHERE flds LIKE ?</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            results_df = query_database(query, (<span class="string">f'%<span class="subst">{search_term}</span>%'</span>,))</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f"Query results: <span class="subst">{results_df}</span>"</span>)</span><br><span class="line">            <span class="keyword">if</span> results_df.empty:</span><br><span class="line">                message = <span class="string">"未找到相关结果。"</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> _, row <span class="keyword">in</span> results_df.iterrows():</span><br><span class="line">                    fields = row[<span class="string">'flds'</span>].split(<span class="string">'\x1f'</span>)</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f"Fields content: <span class="subst">{fields}</span>"</span>)</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">for</span> i, field <span class="keyword">in</span> <span class="built_in">enumerate</span>(fields):</span><br><span class="line">                        matches = re.findall(<span class="string">r'src="([^"]+\.(?:jpg|png|gif))"'</span>, field)</span><br><span class="line">                        <span class="keyword">for</span> match <span class="keyword">in</span> matches:</span><br><span class="line">                            img_tag = <span class="string">f' class="image" src="/media/<span class="subst">{match}</span>" alt="Image" '</span></span><br><span class="line">                            field = re.sub(<span class="string">r'src="[^"]*"'</span>, img_tag, field, count=<span class="number">1</span>)</span><br><span class="line">                        fields[i] = field.strip()</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># results.append({'id': row['id'], 'flds': fields})</span></span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 添加 flags 数据</span></span><br><span class="line">                    <span class="comment"># results.append({'id': row['id'], 'flds': fields, 'flags': row['flags']})</span></span><br><span class="line">                    results.append({<span class="string">'id'</span>: row[<span class="string">'id'</span>], <span class="string">'flds'</span>: fields})</span><br><span class="line"></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            message = <span class="string">f"查询错误: <span class="subst">{<span class="built_in">str</span>(e)}</span>"</span></span><br><span class="line">            <span class="built_in">print</span>(message)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用 render_template 加载 HTML 模板</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, results=results, message=message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/export'</span>, methods=[<span class="string">'GET'</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">export_notes</span>():</span></span><br><span class="line">    search_term = request.args.get(<span class="string">'term'</span>, <span class="string">''</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"导出请求，搜索词: <span class="subst">{search_term}</span>"</span>)  <span class="comment"># 确认请求是否到达</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># query = """</span></span><br><span class="line">    <span class="comment">#     SELECT id, flds, flags</span></span><br><span class="line">    <span class="comment">#     FROM notes</span></span><br><span class="line">    <span class="comment">#     WHERE flds LIKE ?</span></span><br><span class="line">    <span class="comment"># """</span></span><br><span class="line"></span><br><span class="line">    query = <span class="string">"""</span></span><br><span class="line"><span class="string">        SELECT id, flds</span></span><br><span class="line"><span class="string">        FROM notes </span></span><br><span class="line"><span class="string">        WHERE flds LIKE ?</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        results_df = query_database(query, (<span class="string">f'%<span class="subst">{search_term}</span>%'</span>,))</span><br><span class="line">        temp_file = <span class="string">'exported_notes.csv'</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 使用 utf-8-sig 编码</span></span><br><span class="line">        results_df.to_csv(temp_file, index=<span class="literal">False</span>, encoding=<span class="string">'utf-8-sig'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> send_file(temp_file, as_attachment=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f"导出错误: <span class="subst">{<span class="built_in">str</span>(e)}</span>"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"导出失败"</span>, <span class="number">500</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">5000</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><figcaption><span>index.html</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Anki 笔记查询<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"{{ url_for('static', filename='styles.css') }}"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"static/javascript.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!-- 引入 JavaScript 文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Anki 笔记查询<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"term"</span> <span class="attr">placeholder</span>=<span class="string">"输入搜索关键词"</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"searchInput"</span> <span class="attr">placeholder</span>=<span class="string">"搜索内容并导出内容"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"exportNotes()"</span>&gt;</span>导出笔记<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>查询结果<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span>{{ message }}<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Note ID<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>Fields<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--            &lt;th&gt;flags&lt;/th&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        {% for note in results %}</span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ note.id }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ note.flds | join('<span class="tag">&lt;<span class="name">br</span>&gt;</span>') | safe }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">             <span class="comment">&lt;!-- 展示旗帜数据 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--            &lt;td&gt;{{ note.flags }}&lt;/td&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        {% endfor %}</span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h4><figure class="highlight javascript"><figcaption><span>javascript.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">exportNotes</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> searchTerm = <span class="built_in">document</span>.getElementById(<span class="string">'searchInput'</span>).value; <span class="comment">// 获取搜索词</span></span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">`/export?term=<span class="subst">${<span class="built_in">encodeURIComponent</span>(searchTerm)}</span>`</span>; <span class="comment">// 构建请求 URL</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.location.href = url; <span class="comment">// 直接跳转到 URL 下载文件</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><figcaption><span>styles.css</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* styles.css */</span></span><br><span class="line"><span class="selector-tag">body</span> {</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f9f9f9</span>; <span class="comment">/* 背景颜色 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">table</span> {</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">border-collapse</span>: collapse; <span class="comment">/* 确保边框合并 */</span></span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>); <span class="comment">/* 添加阴影 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">th</span>, <span class="selector-tag">td</span> {</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>; <span class="comment">/* 添加边框 */</span></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">12px</span>; <span class="comment">/* 增加内边距 */</span></span><br><span class="line">    <span class="attribute">text-align</span>: left;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">th</span> {</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#4CAF50</span>; <span class="comment">/* 表头背景色 */</span></span><br><span class="line">    <span class="attribute">color</span>: white; <span class="comment">/* 表头字体颜色 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child</span>(even) {</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f2f2f2</span>; <span class="comment">/* 偶数行背景色 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:hover</span> {</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#e0f7fa</span>; <span class="comment">/* 鼠标悬停行的背景色 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.message</span> {</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image</span> {</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">600px</span>; <span class="comment">/* 调整图片尺寸 */</span></span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>; <span class="comment">/* 圆角 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Short-Notes-on-Making-Simple-Software-with-PyQt.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,10 +405,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-08-20 20:30:57 / 修改时间：21:42:38" itemprop="dateCreated datePublished" datetime="2024-08-20T20:30:57+08:00">2024-08-20</time>
+      <time title="创建时间：2024-08-20 20:30:57" itemprop="dateCreated datePublished" datetime="2024-08-20T20:30:57+08:00">2024-08-20</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-08-21 20:42:27" itemprop="dateModified" datetime="2024-08-21T20:42:27+08:00">2024-08-21</time>
+      </span>
 
   
     <span class="post-meta-item" title="本文字数">
@@ -1319,162 +1447,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/QHUMaster-User's-Guide.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/QHUMaster-User's-Guide.html" class="post-title-link" itemprop="url">QHUMaster 使用指南</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-01-09 21:25:10" itemprop="dateCreated datePublished" datetime="2024-01-09T21:25:10+08:00">2024-01-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:57:50" itemprop="dateModified" datetime="2024-06-22T17:57:50+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>912</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h2><table>
-<thead>
-<tr>
-<th>文件名</th>
-<th>下载</th>
-</tr>
-</thead>
-<tbody><tr>
-<td> QHUMaster.zip</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/coffeelize/coffeelize.github.io/blob/master/download/QHUMaster.zip">QHUMaster.zip</a></td>
-</tr>
-<tr>
-<td> 一份简短的 LaTeX 介绍.pdf </td>
-<td><a target="_blank" rel="noopener" href="https://github.com/coffeelize/coffeelize.github.io/blob/master/download/%E4%B8%80%E4%BB%BD%E7%AE%80%E7%9F%AD%E7%9A%84LaTeX%E4%BB%8B%E7%BB%8D.pdf">一份简短的 LaTeX 介绍.pdf</a></td>
-</tr>
-</tbody></table>
-<h2 id="Overleaf-在线编译"><a href="#Overleaf-在线编译" class="headerlink" title="Overleaf 在线编译"></a>Overleaf 在线编译</h2><h3 id="注册-or-登录帐号"><a href="#注册-or-登录帐号" class="headerlink" title="注册 or 登录帐号"></a>注册 or 登录帐号</h3><p>官网：<a target="_blank" rel="noopener" href="https://www.overleaf.com/project">Online LaTeX Editor</a></p>
-<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>Projects —&gt; Create a new project —&gt; Blank project (空项目) —&gt; 为项目取一个名字</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/kabndM4ozVc9KWZ.png" alt="image.png"></p>
-<p>创建项目完之后，将出现如下界面：</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/oqa5lxQL7dhREj9.png" alt="image.png"></p>
-<h3 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h3><p>1）对 QHUMaster.zip 进行解压，得如下文件；</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/gQRtCHrUbfwe3Nu.png" alt="image.png"></p>
-<p>2）将 Manuscript.tex、QHUMaster.cls 以及 reference.bib 拖入到 Overleaf 的项目当中，进行上传</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/8PQrEUW57tKpV1A.png" alt="image.png"></p>
-<p>3）新建文件夹，取名 <code>imgs</code></p>
-<p><img data-src="https://s2.loli.net/2024/01/09/nODSKBrG46jUeXN.png" alt="image.png"></p>
-<p>将 imgs 文件夹中的两张图片拖入 overleaf 项目中的 imgs 文件夹下，进行上传<br><img data-src="https://s2.loli.net/2024/01/09/xMt36FSDCOH8YWh.png" alt="image.png"></p>
-<h3 id="项目设置"><a href="#项目设置" class="headerlink" title="项目设置"></a>项目设置</h3><p>1）全选复制 <code>Manuscript.tex</code> 中的所有内容；<br>``<br><img data-src="https://s2.loli.net/2024/01/09/D15TYJVenckNZRr.png" alt="image.png"></p>
-<p>2）删除 <code>main.tex</code> 文件中的所有内容，粘贴刚才复制的内容到 <code>main.tex</code> </p>
-<p>3）点击左上角的 Menu，将 pdfLaTeX 改为 XeLaTeX</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/osG98VcPhnmw3La.png" alt="image.png"></p>
-<h3 id="编译文件"><a href="#编译文件" class="headerlink" title="编译文件"></a>编译文件</h3><p>接下来按快捷键 <code>Ctrl+S</code>，项目开始编译；编译结束后右侧将出现生成的 PDF 文件</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/odFphf2OgEJA4vD.png" alt="image.png"></p>
-<h3 id="相关操作"><a href="#相关操作" class="headerlink" title="相关操作"></a>相关操作</h3><ul>
-<li>下载 PDF 文件</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2024/01/09/qTbPaefZjXYF1GB.png" alt="image.png"></p>
-<ul>
-<li>打包下载整个项目</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2024/01/09/VxlIn2aijCeuyoU.png" alt="image.png"></p>
-<ul>
-<li>多人共同编辑：Share —&gt; 通过邮件分享项目，可多人在线同时编辑</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2024/01/09/cJwXrpYxhm2tKyd.png" alt="image.png"></p>
-<ul>
-<li>代码和 PDF 位置的跳转</li>
-</ul>
-<p><img data-src="https://s2.loli.net/2024/01/09/moaTYqizg3xQdOp.png" alt="image.png"></p>
-<h2 id="模板介绍"><a href="#模板介绍" class="headerlink" title="模板介绍"></a>模板介绍</h2><h3 id="中英文封面修改"><a href="#中英文封面修改" class="headerlink" title="中英文封面修改"></a>中英文封面修改</h3><p><img data-src="https://s2.loli.net/2024/01/09/5X8otNPwusj1l2c.png" alt="image.png"></p>
-<p>同理，可以相应修改英文封面的内容</p>
-<p><img data-src="https://s2.loli.net/2024/01/09/mrZFnJI7dgxS6pc.png" alt="image.png"></p>
-<h3 id="命令介绍"><a href="#命令介绍" class="headerlink" title="命令介绍"></a>命令介绍</h3><p>这里仅对照图片介绍部分命令，对于 LaTeX 通用命令，大家完全可以使用 GPT 或者搜索引擎就行搜索</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">% 插入章节</span><br><span class="line">\chapter{时运不齐，命途多舛}</span><br><span class="line">% 插入小节</span><br><span class="line">\section{插入图片}</span><br><span class="line">% 插入假文</span><br><span class="line">\zhlipsum[1]</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2024/01/09/MvEmwVUp8Ku9jYP.png" alt="image.png"></p>
-<h2 id="LaTeX-实用资源"><a href="#LaTeX-实用资源" class="headerlink" title="LaTeX 实用资源"></a>LaTeX 实用资源</h2><ul>
-<li>LaTeX 工作室：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/">LaTeX 工作室</a><ul>
-<li><a target="_blank" rel="noopener" href="https://www.latexstudio.net/texdoc/#/29?page_id=155">入门看哪些文档 - LaTeX 工作室</a></li>
-<li><a target="_blank" rel="noopener" href="https://ask.latexstudio.net/ask/">首页 - LaTeX 工作室 问答社区</a></li>
-</ul>
-</li>
-<li> CTAN.org 宏包大全：<a target="_blank" rel="noopener" href="https://ctan.org/pkg/">CTAN: Packages</a></li>
-<li>CTEX.org 常用宏包：<a target="_blank" rel="noopener" href="http://www.ctex.org/documents/packages/">CTEX - 在线文档 - TeX/LaTeX 常用宏包</a></li>
-<li> CTEX.org：<a target="_blank" rel="noopener" href="http://www.ctex.org/documents/latex/graphics/graphics.html">LATEX2e&nbsp;插图指南</a></li>
-<li> CTEX.org 主页：<a target="_blank" rel="noopener" href="http://www.ctex.org/HomePage#">科技排版系统</a></li>
-<li> LaTeX 编辑部：<a target="_blank" rel="noopener" href="https://www.latexstudio.net/hulatex/index.htm">LaTeX 编辑部</a></li>
-<li><a href="https://coffeelize.top/posts/a9e583b4.html">LaTeX 相关资源汇总 | 智朋的个人博客</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1497,13 +1471,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">270k</span>
+    <span title="站点总字数">281k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:06</span>
+    <span title="站点阅读时长">4:15</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
