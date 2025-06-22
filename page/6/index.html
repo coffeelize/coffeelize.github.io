@@ -177,7 +177,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -251,622 +251,6 @@
 
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/MyBatis-Concise-Notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/MyBatis-Concise-Notes.html" class="post-title-link" itemprop="url">MyBatis 简明笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-12-02 15:02:20" itemprop="dateCreated datePublished" datetime="2022-12-02T15:02:20+08:00">2022-12-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:54:53" itemprop="dateModified" datetime="2024-06-22T17:54:53+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="什么是-MyBatis"><a href="#什么是-MyBatis" class="headerlink" title="什么是 MyBatis"></a>什么是 MyBatis</h2><ul>
-<li>MyBatis 是一款优秀的 <strong>持久层框架</strong>，用于简化 JDBC 开发</li>
-</ul>
-<p>持久层</p>
-<ul>
-<li>负责将数据保存到数据库的那一层代码</li>
-<li> JavaEE 三层结构：表现层（页面展示）、业务层（逻辑处理）、持久层（数据库相关）</li>
-</ul>
-<p>框架</p>
-<ul>
-<li>框架是一个 <strong>半成品</strong> 软件，是一套可重用的、通用的、软件基础代码模型</li>
-<li>在框架的基础之上构建编写更加高效、规范、通用、可扩展</li>
-</ul>
-<h2 id="为什么-MyBatis"><a href="#为什么-MyBatis" class="headerlink" title="为什么 MyBatis"></a>为什么 MyBatis</h2><h3 id="JDBC-缺点"><a href="#JDBC-缺点" class="headerlink" title="JDBC 缺点"></a>JDBC 缺点</h3><ol>
-<li>硬编码问题</li>
-</ol>
-<p>比如注册驱动，获取连接对象时，需要通过变量接收这些字符串，都是写死在代码中的，但是后期可能会对这些字符串进行修改</p>
-<ol start="2">
-<li>操作繁琐</li>
-</ol>
-<p>对于处理对象中的问号占位符，手动封装结果集，都需要手动设置参数，操作繁琐</p>
-<h3 id="MyBatis-简化"><a href="#MyBatis-简化" class="headerlink" title="MyBatis 简化"></a>MyBatis 简化</h3><ol>
-<li>硬编码问题 ⇒ 通过配置文件解决</li>
-</ol>
-<p>比如字符串硬编码问题，将字符串写到 <code>mybatis-config.xml</code> 文件中；将 mysql 语句写到 <code>UserMapper.xml</code> 文件中</p>
-<ol start="2">
-<li>操作繁琐 ⇒ 自动完成</li>
-</ol>
-<p>MaBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作</p>
-<h2 id="MyBatis-快速入门"><a href="#MyBatis-快速入门" class="headerlink" title="MyBatis 快速入门"></a>MyBatis 快速入门</h2><h3 id="案例-1：查询-user-表中的所有数据"><a href="#案例-1：查询-user-表中的所有数据" class="headerlink" title="案例 1：查询 user 表中的所有数据"></a>案例 1：查询 user 表中的所有数据</h3><ol>
-<li>创建 user 表，添加数据</li>
-<li>创建模块，导入坐标</li>
-<li>创建 MyBatis 核心配置文件⇒替换连接信息，解决硬编码问题</li>
-<li>创建 SQL 映射文件⇒统一管理 SQL 语句，解决硬编码问题<ol>
-<li>在项目下新建 mapper 包，创建 UserMapper 接口</li>
-<li>在 resources 资源文件夹下，创建 UserMapper.xml 配置文件</li>
-</ol>
-</li>
-<li> Demo 主程序<ol>
-<li>定义 POJO 类</li>
-<li>加载核心配置文件，获取 SqlSessionFactory 对象</li>
-<li>获取 SqlSession 对象，执行 SQL 语句</li>
-<li>释放资源</li>
-</ol>
-</li>
-</ol>
-<h4 id="1、创建-user-表，添加数据"><a href="#1、创建-user-表，添加数据" class="headerlink" title="1、创建 user 表，添加数据"></a>1、创建 user 表，添加数据</h4><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database mybatis;</span><br><span class="line">use mybatis;</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> tb_user;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_user(</span><br><span class="line"> id <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line"> username <span class="type">varchar</span>(<span class="number">20</span>),</span><br><span class="line"> password <span class="type">varchar</span>(<span class="number">20</span>),</span><br><span class="line"> gender <span class="type">char</span>(<span class="number">1</span>),</span><br><span class="line"> addr <span class="type">varchar</span>(<span class="number">30</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tb_user <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'zhangsan'</span>, <span class="string">'123'</span>, <span class="string">'男'</span>, <span class="string">'北京'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tb_user <span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'李四'</span>, <span class="string">'234'</span>, <span class="string">'女'</span>, <span class="string">'天津'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tb_user <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'王五'</span>, <span class="string">'11'</span>, <span class="string">'男'</span>, <span class="string">'西安'</span>);</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="2、创建模块，导入坐标"><a href="#2、创建模块，导入坐标" class="headerlink" title="2、创建模块，导入坐标"></a>2、创建模块，导入坐标</h4><ol>
-<li>新建空项目</li>
-<li>点击项目结构，模块，新建模块，选择 Maven 项目</li>
-<li>在 pom.xml 文件中导入如下坐标 </li>
-</ol>
-<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--mybatis依赖--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--加载mysql驱动--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.26<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="3、创建-MyBatis-核心配置文件"><a href="#3、创建-MyBatis-核心配置文件" class="headerlink" title="3、创建 MyBatis 核心配置文件"></a>3、创建 MyBatis 核心配置文件</h4><ol>
-<li>在 resources 文件下新建 <code>mybatis-config.xml</code> 文件，将以下内容粘贴到 xml 文件中。注：代码模板可从 <a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/getting-started.html#%E4%BB%8E-xml-%E4%B8%AD%E6%9E%84%E5%BB%BA-sqlsessionfactory">mybatis 官方入门</a> 复制</li>
-</ol>
-<p>注意修改数据库的连接信息</p>
-<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">  <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Config 3.0//EN"</span></span></span><br><span class="line"><span class="meta">  <span class="meta-string">"https://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--数据库的连接信息--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver "</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql:///mybatis?useSSL=false"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--加载sql映射文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"UserMapper.xml"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="4、创建-SQL-映射文件及接口"><a href="#4、创建-SQL-映射文件及接口" class="headerlink" title="4、创建 SQL 映射文件及接口"></a>4、创建 SQL 映射文件及接口</h4><ol>
-<li>在 mapper 包下新建 UserMapper 接口 </li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>{</span><br><span class="line">    <span class="function">List&lt;User&gt; <span class="title">selectAll</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//User selectById(int id);</span></span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>在 resources 文件夹下，新建 UserMapper.xml 配置文件 </li>
-</ol>
-<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Mapper 3.0//EN"</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">"https://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    namespace：名称空间</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--查询标签，id为这条SQL语句的唯一标识，resultType为返回结果类（POJO类）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectAll"</span> <span class="attr">resultType</span>=<span class="string">"com.itheima.pojo.User"</span>&gt;</span></span><br><span class="line">        select * from tb_user;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>注：此处的代码模板也可以官方的实例模板中粘贴：<a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/getting-started.html#%E4%BB%8E-xml-%E4%B8%AD%E6%9E%84%E5%BB%BA-sqlsessionfactory">探究已映射的 SQL 语句</a></p>
-<h4 id="5、Demo-主程序"><a href="#5、Demo-主程序" class="headerlink" title="5、Demo 主程序"></a>5、Demo 主程序</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBatisDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>{</span><br><span class="line">        <span class="comment">//1.加载mybatis的核心配置文件，获取SqlSessionFactory</span></span><br><span class="line">        String resource = <span class="string">"mybatis-config.xml"</span>;</span><br><span class="line">        InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">        SqlSessionFactory sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.获取SqlSession对象，用它来执行SQL</span></span><br><span class="line">        SqlSession sqlSession = sqlSessionFactory.openSession();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.执行SQl语句,名称空间.ID,返回list集合</span></span><br><span class="line">        List&lt;User&gt; users = sqlSession.selectList(<span class="string">"test.selectAll"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(users);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.释放资源</span></span><br><span class="line">        sqlSession.close();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/VScode-configuration-md-template.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/VScode-configuration-md-template.html" class="post-title-link" itemprop="url">VScode 配置 md 模板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-11-30 16:38:38" itemprop="dateCreated datePublished" datetime="2022-11-30T16:38:38+08:00">2022-11-30</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 18:01:32" itemprop="dateModified" datetime="2024-06-22T18:01:32+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>需要使用 VScode 来编辑 md 文件，并且希望每次在创建 md 文档时，都能够自动补全 YAML 文件信息</p>
-<h3 id="配置-setting-json-文件"><a href="#配置-setting-json-文件" class="headerlink" title="配置 setting.json 文件"></a>配置 setting.json 文件</h3><ol>
-<li>Ctrl+Shift+P，搜索 setting，选择 <code>首选项：打开用户设置 (json)</code></li>
-<li>在这给文件中添加如下代码 </li>
-</ol>
-<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"[markdown]"</span>:  {  </span><br><span class="line">    <span class="attr">"editor.quickSuggestions"</span>: <span class="literal">true</span>  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以下图片显示的是之前就对 setting.json 文件配置过，找到 markdown 的位置添加上述的那一行代码即可；如果之前没有配置过，只需要将上述的那一串代码全部复制到下图中最大的一对黄括号中即可<br><img data-src="https://s2.loli.net/2022/11/30/4GztnFY2WcTpmJa.png" alt="配置SettingJson.png"></p>
-<h3 id="配置-md-模板"><a href="#配置-md-模板" class="headerlink" title="配置 md 模板"></a>配置 md 模板</h3><p><img data-src="https://s2.loli.net/2022/11/30/vV6rAHzYCo8EZk3.png" alt="01-VScode配置用户代码片段.png"></p>
-<ol>
-<li>Ctrl+Shift+P，搜索 snippets，选则 <code>配置用户代码片段</code>，再选择 <code>markdown</code></li>
-<li>将一下代码复制进去保存</li>
-<li>新建 md 文档之后，输入 <code>log</code> 敲 tab 即可自动补全配置好的模板 </li>
-</ol>
-<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line"> <span class="comment">// Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and</span></span><br><span class="line"> <span class="comment">// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</span></span><br><span class="line"> <span class="comment">// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the</span></span><br><span class="line"> <span class="comment">// same ids are connected.</span></span><br><span class="line"> <span class="comment">// Example:</span></span><br><span class="line"> <span class="comment">// 联想时显示的文字内容</span></span><br><span class="line"> <span class="attr">"create blog"</span>: {</span><br><span class="line">   <span class="attr">"prefix"</span>: <span class="string">"log"</span>, <span class="comment">// 输入log，即显示模板提示</span></span><br><span class="line">   <span class="attr">"body"</span>: [</span><br><span class="line">  <span class="comment">// body里是模板内容</span></span><br><span class="line">  <span class="string">"---"</span>,</span><br><span class="line">  <span class="string">"title: $1"</span>, <span class="comment">// $1表示生成模板后，光标最先在此位置</span></span><br><span class="line">  <span class="string">"date: $2"</span>, <span class="comment">// $2表示，在$1处输入完成后，按tab键，光标便跳转到这里，以此类推</span></span><br><span class="line">  <span class="string">"tags:"</span>,</span><br><span class="line">  <span class="string">"  - $3"</span>,</span><br><span class="line">  <span class="string">"---"</span>,</span><br><span class="line">  <span class="string">""</span>,</span><br><span class="line">   ],</span><br><span class="line">   <span class="attr">"description"</span>: <span class="string">"blog模板"</span></span><br><span class="line"> }</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>个人博客：<a target="_blank" rel="noopener" href="http://allanhao.com/2022/07/17/2022-07-17-vscode-markdown/">VSCode 配置 Markdown 模板 | AllanHao</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Visio-Concise-Notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/Visio-Concise-Notes.html" class="post-title-link" itemprop="url">Visio 学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-11-30 16:06:40" itemprop="dateCreated datePublished" datetime="2022-11-30T16:06:40+08:00">2022-11-30</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 18:01:19" itemprop="dateModified" datetime="2024-06-22T18:01:19+08:00">2024-06-22</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Research/" itemprop="url" rel="index"><span itemprop="name">Research</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="导出高清图片"><a href="#导出高清图片" class="headerlink" title="导出高清图片"></a>导出高清图片</h3><p>导出图片时的关键设置</p>
-<ul>
-<li>颜色格式设置为 256 位（实际上默认 24 位色也是足够了的）</li>
-<li><del>分辨率设置为打印机模式（400×400 效果已经不错了）</del></li>
-<li>分辨率设置为自定义，300 × 300 像素 /in. 效果已经非常不错 </li>
-</ul>
-<h3 id="绘制圆角箭头"><a href="#绘制圆角箭头" class="headerlink" title="绘制圆角箭头"></a>绘制圆角箭头</h3><p>有时候直接使用直线工具绘制箭头比自带的箭头工具好用得多，以下图片中演示的就是使用直线工具来绘制箭头<br><img data-src="https://s2.loli.net/2022/11/30/Ph3jGZ1o5XQbta2.gif" alt="Visio绘制圆角箭头.gif"></p>
-<h3 id="格式刷的应用"><a href="#格式刷的应用" class="headerlink" title="格式刷的应用"></a>格式刷的应用</h3><p>比下图所示，箭头可以通过格式化统一成一致的样式<br><img data-src="https://s2.loli.net/2022/11/30/FsupNOYVwTB35d1.gif" alt="Visio使用格式刷绘制箭头.gif"></p>
-<h3 id="标准色块的使用"><a href="#标准色块的使用" class="headerlink" title="标准色块的使用"></a>标准色块的使用</h3><p>将图片统一调整 / 裁剪成一样的比例 —&gt; 如何快速的设置选框 —&gt; 新建一个固定的标准矩形</p>
-<p><img data-src="https://s2.loli.net/2023/10/20/xYOBiE8KyghI3pt.png" alt="Pasted image 20231020154604.png"></p>
-<ol>
-<li>新建标准矩形，添加填充色</li>
-<li>裁剪的时候，会有一些透明，可以透过这层透明查找裁剪的边缘，很方便可以找到标准色块的边</li>
-</ol>
-<h3 id="上下角标"><a href="#上下角标" class="headerlink" title="上下角标"></a>上下角标</h3><p>Visio 不像 Word 那样有上角标，下角标按钮，需要使用到快捷键来完成这个操作</p>
-<p>上角标：Ctrl + Shift + =</p>
-<p>下角标：Ctrl + =</p>
-<h3 id="嵌入-Word-中"><a href="#嵌入-Word-中" class="headerlink" title="嵌入 Word 中"></a>嵌入 Word 中</h3><p>如何调整 Visio 对象的嵌入格式以及 Visio 对象尺寸</p>
-<p>右键 Visio 对象 —&gt; 图片 —&gt; 调整大小和版式等操作</p>
-<p><img data-src="https://s2.loli.net/2023/10/20/lYVqFiXH9c5szEB.gif" alt="Visio对象嵌入Word当中调整图片.gif"></p>
-<h3 id="如何插入表格"><a href="#如何插入表格" class="headerlink" title="如何插入表格"></a>如何插入表格</h3><p>从 Excel 中复制表格，粘贴到 Visio 中，粘贴的时候<strong>选择性粘贴</strong>，选择 Excel 格式。此时 Visio 中的数据是和 Excel 表格中的数据是关联的，还可以实现动态更新呢</p>
-<p>如果在 Visio 中调整表格的格式，比如字体的颜色，那么需要双击进入到关联的 Excel 表格中，在 Excel 中修改格式</p>
-<h3 id="粘贴到-word-中白边太宽"><a href="#粘贴到-word-中白边太宽" class="headerlink" title="粘贴到 word 中白边太宽"></a>粘贴到 word 中白边太宽</h3><p>将 Visio 图直接粘贴到 Word 中时，可能会遇到 Visio 图片显示不全的情况。word 中双击这个 Visio 对象，可以按住 control/Ctrl 键，拖动画布边缘，调整画布尺寸至合适大小，鼠标离开 Visio 对象编辑区域单击即可自动保存</p>
-<h3 id="导出图片时最下方出现一行空白"><a href="#导出图片时最下方出现一行空白" class="headerlink" title="导出图片时最下方出现一行空白"></a>导出图片时最下方出现一行空白</h3><p>这可能是图片的图注造成的</p>
-<p>双击图片时，自动会弹出一个文本框，如果敲了一个空格，再退出编辑，此时图片的图注就仅有一个空白的空格，导致出图的时候把这个空白的图注也带上了</p>
-<p>解决方案：可以通过查询空格字符，如果能够查询得到，就会自动跳转到图注位置，删除这个空格即可</p>
-<h3 id="visio-取消首字母自动大写"><a href="#visio-取消首字母自动大写" class="headerlink" title="visio 取消首字母自动大写"></a>visio 取消首字母自动大写</h3><p><img data-src="https://s2.loli.net/2022/11/30/TMo2lqfrWc8nEDO.png" alt="Visio取消首字母自动大写.png"></p>
-<h3 id="两形状之间直的连接线"><a href="#两形状之间直的连接线" class="headerlink" title="两形状之间直的连接线"></a>两形状之间直的连接线</h3><p>这种情况有两种解决办法：</p>
-<ol>
-<li>微调：选中下面的矩形通过 shift+ 方向键 微调来完成</li>
-<li>对齐：选中整个图形，选择排列，选中水平居中进行调整即可</li>
-<li>对不齐的时候，试试按着 Alt 键拖动形状试试：)</li>
-</ol>
-<h3 id="绘图时保证图片与文字大小协调"><a href="#绘图时保证图片与文字大小协调" class="headerlink" title="绘图时保证图片与文字大小协调"></a>绘图时保证图片与文字大小协调</h3><ol>
-<li>首先输入 8-12 号的字体，插入图片调整至和文字协调的大小（图片尽可能是由大图调整至小图），也就是说图片的大小按照标准的文字大小进行调整</li>
-<li>最好提前想好这张图在投稿时是打算单栏排版还是双栏排版，或者两个排版方式各导出一张</li>
-<li>图片更新时，最好在同一个 Visio 文件中新建页面，在新建的页面中对图片进行编辑，保存旧版本图片</li>
-</ol>
-<h3 id="辅助线"><a href="#辅助线" class="headerlink" title="辅助线"></a>辅助线</h3><p>从标尺处拖拉可添加辅助线</p>
-<h3 id="连接线与线条"><a href="#连接线与线条" class="headerlink" title="连接线与线条"></a>连接线与线条</h3><p>能用线条的地方尽量不要用连接线。连接线通常用来连接两个形状，但是这两个形状位置或大小发生变化或者整张大图的比例需要调整时，这个连接线就会自动更着变化，非常容易导致排版问题。连续画几条线条，这几条线条会自动连接在一起，并且在属性中也可以设置圆角，箭头等属性，这样已经完全可以实现连接线的功能了，所以，尽可能不要再绘图中使用连接线。</p>
-<h3 id="编辑-Xmind-导出的形状"><a href="#编辑-Xmind-导出的形状" class="headerlink" title="编辑 Xmind 导出的形状"></a>编辑 Xmind 导出的形状</h3><ol>
-<li>Xmind 导出形状为 SVG 格式</li>
-<li> Visio 自带 SVG 格式编辑功能</li>
-<li>还是矢量图格式的，妙啊！</li>
-</ol>
-<h3 id="Visio2PPT"><a href="#Visio2PPT" class="headerlink" title="Visio2PPT"></a>Visio2PPT</h3><p>直接框选复制到 ppt 当中，会自动转换为 emf 格式的矢量图片，而且背景是透明的哦，不会受 vision 背景底图的影响</p>
-<h3 id="思维导图样式"><a href="#思维导图样式" class="headerlink" title="思维导图样式"></a>思维导图样式</h3><p>![[Visio 一对多多对一线条绘制 1.gif]]</p>
-<h3 id="导出-PDF"><a href="#导出-PDF" class="headerlink" title="导出 PDF"></a>导出 PDF</h3><p>1、如果有多个页面，导出 PDF 时默认会将所有的页面都导出。如果只想导出当前页面，记得勾选</p>
-<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240612222714.png" alt="image.png"></p>
-<p>2、PDF 页面是按照画布来的，有空白的地方在 PDF 中也会跟着导出，故需要提前调整画布尺寸</p>
-<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240612222816.png" alt="image.png"></p>
-<h3 id="CAD2Visio"><a href="#CAD2Visio" class="headerlink" title="CAD2Visio"></a>CAD2Visio</h3><p>在 Visio 中，可将复制到 CAD 图形当成一个对象，双击还可进入 CAD 中进行编辑</p>
-<p><img data-src="https://s2.loli.net/2024/06/12/CWw5VeSmslQALET.gif"></p>
-<h3 id="收藏夹的应用"><a href="#收藏夹的应用" class="headerlink" title="收藏夹的应用"></a>收藏夹的应用</h3><p>1、可应用 Visio 中自带的一些形状，例如水平基线和垂直基线来给图形添加尺寸</p>
-<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240612223331.png" alt="image.png"></p>
-<p>2、可将常用的形状加入收藏夹，后期方便反复调用</p>
-<p><img data-src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/imgs/blog20240612223354.png" alt="image.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Anki-Study-Notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/Anki-Study-Notes.html" class="post-title-link" itemprop="url">Anki 学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-11-29 11:53:47" itemprop="dateCreated datePublished" datetime="2022-11-29T11:53:47+08:00">2022-11-29</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:42:52" itemprop="dateModified" datetime="2024-06-22T17:42:52+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>393</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>插件官网： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/addons/2.1">Add-ons for Anki 2.1</a></p>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ul>
-<li>Review Heatmap： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/1771074083">Review Heatmap</a></li>
-<li> 缩放 Anki 界面： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/538879081">Anki Zoom</a></li>
-<li> 查看卡片时编辑卡片： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/1020366288">Edit Field During Review</a></li>
-<li> 和网页插件等搭配使用： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/2055492159">AnkiConnect</a></li>
-<li> 视频制卡： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/1213145732">Create subs2srs cards with mpv video player</a></li>
-<li> 图形遮挡： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/1374772155">Image Occlusion Enhanced</a></li>
-<li> 快速添加单词各字段信息： <a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/1807206748">Fast Word Query: Multi-threaded queries for words from local or web dictionaries</a></li>
-<li> 同时打开多个窗口（比如添加卡片时可以同时打开两个添加窗口，分别设置好不同的模板，就不用老是切换模板了）：<a target="_blank" rel="noopener" href="https://ankiweb.net/shared/info/354407385">Opening the same window multiple time</a></li>
-<li> 了解更多：The Anking：<a target="_blank" rel="noopener" href="https://www.ankipalace.com/best-add-ons">Best Anki Add-ons</a> 清单</li>
-</ul>
-<h3 id="单词在线发音"><a href="#单词在线发音" class="headerlink" title="单词在线发音"></a>单词在线发音</h3>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/LaTeX-Customized-List-Environment.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat-avatar.jpg">
-      <meta itemprop="name" content="coffeelize">
-      <meta itemprop="description" content="一个研究生的存档点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="智朋的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/LaTeX-Customized-List-Environment.html" class="post-title-link" itemprop="url">LaTeX 自定义列表环境</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-11-29 11:49:47" itemprop="dateCreated datePublished" datetime="2022-11-29T11:49:47+08:00">2022-11-29</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:52:32" itemprop="dateModified" datetime="2024-06-22T17:52:32+08:00">2024-06-22</time>
-      </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>注：本文内容的主体结构转载自博客园 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ahhylau/p/4586167.html">LaTeXmath：LaTeX 中列表环境的使用</a>，本人仅对案例中的一些代码、图片及一些宏包的使用做了一些补充。</p>
-<p>列表就是将所要表达的内容分为若干个条目并按一定的顺序排列，达到简明、直观的效果。LaTeX 中常见的列表环境有&nbsp;enumerate、itemize 和 description。这三种列表环境的主要区别是列表项标签的不同：</p>
-<p>有序列表和无序列表无需在进行介绍，对于 description 列表来说，可指定其标签</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{pifont} </span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{description}</span><br><span class="line">  <span class="keyword">\item</span>[<span class="keyword">\ding</span>{47}] This is the first item</span><br><span class="line">  <span class="keyword">\item</span>[<span class="keyword">\ding</span>{47}] This is the second item</span><br><span class="line">  <span class="keyword">\item</span>[<span class="keyword">\ding</span>{47}] This is the third item</span><br><span class="line"> <span class="keyword">\end</span>{description}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/07/01/riNZI4RMPheTu9o.png" alt="01-指定description标签.png"></p>
-<p>了解关于 pifont 宏包的更多信息，请参考：<a target="_blank" rel="noopener" href="https://ctan.org/pkg/pifont">pifont – Access to PostScript standard Symbol and Dingbats fonts</a>，如下为 pifont 的一些字符</p>
-<p><img data-src="https://s2.loli.net/2022/07/01/2PuBr5ezGCqi1cT.png" alt="02-pifont的一些字符.png"></p>
-<p>或者参阅以下的简要信息快速了解 pifont 宏包</p>
-<blockquote>
-<p>The package provides commands for Pi fonts (Dingbats, Symbol, etc.); all commands assume you know the character number within the font of the symbol within the font.</p>
-</blockquote>
-<p>列表环境也可以互相嵌套，默认情况下不同层级的标签不同，以体现分级层次。</p>
-<h3 id="进阶用法"><a href="#进阶用法" class="headerlink" title="进阶用法"></a>进阶用法</h3><p>可参考个人博客：<a target="_blank" rel="noopener" href="https://syvshc.github.io/2021-12-05-length-in-enumitem/">enumitem 宏包中的长度设置</a> @无锤乙醇</p>
-<p>以如下代码对自定义列表环境进行案例分析:</p>
-<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{enumerate}</span><br><span class="line"><span class="keyword">\usepackage</span>{enumitem}</span><br><span class="line"><span class="keyword">\setlist</span>[enumerate,1]{label=(<span class="keyword">\arabic</span>*).,font=<span class="keyword">\textup</span>,</span><br><span class="line"> leftmargin=7mm,labelsep=1.5mm,topsep=0mm,itemsep=-0.8mm}</span><br><span class="line"><span class="keyword">\setlist</span>[enumerate,2]{label=(<span class="keyword">\alph</span>*).,font=<span class="keyword">\textup</span>,</span><br><span class="line"> leftmargin=7mm,labelsep=1.5mm,topsep=-0.8mm,itemsep=-0.8mm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"> <span class="keyword">\begin</span>{enumerate}</span><br><span class="line">  <span class="keyword">\item</span> 这是一个一级列表</span><br><span class="line">  <span class="keyword">\item</span> 看我在嵌套一个二级列表</span><br><span class="line">    <span class="keyword">\begin</span>{enumerate}</span><br><span class="line">     <span class="keyword">\item</span> 这是一个二级列表</span><br><span class="line">    <span class="keyword">\end</span>{enumerate}</span><br><span class="line"> <span class="keyword">\end</span>{enumerate}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&nbsp;<code>\setlist[enumerate,1]</code>&nbsp;表示对一级列表进行设置，<code>\setlist[enumerate,2]</code>&nbsp;表示对二级列表进行设置。这样一级列表的标签就是括号加阿拉伯数字加点，二级标签是括号加小写英文字母加点。输出效果为：</p>
-<p><img data-src="https://s2.loli.net/2022/07/01/loZxCdTE8hAVD74.png" alt="04-自定义修改列表样式.png"></p>
-<p><code>font=\textup</code> 表示使用直立体（可参考官方入门手册）</p>
-<p><img data-src="https://s2.loli.net/2022/07/01/xiAoPaI8DqOQ7mU.png" alt="05-字体命令.png"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>个人博客：<a target="_blank" rel="noopener" href="https://syvshc.github.io/2021-12-05-length-in-enumitem/">enumitem 宏包中的长度设置</a> @无锤乙醇</li>
-<li>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ahhylau/p/4586167.html">LaTeX 中列表环境的使用</a> @LaTeXmath</li>
-<li>Latex 官方入门手册：一份（不太）简短的 LaTeX2ε 介绍</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -1214,7 +598,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2024-06-22 17:30:12" itemprop="dateModified" datetime="2024-06-22T17:30:12+08:00">2024-06-22</time>
+        <time title="修改时间：2025-03-14 15:40:26" itemprop="dateModified" datetime="2025-03-14T15:40:26+08:00">2025-03-14</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1232,7 +616,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>383</span>
+      <span>422</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1379,8 +763,526 @@
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/regular-expression.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/regular-expression.html" class="post-title-link" itemprop="url">正则表达式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-06 09:28:20" itemprop="dateCreated datePublished" datetime="2022-10-06T09:28:20+08:00">2022-10-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:40:53" itemprop="dateModified" datetime="2024-06-22T17:40:53+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>133</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>正则表达式在线学习网址：<a target="_blank" rel="noopener" href="https://regexlearn-com.vercel.app/zh">正则表达式学习 - 逐步从零基础到高阶。</a></li>
+<li>Github：<a target="_blank" rel="noopener" href="https://github.com/aykutkardas/regexlearn.com">GitHub - aykutkardas/regexlearn.com: Learn RegEx step by step, from zero to advanced.</a></li>
+<li> 菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-example.html">正则表达式 – 示例 | 菜鸟教程</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Sketchup-3D-Model-Download.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Sketchup-3D-Model-Download.html" class="post-title-link" itemprop="url">Sketchup 之 3D 模型下载</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-22 14:35:47" itemprop="dateCreated datePublished" datetime="2022-09-22T14:35:47+08:00">2022-09-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:59:30" itemprop="dateModified" datetime="2024-06-22T17:59:30+08:00">2024-06-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Mechanical/" itemprop="url" rel="index"><span itemprop="name">Mechanical</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>181</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li>Youtube：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2MIFlGg5jJ0&amp;t=109s">Top 5 Websites for FREE 3D Models</a></li>
+</ol>
+<h3 id="3D-模型下载"><a href="#3D-模型下载" class="headerlink" title="3D 模型下载"></a>3D 模型下载</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://3dwarehouse.sketchup.com/">https://3dwarehouse.sketchup.com</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.bimobject.com/">http://www.bimobject.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cgtrader.com/">https://www.cgtrader.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://box.pcon-solutions.com/">https://box.pcon-solutions.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.caddetails.com/">https://www.caddetails.com</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Markdown-Emoji.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Markdown-Emoji.html" class="post-title-link" itemprop="url">Markdown Emoji</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-16 16:03:20" itemprop="dateCreated datePublished" datetime="2022-09-16T16:03:20+08:00">2022-09-16</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:52:41" itemprop="dateModified" datetime="2024-06-22T17:52:41+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>256</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li>Emoji Code Sheet：<a target="_blank" rel="noopener" href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a></li>
+<li>VScode 插件：<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji">Markdown Emoji</a></li>
+<li>Obsidian 插件：<a target="_blank" rel="noopener" href="https://github.com/phibr0/obsidian-emoji-shortcodes">Emoji shortcodes</a>（自带补全提示）</li>
+<li><a target="_blank" rel="noopener" href="https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia">Complete list of github markdown emojis</a></li>
+</ol>
+<h3 id="常用-Emoji"><a href="#常用-Emoji" class="headerlink" title="常用 Emoji"></a>常用 Emoji</h3><p>只是，同样的 Markdown Emoji 符号，在不同的地方显示可能不同，比如 VScode 和 Obsidian，更别说其他浏览器里</p>
+<ul>
+<li>😄：smile</li>
+<li>😭：sob</li>
+<li>😂：joy</li>
+<li>😁：grin</li>
+<li>😉：wink</li>
+<li>😳：flushed</li>
+<li>👍：+1</li>
+<li>😅：sweat_smile</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/4a17b156.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/4a17b156.html" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-09 10:02:34" itemprop="dateCreated datePublished" datetime="2022-08-09T10:02:34+08:00">2022-08-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>363</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://coffeelize.top/posts/Framed-macro-package.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat-avatar.jpg">
+      <meta itemprop="name" content="coffeelize">
+      <meta itemprop="description" content="一个研究生的存档点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="智朋的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Framed-macro-package.html" class="post-title-link" itemprop="url">LaTeX 之 framed 宏包</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-26 10:59:47" itemprop="dateCreated datePublished" datetime="2022-07-26T10:59:47+08:00">2022-07-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2024-06-22 17:51:21" itemprop="dateModified" datetime="2024-06-22T17:51:21+08:00">2024-06-22</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="速览"><a href="#速览" class="headerlink" title="速览"></a>速览</h3><p>framed – Framed or shaded regions that can break across pages</p>
+<p>该宏包提供可三个环境：</p>
+<ul>
+<li>frame：which puts an ordinary frame box around the region</li>
+<li>shaded：which shades the region</li>
+<li>leftbar：which places a line at the left side.</li>
+</ul>
+<p>还提供了一个命令来自定义设置 framed-style 的环境</p>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{geometry} </span><br><span class="line"><span class="keyword">\usepackage</span>{framed}</span><br><span class="line"><span class="keyword">\geometry</span>{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line">    <span class="keyword">\begin</span>{framed}</span><br><span class="line">        <span class="keyword">\zhlipsum</span>[1-5]</span><br><span class="line">    <span class="keyword">\end</span>{framed}</span><br><span class="line"><span class="keyword">\clearpage</span></span><br><span class="line"><span class="keyword">\fbox</span>{<span class="keyword">\zhlipsum</span>[1-3]}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><p>设置页边距，ctexart 文档类默认的页边距有些宽，习惯使用如下的页边距</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage{geometry} </span><br><span class="line">\geometry{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用中文假文</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage{zhlipsum} %中文假文宏包</span><br><span class="line">\zhlipsum[1-5] %从假文文章中抽取第一段到第五段内容</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="frame-环境和-fbox-命令"><a href="#frame-环境和-fbox-命令" class="headerlink" title="frame 环境和 fbox 命令"></a>frame 环境和 fbox 命令</h3><p>两者均可以为文本内容添加外边框，但是当文本内容超过一行之后，使用 fbox 就会出现问题了，无法正确的换行和分页，导致超出该行的部分无法在 PDF 中显示。如下图所示<br>因此，针对此问题，宏包作者开发了 framed 宏包，两者的关系不言而喻，framed 宏包是基于 fbox 进行开发的。</p>
+<h4 id="framed-环境输出"><a href="#framed-环境输出" class="headerlink" title="framed 环境输出"></a>framed 环境输出</h4><ol>
+<li>正常换行</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/08/26/HSyITu96NoXO8vx.png" alt="01-frame宏包正常换行.png"></p>
+<ol start="2">
+<li>正常分页</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/08/26/3okDxFs7OwXzY1p.png" alt="02-frame宏包正常分页.png"></p>
+<h4 id="fbox-命令输出"><a href="#fbox-命令输出" class="headerlink" title="fbox 命令输出"></a>fbox 命令输出</h4><ol>
+<li>无法正确换行</li>
+</ol>
+<p><img data-src="https://s2.loli.net/2022/08/26/gQ98HBMDPNuxUjz.png" alt="03-fbox命令无法处理长文本-无法正常换行和分页.png"></p>
+<p>实际上，framebox 命令输出也是这种效果，这里暂且认为 framebox 命令和 fbox 命令完全相同</p>
+<p>对应的，fbox 可以设置边框边线的宽度和内容距边框的间距，framed 环境同样是可以设置的</p>
+<h3 id="设置边框宽度和间距"><a href="#设置边框宽度和间距" class="headerlink" title="设置边框宽度和间距"></a>设置边框宽度和间距</h3><h4 id="对-fbox-盒子进行设置"><a href="#对-fbox-盒子进行设置" class="headerlink" title="对 fbox 盒子进行设置"></a>对 fbox 盒子进行设置</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\fbox</span>{Test box}</span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\fboxrule</span>}{1.6pt}</span><br><span class="line"><span class="keyword">\setlength</span>{<span class="keyword">\fboxsep</span>}{1em}</span><br><span class="line"><span class="keyword">\fbox</span>{Test box}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/08/26/6bkqhwMB2xpPLHz.png" alt="06-设置fbox边框和间距.png"></p>
+<h4 id="对-frame-盒子进行设置"><a href="#对-frame-盒子进行设置" class="headerlink" title="对 frame 盒子进行设置"></a>对 frame 盒子进行设置</h4><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{geometry}</span><br><span class="line"><span class="keyword">\usepackage</span>{framed}</span><br><span class="line"><span class="keyword">\geometry</span>{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{framed}</span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1]</span><br><span class="line"><span class="keyword">\end</span>{framed}</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\FrameRule</span>{1.6pt}</span><br><span class="line"><span class="keyword">\setlength</span><span class="keyword">\FrameSep</span>{2em}</span><br><span class="line"><span class="keyword">\begin</span>{framed}</span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1]</span><br><span class="line"><span class="keyword">\end</span>{framed}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/08/26/6ZjnEfo8CuKpY3c.png" alt="07-默认frame盒子和自定义frame盒子.png"></p>
+<h3 id="拓展应用"><a href="#拓展应用" class="headerlink" title="拓展应用"></a>拓展应用</h3><h4 id="换页是否封闭外边框"><a href="#换页是否封闭外边框" class="headerlink" title="换页是否封闭外边框"></a>换页是否封闭外边框</h4><ul>
+<li>framed 环境默认是封闭的</li>
+<li> oframed 环境则提供了开口的外边框：oframed 其实是 “Open Framed” 的组合吧</li>
+</ul>
+<p><img data-src="https://s2.loli.net/2022/08/26/tdETgbaPuC4NRn7.png" alt="04-oframed环境.png"></p>
+<h4 id="左边线样式"><a href="#左边线样式" class="headerlink" title="左边线样式"></a>左边线样式</h4><p>我想许多人使用这个宏包就是为了实现网页中的 <strong>引用</strong> 效果吧 o (^▽^) o，左边线的长度会自动随着环境中的文本长度进行变化</p>
+<figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{ctexart}</span><br><span class="line"><span class="keyword">\usepackage</span>{zhlipsum}</span><br><span class="line"><span class="keyword">\usepackage</span>{geometry}</span><br><span class="line"><span class="keyword">\usepackage</span>{framed}</span><br><span class="line"><span class="keyword">\geometry</span>{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\begin</span>{leftbar}</span><br><span class="line"> <span class="keyword">\zhlipsum</span>[1]</span><br><span class="line"><span class="keyword">\end</span>{leftbar}</span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/08/26/UwWyTVJesIrpzOb.png" alt="05-leftbar环境.png"></p>
+<h3 id="其他参数"><a href="#其他参数" class="headerlink" title="其他参数"></a>其他参数</h3><p>除了上面所说的 <code>FrameSep</code> 和 <code>FrameRule</code> 命令，宏包手册中还列举了大量其他命令，这里就不仔细研究了，感觉用不到这里面太多的东西，但是还是感谢开发者啦 o (^▽^) o</p>
+<p><img data-src="https://s2.loli.net/2022/08/26/JarGK9Oh1ulQiBC.png" alt="08-framed宏包命令.png"></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>CTAN： <a target="_blank" rel="noopener" href="https://ctan.org/pkg/framed">framed – Framed or shaded regions that can break across pages</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1392,7 +1294,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-mug-saucer"></i>
   </span>
@@ -1403,13 +1305,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">281k</span>
+    <span title="站点总字数">271k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:15</span>
+    <span title="站点阅读时长">4:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
