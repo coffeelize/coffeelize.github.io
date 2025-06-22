@@ -1,231 +1,254 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <title>Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      :root {
-        --main-bg: #fff;
-        --main-fg: #222;
-        --accent: #00aaff;
-        --header-bg: #222;
-        --footer-bg: #222;
-        --gallery-gap: 1.5em;
-      }
+<head>
+  <meta charset="utf-8" />
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --main-bg: #fff;
+      --main-fg: #222;
+      --accent: #00aaff;
+      --header-bg: #222;
+      --footer-bg: #222;
+      --gallery-gap: 1.5em;
+    }
 
-      body {
-        font-family: "Noto Sans SC", "Segoe UI", sans-serif;
-        margin: 0;
-        background-color: var(--main-bg);
-        color: var(--main-fg);
-        cursor: url(/images/designcursor.svg) 6 2, default;
-        line-height: 1.6;
-      }
+    body {
+      font-family: "Noto Sans SC", "Segoe UI", sans-serif;
+      margin: 0;
+      background-color: var(--main-bg);
+      color: var(--main-fg);
+      cursor: url(/images/designcursor.svg) 6 2, default;
+      line-height: 1.6;
+    }
 
-      header, footer {
-        background-color: var(--header-bg);
-        color: white;
-        text-align: center;
-        padding: 1.2em 1em;
-      }
+    header, footer {
+      background-color: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 1.2em 1em;
+    }
 
-      header h1 {
-        margin: 0;
-        font-size: 1.8em;
-        letter-spacing: 1px;
-      }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
 
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: var(--gallery-gap);
-        padding: 2em;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--gallery-gap);
+      padding: 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-      .gallery div {
-        text-align: center;
-        background: #fafafa;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        padding: 1em;
-        transition: transform 0.2s ease;
-      }
+    .gallery div {
+      text-align: center;
+      background: #fafafa;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 1em;
+      transition: transform 0.2s ease;
+    }
 
-      .gallery div:hover {
-        transform: translateY(-5px);
-      }
+    .gallery div:hover {
+      transform: translateY(-5px);
+    }
 
-      .gallery img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: transform 0.3s;
-      }
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
 
-      .gallery img:hover {
-        transform: scale(1.03);
-      }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
 
-      .gallery p {
-        margin: 0.8em 0 0;
-        font-size: 0.95em;
-        color: #555;
-      }
+    .gallery p {
+      margin: 0.8em 0 0;
+      font-size: 0.95em;
+      color: #555;
+    }
 
-      .album {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        z-index: 10;
-        overflow-y: auto;
-      }
+    .album {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      z-index: 10;
+      overflow-y: auto;
+    }
 
-      .album-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1em;
-        padding: 2em;
-        max-width: 1400px;
-        margin: auto;
-      }
+    .album-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      padding: 2em;
+      max-width: 1400px;
+      margin: auto;
+    }
 
+    .album-content img {
+      max-width: 100%;
+      max-height: 60vh;
+      border-radius: 6px;
+      flex: 1 1 calc(33% - 2em);
+      transition: transform 0.2s ease;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .album-content img:hover {
+      transform: scale(1.05);
+    }
+
+    .album-info {
+      text-align: center;
+      margin-top: 2em;
+      color: var(--main-fg);
+    }
+
+    .album-info h2 {
+      margin-bottom: 0.5em;
+    }
+
+    .close {
+      position: fixed;
+      top: 1em;
+      right: 1.5em;
+      font-size: 2.5em;
+      color: var(--main-fg);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s;
+      z-index: 11;
+    }
+
+    .close:hover {
+      transform: rotate(180deg);
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: white;
+      font-size: 0.9em;
+    }
+
+    @media screen and (max-width: 768px) {
       .album-content img {
-        max-width: 100%;
-        max-height: 60vh;
-        border-radius: 6px;
-        flex: 1 1 calc(33% - 2em);
-        transition: transform 0.2s ease;
-        object-fit: cover;
-        cursor: pointer;
+        flex: 1 1 100%;
       }
+    }
+  </style>
+</head>
+<body>
 
-      .album-content img:hover {
-        transform: scale(1.05);
-      }
+  <header>
+    <h1>画廊 Gallery</h1>
+  </header>
 
-      .album-info {
-        text-align: center;
-        margin-top: 2em;
-        color: var(--main-fg);
-      }
-
-      .album-info h2 {
-        margin-bottom: 0.5em;
-      }
-
-      .close {
-        position: fixed;
-        top: 1em;
-        right: 1.5em;
-        font-size: 2.5em;
-        color: var(--main-fg);
-        cursor: pointer;
-        user-select: none;
-        transition: transform 0.3s;
-        z-index: 11;
-      }
-
-      .close:hover {
-        transform: rotate(180deg);
-      }
-
-      footer {
-        background-color: var(--footer-bg);
-        color: white;
-        font-size: 0.9em;
-      }
-
-      @media screen and (max-width: 768px) {
-        .album-content img {
-          flex: 1 1 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>画廊 Gallery</h1>
-    </header>
-
-    <main>
-      <div class="gallery">
-        <div>
-          <img loading="lazy" src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" alt="青大相册" onclick="showAlbum('album1')" />
-          <p>青大相册 Qinghai University</p>
-        </div>
-        <div>
-          <img loading="lazy" src="https://s2.loli.net/2023/08/02/zODxpCT1sq5jKHc.png" alt="Coffeelize 和 Coffity" onclick="showAlbum('album2')" />
-          <p>Coffeelize & Coffity</p>
-        </div>
+  <main>
+    <div class="gallery">
+      <div>
+        <img loading="lazy" src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" alt="青大相册" onclick="showAlbum('album1')" />
+        <p>青大相册 Qinghai University</p>
       </div>
-
-      <div class="album" id="album1">
-        <span class="close" onclick="closeAlbum(event)">&times;</span>
-        <div class="album-info">
-          <h2>专辑 1：青大记忆</h2>
-          <p>记录在青海大学生活的点点滴滴</p>
-        </div>
-        <div class="album-content">
-          <img loading="lazy" src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" />
-          <img loading="lazy" src="https://s2.loli.net/2022/11/30/yD2egupZVPS9KIL.jpg" />
-          <img loading="lazy" src="https://s2.loli.net/2022/11/30/5ewyIhrngSXBJju.jpg" />
-        </div>
+      <div>
+        <img loading="lazy" src="https://s2.loli.net/2023/08/02/zODxpCT1sq5jKHc.png" alt="Coffeelize 和 Coffity" onclick="showAlbum('album2')" />
+        <p>Coffeelize & Coffity</p>
       </div>
-
-      <div class="album" id="album2">
-        <span class="close" onclick="closeAlbum(event)">&times;</span>
-        <div class="album-info">
-          <h2>专辑 2：创意空间</h2>
-          <p>Coffeelize 与 Coffity 项目的灵感与过程</p>
-        </div>
-        <div class="album-content">
-          <img loading="lazy" src="https://s2.loli.net/2023/08/02/z9RmTK7VlFZ2bg5.jpg" />
-          <img loading="lazy" src="https://s2.loli.net/2023/08/02/dRFNf9tHy8sEivl.jpg" />
-          <img loading="lazy" src="https://s2.loli.net/2023/08/02/s1IBZEvbWJlOpfo.jpg" />
-          <img loading="lazy" src="https://s2.loli.net/2023/08/02/1PxfNdATOkyc259.jpg" />
-          <img loading="lazy" src="https://s2.loli.net/2023/08/02/K2PXBIwE5iR4TOD.jpg" />
-        </div>
+      <div>
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/20250622203509.png" alt="Meow" onclick="showAlbum('album3')" />
+        <p>~Meow Meow Meow~</p>
       </div>
+    </div>
 
-
-      <div class="album" id="album2">
-        <span class="close" onclick="closeAlbum(event)">&times;</span>
-        <div class="album-info">
-          <h2>专辑 3：Mewo</h2>
-          <p>~Mewo Mewo Mewo~</p>
-        </div>
-        <div class="album-content">
-
-          <!-- 玖哥和山君 -->
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/20250622203509.png" />
-          <!-- 玖哥 -->
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222037570.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222039920.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222039429.png" />
-          <!-- 玖哥和山君 -->
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222041767.png" />
-          <!-- 多多 -->
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222044861.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222045322.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222046921.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222047014.png" />
-          <!-- 菜粿 -->
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222048256.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222049379.png" />
-          <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222049585.png" />
-        </div>
+    <!-- 相册1：青大 -->
+    <div class="album" id="album1">
+      <span class="close" onclick="closeAlbum(event)">&times;</span>
+      <div class="album-info">
+        <h2>专辑 1：青大记忆</h2>
+        <p>记录在青海大学生活的点点滴滴</p>
       </div>
-    </main>
+      <div class="album-content">
+        <img loading="lazy" src="https://s2.loli.net/2022/11/30/qdMzeDYZTyWucUN.jpg" />
+        <img loading="lazy" src="https://s2.loli.net/2022/11/30/yD2egupZVPS9KIL.jpg" />
+        <img loading="lazy" src="https://s2.loli.net/2022/11/30/5ewyIhrngSXBJju.jpg" />
+      </div>
+    </div>
 
-    <footer>
-      <p>&copy; 2025 - Coffeelize & Coffity. All rights reserved.</p>
-    </footer>
+    <!-- 相册2：创意项目 -->
+    <div class="album" id="album2">
+      <span class="close" onclick="closeAlbum(event)">&times;</span>
+      <div class="album-info">
+        <h2>专辑 2：创意空间</h2>
+        <p>Coffeelize 与 Coffity 项目的灵感与过程</p>
+      </div>
+      <div class="album-content">
+        <img loading="lazy" src="https://s2.loli.net/2023/08/02/z9RmTK7VlFZ2bg5.jpg" />
+        <img loading="lazy" src="https://s2.loli.net/2023/08/02/dRFNf9tHy8sEivl.jpg" />
+        <img loading="lazy" src="https://s2.loli.net/2023/08/02/s1IBZEvbWJlOpfo.jpg" />
+        <img loading="lazy" src="https://s2.loli.net/2023/08/02/1PxfNdATOkyc259.jpg" />
+        <img loading="lazy" src="https://s2.loli.net/2023/08/02/K2PXBIwE5iR4TOD.jpg" />
+      </div>
+    </div>
 
-    <script>
+    <!-- 相册3：Meow -->
+    <div class="album" id="album3">
+      <span class="close" onclick="closeAlbum(event)">&times;</span>
+      <div class="album-info">
+        <h2>专辑 3：Mewo</h2>
+        <p>~Mewo Mewo Mewo~</p>
+      </div>
+      <div class="album-content">
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/20250622203509.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222037570.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222039920.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222039429.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222041767.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222044861.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222045322.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222046921.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222047014.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222048256.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222049379.png" />
+        <img loading="lazy" src="https://coffeelize-1307708315.cos.ap-beijing.myqcloud.com/202506222049585.png" />
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Coffeelize & Coffity. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 展示相册
+    function showAlbum(albumId) {
+      document.querySelectorAll('.album').forEach(album => {
+        album.style.display = 'none';
+      });
+      const target = document.getElementById(albumId);
+      if (target) {
+        target.style.display = 'block';
+      }
+    }
+
+    // 关闭相册
+    function closeAlbum(event) {
+      event.stopPropagation();
+      document.querySelectorAll('.album').forEach(album => {
+        album.style.display = 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
